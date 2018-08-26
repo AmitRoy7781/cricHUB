@@ -59,32 +59,18 @@ def SOUP(url):
 
 
 
-def Print(data,score):
-
-
-    for i in data:
-        print(data[i])
-        print(score[i])
-        print()
 
 
 def livescore():
     """
-    Diplays of current matches and results
-
-    Args : None (No arguements are passed into this function)
-
-    Returns : None (No value is returned by this function)
+    Diplays of current matches, scores and results
 
     """
 
     url= URL()
-    data,score = SOUP(url)
-    #Print(data,score)
+    SOUP(url)
 
 
 if __name__ == '__main__':
-    #while True:
-        #print(SCORE("https://www.cricbuzz.com/live-cricket-scores/20704/ausa-vs-rsaa-8th-match-india-a-team-quadrangular-series-2018"))
     livescore()
 
