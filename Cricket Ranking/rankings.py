@@ -108,6 +108,7 @@ def SOUP(url, tp):
             name = ''
             rating = ''
 
+
             try:
                 rank = int(i.contents[1].text)
             except:
