@@ -6,17 +6,19 @@ def SCORE(url):
         res = requests.get(url)
         ret = ""
         soup = BeautifulSoup(res.text,'lxml')
-        a = soup.find_all('div',{'class':"cb-min-tm"})
+        a = soup.find_all('div',{'class':"cb-scrs-wrp"})
 
         for i in a:
             ret = ret + str(i.text) +"\n"
-        a = soup.find('div', {'class': "cb-min-stts"})
-        ret = ret + str(a.text)
+        #a = soup.find('div', {'class': "cb-min-stts",'class': "cb-text-inprogress"})
+        #ret = ret + str(a.text)
         #print(ret)
 
     except:
         ret = ""
 
+    ret.strip();
+    ret = ret[1:]
     return ret;
 
 
@@ -40,11 +42,13 @@ def SOUP(url):
         for i in a:
             data[cnt] = str(i.contents[0]).split('"')[5]
             scoreurl  =  'https://www.cricbuzz.com' + str(i.contents[0]).split('"')[1]
+            score[cnt]= SCORE(scoreurl)
+
             #print(scoreurl)
             #print(SCORE(scoreurl))
+
             print()
             print()
-            score[cnt]= SCORE(scoreurl)
             print(data[cnt])
             print(score[cnt])
             print()
