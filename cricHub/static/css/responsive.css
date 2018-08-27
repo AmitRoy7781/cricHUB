@@ -1,0 +1,862 @@
+
+
+
+@media (min-width: 1367px) and (max-width: 1680px){
+	.banner-thumb{
+		padding:23.4px 30px 28px; 
+	}
+	.slider-for2 li a .container{
+		width: 100%;
+	}
+}
+
+/*
+=================================================
+				UP FROM 1200PX
+=================================================
+*/ 
+@media (min-width: 1200px) and (max-width: 1366px) {
+	.banner-thumb .rgb-date, .banner-thumb h5 a {
+		font-size: 16px;
+	}
+	.banner-thumb{
+		padding:23px 30px 24px;
+	}
+	.kode-caption {
+		left: 20px;
+		padding: 28px 30px 36px;
+		position: absolute;
+		top: -157px;
+	}
+	.instagram-feed-title{
+		padding: 0 55px;	
+	}
+	.instagram-feed figcaption{
+		padding: 0 25px;
+	}
+}
+/*
+=================================================
+			FROM 992PX TO 1199PX
+=================================================
+*/ 
+@media (min-width: 992px) and (max-width: 1199px) {
+	.banner-thumb .rgb-date, .banner-thumb h5 a {
+		font-size: 16px;
+	}
+	.banner-thumb{
+		padding:16px;
+	}
+	.slider-for2 li a .container{
+		width: auto;
+	}
+	.rgb-tab-match-results  p{
+		font-size: 13px;
+	}
+	.player-position-table li > div > p{
+		font-size: 13px;
+	}
+	.rgb-match-info-wrap .opponanet-contant .rgb-team-1 h6 {
+	    font-size: 14px;
+	}
+	.rgb-player-stats-wrap .player-position-table h6{
+		font-size: 14px;
+	}
+	.blog-small .rgb-blog-contant{
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+	.blog-small .kode-social-link.simple li {
+	    margin-left: 10px;
+	}
+	.blog-small .blog-title{
+		font-size: 16px;
+	}
+	.rgb-player-contant .text p:last-of-type{
+		display: none;
+	}
+	.rgb-header .tp-address{
+		display: none;
+	}
+	.rgb-header .navigation ul li{
+		margin-right: 20px;
+	}
+	.rgb-header .logo{
+		padding-left: 0;
+	}
+	.rgb-header .logo::before{
+		right: 30px;
+		transform: skew(-30deg);
+		-o-transform: skew(-30deg);
+		-ms-transform: skew(-30deg);
+		-moz-transform: skew(-30deg);
+		-webkit-transform: skew(-30deg);
+	}
+	.rgb-live-stats-wrap  .contant-table-head h6,
+	.rgb-live-stats-wrap  .rgb-team-1 h6{
+		font-size: 12px;
+	}
+	.rgb-live-stats-wrap{
+		padding: 15px;
+	}
+	.rgb-live-stats-contant .rgb-team-1 {
+	    margin-bottom: 19px;
+	}
+	.rgb-live-stats-title h6{
+		font-size: 14px;
+	}
+	.rgb-countdown li h6{
+		font-size: 35px;
+		height: 49px;
+		line-height: 49px;
+	}
+	.section-title{
+		font-size: 22px;
+	}
+	.featured-player{
+		background-position: 38% 100%;
+		 background-size: auto 90%;
+	}
+	.white-bg, 
+	.rgb-white-style{
+		padding: 15px 15px 0;
+	}
+	.featured-player h6{
+		font-size: 17px;
+	}
+	.tb-matches-timeline{
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+	}
+	.tb-matches-timeline p{
+		width: 20px;
+		font-size: 12px;
+	}
+	.featured-footer .blog-meta .blog-info {
+	    margin-left: 13px;
+	}
+	.featured-footer .blog-meta .blog-info:first-child {
+	    margin-left: 0 !important;
+	}
+	.rgb-featured-news-list p{
+		max-height: 73px;
+		overflow: hidden;
+	}
+	.widget-next-match .opponanet-contant .rgb-opponanet{
+		min-width: inherit;
+	}
+	.rgb-label{
+		width: 76px;
+	}
+	.text-wrap .featured-title{
+		font-size: 15px;
+	}
+	.widget-add{
+		margin-bottom: 60px;
+	}
+	.text-wrap:first-child{
+		padding-top: 20px;
+	}
+	.slider-nav3 .rgb-media-thumb figure{
+		width: 100px;
+	}
+	.rgb-media-thumb h6 {
+	    font-size: 15px;
+	    width: 100%;
+	    margin-bottom: 6px;
+	    text-overflow: ellipsis;
+	    overflow: hidden;
+	    white-space: nowrap;
+	}
+	.widget-twitter .twitter-twitte{
+		padding-top: 12px;
+		padding-bottom: 13px;
+	}
+	.widget-twitter .twitter-twitte:last-child{
+		display: none;
+	}
+	.widget-twitter .twitter-twitte p{
+		margin: 0;
+		font-size: 12px;
+	}
+	.instagram-feed-title{
+		padding: 0 20px;
+	}
+	.rgb-ft-contact em{
+		font-size: 11px;
+	}
+	.widget_flickr a{
+		width: 57px;
+	}
+	.rgb-social-wrap{
+		padding: 25px 0 20px;
+	}
+}	
+/*
+=================================================
+			FROM 0PX TO 979PX
+=================================================
+*/ 
+@media (max-width: 991px) {
+	.gallery1-dec figure figcaption h5{
+		font-size: 15px;
+	}
+	.rgb-live-stats-wrap{
+		z-index: 1;
+	}
+	.rgb-live-stats-contant .rgb-team-1 {
+	    margin-bottom: 21px;
+	}
+	.slider-nav2{
+		float: left;
+		width: 100%;
+		position: static;
+	}
+	.slider-for2 li a .kode-caption-wrapper{
+		bottom: 50%;
+		transform: translateY(50%);
+		-o-transform: translateY(50%);
+		-ms-transform: translateY(50%);
+		-moz-transform: translateY(50%);
+		-webkit-transform: translateY(50%);
+	}
+	.banner-thumb h5{
+		font-size: 16px;
+	}
+	.banner-thumb{
+		padding: 29.3px 30px 35px;
+	}
+	.slider-for2{
+		padding: 0 !important;
+	}
+	.rgb-upcoming-fixture1 table{
+		display: table;
+		width: 100%;
+	}
+	.rgb-upcoming-fixture1{
+		float: left;
+		width: 100%;
+	}
+	.rgb-upcoming-fixture1 .tb-opponanet-contant .text{
+		padding: 0;
+	}
+	.rgb-upcoming-fixture1 .tb-venue,
+	.rgb-upcoming-fixture1  .tb-ha,
+	.rgb-upcoming-fixture1 .tb-time{
+		display: none;
+	}
+	.rgb-tab-match-results  p{
+		width:60%;
+		overflow: hidden;
+		max-height: 23px;
+		text-overflow: ellipsis;
+	}
+	.rgb-player-contant figure{
+		margin: 0 0 30px;
+	}
+	.rgb-table-3 td, .rgb-table-2 li > div{
+		padding: 13px 9px 14px;
+	}
+	.rgb-content-wrap > .white-bg{
+		padding-left: 0;
+		padding-right:0; 
+	}
+	
+	.rgb-upcoming-fixture-wrap .team-logo{
+		display: none;
+	}
+	.rgb-header .navigation{
+		display: none;
+	}
+	.rgb-header .tp-address {
+	    display: none;
+	}
+	.rgb-header .rgb-inner-header{
+		float: right;
+		width: 78%;
+	}
+	.rgb-header .logo{
+		width: 22%;
+		padding: 11px 58px 11px 0;
+	}
+	.rgb-header .logo::before{
+		right: 30px;
+	}
+	.rgb-header .rgb-search-cart-wrap{
+		padding: 16px 0;
+	}
+	.rgb-header .dl-menuwrapper{
+		display: block;
+		float: left;
+	}
+	.rgb-header .kode-navigation-wrapper{
+		padding: 11px 0;
+	}
+	.fixtures-slider .rgb-fixtures-contant .rgb-team-1{
+		width: 30%;
+	}
+	.rgb-live-stats-wrap{
+		padding: 15px;
+	}
+	.rgb-live-stats-wrap .rgb-live-stats-title{
+		text-align: center;
+		margin-bottom: 20px;
+	}
+	.rgb-live-stats-wrap .contant-table-head h6{
+		font-size: 14px;
+	}
+	.rgb-featured-news-list p{
+		max-height: 115px;
+		overflow: hidden;
+	}
+	.rgb-featured-news-list .featured-title{
+		margin-bottom: 9px;
+	}
+	.kode-sidebar-element .widget, .margin-bottom,
+	.widget-add{
+		margin-bottom: 30px;
+	}
+	.slider-nav3  .rgb-media-thumb figure{
+		width: 105px;
+		margin-right: 12px;
+	}
+	.slider-nav3 .rgb-media-thumb h6{
+		font-size: 14px;
+	}
+	.rgb-media-slider{
+		margin-bottom: 30px;
+	}
+	.instagram-feed-title{
+		padding: 0 15px;
+	}
+	.instagram-feed-title h5{
+		font-size: 29px;
+	}
+	.widget_flickr a{
+		width: 75px;
+	}
+	.kode-comment-form{
+		float: left;
+		width: 100%;
+		margin: 0 0 20px;
+	}
+	.rgb-comingsoon-wrap .rgb-white-style{
+		padding-right: 30px;
+		padding-left: 30px;
+	}
+}
+
+/*
+=================================================
+			FROM 768PX TO 979PX
+=================================================
+*/
+
+@media (min-width: 768px) and (max-width: 979px) {
+	
+  
+}
+/*
+=================================================
+			FROM 0PX TO 767PX
+=================================================
+*/
+@media (max-width: 767px) {
+	.kode-caption-title{
+		font-size: 28px;
+	}
+	.rgb-tab-match-results p{
+		width: 54%;
+		text-align: left;
+	}
+	.rgb-player-stats-wrap .rgb-white-style,
+	.rgb-match-summary-wrap .rgb-white-style{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.rgb-player-stats-wrap .player-position-table{
+		width: 100%;
+	}
+	.with-ticket .text h6{
+		font-size: 14px;
+	}
+	.section-title .add-calender-btn {
+	    bottom: 0;
+	    float: right;
+	    font-size: 12px;
+	    position: absolute;
+	    right: 0;
+	}
+	.with-ticket .tb-competition,
+	.rgba-player-stats .tb-scores,
+	.rgba-player-stats .tb-pens, 
+	.rgba-player-stats .tb-tries, 
+	.rgba-player-stats .tb-cons,
+	.rgba-player-stats .tb-dgs,
+	.rgb-upcoming-fixture-wrap .tb-venue,
+	.rgb-upcoming-fixture-wrap .tb-result-area,
+	.rgb-upcoming-fixture-wrap .tb-score,
+	.rgb-upcoming-fixture-wrap .tb-time,
+	.rgb-upcoming-fixture-wrap .tb-ha{
+		display: none;
+	}
+	.rgb-player-info .rgb-table li div{
+		text-align: center;
+	}
+	.rgb-player-info .rgb-table li div > p{
+		float: left;
+		width: 100%;
+	}
+	.rgb-player-info .rgb-table li div > h5{
+		font-size: 12px;
+		width: 100%;
+	}
+	.rgb-table-3 h6{
+		font-size: 14px;
+	}
+	.rgb-fixture-flilter-wrap .input-select{
+		width: 31.1% !important;
+	}
+
+	.rgb-upcoming-fixture-wrap .rgb-table-3 th:first-child, 
+	.rgb-upcoming-fixture-wrap .rgb-table-3 th:last-child, 
+	.rgb-upcoming-fixture-wrap .rgb-table-3 td:first-child, 
+	.rgb-upcoming-fixture-wrap .rgb-table-3 td:last-child,{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.rgb-countdown-simple li{
+		float: left;
+		width: 25%;
+	}
+	.kode-author-wrap .kode-author-content p {
+	    float: left;
+	    margin-bottom: 0;
+	    max-height: 48px;
+	    overflow: hidden;
+	    width: 100%;
+	}
+	.kode-social-list a i{
+		width: 20px;
+	}
+	.rgb-blog-contant{
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+	.blog-title{
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.rgb-blog .blog-meta i{
+		display: none;
+	}
+	.sub-banner{
+		padding: 40px 0 50px;
+	}
+	.rgb-header .logo{
+		padding:7px 0;
+		width: 26%;
+	}
+	.rgb-header .logo a{
+		float: left;
+		width: 111px;
+		margin-right: 15px;
+	}
+	.rgb-header .tp-contact{
+		display: none;
+	}
+	.rgb-header .rgb-inner-header{
+		width: 74%;
+	}
+	.rgb-live-stats-wrap{
+		position: relative;
+		z-index: 1;
+	}
+	.rgb-live-stats-contant figure {
+	    width: 100%;
+	    text-align: center;
+	}
+	.rgb-live-stats-contant figure img{
+		float: none;
+		width: auto;
+		display: inline-block;
+	}
+	.rgb-live-stats-contant .rgb-team{
+		width: 30%;
+	}
+	.rgb-live-stats-contant .rgb-team-1 .text-overflow{
+		padding-top: 0;
+		text-align: center;
+	}
+	.rgb-live-stats-contant .rgb-team-1 h6 span{
+		display: block;
+		margin: 0;
+	}
+	.rgb-live-stats-contant .rgb-team-1 h6{
+		font-size: 14px;
+	}
+	.rgb-live-stats-contant .text{
+		width: 70%;
+	}
+	.rgb-live-stats-wrap .contant-table-head h6 {
+	    font-size: 12px;
+	}
+	.rgb-live-stats-contant .rgb-team-1 {
+	    margin-bottom: 19px;
+	}
+	.rgb-table-2 .team-name {
+	    min-width: 140px;
+	}
+	.tb-matches-timeline .label-result{
+		margin: 3px 0 !important;
+	}
+	.rgb-featured-news-list figure{
+		width: 100%;
+		margin: 0 0 20px;
+	}
+	.rgb-featured-news-list .rgb-featured-contant{
+		width: 100%;
+	}
+	.rgb-media-slider .slider-for3{
+		width: 100%;
+	}
+	.rgb-media-slider .slider-nav3{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+	.slider-nav3 .rgb-media-thumb figure{
+		width: 100%;
+		margin: 0 0 15px;
+	}
+	.slider-nav3 .slick-slide{
+		padding: 0 15px;
+	    border-right: 1px dashed rgba(51, 51, 51, 0.3);
+	}
+	.rgb-media-thumb {
+		padding: 0;
+		margin: 0;
+		border-top: none;
+	}
+	.slider-nav3 .rgb-media-thumb .text-overflow{
+		float: left;
+		width: 100%;
+	}
+	.slider-nav3 .slick-list {
+	    margin-bottom: auto;
+	    top: auto;
+	    margin: 0 -15px;
+	}
+	.instagram-feed-title {
+	    bottom: auto;
+	    float: left;
+	    padding: 10px;
+	    position: static;
+	    text-align: center;
+	    top: auto;
+	    transform: translate(0px);
+	    width: 100%;
+	}
+	.instagram-feed{
+		width: 100%;
+	}
+	.rgb-error-wrap h6{
+		font-size: 250px;
+		line-height: 250px;
+	}
+	.rgb-error-wrap .kode-search{
+		width: 80%;
+	}
+	.rgb-alpha-listing-nav{
+		text-align: center;
+	}
+	.rgb-alpha-listing-nav li{
+		float: none;
+		width: auto;
+		display: inline-block;
+	}
+	.rgb-alpha-listing-nav li a{
+		padding: 10px;
+	}
+	.blog-info i{
+		display: none;
+	}
+	.kode-social-link.simple li {
+	    margin-left: 13px;
+	}
+}
+/*
+=================================================
+			FROM 0PX TO 0PX
+=================================================
+*/
+@media (min-width: 360px) and (max-width: 640px) {
+	
+  
+}
+/*
+=================================================
+			FROM 0PX TO 0PX
+=================================================
+*/
+@media (max-width: 480px) {
+	.kode-caption-title {
+	    font-size: 16px;
+	}
+	.kode-caption-text{
+		display: none;
+	}
+	.rgb-tab-match-results p{
+		width: 100%;
+		text-align: center;
+	}
+	.rgb-tab-match-results .info-contant-footer{
+		width: 100%;
+		padding-top: 15px;
+	}
+	.tb-ticket .btn-1.btn-small{
+		padding:2px; 
+	}
+	.rgb-match-info-wrap .opponanet-contant .rgb-team-1 h6{
+		font-size: 14px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.rgb-match-summary-wrap .tb-opponanet-contant{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.rgb-player-stats-wrap .player-position-table h6 {
+	    font-size: 14px;
+	}
+	.rgb-match-summary-wrap .rgb-shadow{
+		display: none;
+	}
+	.tb-opponanet-contant .text{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.opponanet-contant{
+	 	align-items: center;
+	}
+	.rgb-large-fixture-wrap .opponanet-contant .team-meta-logo{
+		width: 62px;
+	}
+	.rgb-large-fixture-wrap .rgb-team-1 h6{
+		font-size: 14px;
+	}
+	.opponanet-contant .rgb-opponanet{
+		min-width: inherit;
+	}
+	.section-heading2{
+		font-size: 22px;
+	}
+	.section-heading2 .width-125{
+		width: 84px;
+	}
+	.rgba-player-stats .tb-result,
+	.rgba-player-stats .tb-position{
+		display: none;
+	}
+	.rgb-upcoming-fixture-wrap .tb-competition{
+		display: none;
+	}
+	.rgb-fixture-flilter-wrap .input-select {
+	    width: 47.1% !important;
+	}
+	.rgb-fixture-flilter-wrap .input-select.width-185{
+		width: 100% !important;
+		margin-left: 0; 
+	}
+	.rgb-upcoming-fixture-wrap .tb-opponanet-contant .text{
+		padding: 8px 5px;
+	}
+	.col-sm-4.col-xs-6{
+		width: 100%;
+	}
+	.contact-form .kode-left-comment-sec .kf_commet_field{
+		width: 100%;
+	}
+	.contact-meta-list li i {
+	    margin-right: 8px;
+	}
+	.rgb-countdown-simple li{
+		width: 50%;
+		margin: 5px 0;
+	}
+	.blockquote{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+	.kf_pagination li a{
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	.kode-social-list li{
+		width: 50%;
+		margin: 0;
+		padding: 0 2px;
+	}
+	.min-thumb{
+		display: none !important;
+	}
+	.rgb-comment-thumb .text-overflow{
+		float: left;
+		width: 100%;
+	}
+	.rgb-comment-thumb{
+		text-align: center;
+	}
+	.comment-author-head h6 {
+	    margin: 0 0 14px;
+	    padding-top: 4px;
+	    text-align: left;
+	}
+	.comment .children{
+		padding-left: 20px;
+	}
+	.comment .children::before{
+		left: 9px;
+	}
+	.kode-left-comment-sec .kf_commet_field{
+		width: 100%;
+		margin-left: 0;
+	}
+	.rgb-comment-thumb figure{
+		float: none;
+		width: auto;
+		margin: 0 0 20px 0;
+		display: inline-block;
+	}
+	.kode-author{
+		text-align: center;
+		padding-top: 20px;
+	}
+	.kode-author figure{
+		float: none;
+		width: auto;
+		display: inline-block;
+	}
+	.kode-author-content{
+		float: left;
+		width: 100%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.blog-meta .blog-info{
+		margin-top: 2px;
+		margin-bottom: 2px;
+	}
+	.rgb-error-wrap .kode-search label input.btn-1{
+		padding: 0 15px;
+	}
+	.rgb-error-wrap .kode-search{
+		width: 100%;
+	}
+	.rgb-error-wrap h6{
+		font-size: 160px;
+		line-height: 160px;
+	}
+	.rgb-header .logo{
+		width: 100%;
+		text-align: center;
+	}
+	.rgb-header .rgb-inner-header{
+		width: 100%;
+	}
+	.rgb-header .logo a{
+		float: none;
+		width: auto;
+		display: inline-block;
+		margin: 0;
+	}
+	.rgb-live-stats-contant .text,
+	.rgb-live-stats-contant .rgb-team{
+		width: 100%;
+	}
+	.rgb-live-stats-contant .rgb-team-1 .text-overflow{
+		text-align: left;
+	}
+	.rgb-live-stats-contant .contant-table-head h6{
+		padding: 0 5px;
+	}
+	.section-title{
+		font-size: 22px;
+		padding-left: 60px;
+	}
+	.rgb-label{
+		width: 79px;
+	}
+	.rgb-table-2 .team-name{
+		width: auto;
+		min-width:inherit;
+	}
+	.rgb-table-2 .tb-match-goals,
+	.rgb-table-2 .tb-matches-timeline,
+	.rgb-table-2 .team-name .team-meta-logo{
+		display: none;
+	}
+	.rgb-table .rgb-team-1 .text-overflow{
+		float: left;
+		width: 100%;
+		padding: 0;
+	}
+	.rgb-table-3 th:first-child, .rgb-table-3 th:last-child, .rgb-table-3 td:first-child, .rgb-table-3 td:last-child, .rgb-table-2 li > div:last-child, .rgb-table-2 li > div:first-child{
+		padding-right: 7px;
+		padding-left: 7px;
+	}
+	.rgb-table .rgb-team-1 h6{
+		font-size: 14px;
+	}
+	.white-bg, .rgb-white-style{
+		padding-right:10px;
+		padding-left: 10px; 
+	}
+	.rgb-featured-news-list{
+		padding:10px; 
+	}
+	.rgb-featured-news-list .featured-title{
+		font-size: 22px;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.blog-info i{
+		display: none;
+	}
+	.widget-next-match .opponanet-contant .rgb-opponanet{
+		min-width: auto;
+	}
+	.video-thumb iframe{
+		height: 163px;
+	}
+	.widget-match-history .match-tabs-navigation li a{
+		font-size: 14px;
+	}
+	.slider-nav3 .rgb-media-thumb h6{
+		text-overflow: ellipsis;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+	.rgb-social-wrap .kode-social-link li{
+		margin: 0 0 0 10px;
+	}
+	.rgb-social-wrap .kode-social-link li a{
+		width: 32px;
+		height: 32px;
+		line-height: 28px;
+	}
+	.col-xs-6{
+		width: 100%;
+	}
+	.rgb-medium-fixture-wrap .opponanet-contant {
+	    -moz-box-align: center;
+	    align-items: center;
+	}
+
+}
+@media (max-width: 320px){
+	
+}
+

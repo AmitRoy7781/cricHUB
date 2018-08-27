@@ -1,0 +1,273 @@
+/*
+	  ============================================================
+		   Font Color
+	  ============================================================
+*/
+.rgb-copy-right p a:hover,
+.simple-btn:hover,
+.empty-link:hover,
+.rgb-comment-thumb:hover h6 a,
+.kode-social-list a:hover span,
+.view-all-post:hover,
+.blog-info.blog-tag a:hover,
+.featured-player h5:hover a,
+.team-meta-logo:hover h6 a,
+.history-contant:hover h6 a,
+.history-contant:hover  span,
+.kode-author-head h6:hover a,
+.rgb-match-thumb:hover .rgb-team-1 h6 a,
+.slick-current.slick-active .rgb-media-thumb h6 a,
+.rgb-media-thumb:hover h6 a,
+.text-wrap:hover .featured-title a,
+.rgb-featured-news:hover .featured-title a,
+.bread-link:hover,
+.rgb-blog:hover .blog-title a,
+.blockquote a:hover,
+.rgb-ft-contact strong,
+.contant-table-head h6,
+.theme-color,
+.rgb-team-1 h6:hover a,
+.match-filter-contant .rgb-team-1 h6:hover a,
+.match-view-btn:hover,
+.breadcrumb .bread-link:hover,
+.under-line-link:hover,
+.kode-social-link.simple a:hover,
+.blog-info:hover a,
+ .rgb-media-thumb p a,
+ .tb-team-1 .text h6:hover a,
+ .tb-team-2 .text h6:hover a,
+.widget_nav li a:hover,
+.navigation ul li:hover > a,
+.team-list-thumb-title h5:hover a,
+.rgb-tab-match-results h5:hover a,
+.rgb-tab-match-results h6:hover a,
+.rgb-player-contant-head h6:hover a
+{
+	color:#ffbe00;
+}
+/*
+	  ============================================================
+		   Background Color
+	  ============================================================
+*/
+.rgb-featured-news:hover figure.rgb-overlay,
+.rgb-featured-news:hover figure,
+.navigation ul li ul li:hover > a,
+.navigation ul li .sub-menu li:hover > a,
+.navigation ul li .children li:hover > a,
+.dl-menuwrapper li a:hover,
+.team-list-thumb:hover .triangle-effect,
+.barWrapper .progress-bar,
+.kode-search > input:focus + label input.btn-1,
+.tag-no:before,
+.text-wrap:hover .plus-icon,
+.instagram-feed figure,
+.widget-title2 span:before,
+.widget_flickr a,
+.rgb-header .logo:before,
+.theme-background,
+.banner-thumb:hover,
+.widget-title:before,
+.kode-search label,
+.social-label:hover,
+.twitter-twitte:before,
+.kf_pagination li a:hover,
+.kode-social-list a:hover i,
+.match-filter-contant:hover,
+.comment-reply-link,
+.gallery1-dec figure figcaption a,
+.gallery1-dec:hover figure::before,
+.rgb-header .dl-menuwrapper button,
+.comingsoon-footer .kode-social-link li a:hover,
+.rgb-alpha-listing-nav li a:hover,
+.custom-slider-nav .slick-arrow:hover,
+.match-tabs-navigation li.active,
+.triangle-effect:before,
+.rgb-social-wrap .kode-social-link li a:hover,
+.slider-nav2  li.slick-center .banner-thumb
+{
+	background-color:#ffbe00;
+}
+/*
+	  ============================================================
+		   Border Color
+	  ============================================================
+*/
+.comingsoon-footer .kode-social-link li a:hover,
+.kode-search input[type="text"]:focus,
+.rgb-alpha-listing-nav li a:hover,
+.kode-textarea textarea:focus,
+.kf_commet_field input[type="text"]:focus,
+.comment .children:before,
+.comment .children .comment_item:before,
+.rgb-social-wrap .kode-social-link li a:hover,
+.widget-newslatter .rgb-input input[type="text"],
+.theme-border
+{
+	border-color:#ffbe00;
+}
+.border-top
+{
+	border-top-color:#ffbe00 !important;
+}
+.border-left
+{
+	border-left-color:#ffbe00 !important;
+}
+.widget-add a{
+	outline-color:#ffbe00;
+}
+/*
+	  ============================================================
+		   Trandition
+	  ============================================================
+*/
+.gallery1-dec:hover figure::before,
+.simple-btn,
+.team-list-thumb-title h5 a,
+.rgb-player-contant-head h6 a,
+.match-view-btn,
+.kode-search  input,
+.triangle-effect,
+.text h6 a,
+.gallery1-dec figure figcaption,
+.gallery1-dec figure figcaption a,
+.triangle-effect:before,
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a,
+.kode-textarea textarea,
+.empty-link,
+.rgb-alpha-listing-nav li a,
+.team-list-thumb,
+.rgb-copy-right p a,
+.navigation ul li a,
+.under-line-link:hover,
+.kf_commet_field input[type="text"],
+.banner-thumb,
+.btn-1,
+.comment-reply-link,
+.rgb-team-1 span,
+.rgb-team-1 p,
+.twitter-twitte,
+.blog-info a,
+.blog-title a,
+.view-all-post,
+.blockquote a,
+.plus-icon,
+.featured-title a,
+.kf_pagination li a,
+.breadcrumb .bread-link,
+.twitter-twitte:before,
+.instagram-feed figure,
+.social-label,
+.instagram-feed figure img,
+.instagram-feed figcaption,
+.match-tabs-navigation li,
+.widget_flickr a,
+.widget_flickr a img,
+.kode-social-link li a,
+.widget_flickr a:before,
+.widget_nav li a,
+.kode-social-list a,
+.kode-social-list a span,
+.kode-social-list a i,
+.kode-social-link a,
+.history-contant h6 a,
+.match-filter-contant,
+.history-contant  span,
+.widget_nav li a:before,
+.rgb-fixtures-contant
+{
+	-webkit-transition:all 0.3s ease-in-out;
+		-moz-transition:all 0.3s ease-in-out;
+			-ms-transition:all 0.3s ease-in-out;
+				-o-transition:all 0.3s ease-in-out;
+					transition:all 0.3s ease-in-out;	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.green{
+	background-color: #2dcb73;
+}
+.brd-green{
+	border-color: #2dcb73 !important;
+}
+.brd-blue{
+	border-color: #3498db !important;
+}
+
+.match-filter-contant.brd-green:hover{
+	background-color: #2dcb73;
+}
+.match-filter-contant.brd-blue:hover{
+	background-color:  #3498db ;
+}
+
+
+
+
+.blue{
+	background-color: #3498db;
+}
+.orange{
+	background-color: #f39c12;
+}
+.dark-red{
+	background-color: #eb6a28;
+}
+.red{
+	background-color: #d83d27;
+}
+.brd-red{
+	border-color: #d83d27 !important;
+}
+.gray{
+	background-color: #efefef;
+}
+
+
+
+
+
+
+
+.table-head .points,
+.rgb-top-bar .kode-social-link a:hover{
+	color: #011b47;
+}
+
+
+.navigation ul li ul a,
+.navigation ul li .sub-menu a,
+.navigation ul li .children  a,
+.rgb-navigation-wrap:before,
+.sub-banner .breadcrumb,
+.kf_brand,
+.blockquote,
+.kf_pagination a,
+li.darkgray-bg-head > div,
+.team-list-thumb-title,
+.rgb-table-2 .table-head div,
+.match-tabs-navigation li,
+.rgb-table-3 tr.darkgray-bg-head th,
+.widget-featured-player .rgb-table-2 li > div{
+	background-color: #011b47;
+}
