@@ -36,10 +36,11 @@ def SOUP(url):
         data = {}
         score = {}
         a = soup.find_all('div',{'class':'cb-mtch-all'})
-
+        #print(a)
 
         cnt = 0
         for i in a:
+            print(i)
             data[cnt] = str(i.contents[0]).split('"')[5]
             scoreurl  =  'https://www.cricbuzz.com' + str(i.contents[0]).split('"')[1]
             score[cnt]= SCORE(scoreurl)

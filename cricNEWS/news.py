@@ -80,14 +80,14 @@ def SOUP(url):
                 related_item[cnt] = str(soup.find('a', {'class': 'big-crd-rltd-txt'}).text)
                 cnt = cnt + 1
 
-            #print(context)
-            # print(headline)
-            # print(newstime)
-            # print(description)
-            # for p in related_item:
-            #     print(related_item[p])
-            # print()
-            # print()
+            print(context)
+            print(headline)
+            print(newstime)
+            print(description)
+            for p in related_item:
+                 print(related_item[p])
+            print()
+            print()
 
 
 
