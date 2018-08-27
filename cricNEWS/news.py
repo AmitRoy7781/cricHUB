@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+import re
 
 
 def URL():
@@ -18,29 +19,39 @@ def SOUP(url):
 
         # print(big)
         for i in big:
-            # print(i)
+            #print(i)
             soup = BeautifulSoup(str(i), 'lxml')
 
             context = str(soup.find('div', {'class': 'crd-cntxt'}).text)
             headline = str(soup.find('h2', {'class': 'big-crd-hdln'}).text)
             description = str(soup.find('div', {'class': 'cb-nws-intr'}).text)
+            link = "www.cricbuzz.com" + soup.find('a')['href']
+
+
+
 
             related_item_html = soup.find_all('div', {'class': 'big-crd-reltd-itm'})
             related_item = {}
+            related_link = {}
             cnt = 0
 
             for j in related_item_html:
                 soup = BeautifulSoup(str(j), 'lxml')
                 related_item[cnt] = str(soup.find('a', {'class': 'big-crd-rltd-txt'}).text)
+                related_link[cnt] = "www.cricbuzz.com" + soup.find('a')['href']
                 cnt = cnt + 1
 
-            # print(context)
-            # print(headline)
-            # print(description)
-            # for p in related_item:
-            # print(related_item[p])
-
-            # print()
+            print(context)
+            print(headline)
+            print(description)
+            print(link)
+            print()
+            for p in related_item:
+                print(related_item[p])
+                print(related_link[p])
+            print()
+            print("--------------------------------------------------------------------")
+            print()
 
 
 
