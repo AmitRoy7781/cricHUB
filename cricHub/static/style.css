@@ -571,9 +571,6 @@ section{
 .rgb-fixtures-contant:hover{
 	box-shadow: 0 10px 20px 0 rgba(0,0,0,0.3);
 }
-.rgb-fixtures-contant .text{
-	padding: 25px 30px;
-}
 .rgb-fixtures-date{
 	float: left;
 	width: 100%;
