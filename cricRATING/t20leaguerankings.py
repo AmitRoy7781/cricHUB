@@ -100,5 +100,3 @@ plt.legend()
 plt.title(title)
 
 plt.show()
-
-
