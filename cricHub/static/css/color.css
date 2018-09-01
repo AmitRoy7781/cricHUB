@@ -43,7 +43,7 @@
 .rgb-tab-match-results h6:hover a,
 .rgb-player-contant-head h6:hover a
 {
-	color:#ffbe00;
+	color:#00004f;
 }
 /*
 	  ============================================================
@@ -86,7 +86,7 @@
 .rgb-social-wrap .kode-social-link li a:hover,
 .slider-nav2  li.slick-center .banner-thumb
 {
-	background-color:#ffbe00;
+	background-color:#00004f;
 }
 /*
 	  ============================================================
@@ -104,18 +104,18 @@
 .widget-newslatter .rgb-input input[type="text"],
 .theme-border
 {
-	border-color:#ffbe00;
+	border-color:#00004f;
 }
 .border-top
 {
-	border-top-color:#ffbe00 !important;
+	border-top-color:#00004f !important;
 }
 .border-left
 {
-	border-left-color:#ffbe00 !important;
+	border-left-color:#00004f !important;
 }
 .widget-add a{
-	outline-color:#ffbe00;
+	outline-color:#00004f;
 }
 /*
 	  ============================================================
@@ -269,5 +269,5 @@ li.darkgray-bg-head > div,
 .match-tabs-navigation li,
 .rgb-table-3 tr.darkgray-bg-head th,
 .widget-featured-player .rgb-table-2 li > div{
-	background-color: #011b47;
+	background-color: #000a12;
 }

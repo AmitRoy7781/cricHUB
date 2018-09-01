@@ -1,0 +1,22 @@
+{% set social_networks = [
+    ('#', 'fa fa-facebook'),
+    ('#', 'fa fa-twitter'),
+    ('#', 'fa fa-instagram'),
+    ('#', 'fa fa-linkedin')] -%}
+
+<div class="rgb-social-wrap">
+    <ul class="kode-social-link">
+
+        {% for href, class in social_networks %}
+            <li><a href="{{ href|e }}"><i class="{{ class|e }}"></i></a></li>
+        {% endfor %}
+
+    </ul>
+</div>
+
+<!--Copy Right Start-->
+<div class="rgb-copy-right">
+    <p>&copy; 2018 -
+        <a href="#">cricHub</a> - All Rights Reserved</p>
+</div>
+<!--Copy Right End-->

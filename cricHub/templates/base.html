@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ title }}</title>
     {% if title %}
-        <title>{{ title }}</title>
+        <title>{{ title }} - crickHub</title>
     {% else %}
         <title>crickHub</title>
     {% endif %}
@@ -37,168 +36,14 @@
 
 <body class="gray-background">
 <div class="rgb-wrapper">
-
-    <!--Header Wrap Start-->
-    <header class="rgb-header theme-background">
-        <div class="container">
-            <!--Logo Wrap Start-->
-            <div class="logo">
-                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
-            </div>
-            <!--Logo Wrap End-->
-            <!--Inner Header Wrap Start-->
-            <div class="rgb-inner-header">
-
-                <div class="rgb-top-bar">
-                    <!--Popup Button Start-->
-                    <div class="rgb-popups-btn">
-                        <a href="#" data-toggle="modal" data-target="#Sign">Sign in</a>
-                        <a href="#" data-toggle="modal" data-target="#signup">Sign up</a>
-                    </div>
-                    <!--Popup Button End-->
-                    <div class="dropdown rgb-language-button">
-                        <button class="dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
-                            <img src="{{ url_for('static', filename='images/flag.png') }}" alt="">
-                            <span class="fa fa-angle-down"></span></button>
-                    </div>
-                </div>
-
-
-                <!--Navigation Wrap Start-->
-                <div class="rgb-navigation-wrap">
-                    <!--navigation inner Wrap Start-->
-                    <div class="kode-navigation-wrapper">
-                        <nav class="navigation">
-                            <div class="menu-main-menu-container">
-
-                                {% set navigation_bar = [
-    ('/', 'index', 'Home'),
-    ('/live-score/', 'live-score', 'Live score'),
-    ('/rankings/', 'lrankings', 'Rankings'),
-    ('/predictions/', 'predictions', 'Predictions'),
-    ('/blog/', 'blog', 'Blog'),
-    ('/stats/', 'stats', 'Stats'),
-    ('/players/', 'players', 'Players'),
-    ('/contact-us/', 'contact-us', 'Contact Us')] -%}
-
-                                {% set active_page = active_page|default('index') -%}
-                                ...
-                                <ul id="navigation">
-                                    {% for href, id, caption in navigation_bar %}
-                                        <li{% if id == active_page %} class="active"{% endif %}><a
-                                                href="{{ href|e }}">{{ caption|e }}</a></li>
-                                    {% endfor %}
-                                </ul>
-
-                            </div>
-                        </nav>
-                        <!--Responsive Menu Start-->
-                        <div id="kode-responsive-navigation" class="dl-menuwrapper">
-                            <button class="dl-trigger">Open Menu</button>
-
-                            <ul class="dl-menu">
-                                {% for href, id, caption in navigation_bar %}
-                                    <li{% if id == active_page %} class="active"{% endif %}><a
-                                            href="{{ href|e }}">{{ caption|e }}</a></li>
-                                {% endfor %}
-                            </ul>
-
-                        </div>
-                        <!--Responsive Menu END-->
-                    </div>
-                    <!--navigation inner Wrap End-->
-                    <!--Search Wrap Start-->
-                    <div class="rgb-search-cart-wrap">
-                        <div class="rgb-search-wrap">
-                            <div id="kode_search" class="kode_search kf_pet_search">
-                                <a class="search-here empty-link"><i class="lnr lnr-magnifier"></i></a>
-                            </div>
-                        </div>
-                        <div class="rgb-user">
-                            <a class="empty-link" href="#"><i class="lnr lnr-user"></i></a>
-                        </div>
-                    </div>
-                    <!--Search Wrap End-->
-                </div>
-                <!--Navigation Wrap End-->
-            </div>
-            <!--Inner Header Wrap End-->
-        </div>
-    </header>
-    <!--Header Wrap End-->
-
+    {% include 'header.html' %}
     {% block content %} {% endblock %}
-
-
-    <!--Footer Wrap Start-->
-    <footer class="rgb-footer rgb-overlay">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <!--Widget Text Start-->
-                    <div class="widget widget-text">
-                        <h4 class="widget-title">About Us</h4>
-                        <div class="text">
-                            <p>about-us-desc</p>
-
-                        </div>
-                        <div class="rgb-ft-contact theme-border">
-                            <span>
-                                <strong>Phone</strong>
-                                <em>(+88) 75863251</em>
-                            </span>
-                            <span>
-                                <strong>Email</strong>
-                                <em>mail@csedu.com</em>
-                            </span>
-                        </div>
-                    </div>
-                    <!--Widget Text End-->
-                </div>
-                <div class="col-md-3 col-sm-6">
-                </div>
-                <div class="col-md-3 col-sm-6">
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--Footer Wrap End-->
-    <!--Footer Social Start-->
-
-    {% set social_networks = [
-    ('#', 'fa fa-facebook'),
-    ('#', 'fa fa-twitter'),
-    ('#', 'fa fa-instagram'),
-    ('#', 'fa fa-linkedin')] -%}
-    <div class="rgb-social-wrap">
-        <ul class="kode-social-link">
-
-            {% for href, class in social_networks %}
-                <li><a href="{{ href|e }}"><i class="{{ class|e }}"></i></a></li>
-            {% endfor %}
-
-        </ul>
-    </div>
-    <!--Footer Social End-->
-    <!--Copy Right Start-->
-    <div class="rgb-copy-right">
-        <p>&copy; 2018 -
-            <a href="#">tht</a> - All Rights Reserved</p>
-    </div>
-    <!--Copy Right End-->
+    {% include 'footer.html' %}
+    {% include 'footer-social.html' %}
 </div>
 
-<!--Jquery Library-->
-<script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
-<!--Bootstrap core JavaScript-->
-<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
-<!--Slick Slider JavaScript-->
-<script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
-<!--Dl Menu Script-->
-<script src="{{ url_for('static', filename='js/dl-menu/modernizr.custom.js') }}"></script>
-<script src="{{ url_for('static', filename='js/dl-menu/jquery.dlmenu.js') }}"></script>
-<!--Custom JavaScript-->
-<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+{% include 'scripts.html' %}
+
 </body>
 
 </html>
