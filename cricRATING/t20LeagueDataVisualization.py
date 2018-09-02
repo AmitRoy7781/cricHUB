@@ -11,15 +11,15 @@ myclient = pymongo.MongoClient("mongodb://localhost:27017/")
 mydb = myclient["cricHUBdb"]
 mycol = mydb["t20Ranking"]
 
-tournament_name = "BPL"
-year = "2017"
+tournament_name = input("Enter t20 League Name: ")
+year = input("Enter Year: ")
 
 
 mydoc = mycol.find({"Tournament":tournament_name,"Year":year})
 #print(mydoc)
 
 team_names = []
-col_names = ['Mat', 'Won', 'Lost', 'Tied', 'No Result', 'Points','Net Run Rate']
+col_names = ['Matches', 'Won', 'Lost', 'Tied', 'No Result', 'Points','Net Run Rate']
 pnt_tbl = []
 cnt = 0
 
@@ -56,6 +56,7 @@ for x in mydoc:
 #print(pnt_tbl)
 
 data.sort(key=takePoints,reverse=True)
+print(col_names)
 for i in data:
     print(i)
 
