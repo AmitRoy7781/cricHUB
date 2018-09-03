@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     #return render_template('index.html', title='Home', matches=get_matches()) #use this if u have api key
-    return render_template('newsTwitter.html')
+    return render_template('temp.html', title='Home')
 
 
 if __name__ == '__main__':
