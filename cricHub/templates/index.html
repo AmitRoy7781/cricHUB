@@ -3,6 +3,8 @@
 
 {% block content %}
 
+    {% include 'header.html' %}
+
     <!--Section Title Start-->
     <h4 class="section-title border-top">
         <span class="rgb-label theme-background">
@@ -62,25 +64,6 @@
         </div>
         <!--Fixture Slider End-->
     </div>
-
-    <section>
-        <!--Section Title Start-->
-        <h4 class="section-title border-top">
-        <span class="rgb-label theme-background">
-            <i class="lnr lnr-hand"></i>
-        </span>
-            Featured Videos
-        </h4>
-        <!--Section Title End-->
-        <div class="col-md-8">
-            <!--Main Banner Start-->
-            <div class="rgb-white-style">
-                <iframe src="http://ytchannelembed.com/ytce-gallery.php?user=UCt2JXOLNxqry7B_4rRZME3Q&rows=2&ratio=hd&width=180&margin=20&desc="
-                        100&desc_color=9E9E9E&title=35&title_color=000000&https=1&duration=1&views=1&likes=0&dislikes=0&fav=0&cols=4"
-                        style="height:420px;overflow: hidden;" scrolling="auto"></iframe>
-            </div>
-            <!--Main Banner End-->
-        </div>
-        <!--Fixture Slider Wrap End-->
-    </section>
+    {% include 'footer.html' %}
+    {% include 'footer-social.html' %}
 {% endblock %}

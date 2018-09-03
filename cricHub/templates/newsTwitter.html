@@ -1,61 +1,40 @@
+{% extends "base.html" %}
 
-
-
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    {% if title %}
-        <title>{{ title }} - crickHub</title>
-    {% else %}
-        <title>crickHub</title>
-    {% endif %}
-    <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-    <!-- Slick Slider CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
-    <!-- DL Menu CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='js/dl-menu/component.css') }}">
-    <!-- ICONS CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/linearicons.css') }}">
-    <!-- Typography CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/typography.css') }}">
-    <!-- Widget CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/widget.css') }}">
-    <!-- Shortcodes CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/shortcodes.css') }}">
-    <!-- Custom Main StyleSheet CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <!-- Color CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/color.css') }}">
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
-</head>
-
-<body class="gray-background">
-<div class="rgb-wrapper">
+{% block content %}
     {% include 'header.html' %}
-    {% block content %}
-    <a class="twitter-timeline" data-widget-id="586402209283227648" href="/ESPNcricinfo/timelines/585813293161406464">
-        Readers recommend
-       </a>
-       <script>
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
-       </script>
 
-    {% endblock %}
+    <section>
+        <div class="col-md-8">
+            <h5 class="section-title border-top">
+                <span class="rgb-label theme-background"><i class="fa fa-twitter"></i></span>
+                Readers recommend
+            </h5>
+            <a class="twitter-timeline" data-width="1200" data-widget-id="586402209283227648"
+               data-chrome="noheader nofooter" href="/ESPNcricinfo/timelines/585813293161406464"></a>
+            <script>
+                !function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + "://platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");
+            </script>
+        </div>
+
+        <div class="col-md-4">
+            <h5 class="section-title border-top">
+                <span class="rgb-label theme-background"><i class="fa fa-youtube-play"></i></span>
+                Featured Videos
+            </h5>
+            <iframe src="http://ytchannelembed.com/ytce-gallery.php?user=UCt2JXOLNxqry7B_4rRZME3Q&rows=10&ratio=hd&width=185&margin=10&desc="
+                    100&desc_color=9E9E9E&title=35&title_color=000000&https=1&duration=1&views=1&likes=0&dislikes=0&fav=0&cols=2"
+                    style="height:420px;overflow: hidden;" scrolling="auto"></iframe>
+        </div>
+    </section>
+
     {% include 'footer.html' %}
     {% include 'footer-social.html' %}
-</div>
-
-{% include 'scripts.html' %}
-
-</body>
-
-</html>
+{% endblock %}
