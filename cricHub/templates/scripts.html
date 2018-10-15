@@ -9,3 +9,33 @@
 <script src="{{ url_for('static', filename='js/dl-menu/jquery.dlmenu.js') }}"></script>
 <!--Custom JavaScript-->
 <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+<script>
+
+    function valid(str) {
+        return !(!str || 0 === str.length || !str.trim());
+    }
+
+    function check_login_status() {
+
+        var username = '{{session["username"]}}';
+
+        if (valid(username)) {
+            document.getElementById("signin").innerText = username;
+            document.getElementById("signin").href = "/";
+            document.getElementById("signup").innerText = "Log Out";
+            document.getElementById("signup").href = "/auth/logout";
+        }
+        else {
+            document.getElementById("signin").innerText = "Sign In"
+            document.getElementById("signin").href = "/auth/signin"
+            document.getElementById("signup").innerText = "Sign Up"
+            document.getElementById("signup").href = "/auth/signup"
+        }
+    }
+    window.onload = function () {
+        check_login_status();
+        display_error();
+    }
+
+</script>

@@ -1,3 +1,30 @@
+<script>
+
+    function valid(str) {
+        return !(!str || 0 === str.length || !str.trim());
+    }
+
+    function check_login_status() {
+
+        var username = '{{session["username"]}}';
+
+        if (valid(username)) {
+            document.getElementById("signin").innerText = username;
+            document.getElementById("signin").href = "/";
+            document.getElementById("signup").innerText = "Log Out";
+            document.getElementById("signup").href = "/auth/logout";
+        }
+        else {
+            document.getElementById("signin").innerText = "Sign In"
+            document.getElementById("signin").href = "/auth/signin"
+            document.getElementById("signup").innerText = "Sign Up"
+            document.getElementById("signup").href = "/auth/signup"
+        }
+    }
+
+
+</script>
+
 <!--Header Wrap Start-->
 <header class="rgb-header theme-background">
     <div class="container">
@@ -12,8 +39,8 @@
             <div class="rgb-top-bar">
                 <!--Popup Button Start-->
                 <div class="rgb-popups-btn">
-                    <a href="#" data-toggle="modal" data-target="#Sign">Sign in</a>
-                    <a href="#" data-toggle="modal" data-target="#signup">Sign up</a>
+                    <a id="signin" href="/auth/signin" >Sign In</a>
+                    <a id="signup" href="/auth/signup" >Sign Up</a>
                 </div>
                 <!--Popup Button End-->
                 <div class="dropdown rgb-language-button">
@@ -32,21 +59,22 @@
                         <div class="menu-main-menu-container">
 
                             {% set navigation_bar = [
-    ('/', 'index', 'Home'),
-    ('/live-score/', 'live-score', 'Live score'),
-    ('/rankings/', 'lrankings', 'Rankings'),
-    ('/predictions/', 'predictions', 'Predictions'),
-    ('/blog/', 'blog', 'Blog'),
-    ('/stats/', 'stats', 'Stats'),
-    ('/players/', 'players', 'Players'),
-    ('/contact-us/', 'contact-us', 'Contact Us')] -%}
+                            ('/', 'index', 'Home'),
+                            ('/live-score/', 'live-score', 'Live score'),
+                            ('/rankings/', 'lrankings', 'Rankings'),
+                            ('/predictions/', 'predictions', 'Predictions'),
+                            ('/blog/', 'blog', 'Blog'),
+                            ('/stats/', 'stats', 'Stats'),
+                            ('/players/', 'players', 'Players'),
+                            ('/contact-us/', 'contact-us', 'Contact Us')] -%}
 
                             {% set active_page = active_page|default('index') -%}
                             ...
                             <ul id="navigation">
                                 {% for href, id, caption in navigation_bar %}
-                                    <li{% if id == active_page %} class="active"{% endif %}><a
-                                            href="{{ href|e }}">{{ caption|e }}</a></li>
+                                <li
+                                {% if id == active_page %} class="active"{% endif %}><a
+                                    href="{{ href|e }}">{{ caption|e }}</a></li>
                                 {% endfor %}
                             </ul>
 
@@ -58,8 +86,9 @@
 
                         <ul class="dl-menu">
                             {% for href, id, caption in navigation_bar %}
-                                <li{% if id == active_page %} class="active"{% endif %}><a
-                                        href="{{ href|e }}">{{ caption|e }}</a></li>
+                            <li
+                            {% if id == active_page %} class="active"{% endif %}><a
+                                href="{{ href|e }}">{{ caption|e }}</a></li>
                             {% endfor %}
                         </ul>
 

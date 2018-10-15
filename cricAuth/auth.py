@@ -1,19 +1,16 @@
-from flask import Flask, request, jsonify
-from flask import render_template
-from datetime import datetime
 import string
-from flask import render_template, request, redirect, session, Blueprint
+from flask import Flask,render_template, request, redirect, session, Blueprint
 from cricMongoDB.database import db
-#from cricHub.upcoming_matches import get_matches
 
-app = Flask(__name__)
+app = Blueprint('auth', __name__)
 
-@app.route("/auth/register")
-def signup(data=None):
+
+@app.route("/auth/signup")
+def signUp(data=None):
     if 'username' in session.keys():
         return redirect('/')
-    return render_template(
-        'auth/signup.html', **locals())
+    print(data)
+    return render_template('auth/signup.html', userinfo=data)
 
 
 
@@ -56,7 +53,7 @@ def signup_validation():
             flag = False
             data['password_msg'] = 'Password length must be at least 6.'
 
-        if password != c_password:
+        elif password != c_password:
             flag = False
             data['c_password_msg'] = 'Password did not match.'
 
@@ -83,16 +80,43 @@ def signup_validation():
             data.pop('c_password')
             posts = db.users
             posts.insert_one(data)
-            return redirect('/')
+            return redirect('/auth/signin')
 
-        return signup(data)
-
-
-
-@app.route('/')
-def signUp():
-    return render_template('auth/signup.html')
+        return signUp(data)
 
 
-if __name__ == '__main__':
-    app.run(port=5000,debug=True)
+@app.route("/auth/signin")
+def signin(data=None):
+    # if 'username' in session.keys():
+    #     return redirect('/profile/' + session['username'])
+    return render_template('auth/signin.html',userinfo=data)
+
+
+@app.route("/auth/signin-validation", methods=['POST', 'GET'])
+def login_validation():
+    if request.method == 'POST':
+        data = request.form.to_dict()
+        username = data['username']
+        password = data['password']
+
+        flag = True
+
+        find = db.users.find_one({"username": str(username)})
+
+        if find is None:
+            flag = False
+            data['username_msg'] = 'Username does not Exist'
+        elif find['password'] != password:
+            flag = False
+            data['password_msg'] = 'Wrong password. Try again.'
+        if flag is False:
+            return signin(data)
+        session['username'] = username
+        #return redirect('/profile/'+session['username'])
+        return redirect('/')
+
+@app.route("/auth/logout")
+def logout():
+    if 'username' in session.keys():
+        session.pop('username')
+    return redirect('/')
