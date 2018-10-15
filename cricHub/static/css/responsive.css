@@ -421,7 +421,7 @@
 	.rgb-upcoming-fixture-wrap .rgb-table-3 th:first-child, 
 	.rgb-upcoming-fixture-wrap .rgb-table-3 th:last-child, 
 	.rgb-upcoming-fixture-wrap .rgb-table-3 td:first-child, 
-	.rgb-upcoming-fixture-wrap .rgb-table-3 td:last-child,{
+	.rgb-upcoming-fixture-wrap .rgb-table-3 td:last-child{
 		padding-left: 10px;
 		padding-right: 10px;
 	}

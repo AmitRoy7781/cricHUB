@@ -8,12 +8,10 @@ from cricMongoDB.database import db
 
 app = Flask(__name__)
 
-@app.route("/auth/register")
-def signup(data=None):
-    if 'username' in session.keys():
-        return redirect('/')
-    return render_template(
-        'auth/signup.html', **locals())
+@app.route("/auth/signup")
+def signup(data):
+    #print(data)
+    return render_template('auth/signup.html', userinfo=data)
 
 
 
@@ -56,7 +54,7 @@ def signup_validation():
             flag = False
             data['password_msg'] = 'Password length must be at least 6.'
 
-        if password != c_password:
+        elif password != c_password:
             flag = False
             data['c_password_msg'] = 'Password did not match.'
 
@@ -83,7 +81,7 @@ def signup_validation():
             data.pop('c_password')
             posts = db.users
             posts.insert_one(data)
-            return redirect('/auth/login')
+            return "DONE"
 
         return signup(data)
 
@@ -91,8 +89,7 @@ def signup_validation():
 
 @app.route('/')
 def signUp():
-    return render_template('auth/signup.html')
-
+    return render_template('auth/signup.html',userinfo="")
 
 if __name__ == '__main__':
     app.run(port=5000,debug=True)

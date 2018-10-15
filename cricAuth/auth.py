@@ -83,7 +83,7 @@ def signup_validation():
             data.pop('c_password')
             posts = db.users
             posts.insert_one(data)
-            return redirect('/auth/login')
+            return redirect('/')
 
         return signup(data)
 

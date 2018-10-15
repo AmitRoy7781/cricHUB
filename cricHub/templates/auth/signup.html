@@ -8,16 +8,85 @@
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="keywords" content="Flat Sign Up Form Responsive Widget Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
 
-    <script type="application/x-javascript"> addEventListener("load", function () {
-        setTimeout(hideURLbar, 0);
-    }, false);
+    <script>
+        window.onload=function () {
 
-    function hideURLbar() {
-        window.scrollTo(0, 1);
-    } </script>
+        //login();
+        //document.getElementById("footer").className += " fixed-bottom";
+        display_error();
+    };
+
+    var name = '{{userinfo["name"]}}';
+    var name_msg = '{{userinfo["name_msg"]}}';
+
+    var username = '{{userinfo["username"]}}';
+    var username_msg = '{{userinfo["username_msg"]}}';
+
+    var email = '{{userinfo["email"]}}';
+    var email_msg = '{{userinfo["email_msg"]}}';
+
+    var phone_number = '{{userinfo["phone_number"]}}';
+    var phone_number_msg = '{{userinfo["phone_number_msg"]}}';
+
+
+    var password_msg = '{{userinfo["password_msg"]}}';
+    var c_password_msg = '{{userinfo["c_password_msg"]}}';
+
+    function display_error() {
+
+        if(!valid(name_msg) && !valid(name))
+            document.getElementById("name").placeholder = "Name";
+        else if(valid(name_msg))
+            document.getElementById("name").placeholder = name_msg;
+        else
+            document.getElementById("name").value = name;
+
+
+        if(!valid(username_msg) && !valid(username))
+            document.getElementById("username").placeholder = "User Name"
+        else if(valid(username_msg))
+            document.getElementById("username").placeholder = username_msg
+        else
+            document.getElementById("username").value = username
+
+        if(!valid(email_msg) && !valid(email))
+            document.getElementById("username").placeholder = "Email"
+        else if(valid(email_msg))
+            document.getElementById("email").placeholder = email_msg
+        else
+            document.getElementById("email").value = email
+
+        if(!valid(phone_number_msg) && !valid(phone_number))
+            document.getElementById("phone_number").placeholder = "Phone Number"
+        else if(valid(phone_number_msg))
+            document.getElementById("phone_number").placeholder = phone_number_msg
+        else
+            document.getElementById("phone_number").value = phone_number
+
+
+        if(!valid(password_msg) && !valid(c_password_msg))
+        {
+            document.getElementById("password").placeholder = "Password"
+            document.getElementById("c_password").placeholder = "Confirm Password"
+        }
+        else if(valid(password_msg))
+        {
+            document.getElementById("password").placeholder = password_msg
+            document.getElementById("c_password").placeholder = "Confirm Password"
+        }
+        else if(valid(c_password_msg)) {
+            document.getElementById("password").placeholder = "Password"
+            document.getElementById("c_password").placeholder = c_password_msg
+        }
+
+        function valid(str) {
+              return !(!str || 0 === str.length || !str.trim());
+        }
+    }
+
+
+    </script>
 
 
 
@@ -46,7 +115,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <form action="/auth/signup-validation" method="post">
 
             <input id="name" name="name" placeholder="Name"  class="name"  type="text" required="">
-            <span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span><br>
+            <span class="icon1"><i class="fa fa-user" aria-hidden="true"></i></span>
+            <br>
 
             <input id="username" name="username" placeholder="User Name"  class="name2" id="username" type="text" required="">
             <span class="icon2"><i class="fa fa-user" aria-hidden="true"></i></span><br>
