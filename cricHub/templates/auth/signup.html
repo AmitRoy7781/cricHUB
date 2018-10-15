@@ -3,15 +3,14 @@ Student, 22nd Batch
 Department of Computer Science and Engineering
 University of Dhaka
 -->
-<title>Sign UP</title>
-{% extends "base.html" %}
+{% extends "/common/base.html" %}
 {% block content %}
-{% include 'header.html' %}
+{% include '/common/header.html' %}
 
 
 <head>
 
-
+    <title>Sign UP</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="keywords"
@@ -119,44 +118,55 @@ University of Dhaka
 <!-- login starts here -->
 <div class="login agile">
     <div class="w3agile-border">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
         <h2>cricHUB - SignUp Please!!!</h2>
         <div class="login-main login-agileits">
             <h1>Sign Up</h1>
             <form action="/auth/signup-validation" method="post">
                 <p>Name</p>
-                <input id="name" name="name" type="text" placeholder="Name" required="">
+                <input id="name" name="name" type="text" placeholder="" required="">
                 <p>User Name</p>
-                <input id="username" name="username" type="text" placeholder="User Name" required="">
+                <input id="username" name="username" type="text" placeholder="" required="">
                 <p>Email</p>
-                <input id="email" name="email" type="text" placeholder="example@gmail.com" required="">
+                <input id="email" name="email" type="text" placeholder="" required="">
                 <p>Phone Number</p>
-                <input id="phone_number" name="phone_number" type="text" placeholder="xxxxxxxxxxx" required="">
+                <input id="phone_number" name="phone_number" type="text" placeholder="" required="">
                 <p>Password</p>
-                <input id="password" name="password" type="password" placeholder="Password" required="">
+                <input id="password" name="password" type="password" placeholder="" required="">
                 <p>Confirm Password</p>
-                <input id="c_password" name="c_password" type="password" placeholder="Confirm Password" required="">
+                <input id="c_password" name="c_password" type="password" placeholder="" required="">
                 <input type="submit" value="Login">
             </form>
-            <div class="social-btns w3l">
-                <a class="fa" href="#">Facebook</a>
-                <a class="g" href="#">Google</a>
-            </div>
+            <!--<div class="social-btns w3l">-->
+                <!--<a class="fa" href="#">Facebook</a>-->
+                <!--<a class="g" href="#">Google</a>-->
+            <!--</div>-->
+            <br/>
+            <br/>
             <h3>Already have an account? <a href="/auth/signin"> Sign In Now !</a></h3>
         </div>
     </div>
 </div>
+<br/>
+<br/>
+<br/>
+<br/>
 <!-- //login ends here -->
 <!-- copyrights -->
-<div class="copy-rights wthree">
-    <p>© cricHUB | All Rights Reserved | Design by <a href="http://www.github.com/AmitRoy7" target="_blank">Amit Roy</a>
-    </p>
-</div>
+<!--<div class="copy-rights wthree">-->
+    <!--<p>© cricHUB | All Rights Reserved | Design by <a href="http://www.github.com/AmitRoy7" target="_blank">Amit Roy</a>-->
+    <!--</p>-->
+<!--</div>-->
 <!-- //copyright -->
 <script src="../../static/js/jquery.magnific-popup.js" type="text/javascript"></script>
 
 
-{% include 'footer.html' %}
-{% include 'footer-social.html' %}
+{% include '/common/footer.html' %}
+{% include '/common/footer-social.html' %}
 {% endblock %}
 
 </body>

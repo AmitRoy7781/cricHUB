@@ -3,13 +3,13 @@ Student, 22nd Batch
 Department of Computer Science and Engineering
 University of Dhaka
 -->
-<title>Sign In</title>
-{% extends "base.html" %}
+{% extends "/common/base.html" %}
 {% block content %}
-{% include 'header.html' %}
+{% include '/common/header.html' %}
 
 
 <head>
+<title>Sign In</title>
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -88,7 +88,12 @@ University of Dhaka
 <!-- login starts here -->
 <div class="login agile">
     <div class="w3agile-border">
-        <h2>cricHUB - Sign In</h2>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <h2>cricHUB - Sign In Now!!!</h2>
         <div class="login-main login-agileits">
             <h1>Login</h1>
             <form action="/auth/signin-validation" method="post">
@@ -98,23 +103,29 @@ University of Dhaka
                 <input id="password" name="password" type="password" placeholder="Password" required="">
                 <input type="submit" value="Login">
             </form>
-            <div class="social-btns w3l">
-                <a class="fa" href="#">Facebook</a>
-                <a class="g" href="#">Google</a>
-            </div>
+            <!--<div class="social-btns w3l">-->
+                <!--<a class="fa" href="#">Facebook</a>-->
+                <!--<a class="g" href="#">Google</a>-->
+            <!--</div>-->
+            <br/>
+            <br/>
             <h3>New to cricHUB? <a href="/auth/signup"> Sign Up Now !</a></h3>
         </div>
     </div>
-    <div class="copy-rights wthree">
-        <p>© cricHUB | All Rights Reserved | Design by <a href="http://www.github.com/AmitRoy7" target="_blank">Amit
-            Roy</a></p>
-    </div>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <!--<div class="copy-rights wthree">-->
+        <!--<p>© cricHUB | All Rights Reserved | Design by <a href="http://www.github.com/AmitRoy7" target="_blank">Amit-->
+            <!--Roy</a></p>-->
+    <!--</div>-->
     <!-- //copyright -->
     <script src="../../static/js/jquery.magnific-popup.js" type="text/javascript"></script>
 
 </div>
-    {% include 'footer.html' %}
-    {% include 'footer-social.html' %}
+    {% include '/common/footer.html' %}
+    {% include '/common/footer-social.html' %}
     {% endblock %}
 
 </body>

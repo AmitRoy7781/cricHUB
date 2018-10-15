@@ -1,49 +1,28 @@
-<script>
-
-    function valid(str) {
-        return !(!str || 0 === str.length || !str.trim());
-    }
-
-    function check_login_status() {
-
-        var username = '{{session["username"]}}';
-
-        if (valid(username)) {
-            document.getElementById("signin").innerText = username;
-            document.getElementById("signin").href = "/";
-            document.getElementById("signup").innerText = "Log Out";
-            document.getElementById("signup").href = "/auth/logout";
-        }
-        else {
-            document.getElementById("signin").innerText = "Sign In"
-            document.getElementById("signin").href = "/auth/signin"
-            document.getElementById("signup").innerText = "Sign Up"
-            document.getElementById("signup").href = "/auth/signup"
-        }
-    }
-
-
-</script>
 
 <!--Header Wrap Start-->
 <header class="rgb-header theme-background">
     <div class="container">
         <!--Logo Wrap Start-->
         <div class="logo">
-            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="logo">
+            <img src="{{ url_for('static', filename='images/logonew.jpg') }}" alt="logo">
         </div>
         <!--Logo Wrap End-->
         <!--Inner Header Wrap Start-->
+
         <div class="rgb-inner-header">
+
 
             <div class="rgb-top-bar">
                 <!--Popup Button Start-->
+
                 <div class="rgb-popups-btn">
-                    <a id="signin" href="/auth/signin" >Sign In</a>
-                    <a id="signup" href="/auth/signup" >Sign Up</a>
+                    <br/>
+                    <a id="signin"  href="/auth/signin" ></a>
+                <a id="signup" href="/auth/signup" ></a>
                 </div>
                 <!--Popup Button End-->
                 <div class="dropdown rgb-language-button">
+                    <br/>
                     <button class="dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">
                         <img src="{{ url_for('static', filename='images/flag.png') }}" alt="">
                         <span class="fa fa-angle-down"></span></button>
@@ -73,7 +52,7 @@
                             <ul id="navigation">
                                 {% for href, id, caption in navigation_bar %}
                                 <li
-                                {% if id == active_page %} class="active"{% endif %}><a
+                                {% if id ==active_page %} class="active"{% endif %}><a
                                     href="{{ href|e }}">{{ caption|e }}</a></li>
                                 {% endfor %}
                             </ul>

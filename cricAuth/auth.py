@@ -9,7 +9,7 @@ app = Blueprint('auth', __name__)
 def signUp(data=None):
     if 'username' in session.keys():
         return redirect('/')
-    print(data)
+    #print(data)
     return render_template('auth/signup.html', userinfo=data)
 
 

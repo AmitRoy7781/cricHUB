@@ -1,9 +1,9 @@
-{% extends "base.html" %}
+{% extends "/common/base.html" %}
 {% set active_page = "index" %}
 
 {% block content %}
 
-    {% include 'header.html' %}
+    {% include '/common/header.html' %}
 
     <!--Section Title Start-->
     <h4 class="section-title border-top">
@@ -64,6 +64,6 @@
         </div>
         <!--Fixture Slider End-->
     </div>
-    {% include 'footer.html' %}
-    {% include 'footer-social.html' %}
+    {% include '/common/footer.html' %}
+    {% include '/common/footer-social.html' %}
 {% endblock %}
