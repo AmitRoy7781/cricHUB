@@ -1,5 +1,5 @@
 import string
-from flask import Flask,render_template, request, redirect, session, Blueprint
+from flask import render_template, request, redirect, session, Blueprint
 from cricMongoDB.database import db
 
 app = Blueprint('auth', __name__)
