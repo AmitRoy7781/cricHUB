@@ -1,13 +1,15 @@
 from bs4 import BeautifulSoup
+from cricMongoDB.database import db
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import requests
 import pymongo
+posts = db. t20TournamentStat
 
-myclient = pymongo.MongoClient("mongodb://localhost:27017/")
-mydb = myclient["cricHUBdb"]
-mycol = mydb["t20Ranking"]
+# myclient = pymongo.MongoClient("mongodb://localhost:27017/")
+# mydb = myclient["cricHUBdb"]
+# mycol = mydb["t20Ranking"]
 
 
 # mydoc = mycol.find({"Tournament":"IPL","Year":"2011"})
@@ -59,7 +61,7 @@ mycol = mydb["t20Ranking"]
 # https://www.cricbuzz.com/cricket-series/2196/caribbean-premier-league-2013/points-table
 
 
-page = requests.get("https://www.cricbuzz.com/cricket-series/2717/caribbean-premier-league-2018/points-table")
+page = requests.get("https://www.cricbuzz.com/cricket-series/2196/caribbean-premier-league-2013/points-table")
 soup = BeautifulSoup(page.text, "lxml")
 # print(soup.prettify())
 
@@ -91,10 +93,17 @@ for i in range(len(team_names)):
         cnt = cnt + 1
 
     thisdict["Tournament"] = "CPL"
-    thisdict["Year"] = "2018"
-    x = mycol.insert_one(thisdict)
+    thisdict["Year"] = "2013"
+    #x = mycol.insert_one(thisdict)
 
-    # print(thisdict)
+    #posts.insert_one(thisdict)
+
+    #print(thisdict)
+
+# myquery = {"Tournament": "PSL"}
+# mydoc = posts.find(myquery)
+# for x in mydoc:
+#     print(x)
 
 # np_pnt_tbl = (np.array(pnt_tbl)).reshape(len(team_names),6)
 # np_pnt_tbl = np.delete(np_pnt_tbl,6,1)

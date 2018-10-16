@@ -1,0 +1,733 @@
+{% extends "/common/base.html" %}
+
+{% block content %}
+    {% include '/common/header.html' %}
+    <meta charset="utf-8">
+    <style>body {
+        background: #E3E6E3;
+        font-family: helvetica, "Segoe UI", Arial, sans-serif;
+        color: #222;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    body {
+        min-height: 1000px
+    }
+
+    .container {
+        width: 980px;
+        margin: 0 auto;
+    }
+
+    .page {
+        max-width: 980px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .cb-col-14 {
+        width: 14%;
+    }
+
+    .cb-col-16 {
+        width: 16%;
+    }
+
+    .cb-col-20 {
+        width: 20%;
+    }
+
+    .cb-col-33 {
+        width: 33%;
+    }
+
+    .cb-col-50 {
+        width: 50%;
+    }
+
+    .cb-col-67 {
+        width: 67%;
+    }
+
+    .cb-col-100 {
+        width: 100%;
+    }
+
+    .cb-col {
+        display: inline-block;
+        box-sizing: border-box;
+        float: left;
+        min-height: 1px;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 42px;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin: 0;
+        line-height: 30px;
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0;
+    }
+
+    h4 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    h5 {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    img {
+        border: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #222;
+    }
+
+    a, a:hover, a:active, a:focus {
+        outline: medium none;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .cb-lst-itm-sm {
+        padding: 10px 0 5px;
+    }
+
+    .cb-scrd-lft-col {
+        padding: 15px 10px;
+    }
+
+    .cb-nav-pill-1.active {
+        background: #028062;
+        color: #fff;
+    }
+
+    .cb-subnav .cb-sub-navigation {
+        display: none;
+        position: absolute;
+    }
+
+    .cb-nav-main {
+        border-bottom: 1px solid #e3e6e3;
+        padding: 0 0 5px 20px;
+    }
+
+    .cb-nav-bar {
+        padding-top: 10px;
+        clear: both;
+    }
+
+    .cb-lst-itm, .cb-bg-white {
+        background: #fff;
+    }
+
+    .cb-nav-tab.active, .cb-nav-tab-hm.active {
+        font-weight: bold;
+        color: #028062;
+    }
+
+    .cb-nav-tab.active {
+        border-bottom: 3px solid #028062;
+        line-height: 24px;
+    }
+
+    .cb-nav-tab {
+        margin-right: 20px;
+        padding-bottom: 6px;
+    }
+
+    .cb-nav-hdr {
+        padding-top: 15px
+    }
+
+    .cb-font-24 {
+        font-size: 24px;
+    }
+
+    .line-ht30 {
+        line-height: 30px;
+    }
+
+    #scagTabContent .show {
+        display: block;
+        visibility: visible;
+    }
+
+    #scagTabContent .hide {
+        display: none;
+        visibility: hidden;
+    }
+
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+
+    .cb-nav-pill-1 {
+        background: #CFE0DB;
+        border-radius: 20px;
+        color: #222;
+        cursor: pointer;
+        margin-right: 15px;
+        padding: 5px 20px;
+    }
+
+    .text-bold {
+        font-weight: bold;
+    }
+
+    .cb-font-12 {
+        font-size: 12px;
+    }
+
+    .cb-font-16 {
+        font-size: 16px;
+    }
+
+    .cb-mtchs-dy {
+        padding: 20px 20px 20px 10px;
+    }
+
+    .img-responsive {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .pull-right, .cb-all-mtch-tab {
+        float: right;
+    }
+
+    .cb-more-btn {
+        padding: 8px 20px;
+        border-radius: 2px;
+        color: #fff;
+        background: #009270;
+        border: 0;
+        cursor: pointer;
+    }
+
+    h2 {
+        font-size: 18px
+    }
+
+    .cb-col .cb-align-cen {
+        float: none;
+        text-align: center;
+        padding: 7px 25px;
+        margin-top: 20px;
+    }
+
+    .cb-align-cen {
+        padding-top: 10px;
+    }</style>
+
+    <script>var PAGE_NAME = "icc-rankings";
+    var CBQueue = CBQueue || [];
+    var CBQueueOnLoad = CBQueueOnLoad || [];
+    CBQueue.push(function () {
+        roadblock(2, {country: ["US"]});
+    });
+    _udn = "cricbuzz.com";</script>
+    <script>(function (w) {
+        "use strict";
+        var loadCSS = function (href, before, media) {
+            var doc = w.document;
+            var ss = doc.createElement("link");
+            var ref;
+            if (before) {
+                ref = before;
+            } else {
+                var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+                ref = refs[refs.length - 1];
+            }
+            var sheets = doc.styleSheets;
+            ss.rel = "stylesheet";
+            ss.href = href;
+            ss.media = "only x";
+            ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+            var onloadcssdefined = function (cb) {
+                var resolvedHref = ss.href;
+                var i = sheets.length;
+                while (i--) {
+                    if (sheets[i].href === resolvedHref) {
+                        return cb();
+                    }
+                }
+                setTimeout(function () {
+                    onloadcssdefined(cb);
+                });
+            };
+            ss.onloadcssdefined = onloadcssdefined;
+            onloadcssdefined(function () {
+                ss.media = media || "all";
+            });
+            return ss;
+        };
+        if (typeof module !== "undefined") {
+            module.exports = loadCSS;
+        } else {
+            w.loadCSS = loadCSS;
+        }
+    }(typeof global !== "undefined" ? global : this));
+    loadCSS("//s.cricketcb.com/site/style.201810151158.css");</script>
+
+</head>
+<body>
+<div class="page">
+
+    <div id="page-wrapper" class="container" style="display:inline-block;">
+
+        <div class="cb-col cb-col-100 cb-bg-white" ng-controller="rankingsFilters">
+            <div class="cb-nav-main cb-bg-white"><h1 class='cb-nav-hdr cb-font-24 line-ht30'>ICC Player and Team
+                Rankings</h1>
+                <nav class="cb-nav-bar"><a href="javascript:void(0)" class='cb-nav-tab'
+                                           ng-class="{'active':act_rank_type === 'batsmen'}"
+                                           ng-click="set_filters('batsmen','batsmen-tests');" id="batsmen-tab"
+                                           title="Batsmen Rankings" target="_self">Batsmen</a><a
+                        href="javascript:void(0)" class='cb-nav-tab' ng-class="{'active':act_rank_type === 'bowlers'}"
+                        ng-click="set_filters('bowlers','bowlers-tests');" id="bowlers-tab" title="Bowler Rankings"
+                        target="_self">Bowlers</a><a href="javascript:void(0)" class='cb-nav-tab'
+                                                     ng-class="{'active':act_rank_type === 'all-rounders'}"
+                                                     ng-click="set_filters('all-rounders','all-rounders-tests');"
+                                                     id="all-rounders-tab" title="All Rounder Rankings" target="_self">All-rounders</a><a
+                        href="javascript:void(0)" class='cb-nav-tab' ng-class="{'active':act_rank_type === 'teams'}"
+                        ng-click="set_filters('teams','teams-tests');" id="teams-tab" title="Team Rankings"
+                        target="_self">Teams</a></nav>
+            </div>
+            <div class="cb-col cb-col-67 cb-scrd-lft-col">
+                <div class="cb-col cb-col-100 cb-plyr-tbody cb-rank-tabs" id="batsmen"
+                     ng-show="'batsmen' == act_rank_type">
+                    <nav gtm-label="rankings"><a href="javascript:void(0)" id="batsmen-tests-tab"
+                                                 ng-class="{'active':act_rank_format == 'batsmen-tests'}"
+                                                 ng-click="act_rank_format = 'batsmen-tests';"
+                                                 class="ng-cloak cb-nav-pill-1 cb-font-12">TEST</a><a
+                            href="javascript:void(0)" id="batsmen-odis-tab"
+                            ng-class="{'active':act_rank_format == 'batsmen-odis'}"
+                            ng-click="act_rank_format = 'batsmen-odis';"
+                            class="ng-cloak cb-nav-pill-1 cb-font-12">ODI</a><a href="javascript:void(0)"
+                                                                                id="batsmen-t20s-tab"
+                                                                                ng-class="{'active':act_rank_format == 'batsmen-t20s'}"
+                                                                                ng-click="act_rank_format = 'batsmen-t20s';"
+                                                                                class="ng-cloak cb-nav-pill-1 cb-font-12">T20</a>
+                    </nav>
+                    <div class="cb-col cb-col-100 cb-plyr-tbody" id="batsmenTypeTabContent">
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="batsmen-tests"
+                             ng-show="'batsmen-tests' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-16 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left" style="padding-left: 120px;">Player</div>
+                                <div class="cb-col cb-col-17 pull-right">Rating</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-lst-itm text-center">
+                                <div class="cb-col cb-col-16 cb-rank-tbl cb-font-16">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">
+                                    <div class="cb-col cb-col-33">
+                                        <div class="cb-col cb-col-50"><span class=" cb-ico"
+                                                                            style="position:absolute;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8211;
+                                        </div>
+                                        <div class="cb-col cb-col-50"><img
+                                                src="//i.cricketcb.com/i/stats/fw/50x50/img/faceImages/1413.jpg"
+                                                title="Virat Kohli" alt="Virat Kohli"
+                                                class='img-responsive cb-rank-plyr-img'/></div>
+                                    </div>
+                                    <div class="cb-col cb-col-67 cb-rank-plyr"><a
+                                            class="text-hvr-underline text-bold cb-font-16"
+                                            href='/profiles/1413/virat-kohli' title="Virat Kohli's Profile">Virat
+                                        Kohli</a>
+                                        <div class="cb-font-12 text-gray">INDIA</div>
+                                    </div>
+                                </div>
+                                <div class="cb-col cb-col-17 cb-rank-tbl pull-right">935</div>
+                            </div>
+                        </div>
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="batsmen-odis"
+                             ng-show="'batsmen-odis' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-16 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left" style="padding-left: 120px;">Player</div>
+                                <div class="cb-col cb-col-17 pull-right">Rating</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-lst-itm text-center">
+                                <div class="cb-col cb-col-16 cb-rank-tbl cb-font-16">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">
+                                    <div class="cb-col cb-col-33">
+                                        <div class="cb-col cb-col-50"><span class=" cb-ico"
+                                                                            style="position:absolute;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8211;
+                                        </div>
+                                        <div class="cb-col cb-col-50"><img
+                                                src="//i.cricketcb.com/i/stats/fw/50x50/img/faceImages/1413.jpg"
+                                                title="Virat Kohli" alt="Virat Kohli"
+                                                class='img-responsive cb-rank-plyr-img'/></div>
+                                    </div>
+                                    <div class="cb-col cb-col-67 cb-rank-plyr"><a
+                                            class="text-hvr-underline text-bold cb-font-16"
+                                            href='/profiles/1413/virat-kohli' title="Virat Kohli's Profile">Virat
+                                        Kohli</a>
+                                        <div class="cb-font-12 text-gray">INDIA</div>
+                                    </div>
+                                </div>
+                                <div class="cb-col cb-col-17 cb-rank-tbl pull-right">884</div>
+                            </div>
+                        </div>
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="batsmen-t20s"
+                             ng-show="'batsmen-t20s' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-16 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left" style="padding-left: 120px;">Player</div>
+                                <div class="cb-col cb-col-17 pull-right">Rating</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-lst-itm text-center">
+                                <div class="cb-col cb-col-16 cb-rank-tbl cb-font-16">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">
+                                    <div class="cb-col cb-col-33">
+                                        <div class="cb-col cb-col-50"><span class=" cb-ico"
+                                                                            style="position:absolute;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8211;
+                                        </div>
+                                        <div class="cb-col cb-col-50"><img
+                                                src="//i.cricketcb.com/i/stats/fw/50x50/img/faceImages/1643.jpg"
+                                                title="Aaron Finch" alt="Aaron Finch"
+                                                class='img-responsive cb-rank-plyr-img'/></div>
+                                    </div>
+                                    <div class="cb-col cb-col-67 cb-rank-plyr"><a
+                                            class="text-hvr-underline text-bold cb-font-16"
+                                            href='/profiles/1643/aaron-finch' title="Aaron Finch's Profile">Aaron
+                                        Finch</a>
+                                        <div class="cb-font-12 text-gray">AUSTRALIA</div>
+                                    </div>
+                                </div>
+                                <div class="cb-col cb-col-17 cb-rank-tbl pull-right">891</div>
+                            </div>
+                        </div>
+                        <div class="text-center cb-col cb-col-100 cb-mtchs-dy"><a class="cb-more-btn"
+                                                                                  href="/cricket-stats/icc-rankings/batsmen-rankings"
+                                                                                  title="ICC top 100 batsmen rankings">Full
+                            Rankings</a></div>
+                    </div>
+                </div>
+                <div class="cb-col cb-col-100 cb-plyr-tbody cb-rank-tabs" id="bowlers"
+                     ng-show="'bowlers' == act_rank_type">
+                    <nav gtm-label="rankings"><a href="javascript:void(0)" id="bowlers-tests-tab"
+                                                 ng-class="{'active':act_rank_format == 'bowlers-tests'}"
+                                                 ng-click="act_rank_format = 'bowlers-tests';"
+                                                 class="ng-cloak cb-nav-pill-1 cb-font-12">TEST</a><a
+                            href="javascript:void(0)" id="bowlers-odis-tab"
+                            ng-class="{'active':act_rank_format == 'bowlers-odis'}"
+                            ng-click="act_rank_format = 'bowlers-odis';"
+                            class="ng-cloak cb-nav-pill-1 cb-font-12">ODI</a><a href="javascript:void(0)"
+                                                                                id="bowlers-t20s-tab"
+                                                                                ng-class="{'active':act_rank_format == 'bowlers-t20s'}"
+                                                                                ng-click="act_rank_format = 'bowlers-t20s';"
+                                                                                class="ng-cloak cb-nav-pill-1 cb-font-12">T20</a>
+                    </nav>
+                    <div class="cb-col cb-col-100 cb-plyr-tbody" id="bowlersTypeTabContent">
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="bowlers-tests"
+                             ng-show="'bowlers-tests' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-16 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left" style="padding-left: 120px;">Player</div>
+                                <div class="cb-col cb-col-17 pull-right">Rating</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-lst-itm text-center">
+                                <div class="cb-col cb-col-16 cb-rank-tbl cb-font-16">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">
+                                    <div class="cb-col cb-col-33">
+                                        <div class="cb-col cb-col-50"><span class=" cb-ico"
+                                                                            style="position:absolute;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8211;
+                                        </div>
+                                        <div class="cb-col cb-col-50"><img
+                                                src="//i.cricketcb.com/i/stats/fw/50x50/img/faceImages/65.jpg"
+                                                title="James Anderson" alt="James Anderson"
+                                                class='img-responsive cb-rank-plyr-img'/></div>
+                                    </div>
+                                    <div class="cb-col cb-col-67 cb-rank-plyr"><a
+                                            class="text-hvr-underline text-bold cb-font-16"
+                                            href='/profiles/65/james-anderson' title="James Anderson's Profile">James
+                                        Anderson</a>
+                                        <div class="cb-font-12 text-gray">ENGLAND</div>
+                                    </div>
+                                </div>
+                                <div class="cb-col cb-col-17 cb-rank-tbl pull-right">899</div>
+                            </div>
+                        </div>
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="bowlers-odis"
+                             ng-show="'bowlers-odis' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-16 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left" style="padding-left: 120px;">Player</div>
+                                <div class="cb-col cb-col-17 pull-right">Rating</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-lst-itm text-center">
+                                <div class="cb-col cb-col-16 cb-rank-tbl cb-font-16">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">
+                                    <div class="cb-col cb-col-33">
+                                        <div class="cb-col cb-col-50"><span class=" cb-ico"
+                                                                            style="position:absolute;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8211;
+                                        </div>
+                                        <div class="cb-col cb-col-50"><img
+                                                src="//i.cricketcb.com/i/stats/fw/50x50/img/faceImages/9311.jpg"
+                                                title="Jasprit Bumrah" alt="Jasprit Bumrah"
+                                                class='img-responsive cb-rank-plyr-img'/></div>
+                                    </div>
+                                    <div class="cb-col cb-col-67 cb-rank-plyr"><a
+                                            class="text-hvr-underline text-bold cb-font-16"
+                                            href='/profiles/9311/jasprit-bumrah' title="Jasprit Bumrah's Profile">Jasprit
+                                        Bumrah</a>
+                                        <div class="cb-font-12 text-gray">INDIA</div>
+                                    </div>
+                                </div>
+                                <div class="cb-col cb-col-17 cb-rank-tbl pull-right">797</div>
+                            </div>
+                        </div>
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="bowlers-t20s"
+                             ng-show="'bowlers-t20s' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-16 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left" style="padding-left: 120px;">Player</div>
+                                <div class="cb-col cb-col-17 pull-right">Rating</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-lst-itm text-center">
+                                <div class="cb-col cb-col-16 cb-rank-tbl cb-font-16">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">
+                                    <div class="cb-col cb-col-33">
+                                        <div class="cb-col cb-col-50"><span class=" cb-ico"
+                                                                            style="position:absolute;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8211;
+                                        </div>
+                                        <div class="cb-col cb-col-50"><img
+                                                src="//i.cricketcb.com/i/stats/fw/50x50/img/faceImages/10738.jpg"
+                                                title="Rashid Khan" alt="Rashid Khan"
+                                                class='img-responsive cb-rank-plyr-img'/></div>
+                                    </div>
+                                    <div class="cb-col cb-col-67 cb-rank-plyr"><a
+                                            class="text-hvr-underline text-bold cb-font-16"
+                                            href='/profiles/10738/rashid-khan' title="Rashid Khan's Profile">Rashid
+                                        Khan</a>
+                                        <div class="cb-font-12 text-gray">AFGHANISTAN</div>
+                                    </div>
+                                </div>
+                                <div class="cb-col cb-col-17 cb-rank-tbl pull-right">793</div>
+                            </div>
+
+                        </div>
+                        <div class="text-center cb-col cb-col-100 cb-mtchs-dy"><a class="cb-more-btn"
+                                                                                  href="/cricket-stats/icc-rankings/bowlers-rankings"
+                                                                                  title="ICC top 100 bowlers rankings">Full
+                            Rankings</a></div>
+                    </div>
+                </div>
+                <div class="cb-col cb-col-100 cb-plyr-tbody cb-rank-tabs" id="all-rounders"
+                     ng-show="'all-rounders' == act_rank_type">
+                    <nav gtm-label="rankings"><a href="javascript:void(0)" id="all-rounders-tests-tab"
+                                                 ng-class="{'active':act_rank_format == 'all-rounders-tests'}"
+                                                 ng-click="act_rank_format = 'all-rounders-tests';"
+                                                 class="ng-cloak cb-nav-pill-1 cb-font-12">TEST</a><a
+                            href="javascript:void(0)" id="all-rounders-odis-tab"
+                            ng-class="{'active':act_rank_format == 'all-rounders-odis'}"
+                            ng-click="act_rank_format = 'all-rounders-odis';" class="ng-cloak cb-nav-pill-1 cb-font-12">ODI</a><a
+                            href="javascript:void(0)" id="all-rounders-t20s-tab"
+                            ng-class="{'active':act_rank_format == 'all-rounders-t20s'}"
+                            ng-click="act_rank_format = 'all-rounders-t20s';" class="ng-cloak cb-nav-pill-1 cb-font-12">T20</a>
+                    </nav>
+                    <div class="cb-col cb-col-100 cb-plyr-tbody" id="all-roundersTypeTabContent">
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="all-rounders-tests"
+                             ng-show="'all-rounders-tests' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-16 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left" style="padding-left: 120px;">Player</div>
+                                <div class="cb-col cb-col-17 pull-right">Rating</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-lst-itm text-center">
+                                <div class="cb-col cb-col-16 cb-rank-tbl cb-font-16">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">
+                                    <div class="cb-col cb-col-33">
+                                        <div class="cb-col cb-col-50"><span class=" cb-ico"
+                                                                            style="position:absolute;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8211;
+                                        </div>
+                                        <div class="cb-col cb-col-50"><img
+                                                src="//i.cricketcb.com/i/stats/fw/50x50/img/faceImages/544.jpg"
+                                                title="Shakib Al Hasan" alt="Shakib Al Hasan"
+                                                class='img-responsive cb-rank-plyr-img'/></div>
+                                    </div>
+                                    <div class="cb-col cb-col-67 cb-rank-plyr"><a
+                                            class="text-hvr-underline text-bold cb-font-16"
+                                            href='/profiles/544/shakib-al-hasan' title="Shakib Al Hasan's Profile">Shakib
+                                        Al Hasan</a>
+                                        <div class="cb-font-12 text-gray">BANGLADESH</div>
+                                    </div>
+                                </div>
+                                <div class="cb-col cb-col-17 cb-rank-tbl pull-right">420</div>
+                            </div>
+                        </div>
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="all-rounders-odis"
+                             ng-show="'all-rounders-odis' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-16 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left" style="padding-left: 120px;">Player</div>
+                                <div class="cb-col cb-col-17 pull-right">Rating</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-lst-itm text-center">
+                                <div class="cb-col cb-col-16 cb-rank-tbl cb-font-16">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">
+                                    <div class="cb-col cb-col-33">
+                                        <div class="cb-col cb-col-50"><span class="cb-rank-diff-up cb-ico"
+                                                                            style=""></span>&nbsp;&nbsp;&nbsp;&nbsp;6
+                                        </div>
+                                        <div class="cb-col cb-col-50"><img
+                                                src="//i.cricketcb.com/i/stats/fw/50x50/img/faceImages/10738.jpg"
+                                                title="Rashid Khan" alt="Rashid Khan"
+                                                class='img-responsive cb-rank-plyr-img'/></div>
+                                    </div>
+                                    <div class="cb-col cb-col-67 cb-rank-plyr"><a
+                                            class="text-hvr-underline text-bold cb-font-16"
+                                            href='/profiles/10738/rashid-khan' title="Rashid Khan's Profile">Rashid
+                                        Khan</a>
+                                        <div class="cb-font-12 text-gray">AFGHANISTAN</div>
+                                    </div>
+                                </div>
+                                <div class="cb-col cb-col-17 cb-rank-tbl pull-right">353</div>
+                            </div>
+                        </div>
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="all-rounders-t20s"
+                             ng-show="'all-rounders-t20s' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-16 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left" style="padding-left: 120px;">Player</div>
+                                <div class="cb-col cb-col-17 pull-right">Rating</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-lst-itm text-center">
+                                <div class="cb-col cb-col-16 cb-rank-tbl cb-font-16">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">
+                                    <div class="cb-col cb-col-33">
+                                        <div class="cb-col cb-col-50"><span class=" cb-ico"
+                                                                            style="position:absolute;"></span>&nbsp;&nbsp;&nbsp;&nbsp;&#8211;
+                                        </div>
+                                        <div class="cb-col cb-col-50"><img
+                                                src="//i.cricketcb.com/i/stats/fw/50x50/img/faceImages/7662.jpg"
+                                                title="Glenn Maxwell" alt="Glenn Maxwell"
+                                                class='img-responsive cb-rank-plyr-img'/></div>
+                                    </div>
+                                    <div class="cb-col cb-col-67 cb-rank-plyr"><a
+                                            class="text-hvr-underline text-bold cb-font-16"
+                                            href='/profiles/7662/glenn-maxwell' title="Glenn Maxwell's Profile">Glenn
+                                        Maxwell</a>
+                                        <div class="cb-font-12 text-gray">AUSTRALIA</div>
+                                    </div>
+                                </div>
+                                <div class="cb-col cb-col-17 cb-rank-tbl pull-right">366</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cb-col cb-col-100 cb-plyr-tbody cb-rank-tabs" id="teams" ng-show="'teams' == act_rank_type">
+                    <nav gtm-label="rankings"><a href="javascript:void(0)" id="teams-tests-tab"
+                                                 ng-class="{'active':act_rank_format == 'teams-tests'}"
+                                                 ng-click="act_rank_format = 'teams-tests';"
+                                                 class="ng-cloak cb-nav-pill-1 cb-font-12">TEST</a><a
+                            href="javascript:void(0)" id="teams-odis-tab"
+                            ng-class="{'active':act_rank_format == 'teams-odis'}"
+                            ng-click="act_rank_format = 'teams-odis';" class="ng-cloak cb-nav-pill-1 cb-font-12">ODI</a><a
+                            href="javascript:void(0)" id="teams-t20s-tab"
+                            ng-class="{'active':act_rank_format == 'teams-t20s'}"
+                            ng-click="act_rank_format = 'teams-t20s';" class="ng-cloak cb-nav-pill-1 cb-font-12">T20</a>
+                    </nav>
+                    <div class="cb-col cb-col-100 cb-plyr-tbody" id="teamsTypeTabContent">
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="teams-tests"
+                             ng-show="'teams-tests' == act_rank_format">
+                            <div class="cb-rank-tabs cb-rank-tbl">* The ratings are officially updated after each series
+                                rather than after each Test
+                            </div>
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-20 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left">Team</div>
+                                <div class="cb-col cb-col-14">Rating</div>
+                                <div class="cb-col cb-col-14">Points</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-brdr-thin-btm text-center">
+                                <div class="cb-col cb-col-20 cb-lst-itm-sm ">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">INDIA</div>
+                                <div class="cb-col cb-col-14 cb-lst-itm-sm">116</div>
+                                <div class="cb-col cb-col-14 cb-lst-itm-sm ">4397</div>
+                            </div>
+
+                        </div>
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="teams-odis"
+                             ng-show="'teams-odis' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-20 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left">Team</div>
+                                <div class="cb-col cb-col-14">Rating</div>
+                                <div class="cb-col cb-col-14">Points</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-brdr-thin-btm text-center">
+                                <div class="cb-col cb-col-20 cb-lst-itm-sm ">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">ENGLAND</div>
+                                <div class="cb-col cb-col-14 cb-lst-itm-sm">127</div>
+                                <div class="cb-col cb-col-14 cb-lst-itm-sm ">6607</div>
+                            </div>
+
+                        </div>
+                        <div class="cb-col cb-col-100 cb-rank-tabs" id="teams-t20s"
+                             ng-show="'teams-t20s' == act_rank_format">
+                            <div class="cb-col cb-col-100 text-bold cb-font-14 cb-rank-hdr cb-bg-grey text-center">
+                                <div class="cb-col cb-col-20 text-left cb-rank-plyr">Position</div>
+                                <div class="cb-col cb-col-50 text-left">Team</div>
+                                <div class="cb-col cb-col-14">Rating</div>
+                                <div class="cb-col cb-col-14">Points</div>
+                            </div>
+                            <div class="cb-col cb-col-100 cb-font-14 cb-brdr-thin-btm text-center">
+                                <div class="cb-col cb-col-20 cb-lst-itm-sm ">1</div>
+                                <div class="cb-col cb-col-50 cb-lst-itm-sm text-left">PAKISTAN</div>
+                                <div class="cb-col cb-col-14 cb-lst-itm-sm">132</div>
+                                <div class="cb-col cb-col-14 cb-lst-itm-sm ">3972</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">var script_tag = document.getElementsByTagName('script')[0];
+(function () {
+    var cmin = document.createElement('script');
+    cmin.type = 'text/javascript';
+    cmin.async = true;
+    cmin.src = '//i.cricketcb.com/statics/site/js/cricbuzz.min.201810151158.js';
+    script_tag.parentNode.insertBefore(cmin, script_tag);
+})();</script>
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PGNCT7" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+    var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+    j.async = true;
+    j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+    f.parentNode.insertBefore(j, f);
+})(window, document, 'script', 'dataLayer', 'GTM-PGNCT7');</script>
+<script>window.onerror = function (message, file, line) {
+    var sFormattedMessage = '[' + file + ' (' + line + ')] ' + message;
+    dataLayer.push({'EventAction': "Application", 'EventLabel': sFormattedMessage, 'event': 'Exceptions'});
+}</script>
+
+</body>{% include '/common/footer.html' %}
+    {% include '/common/footer-social.html' %}
+{% endblock %}
