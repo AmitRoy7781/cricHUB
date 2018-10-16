@@ -2,11 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import pprint
 
-class Vividict(dict):
-    def __missing__(self, key):
-        value = self[key] = type(self)()
-        return value
-
 
 def Menu():
     print('\n1. Men \n2. Women\n')
@@ -16,7 +11,6 @@ def Menu():
 
     mode = ''
     val = ''
-
     if gen == 'mens':
         print('\n1. Test\n2. ODI\n3. T20\n')
         mode = Mode()
@@ -170,65 +164,8 @@ def rankings():
     Print(data)
 
 
-def add_to_dict(data, url, gender, match_format, tp, player_type=""):
-    print(url)
-    raw_data = SOUP(url, tp)
-    if(tp == 'team-rankings'):
-        for i in sorted(raw_data):
-            data[tp][gender][match_format][str(i)]['team'] = raw_data[i][0]
-            data[tp][gender][match_format][str(i)]['rating'] = raw_data[i][1]
-    else:
-        for i in sorted(raw_data):
-            data[tp][gender][match_format][player_type][str(i)]['player'] = raw_data[i][0]
-            data[tp][gender][match_format][player_type][str(i)]['rating'] = raw_data[i][1]
-
-
-
-
-def generate_team_data():
-    gender = ['mens', 'womens']
-    m_format = ['test', 'odi', 't20i']
-    base_url = 'https://www.icc-cricket.com/rankings/'
-    tp = 'team-rankings'
-    data = Vividict()
-
-    #team
-    for g in gender:
-        if (g == 'mens'):
-            for m in m_format:
-                url = base_url + g + '/team-rankings/' + m
-                add_to_dict(data = data, url = url, gender=g, match_format=m, tp=tp)
-        else:
-            url = base_url + g + '/team-rankings/'
-            add_to_dict(data = data, url = url, gender=g, match_format='all', tp=tp)
-
-
-
-    return data
-
-
-def generate_player_data():
-    gender = ['mens', 'womens']
-    m_format = ['odi', 't20i']
-    player_type = ['batting', 'bowling','all-rounder']
-    base_url = 'https://www.icc-cricket.com/rankings/'
-    tp = 'player-rankings'
-    data = Vividict()
-
-    #team
-    for g in gender:
-        for m in m_format:
-            for p in player_type:
-                url = base_url + g + '/player-rankings/' + m + '/' + p
-                add_to_dict(data, url, g, m, tp,p)
-
-
-    return data
-
 
 if __name__ == '__main__':
-    # while True:
-    #     rankings()
-    # pprint.pprint(generate_team_data())
-    pprint.pprint(generate_player_data())
+    while True:
+        rankings()
 
