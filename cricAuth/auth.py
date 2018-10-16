@@ -74,7 +74,7 @@ def signup_validation():
                 flag = False
                 data['phone_number_msg'] = 'Phone Number can contain only digits'
 
-        print(flag)
+        #print(flag)
 
         if flag is True:
             data.pop('c_password')
