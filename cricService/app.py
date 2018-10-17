@@ -48,10 +48,9 @@ def show_rank_pmo():
 
 @app.route("/insert/rank")
 def insert_rank():
-    from cricRATING.rankings_scrape import generate_data
-    collections = generate_data()
-    for col in collections:
-        insert_data_from_dataframe('ranking.' + col,collections[col])
+    from cricRATING.rankings_scrape import generate_ranking_data
+    data = generate_ranking_data()
+    insert_data_from_dataframe('ranking', data)
     return "success"
 
 

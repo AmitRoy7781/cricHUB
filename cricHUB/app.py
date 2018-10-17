@@ -16,5 +16,15 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/live-score/')
+def score():
+    return render_template('LiveScore.html')
+
+
+@app.route('/stats/')
+def stats():
+    return render_template('t20TournamentStat.html')
+
+
 if __name__ == '__main__':
     app.run(port=5000,debug=True)
