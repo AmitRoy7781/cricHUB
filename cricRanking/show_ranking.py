@@ -4,7 +4,7 @@ from cricMongoDB.database import db
 app = Blueprint('ranking', __name__)
 
 @app.route('/rankings/')
-def show_ranking(data=None,rank_data=None):
+def ranking(data=None,rank_data=None):
     if 'username' not in session.keys():
         return redirect('/auth/signin')
     if rank_data is not None:
@@ -13,7 +13,7 @@ def show_ranking(data=None,rank_data=None):
     return render_template('ranking/ranking.html', ranking_info=data, rank_data=rank_data)
 
 @app.route('/show_rank',methods=['POST', 'GET'])
-def test():
+def show_ranking():
     data = request.form.to_dict()
     format = data["format"]
     gender = data["gender"]
@@ -40,9 +40,9 @@ def test():
     if flag is True:
         posts = db.ranking
         myquery = {"format": format,"gender":gender,"player_type":rank_type}
-        print(format)
-        print(gender)
-        print(rank_type)
+        # print(format)
+        # print(gender)
+        # print(rank_type)
         mydoc = posts.find(myquery)
         # print(mydoc)
         rank_data = []
@@ -63,6 +63,6 @@ def test():
         else:
             return render_template("ranking/show_ranking_team.html", ranking_info=data, rank_data=rank_data)
 
-    return show_ranking(data,None)
+    return ranking(data,None)
 
 

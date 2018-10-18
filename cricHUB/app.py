@@ -1,6 +1,7 @@
 from flask import Flask, render_template
 from cricAuth.auth import app as auth
 from cricRanking.show_ranking import app as ranking
+from cricSTAT.t20Stat import app as stat
 
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
@@ -11,6 +12,10 @@ app.register_blueprint(auth)
 # show ranking blueprint
 app.register_blueprint(ranking)
 
+# t20 Statistics blueprint
+app.register_blueprint(stat)
+
+
 @app.route('/')
 def home():
     return render_template('index.html')
@@ -19,11 +24,6 @@ def home():
 @app.route('/live-score/')
 def score():
     return render_template('LiveScore.html')
-
-
-@app.route('/stats/')
-def stats():
-    return render_template('t20Stat.html',stat_info = None)
 
 
 if __name__ == '__main__':

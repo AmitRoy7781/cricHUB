@@ -35,12 +35,11 @@
 <script>
 
 
-    var tournament = '{{stat_info["tournament"]}}';
-    var tournament_msg = '{{stat_info["tournament_msg"]}}';
+    var tournament = '{{stat_info["Tournament"]}}';
+    var tournament_msg = '{{stat_info["Tournament_msg"]}}';
 
-
-    var year = '{{stat_info["year"]}}';
-    var year_msg = '{{stat_info["year_msg"]}}';
+    var year = '{{stat_info["Year"]}}';
+    var year_msg = '{{stat_info["Year_msg"]}}';
 
     function valid(str) {
         return !(!str || 0 === str.length || !str.trim());
@@ -48,10 +47,12 @@
 
     function display_error() {
 
-        if (valid(tournament))
-            document.getElementById("Tournament").value = format;
+        if (valid(tournament)) {
+            document.getElementById("Tournament").value = tournament;
+            change_option();
+        }
         if (valid(year))
-            document.getElementById("Year").value = gender;
+            document.getElementById("Year").value = year;
 
 
         if (valid(tournament_msg))
@@ -66,7 +67,11 @@
 
         Year_element.innerHTML = ""
 
-        if(Tournament_element.value=="BPL")
+        if(Tournament_element.value=="Choose...")
+        {
+            var optionArray = ["Choose..."]
+        }
+        else if(Tournament_element.value=="BPL")
         {
             var optionArray = ["Choose...","2017","2016","2015","2013","2012"]
         }
@@ -93,8 +98,6 @@
             newOption.innerHTML = option;
             Year_element.options.add(newOption);
         }
-
-
     }
 </script>
 
@@ -103,13 +106,13 @@
 
     <div style="width: 70%">
 
-
+        {% if stat_data is none %}
         <h2 class="page-header"> T20 Tournament Statistics and Data Visualization</h2>
         <br/>
         <form action="/show_stats" method="POST" style="width: 30%">
             <div class="form-group" style="width: 130%">
                 <label for="format">Tournament</label>
-                <select id="Tournament" onchange="change_option()" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="format" name="format">
+                <select id="Tournament" name="Tournament" onchange="change_option()" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="format" name="format">
                     <option selected>Choose...</option>
                     <option value="BPL">BPL - Bangladesh Premier League</option>
                     <option value="IPL">IPL - Indian Premier League</option>
@@ -121,18 +124,55 @@
             </div>
             <div class="form-group" style="width: 130%">
                 <label for="gender">Choose Year</label>
-                <select id="Year" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="gender" name="gender">
+                <select id="Year" name="Year" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="gender" name="gender">
                     <option selected>Choose...</option>
                 </select>
                 <span id="Year_msg" style="font-size: small;color: red"></span>
             </div>
             <br/>
-            <div class="form-group">
-                <input type="submit" class="btn btn-dark btn-lg" value="Show Ranking">
+            <div class="form-group" style="width: 130%">
+                <input type="submit" class="btn btn-dark btn-lg" align="center" value="Show Ranking">
             </div>
 
         </form>
+        {% else %}
+             <h4 class="page-header" id="rank_header">
+            <script>
 
+
+                document.write(tournament + " " + year)
+
+                document.write(" TEAM STATISTICS AND DATA VISUALIZATION ")
+            </script>
+
+        </h4>
+
+        <table id="commListTable">
+            <tr class="header">
+                <th align="center" style="width: 30%" align="center"> Team</th>
+                <th align="center" style="width: 10%" align="center"> Matches</th>
+                <th align="center" style="width: 10%" align="center"> Won</th>
+                <th align="center" style="width: 10%" align="center"> Lost</th>
+                <th align="center" style="width: 10%" align="center"> No Result</th>
+                <th align="center" style="width: 10%" align="center"> Points</th>
+                <th align="center" style="width: 15%" align="center"> Net Run Rate</th>
+            </tr>
+
+            {% for item in stat_data%}
+            <tr>
+                <td align="center"> {{ item["Team"] }}</td>
+                <td align="center"> {{ item["Matches"] }}</td>
+                <td align="center"> {{ item["Won"] }}</td>
+                <td align="center"> {{ item["Lost"] }}</td>
+                <td align="center"> {{ item["No Result"] }}</td>
+                <td align="center"> {{ item["Points"] }}</td>
+                <td align="center"> {{ item["Net Run Rate"] }}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+        <br/>
+        {% endif %}
     </div>
 </div>
 <br/>
