@@ -60,13 +60,13 @@
                 format_cell.innerHTML = "T20";
 
             if (rank_type == "batting")
-                document.write("OF BATSMEN ")
+                rank_type_cell.innerHTML = "OF BATSMEN "
             else if (rank_type == "bowling")
-                document.write("OF BOWLERS ")
+                rank_type_cell.innerHTML = "OF BOWLERS "
             else if (rank_type == "all-rounder")
-                document.write("OF ALL-ROUNDERS ")
+                rank_type_cell.innerHTML = "OF ALL-ROUNDERS "
             else
-                document.write("OF TEAMS ")
+                rank_type_cell.innerHTML = "OF TEAMS "
 
         }
 
@@ -75,6 +75,7 @@
 
         function addcell() {
 
+            table = document.getElementsByTagName("table")[0];
             new_row = table.insertRow(table.rows.length);
 
             rank_cell = new_row.insertCell(0);
@@ -88,7 +89,7 @@
 
 
         function hello() {
-            table = document.getElementsByTagName("table")[0];
+
 
 
             if (limit == 0) {
@@ -98,6 +99,7 @@
                 rating_cell.innerHTML = '{{rank_data[10]["rating"]}}';
                 show_rest();
                 addcell();
+
                 rank_cell.innerHTML = '{{rank_data[11]["rank"]}}';
                 name_cell.innerHTML = '{{rank_data[11]["name"]}}';
                 rating_cell.innerHTML = '{{rank_data[11]["rating"]}}';
@@ -548,6 +550,7 @@
             }
             else {
 
+                table = document.getElementsByTagName("table")[0];
                 var i = 0;
                 for (i = 100; i > 10; i--)
                     table.deleteRow(i);
