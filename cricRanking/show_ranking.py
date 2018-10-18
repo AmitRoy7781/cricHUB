@@ -9,8 +9,8 @@ def show_ranking(data=None,rank_data=None):
         return redirect('/auth/signin')
     if rank_data is not None:
         data["contain_rank"] = True
-    print(data)
-    return render_template('ranking.html',ranking_info=data,rank_data=rank_data)
+    #print(data)
+    return render_template('ranking/ranking.html', ranking_info=data, rank_data=rank_data)
 
 @app.route('/show_rank',methods=['POST', 'GET'])
 def test():
@@ -59,9 +59,9 @@ def test():
             rank_data.append(temp)
 
         if rank_type!="team":
-            return render_template("show_ranking.html",ranking_info=data,rank_data=rank_data)
+            return render_template("ranking/show_ranking.html", ranking_info=data, rank_data=rank_data)
         else:
-            return render_template("show_ranking_team.html",ranking_info=data,rank_data=rank_data)
+            return render_template("ranking/show_ranking_team.html", ranking_info=data, rank_data=rank_data)
 
     return show_ranking(data,None)
 
