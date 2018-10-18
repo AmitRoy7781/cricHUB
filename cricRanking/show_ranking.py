@@ -58,7 +58,10 @@ def test():
             temp["player_type"] = x["player_type"]
             rank_data.append(temp)
 
-        return render_template("show_ranking.html",ranking_info=data,rank_data=rank_data)
+        if rank_type!="team":
+            return render_template("show_ranking.html",ranking_info=data,rank_data=rank_data)
+        else:
+            return render_template("show_ranking_team.html",ranking_info=data,rank_data=rank_data)
 
     return show_ranking(data,None)
 
