@@ -52,7 +52,7 @@
             else if (gender == "womens")
                 gender_cell.innerHTML = "WOMENS";
 
-            if (format == "tests")
+            if (format == "test")
                 format_cell.innerHTML = "TEST";
             else if (format == "odi")
                 format_cell.innerHTML = "ODI";
@@ -60,11 +60,14 @@
                 format_cell.innerHTML = "T20";
 
             if (rank_type == "batting")
-                rank_type_cell.innerHTML = "BATSMEN"
+                document.write("OF BATSMEN ")
             else if (rank_type == "bowling")
-                rank_type_cell.innerHTML = "BOWLERS"
+                document.write("OF BOWLERS ")
+            else if (rank_type == "all-rounder")
+                document.write("OF ALL-ROUNDERS ")
             else
-                rank_type_cell.innerHTML = "ALL-ROUNDERS"
+                document.write("OF TEAMS ")
+
         }
 
         var new_row, rank_cell, name_cell, rating_cell, gender_cell, format_cell, rank_type_cell
@@ -621,13 +624,12 @@
 
                     <td align="center">
                         <script>
-                            if (format == "tests")
+                            if (format == "test")
                                 document.write("TEST")
                             else if (format == "odi")
                                 document.write("ODI")
                             else
                                 document.write("T20")
-
                         </script>
                     </td>
 
@@ -637,8 +639,10 @@
                                 document.write("BATSMEN")
                             else if (rank_type == "bowling")
                                 document.write("BOWLERS")
+                            else if (rank_type == "all-rounder")
+                                document.write("ALL-ROUNDERS ")
                             else
-                                document.write("ALL-ROUNDERS")
+                                document.write("TEAMS ")
                         </script>
                     </td>
                 {% endfor %}
