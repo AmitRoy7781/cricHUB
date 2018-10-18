@@ -56,7 +56,7 @@ def insert_rank():
 
 @app.route("/insert/stat")
 def insert_stat():
-    from cricStat import scraper
+    from cricSTAT import scraper
     data = scraper.scrape()
     db_cm = db.stats.odi.team
     data_json = json.loads(data.to_json(orient='records'))

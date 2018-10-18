@@ -23,7 +23,7 @@ def score():
 
 @app.route('/stats/')
 def stats():
-    return render_template('t20TournamentStat.html')
+    return render_template('t20Stat.html',stat_info = None)
 
 
 if __name__ == '__main__':

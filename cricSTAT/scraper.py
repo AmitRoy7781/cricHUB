@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 
-from cricStat.html_table_parser import HTMLTableParser
+from cricSTAT.html_table_parser import HTMLTableParser
 
 
 def scrape():
