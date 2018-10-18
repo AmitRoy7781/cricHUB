@@ -2,6 +2,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import pymongo
+import os
 
 def takePoints(elem):
     return elem[6]
@@ -97,4 +98,7 @@ plt.grid(True)
 plt.legend()
 plt.title(title)
 
-plt.show()
+if os.path.exists("myfig.png"):
+    os.remove("myfig.png")
+plt.savefig("myfig.png")
+#plt.show()
