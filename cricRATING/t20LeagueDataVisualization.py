@@ -5,7 +5,7 @@ import pymongo
 import os
 
 def takePoints(elem):
-    return elem[6]
+    return float(elem["Points"])
 
 
 myclient = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -30,26 +30,19 @@ for x in mydoc:
 
     team_names.append(x["Team"])
 
-    pnt_tbl.append(x["Matches"])
-    pnt_tbl.append(x["Won"])
-    pnt_tbl.append(x["Lost"])
-    pnt_tbl.append(x["Tied"])
-    pnt_tbl.append(x["No Result"])
-    pnt_tbl.append(x["Points"])
-    pnt_tbl.append(x["Net Run Rate"])
 
-    tmp= []
+    temp= {}
 
-    tmp.append(x["Team"])
-    tmp.append(x["Matches"])
-    tmp.append(x["Won"])
-    tmp.append(x["Lost"])
-    tmp.append(x["Tied"])
-    tmp.append(x["No Result"])
-    tmp.append(int(x["Points"]))
-    tmp.append(x["Net Run Rate"])
+    temp["Team"] = x["Team"]
+    temp["Matches"] = x["Matches"]
+    temp["Won"] = x["Won"]
+    temp["Lost"] = x["Lost"]
+    temp["Tied"] = x["Tied"]
+    temp["No Result"] = x["No Result"]
+    temp["Net Run Rate"] = x["Net Run Rate"]
+    temp["Points"] = x["Points"]
 
-    data.append(tmp)
+    data.append(temp)
 
     #print(x["Team"],"",x["Matches"]," ",x["Won"]," ",x["Lost"]," ",x["Tied"]," ",x["No Result"]," ",x["Points"]," ",x["Net Run Rate"])
 
@@ -60,6 +53,15 @@ data.sort(key=takePoints,reverse=True)
 print(col_names)
 for i in data:
     print(i)
+
+for x in data:
+    pnt_tbl.append(x["Matches"])
+    pnt_tbl.append(x["Won"])
+    pnt_tbl.append(x["Lost"])
+    pnt_tbl.append(x["Tied"])
+    pnt_tbl.append(x["No Result"])
+    pnt_tbl.append(x["Points"])
+    pnt_tbl.append(x["Net Run Rate"])
 
 np_pnt_tbl = (np.array(pnt_tbl)).reshape(len(team_names),7)
 #print(np_pnt_tbl)

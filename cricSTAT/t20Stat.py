@@ -55,16 +55,6 @@ def show_stats():
         cnt = 0
 
         for x in mydoc:
-            team_names.append(x["Team"])
-
-            pnt_tbl.append(x["Matches"])
-            pnt_tbl.append(x["Won"])
-            pnt_tbl.append(x["Lost"])
-            pnt_tbl.append(x["Tied"])
-            pnt_tbl.append(x["No Result"])
-            pnt_tbl.append(x["Points"])
-            pnt_tbl.append(x["Net Run Rate"])
-
             temp = {}
             temp["Team"] = x["Team"]
             temp["Matches"] = x["Matches"]
@@ -76,7 +66,22 @@ def show_stats():
             temp["Points"] = x["Points"]
             stat_data.append(temp)
 
+        stat_data.sort(key=takePoints, reverse=True)
+
+        for x in stat_data:
+            team_names.append(x["Team"])
+            pnt_tbl.append(x["Matches"])
+            pnt_tbl.append(x["Won"])
+            pnt_tbl.append(x["Lost"])
+            pnt_tbl.append(x["Tied"])
+            pnt_tbl.append(x["No Result"])
+            pnt_tbl.append(x["Points"])
+            pnt_tbl.append(x["Net Run Rate"])
+
+
+
         np_pnt_tbl = (np.array(pnt_tbl)).reshape(len(team_names), 7)
+        #print(np_pnt_tbl)
         np_pnt_tbl = np_pnt_tbl.astype(float)
         team_abr = []
 
@@ -118,9 +123,9 @@ def show_stats():
         figfile.seek(0)
         figdata_png = base64.b64encode(figfile.getvalue())
 
-        print(stat_data)
-        stat_data.sort(key=takePoints, reverse=True)
-        print(stat_data)
+        #print(stat_data)
+        # stat_data.sort(key=takePoints, reverse=True)
+        #print(stat_data)
         return stats(data,stat_data,figdata_png)
 
     return  stats(data,None)
