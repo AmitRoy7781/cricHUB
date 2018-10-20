@@ -93,12 +93,15 @@ plt.bar(val_ticks,np_pnt_tbl[:,1],width=0.4,color='g',alpha=0.6,label='Won')
 plt.bar(lost_ticks,np_pnt_tbl[:,2],width=0.4,color='r',alpha=0.6,label='Lost')
 plt.yticks(val_ticks)
 plt.ylabel("Matches")
+
+plt.gcf().subplots_adjust(bottom=0.15)
 plt.xticks(val_ticks,team_abr,rotation='vertical')
+plt.xlabel("Teams")
 plt.grid(True)
 plt.legend()
 plt.title(title)
 
-if os.path.exists("myfig.png"):
-    os.remove("myfig.png")
-plt.savefig("myfig.png")
-#plt.show()
+#if os.path.exists("myfig.png"):
+    # os.remove("myfig.png")
+#plt.savefig("myfig.png")
+plt.show()

@@ -4,18 +4,26 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import os
+from io import BytesIO
+import base64
 
 app = Blueprint('t20Stat', __name__)
 
+x = False
+
 def takePoints(elem):
-    return elem[6]
+    return int(elem['Points'])
 
 @app.route('/stats/')
 def stats(info = None,data=None,image=None):
     if 'username' not in session.keys():
         return redirect('/auth/signin')
     #print(info)
-    return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image)
+    if image==None:
+        return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image)
+    else:
+        return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image.decode('utf8'))
+
 
 
 @app.route('/show_stats',methods=['POST', 'GET'])
@@ -89,22 +97,30 @@ def show_stats():
         # val_ticks = [1,2,3,4,5,6,7,8]
         # lost_ticks = [1.4,2.4,3.4,4.4,5.4,6.4,7.4,8.4]
 
+        plt.close()
+
+
         plt.bar(val_ticks, np_pnt_tbl[:, 1], width=0.4, color='g', alpha=0.6, label='Won')
         plt.bar(lost_ticks, np_pnt_tbl[:, 2], width=0.4, color='r', alpha=0.6, label='Lost')
         plt.yticks(val_ticks)
         plt.ylabel("Matches")
+        plt.gcf().subplots_adjust(bottom=0.15)
         plt.xticks(val_ticks, team_abr, rotation='vertical')
+        plt.xlabel("Teams")
         plt.grid(True)
-        plt.legend()
         plt.title(title)
 
-        if os.path.exists("myfig.png"):
-            os.remove("myfig.png")
-
-        plt.savefig("myfig.png")
+        plt.legend()
 
 
-        #stat_data.sort(key=takePoints, reverse=True)
-        return stats(data,stat_data)
+        figfile = BytesIO()
+        plt.savefig(figfile, format='png')
+        figfile.seek(0)
+        figdata_png = base64.b64encode(figfile.getvalue())
+
+        print(stat_data)
+        stat_data.sort(key=takePoints, reverse=True)
+        print(stat_data)
+        return stats(data,stat_data,figdata_png)
 
     return  stats(data,None)

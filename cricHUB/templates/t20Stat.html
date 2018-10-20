@@ -47,18 +47,25 @@
 
     function display_error() {
 
-        if (valid(tournament)) {
-            document.getElementById("Tournament").value = tournament;
-            change_option();
+        if(!valid(tournament_msg) && !valid(year_msg))
+        {
+            document.getElementById("Tournament").value = "Choose..."
+            document.getElementById("Year").value = "Choose..."
         }
-        if (valid(year))
-            document.getElementById("Year").value = year;
 
+        if(valid(tournament))
+        {
+            document.getElementById("Tournament").value = tournament
+            change_option()
+        }
 
         if (valid(tournament_msg))
             document.getElementById("Tournament_msg").innerText = tournament_msg;
         if (valid(year_msg))
+        {
+
             document.getElementById("Year_msg").innerText = year_msg;
+        }
     }
 
     function change_option() {
@@ -101,13 +108,12 @@
     }
 </script>
 
-
 <div align="center">
 
     <div style="width: 70%">
 
         {% if stat_data is none %}
-        <h2 class="page-header"> T20 Tournament Statistics and Data Visualization</h2>
+        <h2> T20 Tournament Statistics and Data Visualization</h2>
         <br/>
         <form action="/show_stats" method="POST" style="width: 30%">
             <div class="form-group" style="width: 130%">
@@ -140,13 +146,22 @@
             <script>
 
 
-                document.write(tournament + " " + year)
+                document.write(tournament + " - " + year)
 
                 document.write(" TEAM STATISTICS AND DATA VISUALIZATION ")
             </script>
 
         </h4>
 {#        <img src="{{ url_for('cricRATING',filenae='myfig.png') }}">#}
+{#            <img width=500 height=500 src="." alt="Can't show t20 STAT">#}
+            <img width=640 height=480 src="data:image/png;base64,{{ stat_image }}"\>
+
+            <br/>
+            <br/>
+            <br/>
+
+            <h4 > Points Table </h4>
+
         <table id="commListTable">
             <tr class="header">
                 <th align="center" style="width: 30%" align="center"> Team</th>
