@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .live-score-listing {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            width: 100%
+        }
+
+        .live-score-listing > h2 {
+            background: #145e7d none repeat scroll 0 0;
+            font-size: 20px;
+            padding: 10px;
+            text-transform: uppercase
+        }
+
+    .mod-live-score .live-score-item {
+        background: #f1f2f3 none repeat scroll 0 0;
+        border-top: 3px solid #00aeff;
+        margin-bottom: 15px;
+        padding: 0
+    }
+
+    .mod-live-score .live-score-item {
+        border: 1px solid #d9d9d9;
+        padding: 5px;
+        margin-bottom: 15px
+    }
+    .match-venue-livescrore .team_head_alert span {
+                            float: right;
+                            margin-left: 2px;
+                        }
+    .match-venue-livescrore .team_head_alert span.more:before {
+                            background-image: url(/nstatic/content/images/icon_data.png);
+                        }
+
+                        .match-venue-livescrore .team_head_alert span:before {
+                            content: '';
+                            font-size: 25px;
+                            cursor: pointer;
+                            width: 47px;
+                            height: 25px;
+                            text-align: center;
+                            display: inline-block;
+                            background: #44b1e8 url() no-repeat center;
+                        }
+
+                        .match-venue-livescrore .team_head_alert span.notify:before {
+                            background-image: url(/nstatic/content/images/icon_notify.png);
+                        }
+                        .ln_bn .post-meta span, .ln_bn .list-type-9 .post-description p, .ln_bn .vertical-a .syndicatedItem .video-title, .ln_bn .vertical-a .video-title, .ln_bn .organic-thumbnails-a .video-title, .ln_bn .organic-thumbnails-b .video-title, .ln_bn .thumbnails-b .syndicatedItem .video-title, .ln_bn.si-football .photo-crtsy, .ln_bn.si-football .mod-article .article-content p, .ln_bn .topic-soical-links, .ln_bn .topic-soical-links > a, .ln_bn.si-football .ab_organic-thumbnails-a_4x2 .video-title, .ln_bn.si-football .thumbnails-a .syndicatedItem .video-title, .ln_bn .nd-txt-content, .ln_bn .mod-standing-football .nd-table-th, .ln_bn .post-type-article .post-title a, .ln_bn .match-tab > ul > li > a, .ln_bn .mod-team-schedule .match-score span, .ln_bn .team-inns, .ln_bn .match-result > span, .ln_bn .cric-result-cnt table tr th, .ln_bn .crick-result table tr th, .ln_bn .team-tab li, .ln_bn .list-type-8 .post-title h1, .ln_bn .list-type-8 .post-title h2, .ln_bn .list-type-8 .post-title h3, .ln_bn .post-title-head, .ln_bn .post-title-links, .ln_bn .match-venue-livescrore, .ln_bn .match-venue-livescrore > a, .ln_bn .post-meta-news, .ln_bn .post-tag-3 > a, .ln_bn .date-top, .ln_bn .mod-head.microsite-detail-title > span, .ln_bn .author_comment .author-description h3, .ln_bn #testimonials .testimonial_text, .ln_bn #testimonials .testimonial_text a, .ln_bn .nw-ot h3, .ln_bn .nw-ot h3 a, .ln_bn .ln_bn .para-loc, .ln_bn .story_highlight, .ln_bn.si-football .content-wrapper, .ln_bn.si-football .content-wrapper-stats, .ln_bn.si-football .content-wrapper-stats-team, .ln_bn.si-football .content-wrapper-stats3, .ln_bn .mod-article .article-content strong, .ln_bn .info > span > a, .ln_bn .info > span > span, .ln_bn .sticky_footer ol li, .ln_bn .mod-article .article-content strong a, .ln_bn .comments_slide, .ln_bn .mod-head-live-score, .ln_bn .mod-head-live-score h2, .ln_bn .mod-head-live-score, .ln_bn .mod-head-live-score h2, .ln_bn .mtch_center h2, .ln_bn .tm_nm_txt, .ln_bn .tm_nm_txt_2, .ln_bn .tm_nm_txt_3, .ln_bn .tm_score, .ln_bn .team2 .tm_nm, .ln_bn .m_score1, .ln_bn .mtch_result, .ln_bn .fright, .ln_bn .score_teaser2, .ln_bn .score_teaser {
+                        font-family: 'Lohit Bengali', sans-serif
+                        }
+                        .ln_en .post-meta span, .ln_en .list-type-9 .post-description p, .ln_en .vertical-a .syndicatedItem .video-title, .ln_en .vertical-a .video-title, .ln_en .organic-thumbnails-a .video-title, .ln_en .organic-thumbnails-b .video-title, .ln_en .thumbnails-b .syndicatedItem .video-title, .ln_en.si-football .photo-crtsy, .ln_en.si-football .mod-article .article-content p, .ln_en .topic-soical-links, .ln_en .topic-soical-links > a, .ln_en.si-football .ab_organic-thumbnails-a_4x2 .video-title, .ln_en.si-football .thumbnails-a .syndicatedItem .video-title, .ln_en .nd-txt-content, .ln_en .mod-standing-football .nd-table-th, .ln_en .post-type-article .post-title a, .ln_en .match-tab > ul > li > a, .ln_en .mod-team-schedule .match-score span, .ln_en .team-inns, .ln_en .match-result > span, .ln_en .cric-result-cnt table tr th, .ln_en .crick-result table tr th, .ln_en .team-tab li, .ln_en .list-type-8 .post-title h1, .ln_en .list-type-8 .post-title h2, .ln_en .list-type-8 .post-title h3, .ln_en .post-title-head, .ln_en .post-title-links, .ln_en .match-venue-livescrore, .ln_en .match-venue-livescrore > a, .ln_en .post-meta-news, .ln_en .post-tag-3 > a, .ln_en .date-top, .ln_en .mod-head.microsite-detail-title > span, .ln_en .author_comment .author-description h3, .ln_en #testimonials .testimonial_text, .ln_en #testimonials .testimonial_text a, .ln_en .nw-ot h3, .ln_en .nw-ot h3 a, .ln_en .ln_en .para-loc, .ln_en .story_highlight, .ln_en.si-football .content-wrapper, .ln_en.si-football .content-wrapper-stats, .ln_en.si-football .content-wrapper-stats-team, .ln_en.si-football .content-wrapper-stats3, .ln_en .mod-article .article-content strong, .ln_en .info > span > a, .ln_en .info > span > span, .ln_en .sticky_footer ol li, .ln_en .mod-article .article-content strong a, .ln_en .comments_slide, .ln_en .mod-head-live-score, .ln_en .mod-head-live-score h2, .ln_en .mod-head-live-score, .ln_en .mod-head-live-score h2, .ln_en .mtch_center h2, .ln_en .tm_nm_txt, .ln_en .tm_nm_txt_2, .ln_en .tm_nm_txt_3, .ln_en .tm_score, .ln_en .team2 .tm_nm, .ln_en .m_score1, .ln_en .mtch_result, .ln_en .fright, .ln_en .score_teaser2, .ln_en .score_teaser {
+                        font-family: Roboto, sans-serif
+                        }
+                        .match-venue-livescrore {
+        background: #40ade7 none repeat scroll 0 0;
+        margin: 0 0 20px;
+        padding: 5px 10px;
+        width: 100%
+    }
+
+    .match-venue-livescrore > span {
+        color: #fff;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        margin: 0;
+        padding: 0;
+        text-transform: uppercase;
+        width: auto
+    }
+
+    .match-venue-livescrore > a {
+        color: #fff;
+        display: inline;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        text-transform: uppercase
+    }
+    .match-venue-livescrore {
+        background: #40ade7 none repeat scroll 0 0;
+        margin: 0 0 20px;
+        padding: 5px 10px;
+        width: 100%
+    }
+
+    </style>
+</head>
+<body>
+
+<div class="live-score-listing">
+    <h2>Current Score</h2>
+    <a class="url" href="/cricket/scoreboard?matchid=pkau10162018187594"
+       title="Pakistan vs Australia 2nd Test Live Scorecard">
+        <div class="live-score-item clearfix vevent">
+            <div class="match-venue-livescrore">
+                <span>2nd Test, Pakistan and Australia in UAE, 2 Test Series, 2018</span>
+                <div class="team_head_alert">
+                                                            <span class="notify"
+                                                                  onclick="__alwmatch('pkau10162018187594','Pakistan vs Australia');return false;"
+                                                                  href="javascript:void(0);"></span>
+                </div>
+                <span class="live-scorecard">Live Scorecard >></span>
+
+            </div>
+            <div class="team-vs clearfix">
+                <span style="display:none;" class="description">Live score Pakistan vs Australia 2nd Test,Pakistan and Australia in UAE, 2 Test Series, 2018</span>
+                <span style="display:none;" class="summary">Pakistan vs Australia</span>
+
+                <div class="team team-a">
+                    <div class="team-wrapper">
+                        <div class="team-name">
+                            <span title="Pakistan Cricket Team">Pakistan</span>
+                        </div>
+                        <div id="teama_pkau10162018187594" class="team-inns">
+                            <span>1st Inns:</span> 154/5 (43.3)<br/>
+                            <span>2nd Inns:</span> <span>Yet to bat</span>
+                        </div>
+                        <div class="team-image">
+                            <img src="https://s.ndtvimg.com/images/entities/120/pakistan-2116.png"
+                                 alt="Pakistan Cricket Team"
+                                 title="Pakistan Cricket Team"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="vs">
+                    <span>vs</span>
+                </div>
+                <div class="team team-b">
+                    <div class="team-wrapper">
+                        <div class="team-name">
+                            <span title="Australia Cricket Team">Australia</span>
+                        </div>
+                        <div id="teamb_pkau10162018187594" class="team-inns">
+                            <span>1st Inns:</span> <br/>
+                            <span>2nd Inns:</span> <span>Yet to bat</span>
+
+                        </div>
+                        <div class="team-image">
+                            <img src="https://s.ndtvimg.com/images/entities/120/australia-7.png"
+                                 alt="Australia Cricket Team"
+                                 title="Australia Cricket Team"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="dtstart"
+                  style="display:none;">2018-10-16T11:30+05:30</span>
+            <span style="display:none;"
+                  class="dtend">2018-10-20T18:30+05:30</span>
+            <span style="display:none;" class="location">Sheikh Zayed Stadium, Abu Dhabi</span>
+            <div class="match-result">
+                <span id="status_pkau10162018187594">Pakistan elected to bat</span>
+            </div>
+        </div>
+    </a>
+    <div id="taboola-scorecard-native-column-thumbnails"></div>
+    <script type="text/javascript">
+        window._taboola = window._taboola || [];
+        _taboola.push({
+            mode: 'thumbnails-u',
+            container: 'taboola-scorecard-native-column-thumbnails',
+            placement: 'Scorecard Native Column Thumbnails',
+            target_type: 'mix'
+        });
+    </script>
+
+</div>
+
+
+</body>
+</html>

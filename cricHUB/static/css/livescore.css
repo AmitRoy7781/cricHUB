@@ -1,13 +1,646 @@
-{% extends "/common/base.html" %}
-
-{% block content %}
-{% include '/common/header.html' %}
-<head>
 
 
-    <title>Live Cricket Scores</title>
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459WRhyzbi.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
 
-    <style>
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459W1hyzbi.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459WZhyzbi.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gTD_u50.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3g3D_u50.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gbD_u50.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gfD_u50.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gnD_g.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 100;
+        src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOiCnqEu92Fr1Mu51QrEz0dL_nz.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 100;
+        src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOiCnqEu92Fr1Mu51QrEzQdL_nz.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 100;
+        src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOiCnqEu92Fr1Mu51QrEzwdL_nz.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 100;
+        src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOiCnqEu92Fr1Mu51QrEzMdL_nz.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 100;
+        src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOiCnqEu92Fr1Mu51QrEz8dL_nz.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 100;
+        src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOiCnqEu92Fr1Mu51QrEz4dL_nz.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 100;
+        src: local('Roboto Thin Italic'), local('Roboto-ThinItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOiCnqEu92Fr1Mu51QrEzAdLw.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 300;
+        src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TjASc3CsTKlA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 300;
+        src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TjASc-CsTKlA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 300;
+        src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TjASc2CsTKlA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 300;
+        src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TjASc5CsTKlA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 300;
+        src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TjASc1CsTKlA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 300;
+        src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TjASc0CsTKlA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 300;
+        src: local('Roboto Light Italic'), local('Roboto-LightItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51TjASc6CsQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xFIzIFKw.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xMIzIFKw.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xEIzIFKw.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xLIzIFKw.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xHIzIFKw.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xGIzIFKw.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Roboto Italic'), local('Roboto-Italic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1Mu51xIIzI.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 500;
+        src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc3CsTKlA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 500;
+        src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc-CsTKlA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 500;
+        src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc2CsTKlA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 500;
+        src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc5CsTKlA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 500;
+        src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc1CsTKlA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 500;
+        src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc0CsTKlA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: italic;
+        font-weight: 500;
+        src: local('Roboto Medium Italic'), local('Roboto-MediumItalic'), url(https://fonts.gstatic.com/s/roboto/v18/KFOjCnqEu92Fr1Mu51S7ACc6CsQ.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 100;
+        src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1MmgVxFIzIFKw.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 100;
+        src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1MmgVxMIzIFKw.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 100;
+        src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1MmgVxEIzIFKw.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 100;
+        src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1MmgVxLIzIFKw.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 100;
+        src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1MmgVxHIzIFKw.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 100;
+        src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1MmgVxGIzIFKw.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 100;
+        src: local('Roboto Thin'), local('Roboto-Thin'), url(https://fonts.gstatic.com/s/roboto/v18/KFOkCnqEu92Fr1MmgVxIIzI.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 300;
+        src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfCRc4EsA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfABc4EsA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfCBc4EsA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBxc4EsA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfCxc4EsA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfChc4EsA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCRc4EsA.woff2) format('woff2');
+        unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfABc4EsA.woff2) format('woff2');
+        unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCBc4EsA.woff2) format('woff2');
+        unicode-range: U+1F00-1FFF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBxc4EsA.woff2) format('woff2');
+        unicode-range: U+0370-03FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfCxc4EsA.woff2) format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfChc4EsA.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF
+    }
+
+    @font-face {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 900;
+        src: local('Roboto Black'), local('Roboto-Black'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmYUtfBBc4.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD
+    }
+
+
         hr, img, legend {
             border: 0
         }
@@ -9683,10 +10316,10 @@
         .si-football .nd-secondary-nav {
             background-color: #009933
         }
-    </style>
 
 
-    <style>.si-microsite .mod {
+
+    .si-microsite .mod {
         background: #fff none repeat scroll 0 0;
         float: left;
         margin-bottom: 0;
@@ -16973,254 +17606,4 @@
 
     .mod-article .article-content iframe {
         max-width: 100%
-    }</style>
-
-
-</head>
-
-<body class="si-microsite  si-football ln_en">
-
-
-
-
-<!-- Header ends -->
-<!-- breadcrumb starts -->
-
-
-<script type="application/ld+json">
-        {
-        "@context": "http://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [{"@type": "ListItem","position": 1,"item": {"@id": "/cricket","name": "Cricket"}},{"@type": "ListItem","position": 2,"item": {"@id": "","name": "Scores"}}]
-        }
-
-</script>
-
-<!-- End breadcrumb -->
-<!--Container starts here-->
-<div id="container">
-
-
-    <div class="mainbody">
-        <div class="row">
-            <!--Left Column starts-->
-
-
-
-
-                    <style>
-                        .match-venue-livescrore .team_head_alert span.more:before {
-                            background-image: url(/nstatic/content/images/icon_data.png);
-                        }
-
-                        .match-venue-livescrore .team_head_alert span:before {
-                            content: '';
-                            font-size: 25px;
-                            cursor: pointer;
-                            width: 47px;
-                            height: 25px;
-                            text-align: center;
-                            display: inline-block;
-                            background: #44b1e8 url() no-repeat center;
-                        }
-
-                        .match-venue-livescrore .team_head_alert span.notify:before {
-                            background-image: url(/nstatic/content/images/icon_notify.png);
-                        }
-
-                        .match-venue-livescrore .team_head_alert span:before {
-                            content: '';
-                            font-size: 25px;
-                            cursor: pointer;
-                            width: 47px;
-                            height: 25px;
-                            text-align: center;
-                            display: inline-block;
-                            background: #44b1e8 url() no-repeat center;
-                        }
-
-                        .match-venue-livescrore .team_head_alert span {
-                            float: right;
-                            margin-left: 2px;
-                        }
-                    </style>
-
-
-                        <!--Left Top starts-->
-
-                            <div class="mod nd-mod-header">
-                                <div class="total-share-container">
-                                    <div class="nd-left">
-                                        <div class="content-wrap">
-                                            <div class="mod-head">
-                                                <h1></h1>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="nd-right">
-                                        <div class="content-wrap">
-                                            <div class="total-share">
-                                                <a>
-                                                    <span></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-
-                            <!-- Live-Score Start -->
-                            <div class="mod-live-score clearfix">
-                                <div class="content-box">
-                                    <div class="live-score-listing">
-
-                                        <style>
-                                            .team_head_alert {
-                                                float: right;
-                                                width: auto;
-                                            }
-                                        </style>
-                                        <script type="text/javascript"
-                                                src="/nstatic/content/js/LiveScoreWidget.js?ver=43.5"></script>
-
-
-                                        <!-- Live-Score End -->
-                                        <div class="team-vs clearfix">
-                                            <div class="team team-a">
-                                                <div class="team-wrapper">
-                                                    <div class="team-name">
-                                                        <span title="India Cricket Team">India</span>
-                                                    </div>
-                                                    <div class="team-inns">
-                                                        <span>1st Inns:</span> 367 (106.4) <br/>
-                                                        <span>2nd Inns:</span> 75/0 (16.1)
-                                                    </div>
-                                                    <div class="team-image">
-                                                        <img src="https://s.ndtvimg.com/images/entities/120/india-6.png"
-                                                             alt="India Cricket Team" title="India Cricket Team"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="vs">
-                                                <span>vs</span>
-                                            </div>
-                                            <div class="team team-b">
-                                                <div class="team-wrapper">
-                                                    <div class="team-name">
-                                                        <span title="West Indies Cricket Team"
-                                                              alt="West Indies Cricket Team">West Indies</span>
-                                                    </div>
-                                                    <div class="team-inns">
-                                                        <span>1st Inns:</span> 311 (101.4) <br/>
-                                                        <span>2nd Inns:</span> 127 (46.1)
-                                                    </div>
-                                                    <div class="team-image">
-                                                        <img src="https://s.ndtvimg.com/images/entities/120/west-indies-2119.png"
-                                                             alt="West Indies Cricket Team"
-                                                             title="West Indies Cricket Team"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="match-result">
-                                            <span>India beat West Indies by 10 wickets</span>
-                                        </div>
-                                        <span class="dtstart" style="display:none;">2018-10-12T09:30+05:30</span>
-                                        <span style="display:none;" class="dtend">2018-10-14T17:18+05:30</span>
-                                        <span style="display:none;" class="location">Rajiv Gandhi International Stadium, Hyderabad</span>
-                                    </div>
-                                    </a>
-                                    <a href="/cricket/scoreboard?matchid=slen10132018186482"
-                                       title="Sri Lanka vs England 2nd ODI Scorecard">
-                                        <div class="live-score-item clearfix vevent">
-                                            <div class="match-venue-livescrore">
-                                                <span>2nd ODI, England in Sri Lanka, 5 ODI Series, 2018</span>
-                                                <span class="live-scorecard">ScoreCard >></span>
-                                            </div>
-                                            <span style="display:none;" class="description">Recent Sri Lanka vs England 2nd ODI,England in Sri Lanka, 5 ODI Series, 2018</span>
-                                            <span style="display:none;" class="summary">Sri Lanka vs England</span>
-                                            <div class="team-vs clearfix">
-                                                <div class="team team-a">
-                                                    <div class="team-wrapper">
-                                                        <div class="team-name">
-                                                            <span title="Sri Lanka Cricket Team">Sri Lanka</span>
-                                                        </div>
-                                                        <div class="team-inns">
-                                                            140/5 (29.0)
-                                                        </div>
-                                                        <div class="team-image">
-                                                            <img src="https://s.ndtvimg.com/images/entities/120/sri-lanka-2118.png"
-                                                                 alt="Sri Lanka Cricket Team"
-                                                                 title="Sri Lanka Cricket Team"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="vs">
-                                                    <span>vs</span>
-                                                </div>
-                                                <div class="team team-b">
-                                                    <div class="team-wrapper">
-                                                        <div class="team-name">
-                                                            <span title="England Cricket Team"
-                                                                  alt="England Cricket Team">England</span>
-                                                        </div>
-                                                        <div class="team-inns">
-                                                            278/9 (50.0)
-                                                        </div>
-                                                        <div class="team-image">
-                                                            <img src="https://s.ndtvimg.com/images/entities/120/england-5.png"
-                                                                 alt="England Cricket Team"
-                                                                 title="England Cricket Team"/>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="match-result">
-                                                <span>England beat Sri Lanka by 31 runs (D/L method)</span>
-                                            </div>
-                                            <span class="dtstart" style="display:none;">2018-10-13T10:00+05:30</span>
-                                            <span style="display:none;" class="dtend">2018-10-13T10:00+05:30</span>
-                                            <span style="display:none;" class="location">Rangiri Dambulla International Stadium, Rangiri</span>
-                                        </div>
-                                    </a>
-
-                                    <div class="more-matches">
-                                        <a href="/cricket/results" title="Recent Cricket Matches"><span>More Recent Matches >></span></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="taboola-scorecard-native-column-thumbnails-3"></div>
-                            <script type="text/javascript">
-                                window._taboola = window._taboola || [];
-                                _taboola.push({
-                                    mode: 'thumbnails-u',
-                                    container: 'taboola-scorecard-native-column-thumbnails-3',
-                                    placement: 'Scorecard Native Column Thumbnails 3',
-                                    target_type: 'mix'
-                                });
-                            </script>
-
-                            <!-- Live-Score End -->
-
-
-
-                <!-- Live-Score End -->
-            </div>
-
-            <!--Left Top ends-->
-        </div>
-
-
-        <!--cb[e]-->
-        <div id="__cube" data-site="sports" data-size="120"></div>
-
-    </div>
-</div>
-</body>
-{% include '/common/footer.html' %}
-{% include '/common/footer-social.html' %}
-{% endblock %}
-
+    }
