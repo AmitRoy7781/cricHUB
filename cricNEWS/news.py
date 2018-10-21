@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
-import re
+
 
 
 def URL():
@@ -15,7 +15,6 @@ def SOUP(url):
 
         big = soup.find_all('div', {'class': 'big-crd-main'})  # most popular news
         small = soup.find_all('div', {'class': 'sml-crd-main'})
-
 
         # print(big)
         for i in big:

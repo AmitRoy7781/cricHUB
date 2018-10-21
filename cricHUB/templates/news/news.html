@@ -188,6 +188,7 @@
                 <div class="cb-col cb-col-67 cb-nws-lft-col">
                     <div id="640x40" class="ad-unit" style="padding:0; margin:0; display:block;"></div>
                     <h1 class="cb-font-24 line-ht30">Cricket News and Editorials</h1>
+                    <h6 >Source: www.cricbuzz.com</h6>
 
                     {% for item in news_data %}
 
@@ -203,7 +204,7 @@
                                     <meta itemprop="url" content="https:" + {{ item["news_img"] }}>
 
                                     <a target="_self"
-                                       href="www.cricbuzz.com/cricket-news/104671/jonny-bairstow-in-race-against-time-to-be-fit-for-sri-lanka-tests-england-cricket-team"
+                                       href="//www.cricbuzz.com/{{ item["news_href"]}}"
                                        title="{{ item["news_title"] }}">
 
                                         <img height="152" width="205"
@@ -222,7 +223,7 @@
                                     <h2 class="cb-nws-hdln cb-font-18 line-ht24">
                                         <a target="_self"
                                            class="cb-nws-hdln-ancr text-hvr-underline"
-                                           href="/cricket-news/104671/jonny-bairstow-in-race-against-time-to-be-fit-for-sri-lanka-tests-england-cricket-team"
+                                           href="//www.cricbuzz.com/{{item["news_href"]}}"
                                            title="{{ item["news_title"] }}">
                                             {{ item["news_headline"] }}
                                         </a>
