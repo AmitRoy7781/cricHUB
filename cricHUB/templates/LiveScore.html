@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "/common/base.html" %}
+
+{% block content %}
+{% include '/common/header.html' %}
 <head>
     <script type="text/javascript" src="/js/jqueryminweb?ver=43.5" async></script>
 
@@ -8146,7 +8148,7 @@
             font-family: robotomedium, sans-serif
         }
 
-        @media (min-width: 768px){#container,.si-col-sm-12 {
+        @media (min-width: 768px){.si-col-sm-12 {
             width: 100%
         }
 
@@ -8269,7 +8271,7 @@
             }
         }
 
-        @media (min-width: 992px){#container,.si-col-md-12 {
+        @media (min-width: 992px){si-col-md-12 {
             width: 100%
         }
 
@@ -8993,7 +8995,7 @@
             }
         }
 
-        @media screen and (max-width: 767px){#container,.mod-series-stats .series-stats-cat .tab {
+        @media screen and (max-width: 767px){.mod-series-stats .series-stats-cat .tab {
             width: 100%
         }
 
@@ -9133,7 +9135,7 @@
             border-bottom: 6px solid #fff
         }
 
-        @media (max-width: 1233px)and (min-width: 10px){#container,.si-microsite .wrapper {
+        @media (max-width: 1233px)and (min-width: 10px){.si-microsite .wrapper {
             width: 1200px
         }
         }
@@ -15068,7 +15070,7 @@
         top: -45px
     }
 
-    }
+
     .popup .team-section {
         text-align: center;
         padding: 10px 0
@@ -17469,7 +17471,7 @@
         font-family: montserratregular, sans-serif
     }
 
-    .ln_en .list-type-2 .post-title h1, .ln_en .list-type-2 .post-title h2, .ln_en .list-type-2 .post-title h3, .ln_en.si-football .mod-article .article-related .mod-head p, .ln_en .mod-head h2, .ln_en .mod-head h3, .ln_en .mod-head p, .ln_en .map-box-head, .ln_en .map-container h4, .ln_en.si-football .nd-mod-header h1, .ln_en .mod-head span,
+    .ln_en .list-type-2 .post-title h1, .ln_en .list-type-2 .post-title h2, .ln_en .list-type-2 .post-title h3, .ln_en.si-football .mod-article .article-related .mod-head p, .ln_en .mod-head h2, .ln_en .mod-head h3, .ln_en .mod-head p, .ln_en .map-box-head, .ln_en .map-container h4, .ln_en.si-football .nd-mod-header h1, .ln_en .mod-head span
 
     ,
     .ln_en .mod-fixture-football .nd-block-section-head.nd-head-txt, .ln_en .mod-standing-football .nd-block-section-head.nd-head-txt, .ln_en .mod-standing-football .nd-select-head, .ln_en .mod_team_header .left-side h1, .ln_en .mod_second_nav h2, .ln_en .tab-container .tab li, .ln_en .mod-gallery .list-type-1 .post-title h1, .ln_en .mod-gallery .list-type-1 .post-title h2, .ln_en .mod-gallery .list-type-1 .post-title h3, .ln_en .mod-video .list-type-1 .post-title h1, .ln_en .mod-video .list-type-1 .post-title h2, .ln_en .mod-video .list-type-1 .post-title h3, .ln_en .mod-series-stats span.team-name, .ln_en .mod-team-squad .mod-head h2, .ln_en .nd-footer .links h3, .ln_en .nd-footer .links p, .ln_en .category a, .ln_en .mod-history-listing .nd-history-years, .ln_en .mod-history-listing .team-record span, .ln_en .mod-team-listing .nd-team-name, .ln_en .mod-knock-out .match-status span, .ln_en .widget-over-comparison .nd-table-td.nd-team, .ln_en .widget-over-comparison .nd-table-th.nd-team, .ln_en .widget-over-comparison .nd-over-count, .ln_en.si-microsite #side-nav ul li a {
@@ -17520,7 +17522,7 @@
         font-family: 'Lohit Bengali', sans-serif
     }
 
-    .ln_bn .list-type-2 .post-title h1, .ln_bn .list-type-2 .post-title h2, .ln_bn .list-type-2 .post-title h3, .ln_bn.si-football .mod-article .article-related .mod-head p, .ln_bn .mod-head h2, .ln_bn .mod-head h3, .ln_bn .mod-head p, .ln_bn .map-box-head, .ln_bn .map-container h4, .ln_bn.si-football .nd-mod-header h1, .ln_bn .mod-head span,
+    .ln_bn .list-type-2 .post-title h1, .ln_bn .list-type-2 .post-title h2, .ln_bn .list-type-2 .post-title h3, .ln_bn.si-football .mod-article .article-related .mod-head p, .ln_bn .mod-head h2, .ln_bn .mod-head h3, .ln_bn .mod-head p, .ln_bn .map-box-head, .ln_bn .map-container h4, .ln_bn.si-football .nd-mod-header h1, .ln_bn .mod-head span
 
     ,
     .ln_bn .mod-fixture-football .nd-block-section-head.nd-head-txt, .ln_bn .mod-standing-football .nd-block-section-head.nd-head-txt, .ln_bn .mod-standing-football .nd-select-head, .ln_bn .mod_team_header .left-side h1, .ln_bn .mod_second_nav h2, .ln_bn .tab-container .tab li, .ln_bn .mod-gallery .list-type-1 .post-title h1, .ln_bn .mod-gallery .list-type-1 .post-title h2, .ln_bn .mod-gallery .list-type-1 .post-title h3, .ln_bn .mod-video .list-type-1 .post-title h1, .ln_bn .mod-video .list-type-1 .post-title h2, .ln_bn .mod-video .list-type-1 .post-title h3, .ln_bn .mod-series-stats span.team-name, .ln_bn .mod-team-squad .mod-head h2, .ln_bn .nd-footer .links h3, .ln_bn .nd-footer .links p, .ln_bn .category a, .ln_bn .mod-history-listing .nd-history-years, .ln_bn .mod-history-listing .team-record span, .ln_bn .mod-team-listing .nd-team-name, .ln_bn .mod-knock-out .match-status span, .ln_bn .widget-over-comparison .nd-table-td.nd-team, .ln_bn .widget-over-comparison .nd-table-th.nd-team, .ln_bn .widget-over-comparison .nd-over-count, .ln_bn.si-microsite #side-nav ul li a {
@@ -18606,5 +18608,7 @@
     </div>
 </div>
 </body>
-</html>html
+{% include '/common/footer.html' %}
+{% include '/common/footer-social.html' %}
+{% endblock %}
 

@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask,redirect,session, render_template
 from cricAuth.auth import app as auth
 from cricRanking.show_ranking import app as ranking
 from cricSTAT.t20Stat import app as stat
@@ -18,7 +18,9 @@ app.register_blueprint(stat)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    if 'username' not in session.keys():
+        return redirect('/auth/signin')
+    return render_template('newsTwitter.html')
 
 
 @app.route('/live-score/')
