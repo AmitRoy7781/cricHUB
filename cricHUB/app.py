@@ -29,7 +29,7 @@ def home():
 
 @app.route('/live-score/')
 def score():
-    return render_template('livescore_try.html')
+    return render_template('LiveScore.html')
 
 
 if __name__ == '__main__':
