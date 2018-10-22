@@ -5,243 +5,282 @@
     <head>
         <meta charset="utf-8">
 
-        <style>body {
-            background: #E3E6E3;
-            font-family: helvetica, "Segoe UI", Arial, sans-serif;
-            color: #222;
-            font-size: 14px;
-            line-height: 1.5;
-            margin: 0;
-        }
+        <script>
+            {#function yHandler() {#}
+            {#    // Watch video for line by line explanation of the code#}
+            {#    // http://www.youtube.com/watch?v=eziREnZPml4#}
+            {#    var wrap = document.getElementById('wrap');#}
+            {#    var contentHeight = wrap.offsetHeight;#}
+            {#    var yOffset = window.pageYOffset;#}
+            {#    var y = yOffset + window.innerHeight;#}
+            {#    if (y >= contentHeight) {#}
+            {#        // Ajax call to get more dynamic data goes here#}
+            {#        wrap.innerHTML += '<div class="newData"></div>';#}
+            {#    }#}
+            {#    var status = document.getElementById('status');#}
+            {#    status.innerHTML = contentHeight + " | " + y;#}
+            {##}
+            {##}
+            {#window.onscroll = yHandler;#}
+        </script>
 
-        body, .cb-comm-pg, .cb-hm-mid {
-            min-height: 1000px
-        }
+        <style>
 
-        .container {
-            width: 980px;
-            margin: 0 auto;
-        }
+            h2 > a {
+                position: relative;
+                color: #000;
+                text-decoration: none;
+            }
 
-        .page {
-            max-width: 980px;
-            margin: 0 auto;
-            position: relative;
-        }
+            h2 > a:hover {
+                color: #008fd1;
+                position: relative;
+                text-decoration: none;
+                font-size: 19px;
+                display: inline-block;
+            }
 
-        .cb-col-33 {
-            width: 33%;
-        }
+            body {
+                background: #E3E6E3;
+                font-family: helvetica, "Segoe UI", Arial, sans-serif;
+                color: #222;
+                font-size: 14px;
+                line-height: 1.5;
+                margin: 0;
+            }
 
-        .cb-col-67 {
-            width: 67%;
-        }
+            body, .cb-comm-pg, .cb-hm-mid {
+                min-height: 1000px
+            }
 
-        .cb-col-100 {
-            width: 100%;
-        }
+            .container {
+                width: 980px;
+                margin: 0 auto;
+            }
 
-        .cb-col {
-            display: inline-block;
-            box-sizing: border-box;
-            float: left;
-            min-height: 1px;
-        }
+            .page {
+                max-width: 980px;
+                margin: 0 auto;
+                position: relative;
+            }
 
-        h1 {
-            font-size: 36px;
-            line-height: 42px;
-            margin: 0;
-        }
+            .cb-col-33 {
+                width: 33%;
+            }
 
-        h2 {
-            font-size: 24px;
-            margin: 0;
-            line-height: 30px;
-        }
+            .cb-col-67 {
+                width: 67%;
+            }
 
-        h3 {
-            font-size: 18px;
-            line-height: 24px;
-            margin: 0;
-        }
+            .cb-col-100 {
+                width: 100%;
+            }
 
-        h4 {
-            font-size: 16px;
-            margin: 0;
-        }
+            .cb-col {
+                display: inline-block;
+                box-sizing: border-box;
+                float: left;
+                min-height: 1px;
+            }
 
-        h5 {
-            font-size: 14px;
-            margin: 0;
-        }
+            h1 {
+                font-size: 36px;
+                line-height: 42px;
+                margin: 0;
+            }
 
-        .cb-font-18 {
-            font-size: 18px;
-        }
+            h2 {
+                font-size: 24px;
+                margin: 0;
+                line-height: 30px;
+            }
 
-        img {
-            border: 0;
-        }
+            h3 {
+                font-size: 18px;
+                line-height: 24px;
+                margin: 0;
+            }
 
-        a {
-            text-decoration: none;
-            color: #222;
-        }
+            h4 {
+                font-size: 16px;
+                margin: 0;
+            }
 
-        a, a:hover, a:active, a:focus {
-            outline: medium none;
-        }
+            h5 {
+                font-size: 14px;
+                margin: 0;
+            }
 
-        .cb-nws-lft-col {
-            padding: 15px 20px;
-        }
+            .cb-font-18 {
+                font-size: 18px;
+            }
 
-        .cb-nws-lst-rt {
-            padding-left: 10px;
-        }
+            img {
+                border: 0;
+            }
 
-        .cb-lst-itm, .cb-bg-white {
-            background: #fff;
-        }
+            a {
+                text-decoration: none;
+                color: #222;
+            }
 
-        .cb-font-24 {
-            font-size: 24px;
-        }
+            a, a:hover, a:active, a:focus {
+                outline: medium none;
+            }
 
-        .line-ht30 {
-            line-height: 30px;
-        }
+            .cb-nws-lft-col {
+                padding: 15px 20px;
+            }
 
-        .line-ht24 {
-            line-height: 24px;
-        }
+            .cb-nws-lst-rt {
+                padding-left: 10px;
+            }
 
-        .mrgn-btm-5 {
-            margin-bottom: 5px;
-        }
+            .cb-lst-itm, .cb-bg-white {
+                background: #fff;
+            }
 
-        #scagTabContent {
-            display: block;
-            visibility: visible;
-        }
+            .cb-font-24 {
+                font-size: 24px;
+            }
 
-        #scagTabContent {
-            display: none;
-            visibility: hidden;
-        }
+            .line-ht30 {
+                line-height: 30px;
+            }
 
-        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-            display: none !important;
-        }
+            .line-ht24 {
+                line-height: 24px;
+            }
 
-        .cb-nws-time {
-            font-size: 12px;
-            padding-bottom: 5px;
-        }
+            .mrgn-btm-5 {
+                margin-bottom: 5px;
+            }
 
-        .cb-nws-hdln-ancr {
-            padding-bottom: 5px;
-        }
+            #scagTabContent {
+                display: block;
+                visibility: visible;
+            }
 
-        .cb-nws-intr {
-            color: #666;
-            padding-bottom: 5px;
-        }
+            #scagTabContent {
+                display: none;
+                visibility: hidden;
+            }
 
-        .cb-lst-itm-lg {
-            padding: 20px 0;
-        }
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
 
-        /*-------------------------Live Pages -----------------------*/
+            .cb-nws-time {
+                font-size: 12px;
+                padding-bottom: 5px;
+            }
 
-        .cb-text-link {
-            color: #1866DB;
-        }
+            .cb-nws-hdln-ancr {
+                padding-bottom: 5px;
+            }
 
-        /*Upcoming Series*/
+            .cb-nws-intr {
+                color: #666;
+                padding-bottom: 5px;
+            }
 
-        h2 {
-            font-size: 18px
-        }
+            .cb-lst-itm-lg {
+                padding: 20px 0;
+            }
 
-        .cb-col .cb-align-cen {
-            float: none;
-            text-align: center;
-            padding: 7px 25px;
-            margin-top: 20px;
-        }
+            .cb-text-link {
+                color: #1866DB;
+            }
 
-        .cb-align-cen {
-            padding-top: 10px;
-        }</style>
+            h2 {
+                font-size: 18px
+            }
+
+            .cb-col .cb-align-cen {
+                float: none;
+                text-align: center;
+                padding: 7px 25px;
+                margin-top: 20px;
+            }
+
+            .cb-align-cen {
+                padding-top: 10px;
+            }
+
+            .cb-more-btn {
+                padding: 8px 20px;
+                border-radius: 2px;
+                color: #fff;
+                background: #1f679d;
+                border: 0;
+                cursor: pointer;
+            }
+
+        </style>
 
     </head>
     <body>
-    <div class="page">
 
-        <div id="shosh" class="ad-unit shosh-embed" style="height:0; width:980px; text-align:center;"></div>
+    <div class="cb-col cb-col-67 cb-nws-lft-col">
 
-            <div class="html-refresh" url="/api/html/matches-menu" timeout="300000" disable-first-load="true">
+        <h1 class="cb-font-24 line-ht30">Cricket News and Editorials</h1>
+        <h6>Source: www.cricbuzz.com</h6>
 
-            <div class="cb-col cb-col-100 cb-bg-white">
-                <div class="cb-col cb-col-67 cb-nws-lft-col">
-                    <div id="640x40" class="ad-unit" style="padding:0; margin:0; display:block;"></div>
-                    <h1 class="cb-font-24 line-ht30">Cricket News and Editorials</h1>
-                    <h6 >Source: www.cricbuzz.com</h6>
+        {% for item in news_data %}
 
-                    {% for item in news_data %}
+            <div id="news-list" class="cb-bg-white">
 
-                        <div id="news-list" class="cb-bg-white">
+                <div class="cb-col cb-col-100 cb-lst-itm cb-lst-itm-lg">
 
-                            <div class="cb-col cb-col-100 cb-lst-itm cb-lst-itm-lg">
+                    <div class="cb-col cb-col-33" itemscope itemtype="https://schema.org/ImageObject"
+                         itemprop="image">
 
-                                <div class="cb-col cb-col-33" itemscope itemtype="https://schema.org/ImageObject"
-                                     itemprop="image">
+                        <meta itemprop="width" content="205">
+                        <meta itemprop="height" content="152">
+                        <meta itemprop="url" content="https:" + {{ item["news_img"] }}>
 
-                                    <meta itemprop="width" content="205">
-                                    <meta itemprop="height" content="152">
-                                    <meta itemprop="url" content="https:" + {{ item["news_img"] }}>
+                        <a target="_self"
+                           href="//www.cricbuzz.com/{{ item["news_href"] }}"
+                           title="{{ item["news_title"] }}">
 
-                                    <a target="_self"
-                                       href="//www.cricbuzz.com/{{ item["news_href"]}}"
-                                       title="{{ item["news_title"] }}">
-
-                                        <img height="152" width="205"
-                                             alt="{{ item["news_img_title"] }}"
-                                             title="{{ item["news_img_title"] }}"
-                                             itemprop="image"
-                                             class="cb-lst-img"
-                                             src="{{ item["news_img"] }}"
-                                             style="padding:0px;"/>
-                                    </a>
-                                </div>
-                                <div class="cb-col-67 cb-nws-lst-rt cb-col cb-col-text-container">
-                                    <div class="cb-nws-time">{{ item["news_context"] }}
-                                    </div>
-
-                                    <h2 class="cb-nws-hdln cb-font-18 line-ht24">
-                                        <a target="_self"
-                                           class="cb-nws-hdln-ancr text-hvr-underline"
-                                           href="//www.cricbuzz.com/{{item["news_href"]}}"
-                                           title="{{ item["news_title"] }}">
-                                            {{ item["news_headline"] }}
-                                        </a>
-                                    </h2>
-                                    <div class="cb-nws-intr">{{ item["news_details"] }}
-                                    </div>
-                                    <div>
-                                        <span class="cb-nws-time">{{ item["news_time"] }}</span></div>
-                                </div>
-                            </div>
+                            <img height="152" width="205"
+                                 alt="{{ item["news_img_title"] }}"
+                                 title="{{ item["news_img_title"] }}"
+                                 itemprop="image"
+                                 class="cb-lst-img"
+                                 src="{{ item["news_img"] }}"
+                                 style="padding:0px;"/>
+                        </a>
+                    </div>
+                    <div class="cb-col-67 cb-nws-lst-rt cb-col cb-col-text-container">
+                        <div class="cb-nws-time">{{ item["news_context"] }}
                         </div>
-                    {% endfor %}
 
+                        <h2 class="cb-nws-hdln cb-font-18 line-ht24">
+                            <a target="_self"
+                               class="cb-nws-hdln-ancr text-hvr-underline"
+                               href="//www.cricbuzz.com/{{ item["news_href"] }}"
+                               title="{{ item["news_title"] }}">
+                                {{ item["news_headline"] }}
+                            </a>
+                        </h2>
+                        <div class="cb-nws-intr">{{ item["news_details"] }}
+                        </div>
+                        <div>
+                            <span class="cb-nws-time">{{ item["news_time"] }}</span></div>
+                    </div>
                 </div>
             </div>
-        </div>
+        {% endfor %}
+        {#                    <div id="status">0 | 0</div>#}
+        {#    <div id="wrap"><img src="../../static/images/cricket-logo.jpg"></div>#}
+        <br/>
 
-    </div>
+        <form action="/news/more_news" method="POST">
+            <br/>
+            <button type="submit" name="more_news" value={{ page_no }} align="center" class="cb-more-btn"  title="Load More News">More News
+            </button>
+        </form>
     </div>
     </body>
 

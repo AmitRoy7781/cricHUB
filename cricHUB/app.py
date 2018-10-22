@@ -2,7 +2,7 @@ from flask import Flask,redirect,session, render_template
 from cricAuth.auth import app as auth
 from cricRanking.show_ranking import app as ranking
 from cricSTAT.t20Stat import app as stat
-from cricNEWS.lala import app as news
+from cricNEWS.news import app as news
 
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
