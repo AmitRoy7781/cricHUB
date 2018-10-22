@@ -226,59 +226,66 @@
         <h1 class="cb-font-24 line-ht30">Cricket News and Editorials</h1>
         <h6>Source: www.cricbuzz.com</h6>
 
-        {% for item in news_data %}
+        <form action="/news/detail_news" method="post">
+            {% for item in news_data %}
 
-            <div id="news-list" class="cb-bg-white">
 
-                <div class="cb-col cb-col-100 cb-lst-itm cb-lst-itm-lg">
+                <div id="news-list" class="cb-bg-white">
 
-                    <div class="cb-col cb-col-33" itemscope itemtype="https://schema.org/ImageObject"
-                         itemprop="image">
+                    <div class="cb-col cb-col-100 cb-lst-itm cb-lst-itm-lg">
 
-                        <meta itemprop="width" content="205">
-                        <meta itemprop="height" content="152">
-                        <meta itemprop="url" content="https:" + {{ item["news_img"] }}>
+                        <div class="cb-col cb-col-33" itemscope itemtype="https://schema.org/ImageObject"
+                             itemprop="image">
 
-                        <a target="_self"
-                           href="//www.cricbuzz.com/{{ item["news_href"] }}"
-                           title="{{ item["news_title"] }}">
+                            <meta itemprop="width" content="205">
+                            <meta itemprop="height" content="152">
+                            <meta itemprop="url" content="https:" + {{ item["news_img"] }}>
 
-                            <img height="152" width="205"
-                                 alt="{{ item["news_img_title"] }}"
-                                 title="{{ item["news_img_title"] }}"
-                                 itemprop="image"
-                                 class="cb-lst-img"
-                                 src="{{ item["news_img"] }}"
-                                 style="padding:0px;"/>
-                        </a>
-                    </div>
-                    <div class="cb-col-67 cb-nws-lst-rt cb-col cb-col-text-container">
-                        <div class="cb-nws-time">{{ item["news_context"] }}
-                        </div>
-
-                        <h2 class="cb-nws-hdln cb-font-18 line-ht24">
                             <a target="_self"
-                               class="cb-nws-hdln-ancr text-hvr-underline"
-                               href="//www.cricbuzz.com/{{ item["news_href"] }}"
+{#                               href="//www.cricbuzz.com/{{ item["news_href"] }}"#}
                                title="{{ item["news_title"] }}">
-                                {{ item["news_headline"] }}
+
+                                <img height="152" width="205"
+                                     alt="{{ item["news_img_title"] }}"
+                                     title="{{ item["news_img_title"] }}"
+                                     itemprop="image"
+                                     class="cb-lst-img"
+                                     src="{{ item["news_img"] }}"
+                                     style="padding:0px;"/>
                             </a>
-                        </h2>
-                        <div class="cb-nws-intr">{{ item["news_details"] }}
                         </div>
-                        <div>
-                            <span class="cb-nws-time">{{ item["news_time"] }}</span></div>
+                        <div class="cb-col-67 cb-nws-lst-rt cb-col cb-col-text-container">
+                            <div class="cb-nws-time">{{ item["news_context"] }}
+                            </div>
+
+                            <h2 class="cb-nws-hdln cb-font-18 line-ht24">
+                                <a target="_self"
+                                   class="cb-nws-hdln-ancr text-hvr-underline"
+{#                                   value="//www.cricbuzz.com/{{ item["news_href"] }}"#}
+                                   title="{{ item["news_title"] }}">
+                                    {{ item["news_headline"] }}
+                                </a>
+                            </h2>
+                            <div class="cb-nws-intr">{{ item["news_details"] }}
+                            </div>
+                            <div>
+                                <span class="cb-nws-time">{{ item["news_time"] }}</span></div>
+                            <br/>
+                            <button type="submit" name="detail_news" value="www.cricbuzz.com/{{ item["news_href"] }}" align="center" class="cb-more-btn"title="Load More News">
+                            Read More
+                            </button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        {% endfor %}
-        {#                    <div id="status">0 | 0</div>#}
-        {#    <div id="wrap"><img src="../../static/images/cricket-logo.jpg"></div>#}
+            {% endfor %}
+        </form>
+
         <br/>
 
         <form action="/news/more_news" method="POST">
             <br/>
-            <button type="submit" name="more_news" value={{ page_no }} align="center" class="cb-more-btn"  title="Load More News">More News
+            <button type="submit" name="more_news" value={{ page_no }} align="center" class="cb-more-btn"
+                    title="Load More News">More News
             </button>
         </form>
     </div>
