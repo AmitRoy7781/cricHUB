@@ -1,0 +1,144 @@
+{% extends "/common/base.html" %}
+
+{% block content %}
+{% include '/common/header.html' %}
+
+<style>
+
+    #commListTable {
+
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid #ddd;
+        font-size: 17px;
+    }
+
+    #commListTable th, #commListTable td {
+        text-align: left;
+        padding: 12px;
+        font-family: Ubuntu;
+    }
+
+    #commListTable tr {
+        border-bottom: 1px solid #ddd;
+        font-family: Ubuntu;
+        font-size: 13px;
+    }
+
+    #commListTable tr.header, #commListTable tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    .cb-more-btn {
+                padding: 8px 20px;
+                border-radius: 2px;
+                color: #fff;
+                background: #1f679d;
+                border: 0;
+                cursor: pointer;
+            }
+
+
+
+</style>
+
+<script>
+
+
+    var format = '{{ranking_info["format"]}}';
+    var format_msg = '{{ranking_info["format_msg"]}}';
+
+    var gender = '{{ranking_info["gender"]}}';
+    var gender_msg = '{{ranking_info["gender_msg"]}}';
+
+    var rank_type = '{{ranking_info["rank_type"]}}';
+    var rank_type_msg = '{{ranking_info["rank_type_msg"]}}';
+
+    function valid(str) {
+        return !(!str || 0 === str.length || !str.trim());
+    }
+
+    function display_error() {
+
+        if (valid(format))
+            document.getElementById("format").value = format;
+        if (valid(gender))
+            document.getElementById("gender").value = gender;
+        if (valid(rank_type))
+            document.getElementById("rank_type").value = rank_type;
+
+
+        if (valid(format_msg)) {
+            document.getElementById("format_msg").innerText = format_msg;
+        }
+
+        if (valid(gender_msg)) {
+            document.getElementById("gender_msg").innerText = gender_msg;
+        }
+
+        if (valid(rank_type_msg)) {
+            document.getElementById("rank_type_msg").innerText = rank_type_msg;
+        }
+
+        if (contain_rank) {
+            document.getElementById("rank_header").innerText = "ICC" + format.toUpperCase() + rank_type.toUpperCase() + "RANKING - " + gender.toUpperCase()
+        }
+
+    }
+</script>
+
+
+<div align="center">
+
+    <div style="width: 70%">
+
+
+        <h2 class="page-header"> ICC Player and Team Rankings</h2>
+        <br/>
+        <form action="/show_rank_try" method="POST" style="width: 30%">
+            <div class="form-group">
+                <label for="format">Format</label>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="format" name="format">
+                    <option selected>Choose...</option>
+                    <option value="tests">Test</option>
+                    <option value="odis">ODI</option>
+                    <option value="t20s">t2OI</option>
+                </select>
+                <span id="format_msg" style="font-size: small;color: red"></span>
+            </div>
+            <div class="form-group">
+                <label for="gender">Choose Gender</label>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="gender" name="gender">
+                    <option selected>Choose...</option>
+                    <option value="mens">Mens</option>
+                    <option value="womens">Womens</option>
+                </select>
+                <span id="gender_msg" style="font-size: small;color: red"></span>
+            </div>
+            <div class="form-group">
+                <label for="rank_type">Ranking Type</label>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="rank_type" name="rank_type">
+                    <option selected>Choose...</option>
+                    <option value="batsmen">Batsmen</option>
+                    <option value="bowlers">Bowlers</option>
+                    <option value="all-rounders">All Rounders</option>
+                    <option value="teams">Team</option>
+                </select>
+                <span id="rank_type_msg" style="font-size: small;color: red"></span>
+            </div>
+            <br/>
+            <div>
+                <button type="submit" class="cb-more-btn" value="Show Ranking">
+                    Show Ranking
+                </button>
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<br/>
+<br/>
+{% include '/common/footer.html' %}
+{% include '/common/footer-social.html' %}
+{% endblock %}

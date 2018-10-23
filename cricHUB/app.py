@@ -1,6 +1,7 @@
 from flask import Flask,redirect,session, render_template
 from cricAuth.auth import app as auth
 from cricRanking.show_ranking import app as ranking
+from cricRanking.rank_try import app as ranking_try
 from cricSTAT.t20Stat import app as stat
 from cricNEWS.news import app as news
 
@@ -12,6 +13,7 @@ app.register_blueprint(auth)
 
 # show ranking blueprint
 app.register_blueprint(ranking)
+app.register_blueprint(ranking_try)
 
 # t20 Statistics blueprint
 app.register_blueprint(stat)
