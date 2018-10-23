@@ -10,7 +10,8 @@ def search_players(player_list=None,search_status=None):
     if 'username' not in session.keys():
         return redirect('/auth/signin')
 
-    return render_template("player/search.html",player_list=player_list,search_status=search_status)
+    return render_template("player/search_widget.html")
+
 
 @app.route("/players/show_players", methods=['POST', 'GET'])
 def show_players():
