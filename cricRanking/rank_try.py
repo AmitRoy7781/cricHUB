@@ -16,6 +16,9 @@ def ranking(rank_info=None):
 
 @app.route('/show_rank_try', methods=['POST', 'GET'])
 def show_ranking():
+    if 'username' not in session.keys():
+        return redirect('/auth/signin')
+
     data = request.form.to_dict()
 
     print(data)

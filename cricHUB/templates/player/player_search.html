@@ -1,0 +1,51 @@
+{% extends "/common/base.html" %}
+
+{% block content %}
+{% include '/common/header.html' %}
+    <head>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+              id="bootstrap-css">
+
+    </head>
+    <!------ Include the above in your HEAD tag ---------->
+
+    </body>
+    <div class="container">
+
+
+    <div class="row ">
+        <div class="col-16 col-md-20 col-lg-10" align="center">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <form class="card card-sm">
+                <div class="card-body row no-gutters align-items-center">
+                    <div class="col-auto">
+                        <i class="fas fa-search h4 text-body"></i>
+                    </div>
+                    <!--end of col-->
+                    <div class="col">
+                        <input class="form-control form-control-lg form-control-borderless" type="search"
+                               placeholder="Search using Players Name">
+                    </div>
+                    <!--end of col-->
+                    <div class="col-auto">
+                        <button class="btn btn-lg btn-success" type="submit">Search</button>
+                    </div>
+                    <!--end of col-->
+                </div>
+            </form>
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+        <!--end of col-->
+    </div>
+    </div>
+
+{% include '/common/footer.html' %}
+{% include '/common/footer-social.html' %}
+{% endblock %}

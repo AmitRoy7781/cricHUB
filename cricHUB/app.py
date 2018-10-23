@@ -4,6 +4,7 @@ from cricRanking.show_ranking import app as ranking
 from cricRanking.rank_try import app as ranking_try
 from cricSTAT.t20Stat import app as stat
 from cricNEWS.news import app as news
+from cricPlayer.player import app as player
 
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
@@ -20,6 +21,10 @@ app.register_blueprint(stat)
 
 # news blueprint
 app.register_blueprint(news)
+
+#player blueprint
+app.register_blueprint(player)
+
 
 
 @app.route('/')
