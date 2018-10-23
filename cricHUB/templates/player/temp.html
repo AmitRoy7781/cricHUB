@@ -1,0 +1,1542 @@
+{% extends "/common/base.html" %}
+
+{% block content %}
+    {% include '/common/header.html' %}
+
+
+<head>
+    <meta charset="utf-8">
+    <script>var is_mobile = /symbian|tizen|midp|uc(web|browser)|MSIE (5.0|6.0|7.0|8.0)|tablet/i.test(navigator.userAgent);
+    if (is_mobile && window.location.hostname != "www1.cricbuzz.com") window.location.hostname = "m.cricbuzz.com";</script>
+    <style>body {
+        background: #E3E6E3;
+        font-family: helvetica, "Segoe UI", Arial, sans-serif;
+        color: #222;
+        font-size: 14px;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    body, .cb-comm-pg, .cb-hm-mid {
+        min-height: 1000px
+    }
+
+    .container {
+        width: 980px;
+        margin: 0 auto;
+    }
+
+    .page {
+        max-width: 980px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .cb-col-8 {
+        width: 8%;
+    }
+
+    .cb-col-10 {
+        width: 10%;
+    }
+
+    .cb-col-14 {
+        width: 14%;
+    }
+
+    .cb-col-16 {
+        width: 16%;
+    }
+
+    .cb-col-20 {
+        width: 20%;
+    }
+
+    .cb-col-25 {
+        width: 25%;
+    }
+
+    .cb-col-27 {
+        width: 27%;
+    }
+
+    .cb-col-33 {
+        width: 33%;
+    }
+
+    .cb-col-40 {
+        width: 40%;
+    }
+
+    .cb-col-46 {
+        width: 46%;
+    }
+
+    .cb-col-47 {
+        width: 47%;
+    }
+
+    .cb-col-50 {
+        width: 50%;
+    }
+
+    .cb-col-60 {
+        width: 60%;
+    }
+
+    .cb-col-66 {
+        width: 66%;
+    }
+
+    .cb-col-67 {
+        width: 67%;
+    }
+
+    .cb-col-73 {
+        width: 73%;
+    }
+
+    .cb-col-75 {
+        width: 75%;
+    }
+
+    .cb-col-84 {
+        width: 84%;
+    }
+
+    .cb-col-80 {
+        width: 80%;
+    }
+
+    .cb-col-90 {
+        width: 90%;
+    }
+
+    .cb-col-100 {
+        width: 100%;
+    }
+
+    .cb-col {
+        display: inline-block;
+        box-sizing: border-box;
+        float: left;
+        min-height: 1px;
+    }
+
+    h1 {
+        font-size: 36px;
+        line-height: 42px;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin: 0;
+        line-height: 30px;
+    }
+
+    h3 {
+        font-size: 18px;
+        line-height: 24px;
+        margin: 0;
+    }
+
+    h4 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    h5 {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    .cb-font-18 {
+        font-size: 18px;
+    }
+
+    img {
+        border: 0;
+    }
+
+    a {
+        text-decoration: none;
+        color: #222;
+    }
+
+    a, a:hover, a:active, a:focus {
+        outline: medium none;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .cb-nws-lft-col {
+        padding: 15px 20px;
+    }
+
+    .cb-nws-dtl-lft-col {
+        padding: 10px 30px 0 30px;
+        border-right: 1px solid #ecebeb;
+    }
+
+    .cb-nws-lst-rt {
+        padding-left: 10px;
+    }
+
+    .cb-srs-lst-itm {
+        padding: 10px 0;
+    }
+
+    .cb-lst-itm-sm {
+        padding: 10px 0 5px;
+    }
+
+    .cb-scrd-lft-col {
+        padding: 15px 10px;
+    }
+
+    .cb-col-rt {
+        padding: 10px;
+    }
+
+    .text-white {
+        color: #fff;
+    }
+
+    .cb-scrd-hdr-rw, .cb-nav-pill-1.active {
+        background: #028062;
+        color: #fff;
+    }
+
+    .cb-nav {
+        position: relative;
+        height: 48px;
+        background: #009270;
+    }
+
+    .cb-hm-mnu-itm {
+        padding: 16px 7px 11px;
+        color: #fff;
+        display: inline-block;
+    }
+
+    .cb-hm-text {
+        padding: 10px 18px 10px 20px;
+    }
+
+    .cb-hm-rght {
+        padding: 15px;
+    }
+
+    .cb-subnav .cb-sub-navigation {
+        display: none;
+        position: absolute;
+    }
+
+    .cb-mat-mnu {
+        background: #4a4a4a;
+        width: 980px;
+        font-size: 0;
+    }
+
+    .cb-mat-mnu-itm {
+        font-size: 12px;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        display: inline-block;
+        max-width: 140px;
+    }
+
+    .cb-mat-mnu-ttl {
+        background: #333;
+        padding: 10px 20px;
+    }
+
+    .cb-mat-mnu-wrp {
+        margin-bottom: 10px;
+    }
+
+    .cb-ovr-flo {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .cb-mat-mnu-all {
+        text-align: center;
+        float: right;
+        width: 60px;
+    }
+
+    .cb-nav-main {
+        border-bottom: 1px solid #e3e6e3;
+        padding: 0 0 5px 20px;
+    }
+
+    .cb-nav-bar {
+        padding-top: 10px;
+        clear: both;
+    }
+
+    .cb-lst-itm, .cb-bg-white {
+        background: #fff;
+    }
+
+    .cb-nav-tab.active, .cb-nav-tab-hm.active {
+        font-weight: bold;
+        color: #028062;
+    }
+
+    .cb-nav-tab.active {
+        border-bottom: 3px solid #028062;
+        line-height: 24px;
+    }
+
+    .cb-nav-tab-hm.active {
+        border-bottom: 2px solid #028062;
+        line-height: 22px;
+    }
+
+    .cb-nav-tab {
+        margin-right: 20px;
+        padding-bottom: 6px;
+    }
+
+    .cb-nav-tab-hm {
+        margin-right: 15px;
+        padding-bottom: 6px;
+    }
+
+    .cb-nav-hdr {
+        padding-top: 15px
+    }
+
+    .cb-nav-subhdr {
+        padding: 5px 0 10px 0;
+    }
+
+    .cb-lv-scr-mtch-hdr {
+        line-height: 21px;
+        font-size: 16px;
+    }
+
+    .disp-none {
+        display: none;
+    }
+
+    .disp-blck {
+        display: block;
+    }
+
+    .cb-font-24 {
+        font-size: 24px;
+    }
+
+    .line-ht30 {
+        line-height: 30px;
+    }
+
+    .line-ht24 {
+        line-height: 24px;
+    }
+
+    .cb-hm-scg-blk {
+        background: #fff;
+        margin-bottom: 5px;
+        height: 90px;
+    }
+
+    .mrgn-btm-5 {
+        margin-bottom: 5px;
+    }
+
+    #scagTabContent .show {
+        display: block;
+        visibility: visible;
+    }
+
+    #scagTabContent .hide {
+        display: none;
+        visibility: hidden;
+    }
+
+    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+    }
+
+    .cb-hm-lft {
+        margin-bottom: 5px;
+        padding: 0 15px;
+    }
+
+    .cb-hm-lft-hdr {
+        margin: 0;
+        padding: 15px 15px 0;
+        color: #009270;
+    }
+
+    .cb-hm-mid {
+        border-left: 5px solid #e3e6e3;
+        border-right: 5px solid #e3e6e3;
+        padding: 0 15px;
+    }
+
+    .cb-mtch-blk {
+        border-right: 1px solid #ecebeb;
+        line-height: 1.4;
+        margin: 15px 0;
+        padding: 0 20px;
+    }
+
+    .crd-cntxt {
+        font-size: 12px;
+        color: #666;
+        padding-bottom: 10px;
+    }
+
+    .big-crd-main {
+        border-top: 1px solid #ecebeb;
+        padding: 15px 0 5px;
+        margin-bottom: 1px;
+        clear: both;
+    }
+
+    .big-crd-reltd-itm {
+        margin: 0 0 10px;
+        width: 100%;
+        display: inline-block;
+    }
+
+    .cb-nws-time {
+        font-size: 12px;
+        padding-bottom: 5px;
+    }
+
+    .cb-nws-hdln-ancr {
+        padding-bottom: 5px;
+    }
+
+    .cb-hmscg-bwl-txt, .cb-hmscg-bat-txt {
+        font-weight: bold;
+        padding-bottom: 4px;
+        height: 18px;
+    }
+
+    .cb-hmscg-bwl-txt {
+        color: #666;
+    }
+
+    .sml-crd-main {
+        padding: 15px 0 5px;
+        width: 100%;
+    }
+
+    .big-crd-hdln {
+        margin: 10px 0;
+    }
+
+    .big-crd-rltd-txt {
+        font-weight: bold;
+        margin: 10px 0;
+        color: #1866DB;
+    }
+
+    .cb-nws-intr {
+        color: #666;
+        padding-bottom: 5px;
+    }
+
+    .cb-lv-scrs-well {
+        background: #f5f5f5;
+        display: inline-block;
+        margin: 10px 0;
+        padding: 10px 5px;
+    }
+
+    .cb-schdl-hdr {
+        margin: 0;
+        padding: 15px 0 10px 10px;
+    }
+
+    .cb-lst-itm-lg {
+        padding: 20px 0;
+    }
+
+    .cb-left-pad {
+        padding: 20px 10px 0;
+    }
+
+    .cb-nav-pill-1 {
+        background: #CFE0DB;
+        border-radius: 20px;
+        color: #222;
+        cursor: pointer;
+        margin-right: 15px;
+        padding: 5px 20px;
+    }
+
+    .cb-mtch-lst {
+        padding: 15px 0;
+    }
+
+    .cb-nws-min-cntr {
+        padding: 10px;
+        background: #f5f5f5;
+        color: #333;
+        margin: 10px 0 15px;
+    }
+
+    .sml-crd-subtxt {
+        margin: 0 10px 10px;
+    }
+
+    /*-------------------------Live Pages -----------------------*/
+    .cb-scrcrd-status {
+        padding: 0 0 10px 10px;
+    }
+
+    .cb-scrd-hdr-rw {
+        padding: 8px 10px;
+    }
+
+    .cb-bg-gray {
+        background: #ecebeb;
+    }
+
+    .cb-lv-grn-strip {
+        background: #ecebeb;
+    }
+
+    .cb-min-hdr-rw, .cb-scrd-sub-hdr {
+        padding: 4px 10px;
+        font-size: 12px;
+        color: #666;
+    }
+
+    .cb-scrd-itms {
+        padding: 4px 10px;
+        font-size: 13px;
+    }
+
+    .cb-text-link {
+        color: #1866DB;
+    }
+
+    .text-bold {
+        font-weight: bold;
+    }
+
+    .text-normal {
+        font-weight: normal;
+    }
+
+    .cb-mat-fct-itm {
+        padding: 5px 0;
+    }
+
+    .cb-min-bat-rw {
+        padding-bottom: 5px;
+    }
+
+    .cb-nws-sub-txt, .cb-nws-sub-txt, .cb-font-12 {
+        font-size: 12px;
+    }
+
+    .cb-font-16 {
+        font-size: 16px;
+    }
+
+    .cb-font-20 {
+        font-size: 20px;
+    }
+
+    .cb-min-inf {
+        padding-top: 10px;
+        margin-left: -10px;
+        display: inline-block;
+    }
+
+    .cb-min-itm-rw {
+        padding: 5px 10px 0;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .cb-key-st-lst {
+        padding: 10px 0 0 5px;
+    }
+
+    .cb-min-prw-time {
+        padding: 20px 0 0;
+    }
+
+    .cb-toss-sts {
+        padding: 10px 0 30px;
+    }
+
+    .cb-min-rcnt {
+        padding: 7px 10px;
+        margin: 0 -10px 0;
+    }
+
+    .cb-key-lst-wrp {
+        border: 1px solid #ecebeb;
+        padding-bottom: 15px;
+        margin-right: -10px;
+    }
+
+    .cb-min-tm {
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .cb-min-stts {
+        padding: 20px 0;
+    }
+
+    .cb-mom-itm {
+        padding: 0 0 10px;
+    }
+
+    .cb-lv-grn-strip {
+        padding: 10px 10px 5px;
+    }
+
+    .cb-ovr-num {
+        padding-top: 2px;
+    }
+
+    .cb-min-pad {
+        padding-left: 5px;
+    }
+
+    /*Upcoming Series*/
+    .cb-mnth {
+        margin-top: 10px;
+        padding: 0 10px;
+    }
+
+    .cb-sch-lst-itm {
+        padding: 10px 0;
+        margin-left: 20px;
+        border-bottom: 1px solid #ecebeb;
+    }
+
+    /*Matches By Day*/
+    .cb-mtchs-dy {
+        padding: 20px 20px 20px 10px;
+    }
+
+    .cb-mtchs-dy-tm, .cb-mtchs-dy-vnu {
+        padding: 20px 20px 20px 0px;
+    }
+
+    /*Schedule Teams*/
+    .cb-lv-upcom-strip {
+        padding: 5px 10px;
+        background: #ecebeb;
+    }
+
+    /*Archives*/
+    .cb-srs-cat {
+        padding: 10px;
+        color: #028062;
+    }
+
+    .pad-left {
+        padding-left: 30px;
+    }
+
+    .cb-arcv-yr {
+        font-size: 20px;
+        padding: 0 0 5px 10px;
+        font-weight: bold
+    }
+
+    .cb-yr-tmline {
+        padding: 2px 15px 15px 0;
+    }
+
+    .cb-sch-tms-widgt {
+        padding: 5px 10px;
+        margin: 5px 2px 2px 2px;
+        background: #f5f5f5;
+        border-radius: 0;
+        border: 0;
+        display: inline-block;
+    }
+
+    /*Photos*/
+    .cb-thmb-dark {
+        background: #333333;
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+        padding: 0;
+        color: #CCC;
+    }
+
+    .cb-pht-main {
+        padding: 20px 15px;
+        margin: 0 -10px;
+    }
+
+    .cb-pht-block {
+        padding: 9px;
+        float: left;
+        height: 280px;
+        box-sizing: border-box;
+    }
+
+    .cb-gallery-pht-block {
+        padding: 9px 9px 9px 16px;
+    }
+
+    .img-responsive {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .center-block {
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .cb-schdl {
+        padding: 0 10px;
+        line-height: 1.5;
+    }
+
+    .cb-caret-up, .cb-caret-down {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 4px;
+        margin-bottom: 1px;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+    }
+
+    .cb-caret-up {
+        border-bottom: 4px solid;
+    }
+
+    .cb-caret-down {
+        border-top: 4px solid;
+    }
+
+    .cb-hm-rt-itm {
+        margin: 0 0 5px;
+        padding: 10px 10px 5px;
+    }
+
+    .cb-hmscg-tm-nm {
+        display: inline-block;
+        width: 60px;
+    }
+
+    .pull-right, .cb-all-mtch-tab {
+        float: right;
+    }
+
+    .cb-skin-ads-close {
+        display: none;
+    }
+
+    .cb-nws-sub-txt {
+        padding-top: 10px;
+    }
+
+    .nws-dtl-hdln {
+        margin-top: 10px;
+    }
+
+    .cb-min-lv {
+        min-height: 270px
+    }
+
+    .cb-min-comp {
+        min-height: 150px;
+    }
+
+    .cb-ttl-vts {
+        margin-top: 20px;
+    }
+
+    .cb-poll-radio {
+        width: 5%;
+        margin: 4px 10px 0 0;
+    }
+
+    .cb-mini-tim {
+        padding-bottom: 20px;
+    }
+
+    .cb-com-ln {
+        margin: 0 0 10px;
+        line-height: 24px;
+    }
+
+    .cb-comm-static {
+        min-height: 31px;
+        margin: 0 -10px 10px;
+    }
+
+    .cb-com-ovr-sum-ad {
+        min-height: 31px;
+    }
+
+    .cb-comm-static-anchr {
+        margin: 5px 10px;
+        display: block;
+    }
+
+    .ad-unit-rendered {
+        margin-bottom: 5px;
+    }
+
+    .cb-mm-wrp {
+        max-height: 0px;
+        -webkit-transition: max-height 0.35s ease;
+        transition: max-height 0.35s ease;
+        overflow: hidden;
+    }
+
+    .cb-mm-wrp.down {
+        max-height: 1000px;
+        transition: max-height 0.75s ease;
+        -webkit-transition: max-height 0.75s ease;
+        overflow: hidden;
+    }
+
+    .cb-srs-hstry-dtl {
+        padding: 10px 15px;
+        margin-top: 20px;
+        border-radius: 4px;
+    }
+
+    .cb-qck-lnk {
+        margin-bottom: 5px;
+        padding: 10px 15px;
+    }
+
+    .cb-qck-hdr {
+        padding-right: 15px;
+        border-right: 1px solid #ecebeb;
+    }
+
+    .cb-qck-ancr {
+        margin-left: 15px;
+    }
+
+    .cb-lst-vid-rw {
+        padding-bottom: 0;
+        height: 64px;
+        border: 1px solid #ecebeb;
+        margin-right: -10px;
+    }
+
+    .cb-auth-img {
+        border-radius: 100%;
+    }
+
+    .cb-expt-athr {
+        vertical-align: top;
+        padding: 5px 0 0 0;
+        display: inline-block;
+        font-size: 16px
+    }
+
+    .inline-block {
+        display: inline-block;
+    }
+
+    .cb-exprt-athr-hdr {
+        text-align: right;
+        font-size: 42px;
+        font-family: bodani;
+        color: #fff;
+        padding-right: 15px;
+        line-height: 44px;
+        text-transform: uppercase;
+    }
+
+    .cb-exprt-athr-hdr-tag {
+        text-align: right;
+        font-size: 24px;
+        font-family: bodani;
+        color: #fff;
+        padding-right: 15px;
+        font-style: italic;
+    }
+
+    .cb-athr-wgt-wrp {
+        border: 1px solid #ecebeb;
+        padding: 15px;
+        margin-bottom: 20px;
+        background: #f5f5f5;
+    }
+
+    .cb-exprt-athr-hdr-img {
+        background: url("//i.cricketcb.com/statics/site/images/harsha-banner.jpg") no-repeat scroll;
+        height: 80px;
+    }
+
+    .cb-overflow-hidden {
+        overflow: hidden;
+    }
+
+    /*Videos*/
+    .cb-vid-sm-ply-api {
+        color: #fff;
+        line-height: 34px;
+        font-size: 18px;
+        margin-left: 3px;
+    }
+
+    .cb-vid-sml-card-api {
+        margin-top: 10px;
+        height: auto;
+        padding: 0 12px 0 11px;
+    }
+
+    .cb-cat-head-wrap {
+        padding: 0 12px 0 11px;
+    }
+
+    .cb-cat-head-text {
+        margin-top: 5px;
+        line-height: 20px;
+    }
+
+    .cb-more-btn {
+        padding: 8px 20px;
+        border-radius: 2px;
+        color: #fff;
+        background: #009270;
+        border: 0;
+        cursor: pointer;
+    }
+
+    .cb-cat-head-link {
+        float: right;
+        padding: 5px 25px;
+        margin-top: 10px;
+        border-radius: 4px;
+    }
+
+    .cb-pos-rel {
+        position: relative;
+    }
+
+    .cb-videos-cat {
+        border-bottom: 1px solid #ecebeb;
+        padding: 10px 3px 15px 4px;
+    }
+
+    .cb-cat-head-text-wrap {
+        float: left;
+    }
+
+    .cb-cat-head-count {
+        margin: 0;
+        color: #666;
+    }
+
+    h2.cb-cat-head-text {
+        font-size: 18px
+    }
+
+    .cb-vid-sml-card-api-head {
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 18px;
+        max-height: 55px;
+        margin: 2px 0 5px;
+        overflow: hidden;
+    }
+
+    .cb-cen {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        -webkit-transform: translateX(-50%) translateY(-50%);
+        -moz-transform: translateX(-50%) translateY(-50%);
+        -ms-transform: translateX(-50%) translateY(-50%);
+        -o-transform: translateX(-50%) translateY(-50%);
+        background: #222;
+        text-align: center;
+        height: 35px;
+        width: 35px;
+        border-radius: 50px;
+    }
+
+    .padding-handling-errors {
+        padding: 20px 0px 10px 15px;
+        border-bottom: 1px solid #ecebeb;
+    }
+
+    .cb-col .cb-align-cen {
+        float: none;
+        text-align: center;
+        padding: 7px 25px;
+        margin-top: 20px;
+    }
+
+    .cb-align-cen {
+        padding-top: 10px;
+    }</style>
+    <script>function getCookie(c_name) {
+        var i, x, y, ARRcookies = document.cookie.split(";");
+        for (i = 0; i < ARRcookies.length; i++) {
+            x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
+            y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
+            x = x.replace(/^\s+|\s+$/g, "");
+            if (x == c_name) {
+                return unescape(y);
+            }
+        }
+    }
+
+    var cbads_value = getCookie("cbzads");
+    if (cbads_value != null && cbads_value.indexOf('IN|AS') >= 0) {
+        document.write("<style>.cb-geo-in-50{height:50px}</style>")
+    }</script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="author" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="//i.cricketcb.com/statics/site/images/cric_ball.ico"/>
+    <meta name="google-signin-client_id"
+          content="125255339112-d594jen12o0j854sufu8jfn2gbbnaskj.apps.googleusercontent.com">
+    <LINK REL="apple-touch-icon" href="//i.cricketcb.com/statics/site/images/apple-touch-icon.png"/>
+    <link rel="chrome-webstore-item"
+          href="https://chrome.google.com/webstore/detail/cricbuzz/opljecakjchbhhikbeifamamnpcdbgem"/>
+    <title itemprop="name">Virat Kohli Profile - ICC Ranking, Age, Career Info & Stats | Cricbuzz.com</title>
+    <meta name="description" itemprop="description"
+          content="Read about Virat Kohli&#039;s career details on Cricbuzz.com">
+    <link rel="alternate" href="//m.cricbuzz.com" media="only screen and (max-width: 640px)">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google-site-verification" content="google89fd37b1258ef4b9.html">
+    <meta name="p:domain_verify" content="fd560568b43f31382de30f628c8430bd">
+    <meta name="msvalidate.01" content="A509FA8BAE50018F9DF2553AEDEDF77B">
+    <meta property="og:title" content="Virat Kohli Profile - ICC Ranking, Age, Career Info &amp; Stats">
+    <meta property="og:description" content="Read about Virat Kohli&#039;s career details on Cricbuzz.com">
+    <meta property="fb:app_id" content="30119633160">
+    <meta property="og:site_name" content="Cricbuzz">
+    <meta property="twitter:title" content="Virat Kohli Profile - ICC Ranking, Age, Career Info &amp; Stats">
+    <meta property="twitter:description" content="Read about Virat Kohli&#039;s career details on Cricbuzz.com">
+    <meta name="twitter:site" content="@cricbuzz">
+    <meta name="twitter:domain" content="cricbuzz.com">
+    <meta name="twitter:app:name:iphone" content="Cricbuzz">
+    <meta name="twitter:app:id:iphone" content="360466413">
+    <meta name="twitter:app:name:googleplay" content="Cricbuzz">
+    <meta name="twitter:app:id:googleplay" content="com.cricbuzz.android">
+    <meta name="twitter:widgets:csp" content="on">
+    <meta property="fb:pages" content="178697151159"/>
+    <meta name="keywords" content="">
+    <meta name="news_keywords" content="">
+    <link rel="canonical" href="https://www.cricbuzz.com/profiles/1413/virat-kohli">
+    <meta name="msapplication-config" content="none"/>
+    <script>var PAGE_NAME = "default";
+    var CBQueue = CBQueue || [];
+    var CBQueueOnLoad = CBQueueOnLoad || [];
+    /*CBQueue.push(function(){roadblock(2,{country:["US","CA", "ZA", "AU"], continent:["EU"]});});*/
+    CBQueue.push(function () {
+        roadblock(2, {country: ["US"]});
+    });
+    _udn = "cricbuzz.com";</script>
+    <script>(function (w) {
+        "use strict";
+        var loadCSS = function (href, before, media) {
+            var doc = w.document;
+            var ss = doc.createElement("link");
+            var ref;
+            if (before) {
+                ref = before;
+            } else {
+                var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+                ref = refs[refs.length - 1];
+            }
+            var sheets = doc.styleSheets;
+            ss.rel = "stylesheet";
+            ss.href = href;
+            ss.media = "only x";
+            ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
+            var onloadcssdefined = function (cb) {
+                var resolvedHref = ss.href;
+                var i = sheets.length;
+                while (i--) {
+                    if (sheets[i].href === resolvedHref) {
+                        return cb();
+                    }
+                }
+                setTimeout(function () {
+                    onloadcssdefined(cb);
+                });
+            };
+            ss.onloadcssdefined = onloadcssdefined;
+            onloadcssdefined(function () {
+                ss.media = media || "all";
+            });
+            return ss;
+        };
+        if (typeof module !== "undefined") {
+            module.exports = loadCSS;
+        } else {
+            w.loadCSS = loadCSS;
+        }
+    }(typeof global !== "undefined" ? global : this));
+    loadCSS("/css/cricbuzz.min.201810181346.css");</script>
+    <noscript>
+        <link rel="stylesheet" type="text/css" href="/css/cricbuzz.min.201810181346.css">
+    </noscript>
+</head>
+<body><a href="https://plus.google.com/104502282508811467249" rel="publisher"></a><a id="ad-skin" target="_blank"
+                                                                                     href="Javascript:void(0)"
+                                                                                     class="cb-skin-ads-link cb-skin-ads-link-fixed ad-skin"></a><a
+        href="Javascript:void(0)" class="cb-skin-ads-close cb-font-18 ad-skin-close"
+        style="position:fixed; z-index:1001; color:#FFF; background:#000; padding:2px 5px; right:2px;">&#x2716;</a>
+<div class="page">
+    <div id="page-wrapper" class="container" style="display:inline-block;">
+        <div itemscope itemtype="http://schema.org/Person" id="playerProfile">
+            <div class="cb-col cb-col-100 cb-bg-white">
+                <div class="cb-col cb-col-20 cb-col-rt"><img title="profile image"
+                                                             class="img-responsive cb-plyr-thum-img"
+                                                             src="//i.cricketcb.com/stats/img/faceImages/1413.jpg">
+                </div>
+                <div style="padding-top: 90px;"><h1 itemprop="name" class="cb-font-40">Virat Kohli</h1>
+                    <h3 class="cb-font-18 text-gray">India</h3></div>
+
+            <div class="cb-col cb-col-100 cb-bg-grey">
+                <div class="cb-col cb-col-33 text-black">
+                    <div class="cb-hm-rght">
+                        <div class="cb-font-16 text-bold"> Personal Information</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Born</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> Nov 05, 1988 (29 years)</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Birth Place</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> Delhi</div>
+                        <div class="cb-col cb-col-40 text-bold">Height</div>
+                        <div class="cb-col cb-col-60"> 5 ft 9 in (175 cm)</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Role</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> Batsman</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Batting Style</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> Right Handed Bat</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Bowling Style</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> Right-arm medium</div>
+                        <div class="cb-font-16 text-bold cb-lst-itm-sm cb-col cb-col-100 cb-sr-rev-label">ICC Rankings
+                        </div>
+                        <div class="cb-col cb-col-25">&nbsp;</div>
+                        <div class="cb-col cb-col-25 text-right cb-plyr-rank">Test</div>
+                        <div class="cb-col cb-col-25 text-right cb-plyr-rank">ODI</div>
+                        <div class="cb-col cb-col-25 text-right cb-plyr-rank">T20</div>
+                        <div class="cb-col cb-col-25 text-left cb-plyr-rank text-bold">Batting</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> 1</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> 1</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> 12</div>
+                        <div class="cb-col cb-col-25 text-left cb-plyr-rank text-bold">Bowling</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> --</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> --</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> --</div>
+                        <div id="mpu" class="cb-ttl-vts cb-col ad-unit"></div>
+                        <div class="cb-col cb-col-100 cb-font-16 text-bold cb-ttl-vts"> Career Information</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Teams</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> India, Delhi, India Red, India U19, Royal
+                            Challengers Bangalore, Board Presidents XI, North Zone, Indians, India A
+                        </div>
+                    </div>
+                </div>
+
+               </div>
+                <div class="cb-col cb-col-67 cb-bg-white cb-plyr-rt-col">
+                    <div class="cb-hm-rght cb-player-bio">
+                        </div>
+                        <div class="cb-plyr-tbl">
+                            <div class="cb-font-16 text-bold cb-lst-dom">Batting Career Summary</div>
+                            <table class="table cb-col-100 cb-plyr-thead">
+                                <thead>
+                                <tr class="cb-bg-grey cb-font-12">
+                                    <th></th>
+                                    <th class="cb-plyr-th text-right" title="Matches Played">M</th>
+                                    <th class="text-center" title="No of Innings Batted">Inn</th>
+                                    <th class="text-center" title="No of Not Outs">NO</th>
+                                    <th class="text-center" title="No of Runs Scored">Runs</th>
+                                    <th class="text-center" title="Highest Score">HS</th>
+                                    <th class="text-center" title="Batting Average">Avg</th>
+                                    <th class="text-center" title="No of Balls Faced">BF</th>
+                                    <th class="text-center" title="Batting Strike Rate">SR</th>
+                                    <th class="text-center" title="No of 100s Scored">100</th>
+                                    <th class="text-center" title="No of 200s Scored">200</th>
+                                    <th class="text-center" title="No of 50s Scored">50</th>
+                                    <th class="text-center" title="No of fours hit">4s</th>
+                                    <th class="text-center" title="No of sixes hit">6s</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="cb-col-8"><strong>Test</strong></td>
+                                    <td class="cb-plyr-tbody text-right">73</td>
+                                    <td class="text-right">124</td>
+                                    <td class="text-right">8</td>
+                                    <td class="text-right">6331</td>
+                                    <td class="text-right">243</td>
+                                    <td class="text-right">54.58</td>
+                                    <td class="text-right">10865</td>
+                                    <td class="text-right">58.27</td>
+                                    <td class="text-right">24</td>
+                                    <td class="text-right">6</td>
+                                    <td class="text-right">19</td>
+                                    <td class="text-right">700</td>
+                                    <td class="text-right">18</td>
+                                </tr>
+                                <tr>
+                                    <td class="cb-col-8"><strong>ODI</strong></td>
+                                    <td class="cb-plyr-tbody text-right">212</td>
+                                    <td class="text-right">204</td>
+                                    <td class="text-right">35</td>
+                                    <td class="text-right">9919</td>
+                                    <td class="text-right">183</td>
+                                    <td class="text-right">58.69</td>
+                                    <td class="text-right">10722</td>
+                                    <td class="text-right">92.51</td>
+                                    <td class="text-right">36</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">48</td>
+                                    <td class="text-right">931</td>
+                                    <td class="text-right">107</td>
+                                </tr>
+                                <tr>
+                                    <td class="cb-col-8"><strong>T20I</strong></td>
+                                    <td class="cb-plyr-tbody text-right">62</td>
+                                    <td class="text-right">58</td>
+                                    <td class="text-right">15</td>
+                                    <td class="text-right">2102</td>
+                                    <td class="text-right">90</td>
+                                    <td class="text-right">48.88</td>
+                                    <td class="text-right">1543</td>
+                                    <td class="text-right">136.23</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">18</td>
+                                    <td class="text-right">214</td>
+                                    <td class="text-right">46</td>
+                                </tr>
+                                <tr>
+                                    <td class="cb-col-8"><strong>IPL</strong></td>
+                                    <td class="cb-plyr-tbody text-right">163</td>
+                                    <td class="text-right">155</td>
+                                    <td class="text-right">26</td>
+                                    <td class="text-right">4948</td>
+                                    <td class="text-right">113</td>
+                                    <td class="text-right">38.36</td>
+                                    <td class="text-right">3784</td>
+                                    <td class="text-right">130.76</td>
+                                    <td class="text-right">4</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">34</td>
+                                    <td class="text-right">434</td>
+                                    <td class="text-right">177</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="cb-plyr-tbl">
+                            <div class="cb-font-16 text-bold cb-lst-dom">Bowling Career Summary</div>
+                            <table class="table cb-col-100 cb-plyr-thead">
+                                <thead>
+                                <tr class="cb-bg-grey cb-font-12">
+                                    <th></th>
+                                    <th class="cb-plyr-th text-right" title="Matches Played">M</th>
+                                    <th class="text-right" title="No of Innings Bowled">Inn</th>
+                                    <th class="text-right" title="No of Balls Bowled">B</th>
+                                    <th class="text-right" title="No of Runs Conceded">Runs</th>
+                                    <th class="text-right" title="Wickets">Wkts</th>
+                                    <th class="text-right" title="Best Bowling in Innings">BBI</th>
+                                    <th class="text-right" title="Best Bowling in Match">BBM</th>
+                                    <th class="text-right" title="Economy">Econ</th>
+                                    <th class="text-right" title="Bowling Average">Avg</th>
+                                    <th class="text-right" title="Bowling Strike Rate">SR</th>
+                                    <th class="text-right" title="Five Wickets in an Innings">5W</th>
+                                    <th class="text-right cb-plyr-stump" title="Ten Wickets in an Match">10W</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td class="cb-col-8"><strong>Test</strong></td>
+                                    <td class="cb-plyr-tbody text-right">73</td>
+                                    <td class="text-right">9</td>
+                                    <td class="text-right">163</td>
+                                    <td class="text-right">76</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">0/0</td>
+                                    <td class="text-right">0/0</td>
+                                    <td class="text-right">2.8</td>
+                                    <td class="text-right">0.0</td>
+                                    <td class="text-right">0.0</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                                <tr>
+                                    <td class="cb-col-8"><strong>ODI</strong></td>
+                                    <td class="cb-plyr-tbody text-right">212</td>
+                                    <td class="text-right">48</td>
+                                    <td class="text-right">641</td>
+                                    <td class="text-right">665</td>
+                                    <td class="text-right">4</td>
+                                    <td class="text-right">15/1</td>
+                                    <td class="text-right">15/1</td>
+                                    <td class="text-right">6.22</td>
+                                    <td class="text-right">166.25</td>
+                                    <td class="text-right">160.25</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                                <tr>
+                                    <td class="cb-col-8"><strong>T20I</strong></td>
+                                    <td class="cb-plyr-tbody text-right">62</td>
+                                    <td class="text-right">12</td>
+                                    <td class="text-right">146</td>
+                                    <td class="text-right">198</td>
+                                    <td class="text-right">4</td>
+                                    <td class="text-right">13/1</td>
+                                    <td class="text-right">13/1</td>
+                                    <td class="text-right">8.14</td>
+                                    <td class="text-right">49.5</td>
+                                    <td class="text-right">36.5</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                                <tr>
+                                    <td class="cb-col-8"><strong>IPL</strong></td>
+                                    <td class="cb-plyr-tbody text-right">163</td>
+                                    <td class="text-right">26</td>
+                                    <td class="text-right">251</td>
+                                    <td class="text-right">368</td>
+                                    <td class="text-right">4</td>
+                                    <td class="text-right">25/2</td>
+                                    <td class="text-right">25/2</td>
+                                    <td class="text-right">8.8</td>
+                                    <td class="text-right">92.0</td>
+                                    <td class="text-right">62.75</td>
+                                    <td class="text-right">0</td>
+                                    <td class="text-right">0</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="cb-font-16 text-bold cb-plyr-tbl cb-lst-dom">Career Information</div>
+                        <br/>
+                        <div class="cb-col cb-col-100">
+
+                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Test debut</div>
+
+                            <div class="cb-col cb-col-84 cb-ftr-lst">
+                                vs Windies at Sabina Park, Jun 20, 2011</div>
+
+                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last Test</div>
+
+                            <div class="cb-col cb-col-84 cb-ftr-lst">
+                                vs Windies at Rajiv Gandhi International Stadium, Oct 12, 2018
+                            </div>
+
+                            <br/><br/><br/>
+
+                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">ODI debut</div>
+
+                            <div class="cb-col cb-col-84 cb-ftr-lst">
+                                vs Sri Lanka at Rangiri Dambulla International Stadium, Aug 18, 2008 </div>
+
+                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last ODI</div>
+                            <div class="cb-col cb-col-84 cb-ftr-lst">
+                                vs Windies at Barsapara Cricket Stadium, Oct 21, 2018 </div>
+
+
+                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst cb-nav-hdr">T20 debut</div>
+                            <div class="cb-col cb-col-84 cb-ftr-lst cb-nav-hdr">
+                                vs Zimbabwe at Harare Sports Club, Jun 12, 2010 </div>
+
+
+                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last T20</div>
+                            <div class="cb-col cb-col-84 cb-ftr-lst">
+                                vs England at County Ground, Jul 08, 2018</div>
+
+                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst cb-nav-hdr">IPL debut</div>
+                            <div class="cb-col cb-col-84 cb-ftr-lst cb-nav-hdr">
+                                vs Kolkata Knight Riders at M.Chinnaswamy Stadium, Apr 18, 2008</div>
+
+                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last IPL</div>
+                            <div class="cb-col cb-col-84 cb-ftr-lst">
+                                vs Rajasthan Royals at Sawai Mansingh Stadium, May 19, 2018</div>
+                        </div>
+                        <div class="cb-col cb-col-100 cb-font-16 text-bold cb-plyr-tbl cb-lst-dom" id="profile">
+
+                        <br/>
+                            Profile
+                        </div>
+                        <div class="cb-col cb-col-100 cb-player-bio">A spunky, chubby teenager with gelled hair shot to
+                            fame after leading India to glory in the Under-19 World Cup at Kuala Lumpur in early 2008.
+                            In an Indian team filled with saint-like icons worthy of their own hagiographies, Virat
+                            Kohli, with his most un-Indian, 'bad-boy' intensity, would clearly be an outcast. <br/><br/>
+                            <b>Grind through the ranks</b> <br/> He soon joined the senior Men in Blue in Sri Lanka,
+                            come August 2008. In the absence of the regular openers, Virat Kohli was given a chance to
+                            open the batting in the ODI series. He played some commendable knocks in his extended run as
+                            an opener, as India went on to win the ODI series. However, the established and formidable
+                            pair of Tendulkar and Sehwag kept Kohli out of the team <br/><br/> The 20-year-old continued
+                            to impress for Delhi and dominated attacks, clearly demonstrating that he belonged at a much
+                            higher level; that junior cricket was beneath his standards. Kohli then traveled to
+                            Australia in 2009 for the Emerging players tournament and stamped his authority all over the
+                            bowling attacks. He added 'big-match temperament' to his résumé too, lacing a fluent hundred
+                            in the final against South Africa, and guiding his team to a clinical victory. The young
+                            prodigy, barely old enough to receive his man-of-the-match champagne, ended the tournament
+                            with 398 runs from 7 outings with two centuries and two fifties, ensuring that he remained
+                            fresh in the selectors' minds. <br/><br/> <b>Cementing a national spot</b> <br/> The
+                            selectors had no choice but to give Kohli another go in the Indian side, and this time he
+                            strung together a number of impressive scores. After being given an extended run, he repaid
+                            their faith by notching up his maiden ODI hundred in an impressive run-chase against Sri
+                            Lanka in December 2009 - his first of many exemplary knocks in run-chases. In the World Cup
+                            final of 2011, the biggest stage of them all, Kohli, along with his Delhi teammate Gautam
+                            Gambhir, pulled off a largely underrated rescue effort with an 83-run stand after losing the
+                            openers early. This knock played a crucial role in setting the platform for MS Dhoni's
+                            fabled knock of 91*, which eventually won India the World Cup on that enchanting evening in
+                            Mumbai. <br/><br/> In the hangover of the World Cup euphoria, Kohli continued to take giant
+                            strides in the limited-overs format. Three years after his ODI debut, he was finally handed
+                            the coveted Test cap in the Caribbean islands in July 2011, owing to the need to rest the
+                            senior players. After a series each against the Dukes ball and the SG ball, it was now time
+                            for his trial against the Kookaburra Down Under. In the first two Tests, he seemed to lack
+                            the technique to play in Australia, maintaining his low stance on the bouncy tracks. He also
+                            had a rather restricting trigger movement with his front-foot routinely coming across
+                            towards off-stump, thereby hindering the necessary movement to play back-foot shots such as
+                            the pull and the cut. <br/><br/> <b>A baptism by fire Down Under</b> <br/> The selectors and
+                            the captain persisted with him going into the 3rd Test, and he delivered a break-through
+                            performance on a bouncy Perth wicket - an impressive 75 - where a visible change in
+                            technique was visible. He managed to stand tall, with a more open stance, and exhibited the
+                            back-foot shots in his repertoire during the course of the innings. The volatile Kohli
+                            managed to overshadow his impropriety in conduct with his performance in the final Test of
+                            the series. Notching up India's only century of a disastrous tour, Kohli was the shining
+                            light in amidst the chaos, as he stroked his way to a hundred in Adelaide exhibiting the
+                            will to improve and extraordinary focus under pressure in the searing heat and pressure of
+                            Australia. <br/><br/> While he grappled and clawed his way into the Test side, he went on a
+                            record-breaking spree in ODIs: the Indian record for the fastest to multiples-of-thousand
+                            runs in ODIs, culminating in the world record for the fastest to 9000 runs in ODIs. He was
+                            also the highest run-scorer for India in ODIs for three consecutive calendar years - 2010,
+                            2011 and 2012 and won the ICC ODI cricketer of the year award in 2012. <br/><br/> <b>That
+                                break-through innings…</b> <br/> We remember the accolades, but where did it all begin?
+                            There's always the one innings that made the world sit up and take notice; the 86-ball knock
+                            which he started off as a brash boy, but ended as a man. Chasing an improbable target of 321
+                            off 40 overs to stay alive in the tournament, he laid into the Sri Lankan bowlers and carted
+                            his way to 133*, getting India home with more than 2 overs to spare, practically pulling
+                            them out of the airport after M.S. Dhoni rather ignorantly remarked that India had already
+                            been eliminated from the tournament. <br/><br/> King Kohli had arrived. The king of the
+                            run-chase, and a plethora of ODI records in the modern age. <br/><br/> <b>Batting technique
+                                and idiosyncrasies</b> <br/> Kohli has a seemingly hot head on his shoulders, but he
+                            channels all his anger while he is batting. Known to be an aggressive batsman always on the
+                            lookout for runs, he has a fairly sound , albeit slightly unconventional technique, which
+                            makes him judge the length of the ball earlier than most, and amazingly quick wrists to run
+                            his hands through the ball, even against fast bowlers. He is equally adept against pace and
+                            spin, and never looks ungainly at the crease. With nimble foot-movement against the
+                            spinners, he is known to be quite destructive when the situation demands it. He has had to
+                            fill some rather big shoes of his predecessors, and has done an admirable job to say the
+                            least. <br/><br/> <b>Technical Shortcomings </b> <br/> However, his slightly unconventional
+                            bottom-hand technique results in some technical shortcomings and lack of versatility. Kohli
+                            has dealt with swing bowling well, which is late and difficult to pick, but still less
+                            abrupt than seam bowling, which is almost unnatural and catches you off-guard. He is,
+                            without a doubt, one of the most gifted cricketers who has also worked very hard on his game
+                            and fitness. As a result, he picks the length early and has a swift and decisive backward or
+                            forward movement. However, he picks up the line early too, and as a result, reacts to it
+                            equally early. This is quite amazing in itself; however, on pitches lacking true bounce and
+                            aiding seam movement, it brings about his downfall. Virat tends to 'run his hands through
+                            the ball' beside him rather than punching it late under his line of vision (a virtue that
+                            his compatriot Ajinkya Rahane excels at). <br/><br/> <b>Overseas Test Antics</b> <br/> He
+                            proved his credentials as a Test batsman on the tour of South Africa when he scored a
+                            sensational first innings hundred in Johannesburg in the first Test to bail India out of
+                            trouble and backed it up with a 96 in the second innings. Although Kohli wasn't exposed to
+                            the new ball, with Cheteshwar Pujara and Murali Vijay bunting the shine off it, it was an
+                            excellent innings against a formidable bowling line-up. He continued his good form in New
+                            Zealand as well and ended the tour on a high with an unbeaten century. <br/><br/> However,
+                            against the raised seam of the Dukes ball and the skillful bowling of Anderson, Kohli's
+                            technical shortcomings were exposed when India toured England in 2014 for a grueling 5-Test
+                            series. He scored just 134 runs in ten innings, edging the ball to the slips by reaching out
+                            for it, and showing poor awareness of his off-stump; rather surprising for a batsman of his
+                            calibre. It was worrying that India's star batsman had failed them in trying conditions.
+                            <br/><br/> He continues his struggles when exposed to the new ball and on 'sticky wickets'.
+                            His quiet series against South Africa in late 2015 was full of rank-turners; his
+                            injury-marred series against Australia in early 2017 had several wickets that were not
+                            conducive to batting; and the England series in 2014, of course. Barring that, the glaring
+                            dips in his batting, or 'aberrations', such as Brisbane 2014, Gros Islet 2016, and Pune
+                            2017, have all come in difficult batting conditions, and he has been dismissed – believe it
+                            or not – by a chink in his batting technique. <br/><br/> <b>Captaincy and a change in
+                                technique</b> <br/> With regular captain MS Dhoni ailing from an injury, Kohli was named
+                            stand-in captain for the first Test at Adelaide. After an abysmal tour of England, critics
+                            were sceptical of Kohli's performance in Australia in the Border-Gavaskar trophy in
+                            December. Kohli proved that they couldn't have been more wrong, as he scored two fluent
+                            hundreds in the first Test at Adelaide. His second innings masterclass of 141 almost pulled
+                            off a stunning run-chase on a notorious 5th day rank-turner, and went on to score a total of
+                            four hundreds on this tour. Saying that he had silenced critics would be an understatement;
+                            however, his technique of playing beside the ball, and the bat coming down from gully rather
+                            than slip continued to bother him whenever exposed to late lateral movement. <br/><br/> As
+                            India prepared for their title defence ahead of the 2015 World Cup Down Under, with the
+                            catch phrase 'Won't give it back' doing the rounds, Virat Kohli was touted to be a key
+                            performer for India. The Indians had a terrible run in Australia, having failed to win a
+                            single match in the Test series as well as the succeeding ODI tri-series. Kohli started off
+                            in signature fashion, with a typically stroke-filled hundred against Pakistan as India
+                            maintained their unbeaten run against their arch-rivals in ICC events. As India stormed into
+                            the semi-finals unbeaten, Kohli's form continued to take an uncharacteristic dip,
+                            culminating in a painstaking 1 in the semi-final loss against the co-hosts and eventual
+                            champions, Australia. <br/><br/> Kohli, now the full-time Test captain, toured Sri Lanka
+                            with a young side without the services of Mahendra Singh Dhoni, wary of the Sri Lankan
+                            spinners' fabled 4th innings con-job. After losing the first Test, Kohli's India recorded a
+                            dramatic come-from-behind win in the series, going on to win 2-1. Kohli continued to build
+                            on his auspicious start to Test captaincy as he led them to a rout of the South Africans on
+                            a series of rank-turners all around India. He had a quiet series with the bat, as the more
+                            stoic batsmen of his team took over. Nonetheless, the triumph took India to the No. 1 spot
+                            in the ICC Test rankings for the first time since they forfeited it to England after the
+                            forgettable white-wash in 2011. <br/><br/> <b>IPL and T20 dominance</b> <br/> He continued
+                            his emphatic run in the World T20, batting (and running) like a man possessed, thrashing
+                            boundaries with ridiculous ease. Despite an 89* in the semi-final against the West Indies
+                            (extending his inhuman run of form in the format), India's bowling panicked at a crucial
+                            stage. One had to feel sorry for him as he had to make do with the 'Player of the
+                            tournament' award for the second successive Twenty20 World Cup; a distinction he would've
+                            gladly exchanged for the elusive World T20 trophy. Kohli's thirst for runs showed no signs
+                            of slowing down as he looted a small matter of 973 runs during the 2016 edition of the
+                            Indian Premier League, the most (by far) by any batsman in the history of the tournament -
+                            as he led his Royal Challengers Bangalore (RCB) franchise to a runners-up finish. <br/><br/>
+                            <b>What the future holds...</b> <br/> India's tour to South Africa in early 2018, their
+                            first major away Test assignment since Australia 2014 (before the 2015 World Cup), offers a
+                            new challenge: given a green track, is Virat really as good against the new ball? Is he good
+                            enough to play it out in case there are a few quick wickets? He has been protected from the
+                            new ball by a stoic Vijay and a solid Pujara until now. However, to make the ascent from
+                            'good' to 'great', Virat Kohli has to prove to the world that he doesn't need to be
+                            protected against the new ball; that he is a versatile batsman capable of the grind against
+                            the moving ball. <br/><br/> However, it isn't beyond Kohli to prove his critics wrong yet
+                            again, as he continues to take criticism on his stride, setting new standards for modern
+                            batsmanship. He already possesses an insatiable appetite for runs; and if he can correct
+                            this small chink in his armour and adjust his technique to play late and more compact shots
+                            in front of him, rather than beside him, then no force could stop him from becoming the
+                            perfect batsman. And as a captain, ruthless as he has been at home, if he can hand India the
+                            elusive Test series wins in Australia and South Africa, 'unprecedented' won't even begin to
+                            describe the extent of his achievements as a leader. <br/><br/> However, being a cricket
+                            romantic (as we all are), as we reflect on his prolific international career (and with a
+                            plethora of records to be broken over the next decade) one must look back at the CB series
+                            knock that changed it all. On that fateful night at Hobart, Kohli had not only kept his team
+                            in contention, he had actually dragged a drained Indian side out of the airport. That night,
+                            at the Bellerive Oval, Virat Kohli transcended into a league of his own to etch his name in
+                            history - and a cricketing superstar was born. <br/><br/> By <b>Rishi Roy</b> <br/> <i>As of
+                                25th December 2017</i></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+    {% include '/common/footer.html' %}
+    {% include '/common/footer-social.html' %}
+{% endblock %}

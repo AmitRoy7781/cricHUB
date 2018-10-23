@@ -25,9 +25,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     </head>
     <body>
     <br/>
-        <br/>
-        <br/>
-        <br/>
+    <br/>
+    <br/>
+    <br/>
     <div class="main">
         <br/>
         <br/>
@@ -36,18 +36,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <h1>Search For Players</h1>
         <br/>
         <br/>
-        <div class="search-three">
-            <form action="">
-                <input type="text" value="Search using Players Name" onfocus="this.value = '';"
-                onblur="if (this.value == '') {this.value = 'Search using Players Name';}" required="">
+        <div class="search">
+            <form action="/players/show_players" method="post">
+
+                <input name="player_name" type="text" value="Search using Players Name" onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Search using Players Name';}" required="">
+
                 <input type="submit" value="Search">
+
                 <div class="clear"></div>
+
             </form>
         </div>
         <br/>
         <br/>
         <br/>
         <br/>
+
+    {% if player_list != None %}
+    {% for item in player_list %}
+    <form action="/news/detail_news" method="post">
+
+
+
+                <div id="news-list" class="cb-bg-white">
+
+                    <div class="cb-col cb-col-100 cb-lst-itm cb-lst-itm-lg">
+
+                        <div class="cb-col cb-col-33" itemscope itemtype="https://schema.org/ImageObject"
+                             itemprop="image">
+
+                            <meta itemprop="width" content="205">
+                            <meta itemprop="height" content="152">
+                            <meta itemprop="url" content="https:" + {{ item["player_img"] }}>
+
+                            <a target="_self"
+{#                               href="//www.cricbuzz.com/{{ item["news_href"] }}"#}
+                               title="{{ item["player_name"] }}">
+
+                                <img height="152" width="205"
+                                     alt="{{ item["player_name"] }}"
+                                     title="{{ item["player_name"] }}"
+                                     itemprop="image"
+                                     class="cb-lst-img"
+                                     src="{{ item["player_img"] }}"
+                                     style="padding:0px;"/>
+                            </a>
+                        </div>
+                        <div class="cb-col-67 cb-nws-lst-rt cb-col cb-col-text-container">
+
+
+                            <h2 class="cb-nws-hdln cb-font-18 line-ht24">
+                                <a target="_self"
+                                   class="cb-nws-hdln-ancr text-hvr-underline"
+{#                                   value="//www.cricbuzz.com/{{ item["news_href"] }}"#}
+                                   title="{{ item["player_name"] }}">
+                                    {{ item["player_name"] }}
+                                </a>
+                            </h2>
+                            <div class="cb-nws-intr">{{ item["player_country"] }}
+                            </div>
+                            <div>
+
+                            <br/>
+                            <button type="submit" name="view_profile" value="www.cricbuzz.com/{{ item["player_url"] }}" align="center" class="cb-more-btn"title="View Profile">
+                            View Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                </div>
+        </form>
+    {% endfor %}
+    {% else %}
+        <h1>Sorry No Data Found!!! <br/>Check Spelling and Try Again</h1>
+    {% endif %}
     </div>
     </body>
 
