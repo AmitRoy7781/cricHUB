@@ -10,8 +10,7 @@ def search_players(player_list=None,search_status=None):
     if 'username' not in session.keys():
         return redirect('/auth/signin')
 
-    return render_template("player/search_widget.html")
-
+    return render_template("player/search.html",player_list=player_list,search_status=search_status)
 
 @app.route("/players/show_players", methods=['POST', 'GET'])
 def show_players():
@@ -19,12 +18,11 @@ def show_players():
     search_for = request.form.to_dict()["player_name"]
     search_for = search_for.lower()
 
+    print(search_for)
 
-
-    file = open("/home/amit-roy/SDP Resources/cricHUB/cricPlayer/output.txt", "r")
+    file = open("/home/amit-roy/Music/cricHUB/cricPlayer/output.txt", "r")
     data = file.read()
     file_data = data
-    file_data = file_data.lower()
     file_data = file_data.splitlines()
 
 
@@ -32,18 +30,22 @@ def show_players():
     for i in range(len(file_data)):
 
         x = file_data[i].split("|")
-        print(x)
+
 
         name = x[0]
         href = "https://www.cricbuzz.com" + str(x[1])
         img = str(x[2])
 
-        if (x[0].find(search_for)) != -1:
+
+
+        if (x[0].lower().find(search_for)) != -1:
 
             temp = {}
             temp["player_name"] = name.capitalize()
             temp["player_href"] = href
             temp["player_img"] = img
+
+            print(img)
 
             player_list.append(temp)
 
