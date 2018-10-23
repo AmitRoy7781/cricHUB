@@ -369,10 +369,10 @@ def get_data(url):
         bio = bio[45:len(bio)-6]
         bio = bio.strip()
 
-        bio = bio.replace("<b>","<br/>")
-        bio = bio.replace("</b>", "<br/>")
-        bio = bio.replace("<i>", "<br/>")
-        bio = bio.replace("</i>", "<br/>")
+        bio = bio.replace("<b>","")
+        bio = bio.replace("</b>", "")
+        bio = bio.replace("<i>", "")
+        bio = bio.replace("</i>", "")
         bio = bio.split("<br/>")
 
         print(bio[len(bio)-1])
