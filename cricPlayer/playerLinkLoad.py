@@ -10,15 +10,23 @@ outputFileName = open("output.txt", 'a+')
 
 temp = soup.find_all("a",{"class":"cb-list-item"})
 
-for i in range(0,1024):
+for i in range(869,1025):
     url = "https://m.cricbuzz.com/cricket-search/player/A/" + str(i+1)
     res = requests.get(url)
     soup = BeautifulSoup(res.text, 'lxml')
 
-    temp = soup.find_all("a", {"class": "cb-list-item"})
-    print(i)
 
-    for i in temp:
-        x = i.text + "|https://www.cricbuzz.com" + i["href"]
-        x = x.strip()
-        #outputFileName.write(x+"\n")
+    temp1 = soup.find_all("a", {"class": "cb-list-item"})
+    temp2 = soup.find_all("img")
+
+    temp2 = temp2[2:]
+    #print(temp1)
+
+    print(i)
+    for i in range(len(temp1)):
+        name = str(temp1[i].text).strip()
+        href = str(temp1[i]["href"]).strip()
+        img  = str(temp2[i]["src"]).strip()
+
+        #print(name,href,img)
+        outputFileName.write(name+ "|" + href + "|" + img + "\n")

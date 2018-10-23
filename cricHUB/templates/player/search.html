@@ -4,12 +4,204 @@
     {% include '/common/header.html' %}
 
     <head>
-        <title>Stytlish Search Forms Responsive Widget Template | Home :: w3layouts</title>
+
+        <style>
+
+            h2 > a {
+                position: relative;
+                color: #000;
+                text-decoration: none;
+            }
+
+            h2 > a:hover {
+                color: #008fd1;
+                position: relative;
+                text-decoration: none;
+                font-size: 19px;
+                display: inline-block;
+            }
+
+            body {
+                background: #E3E6E3;
+                font-family: helvetica, "Segoe UI", Arial, sans-serif;
+                color: #222;
+                font-size: 14px;
+                line-height: 1.5;
+                margin: 0;
+            }
+
+            body, .cb-comm-pg, .cb-hm-mid {
+                min-height: 1000px
+            }
+
+            .container {
+                width: 980px;
+                margin: 0 auto;
+            }
+
+            .page {
+                max-width: 980px;
+                margin: 0 auto;
+                position: relative;
+            }
+
+            .cb-col-33 {
+                width: 33%;
+            }
+
+            .cb-col-67 {
+                width: 67%;
+            }
+
+            .cb-col-100 {
+                width: 100%;
+            }
+
+            .cb-col {
+                display: inline-block;
+                box-sizing: border-box;
+                float: left;
+                min-height: 1px;
+            }
+
+            h1 {
+                font-size: 36px;
+                line-height: 42px;
+                margin: 0;
+            }
+
+            h2 {
+                font-size: 24px;
+                margin: 0;
+                line-height: 30px;
+            }
+
+            h3 {
+                font-size: 18px;
+                line-height: 24px;
+                margin: 0;
+            }
+
+            h4 {
+                font-size: 16px;
+                margin: 0;
+            }
+
+            h5 {
+                font-size: 14px;
+                margin: 0;
+            }
+
+            .cb-font-18 {
+                font-size: 18px;
+            }
+
+            img {
+                border: 0;
+            }
+
+            a {
+                text-decoration: none;
+                color: #222;
+            }
+
+            a, a:hover, a:active, a:focus {
+                outline: medium none;
+            }
+
+            .cb-nws-lft-col {
+                padding: 15px 20px;
+            }
+
+            .cb-nws-lst-rt {
+                padding-left: 10px;
+            }
+
+            .cb-lst-itm, .cb-bg-white {
+                background: #fff;
+            }
+
+            .cb-font-24 {
+                font-size: 24px;
+            }
+
+            .line-ht30 {
+                line-height: 30px;
+            }
+
+            .line-ht24 {
+                line-height: 24px;
+            }
+
+            .mrgn-btm-5 {
+                margin-bottom: 5px;
+            }
+
+            #scagTabContent {
+                display: block;
+                visibility: visible;
+            }
+
+            #scagTabContent {
+                display: none;
+                visibility: hidden;
+            }
+
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+
+            .cb-nws-time {
+                font-size: 12px;
+                padding-bottom: 5px;
+            }
+
+            .cb-nws-hdln-ancr {
+                padding-bottom: 5px;
+            }
+
+            .cb-nws-intr {
+                color: #666;
+                padding-bottom: 5px;
+            }
+
+            .cb-lst-itm-lg {
+                padding: 20px 0;
+            }
+
+            .cb-text-link {
+                color: #1866DB;
+            }
+
+            h2 {
+                font-size: 18px
+            }
+
+            .cb-col .cb-align-cen {
+                float: none;
+                text-align: center;
+                padding: 7px 25px;
+                margin-top: 20px;
+            }
+
+            .cb-align-cen {
+                padding-top: 10px;
+            }
+
+            .cb-more-btn {
+                padding: 8px 20px;
+                border-radius: 2px;
+                color: #fff;
+                background: #1f679d;
+                border: 0;
+                cursor: pointer;
+            }
+
+        </style>
+
+
+
         <!-- for-mobile-apps -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta name="keywords" content="Stytlish Search Forms Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design"/>
         <script type="application/x-javascript"> addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
         }, false);
@@ -22,6 +214,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <link href='//fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
               rel='stylesheet' type='text/css'>
+
+
+
     </head>
     <body>
     <br/>
@@ -94,14 +289,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     {{ item["player_name"] }}
                                 </a>
                             </h2>
-                            <div class="cb-nws-intr">{{ item["player_country"] }}
-                            </div>
+
+
                             <div>
 
                             <br/>
+
                             <button type="submit" name="view_profile" value="www.cricbuzz.com/{{ item["player_url"] }}" align="center" class="cb-more-btn"title="View Profile">
                             View Profile
                             </button>
+
                         </div>
                     </div>
                 </div>
@@ -109,7 +306,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </form>
     {% endfor %}
     {% else %}
-        <h1>Sorry No Data Found!!! <br/>Check Spelling and Try Again</h1>
+        <h1></h1>
     {% endif %}
     </div>
     </body>
