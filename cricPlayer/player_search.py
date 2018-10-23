@@ -1,10 +1,9 @@
 from flask import render_template
 from bs4 import BeautifulSoup
-import requests
+import requests,re
 
 
 
-    #
 PRINT_ON = False
 
 
@@ -363,14 +362,25 @@ def get_data(url):
 
 
     bio = soup.find_all("div",{"class":"cb-player-bio"})
-    print(len(bio))
 
     if(len(bio)>=2):
         bio = bio[1]
         bio = str(bio)
         bio = bio[45:len(bio)-6]
         bio = bio.strip()
-        player_bio = bio
+
+        bio = bio.replace("<b>","<br/>")
+        bio = bio.replace("</b>", "<br/>")
+        bio = bio.replace("<i>", "<br/>")
+        bio = bio.replace("</i>", "<br/>")
+        bio = bio.split("<br/>")
+
+        print(bio[len(bio)-1])
+        player_bio = []
+
+        for x in bio:
+            if x.strip()!="":
+                player_bio.append(x)
 
 
     #print_all()
@@ -662,8 +672,6 @@ def get_data(url):
     player_ipl_debut = player_ipl_debut,
     player_last_ipl = player_last_ipl,
 
-    player_bio = player_bio
-
-    )
+    player_bio = player_bio)
 
 

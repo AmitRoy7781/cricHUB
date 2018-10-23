@@ -992,402 +992,302 @@
         .cb-align-cen {
             padding-top: 10px;
         }</style>
-        <script>function getCookie(c_name) {
-            var i, x, y, ARRcookies = document.cookie.split(";");
-            for (i = 0; i < ARRcookies.length; i++) {
-                x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
-                y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
-                x = x.replace(/^\s+|\s+$/g, "");
-                if (x == c_name) {
-                    return unescape(y);
-                }
-            }
-        }
 
-        var cbads_value = getCookie("cbzads");
-        if (cbads_value != null && cbads_value.indexOf('IN|AS') >= 0) {
-            document.write("<style>.cb-geo-in-50{height:50px}</style>")
-        }</script>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-        <meta name="author" content="">
-        <link rel="shortcut icon" type="image/x-icon" href="//i.cricketcb.com/statics/site/images/cric_ball.ico"/>
-        <meta name="google-signin-client_id"
-              content="125255339112-d594jen12o0j854sufu8jfn2gbbnaskj.apps.googleusercontent.com">
-        <LINK REL="apple-touch-icon" href="//i.cricketcb.com/statics/site/images/apple-touch-icon.png"/>
-        <link rel="chrome-webstore-item"
-              href="https://chrome.google.com/webstore/detail/cricbuzz/opljecakjchbhhikbeifamamnpcdbgem"/>
-        <title itemprop="name">Virat Kohli Profile - ICC Ranking, Age, Career Info & Stats | Cricbuzz.com</title>
-        <meta name="description" itemprop="description"
-              content="Read about Virat Kohli&#039;s career details on Cricbuzz.com">
-        <link rel="alternate" href="//m.cricbuzz.com" media="only screen and (max-width: 640px)">
-        <meta name="robots" content="index, follow">
-        <meta name="googlebot" content="index, follow">
-        <meta name="google-site-verification" content="google89fd37b1258ef4b9.html">
-        <meta name="p:domain_verify" content="fd560568b43f31382de30f628c8430bd">
-        <meta name="msvalidate.01" content="A509FA8BAE50018F9DF2553AEDEDF77B">
-        <meta property="og:title" content="Virat Kohli Profile - ICC Ranking, Age, Career Info &amp; Stats">
-        <meta property="og:description" content="Read about Virat Kohli&#039;s career details on Cricbuzz.com">
-        <meta property="fb:app_id" content="30119633160">
-        <meta property="og:site_name" content="Cricbuzz">
-        <meta property="twitter:title" content="Virat Kohli Profile - ICC Ranking, Age, Career Info &amp; Stats">
-        <meta property="twitter:description" content="Read about Virat Kohli&#039;s career details on Cricbuzz.com">
-        <meta name="twitter:site" content="@cricbuzz">
-        <meta name="twitter:domain" content="cricbuzz.com">
-        <meta name="twitter:app:name:iphone" content="Cricbuzz">
-        <meta name="twitter:app:id:iphone" content="360466413">
-        <meta name="twitter:app:name:googleplay" content="Cricbuzz">
-        <meta name="twitter:app:id:googleplay" content="com.cricbuzz.android">
-        <meta name="twitter:widgets:csp" content="on">
-        <meta property="fb:pages" content="178697151159"/>
-        <meta name="keywords" content="">
-        <meta name="news_keywords" content="">
-        <link rel="canonical" href="https://www.cricbuzz.com/profiles/1413/virat-kohli">
-        <meta name="msapplication-config" content="none"/>
-        <script>var PAGE_NAME = "default";
-        var CBQueue = CBQueue || [];
-        var CBQueueOnLoad = CBQueueOnLoad || [];
-        /*CBQueue.push(function(){roadblock(2,{country:["US","CA", "ZA", "AU"], continent:["EU"]});});*/
-        CBQueue.push(function () {
-            roadblock(2, {country: ["US"]});
-        });
-        _udn = "cricbuzz.com";</script>
-        <script>(function (w) {
-            "use strict";
-            var loadCSS = function (href, before, media) {
-                var doc = w.document;
-                var ss = doc.createElement("link");
-                var ref;
-                if (before) {
-                    ref = before;
-                } else {
-                    var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-                    ref = refs[refs.length - 1];
-                }
-                var sheets = doc.styleSheets;
-                ss.rel = "stylesheet";
-                ss.href = href;
-                ss.media = "only x";
-                ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
-                var onloadcssdefined = function (cb) {
-                    var resolvedHref = ss.href;
-                    var i = sheets.length;
-                    while (i--) {
-                        if (sheets[i].href === resolvedHref) {
-                            return cb();
-                        }
-                    }
-                    setTimeout(function () {
-                        onloadcssdefined(cb);
-                    });
-                };
-                ss.onloadcssdefined = onloadcssdefined;
-                onloadcssdefined(function () {
-                    ss.media = media || "all";
-                });
-                return ss;
-            };
-            if (typeof module !== "undefined") {
-                module.exports = loadCSS;
-            } else {
-                w.loadCSS = loadCSS;
-            }
-        }(typeof global !== "undefined" ? global : this));
-        loadCSS("/css/cricbuzz.min.201810181346.css");</script>
-        <noscript>
-            <link rel="stylesheet" type="text/css" href="/css/cricbuzz.min.201810181346.css">
-        </noscript>
+
     </head>
     <body>
     <div class="page">
 
-                <div class="cb-col cb-col-100 cb-bg-white">
-                    <div class="cb-col cb-col-20 cb-col-rt"><img title="profile image"
-                                                                 class="img-responsive cb-plyr-thum-img"
-                                                                 src="{{ player_img }}">
-                    </div>
-                    <div style="padding-top: 90px;"><h1 itemprop="name" class="cb-font-40">{{ player_name }}</h1>
-                        <h3 class="cb-font-18 text-gray">{{ player_country }}</h3></div>
+        <div class="cb-col cb-col-100 cb-bg-white">
+            <div class="cb-col cb-col-20 cb-col-rt"><img title="profile image"
+                                                         class="img-responsive cb-plyr-thum-img"
+                                                         src="{{ player_img }}">
+            </div>
+            <div style="padding-top: 90px;"><h1 itemprop="name" class="cb-font-40">{{ player_name }}</h1>
+                <h3 class="cb-font-18 text-gray">{{ player_country }}</h3></div>
 
-                    <div class="cb-col cb-col-100 cb-bg-grey">
-                        <div class="cb-col cb-col-33 text-black">
-                            <div class="cb-hm-rght">
-                                <div class="cb-font-16 text-bold"> Personal Information</div>
-                                <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Born</div>
-                                <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_born }}</div>
-                                <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Birth Place</div>
-                                <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_birth_place }}</div>
-                                <div class="cb-col cb-col-40 text-bold">Height</div>
-                                <div class="cb-col cb-col-60"> {{ player_height }}</div>
-                                <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Role</div>
-                                <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_role }}</div>
-                                <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Batting Style</div>
-                                <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_batting_style }}</div>
-                                <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Bowling Style</div>
-                                <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_bowlng_style }}</div>
-                                <div class="cb-font-16 text-bold cb-lst-itm-sm cb-col cb-col-100 cb-sr-rev-label">ICC
-                                    Rankings
-                                </div>
-                                <div class="cb-col cb-col-25">&nbsp;</div>
-                                <div class="cb-col cb-col-25 text-right cb-plyr-rank">Test</div>
-                                <div class="cb-col cb-col-25 text-right cb-plyr-rank">ODI</div>
-                                <div class="cb-col cb-col-25 text-right cb-plyr-rank">T20</div>
-                                <div class="cb-col cb-col-25 text-left cb-plyr-rank text-bold">Batting</div>
-                                <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_test_batting_rank }}</div>
-                                <div class="cb-col cb-col-25 cb-plyr-rank text-right">{{ player_odi_batting_rank }}</div>
-                                <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_t20_batting_rank }}</div>
-                                <div class="cb-col cb-col-25 text-left cb-plyr-rank text-bold">Bowling</div>
-                                <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_test_bowling_rank }}</div>
-                                <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_odi_bowling_rank }}</div>
-                                <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_t20_bowling_rank }}</div>
-                                <div id="mpu" class="cb-ttl-vts cb-col ad-unit"></div>
-                                <div class="cb-col cb-col-100 cb-font-16 text-bold cb-ttl-vts"> Career Information</div>
-                                <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Teams</div>
-                                <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_team }}
-                                </div>
-                            </div>
+            <div class="cb-col cb-col-100 cb-bg-grey">
+                <div class="cb-col cb-col-33 text-black">
+                    <div class="cb-hm-rght">
+                        <div class="cb-font-16 text-bold"> Personal Information</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Born</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_born }}</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Birth Place</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_birth_place }}</div>
+                        <div class="cb-col cb-col-40 text-bold">Height</div>
+                        <div class="cb-col cb-col-60"> {{ player_height }}</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Role</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_role }}</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Batting Style</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_batting_style }}</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Bowling Style</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_bowlng_style }}</div>
+                        <div class="cb-font-16 text-bold cb-lst-itm-sm cb-col cb-col-100 cb-sr-rev-label">ICC
+                            Rankings
                         </div>
-
-                    </div>
-                    <div class="cb-col cb-col-67 cb-bg-white cb-plyr-rt-col">
-                        <div class="cb-hm-rght cb-player-bio">
+                        <div class="cb-col cb-col-25">&nbsp;</div>
+                        <div class="cb-col cb-col-25 text-right cb-plyr-rank">Test</div>
+                        <div class="cb-col cb-col-25 text-right cb-plyr-rank">ODI</div>
+                        <div class="cb-col cb-col-25 text-right cb-plyr-rank">T20</div>
+                        <div class="cb-col cb-col-25 text-left cb-plyr-rank text-bold">Batting</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_test_batting_rank }}</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right">{{ player_odi_batting_rank }}</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_t20_batting_rank }}</div>
+                        <div class="cb-col cb-col-25 text-left cb-plyr-rank text-bold">Bowling</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_test_bowling_rank }}</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_odi_bowling_rank }}</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_t20_bowling_rank }}</div>
+                        <div id="mpu" class="cb-ttl-vts cb-col ad-unit"></div>
+                        <div class="cb-col cb-col-100 cb-font-16 text-bold cb-ttl-vts"> Career Information</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Teams</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_team }}
                         </div>
-                        <div class="cb-plyr-tbl">
-                            <div class="cb-font-16 text-bold cb-lst-dom">Batting Career Summary</div>
-                            <table class="table cb-col-100 cb-plyr-thead">
-                                <thead>
-                                <tr class="cb-bg-grey cb-font-12">
-                                    <th></th>
-                                    <th class="cb-plyr-th text-right" title="Matches Played">M</th>
-                                    <th class="text-center" title="No of Innings Batted">Inn</th>
-                                    <th class="text-center" title="No of Not Outs">NO</th>
-                                    <th class="text-center" title="No of Runs Scored">Runs</th>
-                                    <th class="text-center" title="Highest Score">HS</th>
-                                    <th class="text-center" title="Batting Average">Avg</th>
-                                    <th class="text-center" title="No of Balls Faced">BF</th>
-                                    <th class="text-center" title="Batting Strike Rate">SR</th>
-                                    <th class="text-center" title="No of 100s Scored">100</th>
-                                    <th class="text-center" title="No of 200s Scored">200</th>
-                                    <th class="text-center" title="No of 50s Scored">50</th>
-                                    <th class="text-center" title="No of fours hit">4s</th>
-                                    <th class="text-center" title="No of sixes hit">6s</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="cb-col-8"><strong>Test</strong></td>
-                                    <td class="cb-plyr-tbody text-right">{{ player_test_batting_m }}</td>
-                                    <td class="text-right">{{ player_test_batting_inn }}</td>
-                                    <td class="text-right">{{ player_test_no }}</td>
-                                    <td class="text-right">{{ player_test_batting_runs }}</td>
-                                    <td class="text-right">{{ player_test_hs }}</td>
-                                    <td class="text-right">{{ player_test_batting_avg }}</td>
-                                    <td class="text-right">{{ player_test_bf }}</td>
-                                    <td class="text-right">{{ player_test_batting_sr }}</td>
-                                    <td class="text-right">{{ player_test_100 }}</td>
-                                    <td class="text-right">{{ player_test_200 }}</td>
-                                    <td class="text-right">{{ player_test_50 }}</td>
-                                    <td class="text-right">{{ player_test_4s }}</td>
-                                    <td class="text-right">{{ player_test_6s }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="cb-col-8"><strong>ODI</strong></td>
-                                    <td class="cb-plyr-tbody text-right">{{ player_odi_batting_m }}</td>
-                                    <td class="text-right">{{ player_odi_batting_inn }}</td>
-                                    <td class="text-right">{{ player_odi_no }}</td>
-                                    <td class="text-right">{{ player_odi_batting_runs }}</td>
-                                    <td class="text-right">{{ player_odi_hs }}</td>
-                                    <td class="text-right">{{ player_odi_batting_avg }}</td>
-                                    <td class="text-right">{{ player_odi_bf }}</td>
-                                    <td class="text-right">{{ player_odi_batting_sr }}</td>
-                                    <td class="text-right">{{ player_odi_100 }}</td>
-                                    <td class="text-right">{{ player_odi_200 }}</td>
-                                    <td class="text-right">{{ player_odi_50 }}</td>
-                                    <td class="text-right">{{ player_odi_4s }}</td>
-                                    <td class="text-right">{{ player_odi_6s }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="cb-col-8"><strong>T20I</strong></td>
-                                    <td class="cb-plyr-tbody text-right">{{ player_t20_batting_m }}</td>
-                                    <td class="text-right">{{ player_t20_batting_inn }}</td>
-                                    <td class="text-right">{{ player_t20_no }}</td>
-                                    <td class="text-right">{{ player_t20_batting_runs }}</td>
-                                    <td class="text-right">{{ player_t20_hs }}</td>
-                                    <td class="text-right">{{ player_t20_batting_avg }}</td>
-                                    <td class="text-right">{{ player_t20_bf }}</td>
-                                    <td class="text-right">{{ player_t20_batting_sr }}</td>
-                                    <td class="text-right">{{ player_t20_100 }}</td>
-                                    <td class="text-right">{{ player_t20_200 }}</td>
-                                    <td class="text-right">{{ player_t20_50 }}</td>
-                                    <td class="text-right">{{ player_t20_4s }}</td>
-                                    <td class="text-right">{{ player_t20_6s }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="cb-col-8"><strong>IPL</strong></td>
-                                    <td class="cb-plyr-tbody text-right">{{ player_ipl_batting_m }}</td>
-                                    <td class="text-right">{{ player_ipl_batting_inn }}</td>
-                                    <td class="text-right">{{ player_ipl_no }}</td>
-                                    <td class="text-right">{{ player_ipl_batting_runs }}</td>
-                                    <td class="text-right">{{ player_ipl_hs }}</td>
-                                    <td class="text-right">{{ player_ipl_batting_avg }}</td>
-                                    <td class="text-right">{{ player_ipl_bf }}</td>
-                                    <td class="text-right">{{ player_ipl_batting_sr }}</td>
-                                    <td class="text-right">{{ player_ipl_100 }}</td>
-                                    <td class="text-right">{{ player_ipl_200 }}</td>
-                                    <td class="text-right">{{ player_ipl_50 }}</td>
-                                    <td class="text-right">{{ player_ipl_4s }}</td>
-                                    <td class="text-right">{{ player_ipl_6s }}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="cb-plyr-tbl">
-                            <div class="cb-font-16 text-bold cb-lst-dom">Bowling Career Summary</div>
-                            <table class="table cb-col-100 cb-plyr-thead">
-                                <thead>
-                                <tr class="cb-bg-grey cb-font-12">
-                                    <th></th>
-                                    <th class="cb-plyr-th text-right" title="Matches Played">M</th>
-                                    <th class="text-right" title="No of Innings Bowled">Inn</th>
-                                    <th class="text-right" title="No of Balls Bowled">B</th>
-                                    <th class="text-right" title="No of Runs Conceded">Runs</th>
-                                    <th class="text-right" title="Wickets">Wkts</th>
-                                    <th class="text-right" title="Best Bowling in Innings">BBI</th>
-                                    <th class="text-right" title="Best Bowling in Match">BBM</th>
-                                    <th class="text-right" title="Economy">Econ</th>
-                                    <th class="text-right" title="Bowling Average">Avg</th>
-                                    <th class="text-right" title="Bowling Strike Rate">SR</th>
-                                    <th class="text-right" title="Five Wickets in an Innings">5W</th>
-                                    <th class="text-right cb-plyr-stump" title="Ten Wickets in an Match">10W</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="cb-col-8"><strong>Test</strong></td>
-                                    <td class="cb-plyr-tbody text-right">{{ player_test_bowling_m }}</td>
-                                    <td class="text-right">{{ player_test_bowling_inn }}</td>
-                                    <td class="text-right">{{ player_test_b }}</td>
-                                    <td class="text-right">{{ player_test_bowling_runs }}</td>
-                                    <td class="text-right">{{ player_test_wkts }}</td>
-                                    <td class="text-right">{{ player_test_bbi }}</td>
-                                    <td class="text-right">{{ player_test_bbm }}</td>
-                                    <td class="text-right">{{ player_test_econ }}</td>
-                                    <td class="text-right">{{ player_test_bowling_avg }}</td>
-                                    <td class="text-right">{{ player_test_bowling_sr }}</td>
-                                    <td class="text-right">{{ player_test_5W }}</td>
-                                    <td class="text-right">{{ player_test_10W }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="cb-col-8"><strong>ODI</strong></td>
-                                    <td class="cb-plyr-tbody text-right">{{ player_odi_bowling_m }}</td>
-                                    <td class="text-right">{{ player_odi_bowling_inn }}</td>
-                                    <td class="text-right">{{ player_odi_b }}</td>
-                                    <td class="text-right">{{ player_odi_bowling_runs }}</td>
-                                    <td class="text-right">{{ player_odi_wkts }}</td>
-                                    <td class="text-right">{{ player_odi_bbi }}</td>
-                                    <td class="text-right">{{ player_odi_bbm }}</td>
-                                    <td class="text-right">{{ player_odi_econ }}</td>
-                                    <td class="text-right">{{ player_odi_bowling_avg }}</td>
-                                    <td class="text-right">{{ player_odi_bowling_sr }}</td>
-                                    <td class="text-right">{{ player_odi_5W }}</td>
-                                    <td class="text-right">{{ player_odi_10W }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="cb-col-8"><strong>T20I</strong></td>
-                                    <td class="cb-plyr-tbody text-right">{{ player_t20_bowling_m }}</td>
-                                    <td class="text-right">{{ player_t20_bowling_inn }}</td>
-                                    <td class="text-right">{{ player_t20_b }}</td>
-                                    <td class="text-right">{{ player_t20_bowling_runs }}</td>
-                                    <td class="text-right">{{ player_t20_wkts }}</td>
-                                    <td class="text-right">{{ player_t20_bbi }}</td>
-                                    <td class="text-right">{{ player_t20_bbm }}</td>
-                                    <td class="text-right">{{ player_t20_econ }}</td>
-                                    <td class="text-right">{{ player_t20_bowling_avg }}</td>
-                                    <td class="text-right">{{ player_t20_bowling_sr }}</td>
-                                    <td class="text-right">{{ player_t20_5W }}</td>
-                                    <td class="text-right">{{ player_t20_10W }}</td>
-                                </tr>
-                                <tr>
-                                    <td class="cb-col-8"><strong>IPL</strong></td>
-                                    <td class="cb-plyr-tbody text-right">{{ player_ipl_bowling_m }}</td>
-                                    <td class="text-right">{{ player_ipl_bowling_inn }}</td>
-                                    <td class="text-right">{{ player_ipl_b }}</td>
-                                    <td class="text-right">{{ player_ipl_bowling_runs }}</td>
-                                    <td class="text-right">{{ player_ipl_wkts }}</td>
-                                    <td class="text-right">{{ player_ipl_bbi }}</td>
-                                    <td class="text-right">{{ player_ipl_bbm }}</td>
-                                    <td class="text-right">{{ player_ipl_econ }}</td>
-                                    <td class="text-right">{{ player_ipl_bowling_avg }}</td>
-                                    <td class="text-right">{{ player_ipl_bowling_sr }}</td>
-                                    <td class="text-right">{{ player_ipl_5W }}</td>
-                                    <td class="text-right">{{ player_ipl_10W }}</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="cb-font-16 text-bold cb-plyr-tbl cb-lst-dom">Career Information</div>
-                        <br/>
-                        <div class="cb-col cb-col-100">
-
-                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Test debut</div>
-
-                            <div class="cb-col cb-col-84 cb-ftr-lst">
-                                {{ player_test_debut }}
-                            </div>
-
-                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last Test</div>
-
-                            <div class="cb-col cb-col-84 cb-ftr-lst">
-                                {{ player_last_test }}
-                            </div>
-
-                            <br/><br/><br/>
-
-                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">ODI debut</div>
-
-                            <div class="cb-col cb-col-84 cb-ftr-lst">
-                                {{ player_odi_debut }}
-                            </div>
-
-                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last ODI</div>
-                            <div class="cb-col cb-col-84 cb-ftr-lst">
-                                {{ player_last_odi }}
-                            </div>
-
-
-                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst cb-nav-hdr">T20 debut</div>
-                            <div class="cb-col cb-col-84 cb-ftr-lst cb-nav-hdr">
-                                {{ player_t20_debut }}
-                            </div>
-
-
-                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last T20</div>
-                            <div class="cb-col cb-col-84 cb-ftr-lst">
-                                {{ player_last_t20 }}
-                            </div>
-
-                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst cb-nav-hdr">IPL debut</div>
-                            <div class="cb-col cb-col-84 cb-ftr-lst cb-nav-hdr">
-                                {{ player_ipl_debut }}
-                            </div>
-
-                            <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last IPL</div>
-                            <div class="cb-col cb-col-84 cb-ftr-lst">
-                                {{ player_last_ipl }}
-                            </div>
-                        </div>
-                        <div class="cb-col cb-col-100 cb-font-16 text-bold cb-plyr-tbl cb-lst-dom" id="profile">
-
-                            <br/>
-                            Profile
-                        </div>
-                        <div class="cb-col cb-col-100 cb-player-bio">
-                            {{ player_bio }}
-                        </div>
-
                     </div>
                 </div>
+
+            </div>
+            <div class="cb-col cb-col-67 cb-bg-white cb-plyr-rt-col">
+                <div class="cb-hm-rght cb-player-bio">
+                </div>
+                <div class="cb-plyr-tbl">
+                    <div class="cb-font-16 text-bold cb-lst-dom">Batting Career Summary</div>
+                    <table class="table cb-col-100 cb-plyr-thead">
+                        <thead>
+                        <tr class="cb-bg-grey cb-font-12">
+                            <th></th>
+                            <th class="cb-plyr-th text-right" title="Matches Played">M</th>
+                            <th class="text-center" title="No of Innings Batted">Inn</th>
+                            <th class="text-center" title="No of Not Outs">NO</th>
+                            <th class="text-center" title="No of Runs Scored">Runs</th>
+                            <th class="text-center" title="Highest Score">HS</th>
+                            <th class="text-center" title="Batting Average">Avg</th>
+                            <th class="text-center" title="No of Balls Faced">BF</th>
+                            <th class="text-center" title="Batting Strike Rate">SR</th>
+                            <th class="text-center" title="No of 100s Scored">100</th>
+                            <th class="text-center" title="No of 200s Scored">200</th>
+                            <th class="text-center" title="No of 50s Scored">50</th>
+                            <th class="text-center" title="No of fours hit">4s</th>
+                            <th class="text-center" title="No of sixes hit">6s</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="cb-col-8"><strong>Test</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_test_batting_m }}</td>
+                            <td class="text-right">{{ player_test_batting_inn }}</td>
+                            <td class="text-right">{{ player_test_no }}</td>
+                            <td class="text-right">{{ player_test_batting_runs }}</td>
+                            <td class="text-right">{{ player_test_hs }}</td>
+                            <td class="text-right">{{ player_test_batting_avg }}</td>
+                            <td class="text-right">{{ player_test_bf }}</td>
+                            <td class="text-right">{{ player_test_batting_sr }}</td>
+                            <td class="text-right">{{ player_test_100 }}</td>
+                            <td class="text-right">{{ player_test_200 }}</td>
+                            <td class="text-right">{{ player_test_50 }}</td>
+                            <td class="text-right">{{ player_test_4s }}</td>
+                            <td class="text-right">{{ player_test_6s }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>ODI</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_odi_batting_m }}</td>
+                            <td class="text-right">{{ player_odi_batting_inn }}</td>
+                            <td class="text-right">{{ player_odi_no }}</td>
+                            <td class="text-right">{{ player_odi_batting_runs }}</td>
+                            <td class="text-right">{{ player_odi_hs }}</td>
+                            <td class="text-right">{{ player_odi_batting_avg }}</td>
+                            <td class="text-right">{{ player_odi_bf }}</td>
+                            <td class="text-right">{{ player_odi_batting_sr }}</td>
+                            <td class="text-right">{{ player_odi_100 }}</td>
+                            <td class="text-right">{{ player_odi_200 }}</td>
+                            <td class="text-right">{{ player_odi_50 }}</td>
+                            <td class="text-right">{{ player_odi_4s }}</td>
+                            <td class="text-right">{{ player_odi_6s }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>T20I</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_t20_batting_m }}</td>
+                            <td class="text-right">{{ player_t20_batting_inn }}</td>
+                            <td class="text-right">{{ player_t20_no }}</td>
+                            <td class="text-right">{{ player_t20_batting_runs }}</td>
+                            <td class="text-right">{{ player_t20_hs }}</td>
+                            <td class="text-right">{{ player_t20_batting_avg }}</td>
+                            <td class="text-right">{{ player_t20_bf }}</td>
+                            <td class="text-right">{{ player_t20_batting_sr }}</td>
+                            <td class="text-right">{{ player_t20_100 }}</td>
+                            <td class="text-right">{{ player_t20_200 }}</td>
+                            <td class="text-right">{{ player_t20_50 }}</td>
+                            <td class="text-right">{{ player_t20_4s }}</td>
+                            <td class="text-right">{{ player_t20_6s }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>IPL</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_ipl_batting_m }}</td>
+                            <td class="text-right">{{ player_ipl_batting_inn }}</td>
+                            <td class="text-right">{{ player_ipl_no }}</td>
+                            <td class="text-right">{{ player_ipl_batting_runs }}</td>
+                            <td class="text-right">{{ player_ipl_hs }}</td>
+                            <td class="text-right">{{ player_ipl_batting_avg }}</td>
+                            <td class="text-right">{{ player_ipl_bf }}</td>
+                            <td class="text-right">{{ player_ipl_batting_sr }}</td>
+                            <td class="text-right">{{ player_ipl_100 }}</td>
+                            <td class="text-right">{{ player_ipl_200 }}</td>
+                            <td class="text-right">{{ player_ipl_50 }}</td>
+                            <td class="text-right">{{ player_ipl_4s }}</td>
+                            <td class="text-right">{{ player_ipl_6s }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cb-plyr-tbl">
+                    <div class="cb-font-16 text-bold cb-lst-dom">Bowling Career Summary</div>
+                    <table class="table cb-col-100 cb-plyr-thead">
+                        <thead>
+                        <tr class="cb-bg-grey cb-font-12">
+                            <th></th>
+                            <th class="cb-plyr-th text-right" title="Matches Played">M</th>
+                            <th class="text-right" title="No of Innings Bowled">Inn</th>
+                            <th class="text-right" title="No of Balls Bowled">B</th>
+                            <th class="text-right" title="No of Runs Conceded">Runs</th>
+                            <th class="text-right" title="Wickets">Wkts</th>
+                            <th class="text-right" title="Best Bowling in Innings">BBI</th>
+                            <th class="text-right" title="Best Bowling in Match">BBM</th>
+                            <th class="text-right" title="Economy">Econ</th>
+                            <th class="text-right" title="Bowling Average">Avg</th>
+                            <th class="text-right" title="Bowling Strike Rate">SR</th>
+                            <th class="text-right" title="Five Wickets in an Innings">5W</th>
+                            <th class="text-right cb-plyr-stump" title="Ten Wickets in an Match">10W</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="cb-col-8"><strong>Test</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_test_bowling_m }}</td>
+                            <td class="text-right">{{ player_test_bowling_inn }}</td>
+                            <td class="text-right">{{ player_test_b }}</td>
+                            <td class="text-right">{{ player_test_bowling_runs }}</td>
+                            <td class="text-right">{{ player_test_wkts }}</td>
+                            <td class="text-right">{{ player_test_bbi }}</td>
+                            <td class="text-right">{{ player_test_bbm }}</td>
+                            <td class="text-right">{{ player_test_econ }}</td>
+                            <td class="text-right">{{ player_test_bowling_avg }}</td>
+                            <td class="text-right">{{ player_test_bowling_sr }}</td>
+                            <td class="text-right">{{ player_test_5W }}</td>
+                            <td class="text-right">{{ player_test_10W }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>ODI</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_odi_bowling_m }}</td>
+                            <td class="text-right">{{ player_odi_bowling_inn }}</td>
+                            <td class="text-right">{{ player_odi_b }}</td>
+                            <td class="text-right">{{ player_odi_bowling_runs }}</td>
+                            <td class="text-right">{{ player_odi_wkts }}</td>
+                            <td class="text-right">{{ player_odi_bbi }}</td>
+                            <td class="text-right">{{ player_odi_bbm }}</td>
+                            <td class="text-right">{{ player_odi_econ }}</td>
+                            <td class="text-right">{{ player_odi_bowling_avg }}</td>
+                            <td class="text-right">{{ player_odi_bowling_sr }}</td>
+                            <td class="text-right">{{ player_odi_5W }}</td>
+                            <td class="text-right">{{ player_odi_10W }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>T20I</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_t20_bowling_m }}</td>
+                            <td class="text-right">{{ player_t20_bowling_inn }}</td>
+                            <td class="text-right">{{ player_t20_b }}</td>
+                            <td class="text-right">{{ player_t20_bowling_runs }}</td>
+                            <td class="text-right">{{ player_t20_wkts }}</td>
+                            <td class="text-right">{{ player_t20_bbi }}</td>
+                            <td class="text-right">{{ player_t20_bbm }}</td>
+                            <td class="text-right">{{ player_t20_econ }}</td>
+                            <td class="text-right">{{ player_t20_bowling_avg }}</td>
+                            <td class="text-right">{{ player_t20_bowling_sr }}</td>
+                            <td class="text-right">{{ player_t20_5W }}</td>
+                            <td class="text-right">{{ player_t20_10W }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>IPL</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_ipl_bowling_m }}</td>
+                            <td class="text-right">{{ player_ipl_bowling_inn }}</td>
+                            <td class="text-right">{{ player_ipl_b }}</td>
+                            <td class="text-right">{{ player_ipl_bowling_runs }}</td>
+                            <td class="text-right">{{ player_ipl_wkts }}</td>
+                            <td class="text-right">{{ player_ipl_bbi }}</td>
+                            <td class="text-right">{{ player_ipl_bbm }}</td>
+                            <td class="text-right">{{ player_ipl_econ }}</td>
+                            <td class="text-right">{{ player_ipl_bowling_avg }}</td>
+                            <td class="text-right">{{ player_ipl_bowling_sr }}</td>
+                            <td class="text-right">{{ player_ipl_5W }}</td>
+                            <td class="text-right">{{ player_ipl_10W }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cb-font-16 text-bold cb-plyr-tbl cb-lst-dom">Career Information</div>
+                <br/>
+                <div class="cb-col cb-col-100">
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Test debut</div>
+
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_test_debut }}
+                    </div>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last Test</div>
+
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_last_test }}
+                    </div>
+
+                    <br/><br/><br/>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">ODI debut</div>
+
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_odi_debut }}
+                    </div>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last ODI</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_last_odi }}
+                    </div>
+
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst cb-nav-hdr">T20 debut</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst cb-nav-hdr">
+                        {{ player_t20_debut }}
+                    </div>
+
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last T20</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_last_t20 }}
+                    </div>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst cb-nav-hdr">IPL debut</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst cb-nav-hdr">
+                        {{ player_ipl_debut }}
+                    </div>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last IPL</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_last_ipl }}
+                    </div>
+                </div>
+                <div class="cb-col cb-col-100 cb-font-16 text-bold cb-plyr-tbl cb-lst-dom" id="profile">
+
+                    <br/>
+                    Profile
+                </div>
+                <div id="player_bio" class="cb-col cb-col-100 cb-player-bio">
+                    {% for item in player_bio %}
+                        <p> {{ item }}</p>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
 
 
     </div>
