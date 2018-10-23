@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, session, Blueprint
 from bs4 import BeautifulSoup
-import requests
+import requests,os
 
 app = Blueprint('player', __name__)
 
@@ -18,9 +18,10 @@ def show_players():
     search_for = request.form.to_dict()["player_name"]
     search_for = search_for.lower()
 
-    print(search_for)
+    os.chdir(os.path.dirname(__file__))
 
-    file = open("/home/amit-roy/Music/cricHUB/cricPlayer/output.txt", "r")
+
+    file = open(os.getcwd()+"/output.txt", "r")
     data = file.read()
     file_data = data
     file_data = file_data.splitlines()
@@ -45,7 +46,6 @@ def show_players():
             temp["player_href"] = href
             temp["player_img"] = img
 
-            print(img)
 
             player_list.append(temp)
 
