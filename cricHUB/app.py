@@ -1,10 +1,13 @@
-from flask import Flask,redirect,session, render_template
+from flask import Flask, redirect, session, render_template
+
 from cricAuth.auth import app as auth
-from cricRanking.show_ranking import app as ranking
-from cricRanking.rank_try import app as ranking_try
-from cricSTAT.t20Stat import app as stat
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
+from cricRanking.rank_try import app as ranking_try
+from cricRanking.show_ranking import app as ranking
+from cricSTAT.t20Stat import app as stat
+from cricMongoDB.database import db
+import cricAuth.auth
 
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
@@ -22,9 +25,8 @@ app.register_blueprint(stat)
 # news blueprint
 app.register_blueprint(news)
 
-#player blueprint
+# player blueprint
 app.register_blueprint(player)
-
 
 
 @app.route('/')
@@ -39,5 +41,19 @@ def score():
     return render_template('LiveScore.html')
 
 
+@app.route('/contact-us/')
+def profile():
+    if 'username' not in session.keys():
+        return redirect('/auth/signin')
+
+    users = db.users
+
+    loogged_in = session["username"]
+
+    query = {"username": loogged_in}
+    profile = users.find_one(query)
+
+    return render_template('user_profile.html', name=profile["name"], email=profile["email"], phone=profile["phone_number"])
+
 if __name__ == '__main__':
-    app.run(port=5000,debug=True)
+    app.run(port=5000, debug=True)
