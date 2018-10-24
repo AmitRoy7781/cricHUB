@@ -1,6 +1,7 @@
-<!DOCTYPE html>
-<html>
+{% extends "/common/base.html" %}
 
+{% block content %}
+{% include '/common/header.html' %}
 <head lang="en">
   <meta charset="UTF-8">
   <title></title>
@@ -113,4 +114,6 @@
   </div>
 </body>
 
-</html>
+{% include '/common/footer.html' %}
+{% include '/common/footer-social.html' %}
+{% endblock %}
