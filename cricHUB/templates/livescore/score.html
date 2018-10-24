@@ -1002,39 +1002,47 @@
                     Live Cricket Score
                 </h1>
 
+                {%  for item in match_data %}
                 <div class="cb-col cb-col-100 cb-lv-main">
                     <h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr" title="Windies tour of India, 2018">
-                        WINDIES TOUR OF INDIA, 2018</h2>
+                        {{ item["match_header"] }}
+                    </h2>
                     <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
                         <div class="cb-col-100 cb-col cb-schdl">
                             <h3 class="cb-lv-scr-mtch-hdr inline-block">
                                 <a class="text-hvr-underline text-bold"
-                                   href="/live-cricket-scores/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
-                                   title="India vs Windies">
-                                    India vs Windies,
+                                   href="{{ item["match_href"]  }}"
+                                   title="{{ item["match_name"] }}">
+                                    {{ item["match_name"] }}
                                 </a>
                             </h3>
 
                             <span class="text-gray">&nbsp;
-                                2nd ODI
+                                {{ item["match_no"] }}
                             </span>
 
                             <div class="text-gray"><span class="schedule-date" timestamp="1540368000000"
                                                          format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
                                     ng-bind="1540368000000 |date:'h:mm a'"></span><span class="text-gray">
-                                at Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium, Visakhapatnam
+                                {{ item["match_venue"] }}
                             </span>
                             </div>
                         </div>
                         <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
-                                                                   href="/live-cricket-scores/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
-                                                                   title="India vs Windies 2nd ODI">
+                                                                   href="{{ item["match_href"]  }}"
+                                                                   title="{{ item["match_name"] }}{{ item["match_no"] }}">
                             <div class="cb-col">
                                 <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>IND</span> 267/5
-                                        (46.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>WI</span></div>
-                                    <div class="cb-lv-scrs-col cb-text-live">India opt to bat</div>
+                                    <div class="cb-lv-scrs-col text-black">
+                                        <span class='text-bold'>
+                                        {{ item["team1score"] }}
+                                        <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span>
+                                        <span class='text-bold'>
+                                            {{ item["team2score"] }}
+                                        </span>
+                                        </span>
+                                    </div>
+                                    <div class="cb-lv-scrs-col cb-text-live">{{ item["match_status"] }}</div>
                                 </div>
                                 <div class="cb-scr-wll-chvrn">
                                     <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
@@ -1045,36 +1053,7 @@
 
                     </div>
                 </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="Zimbabwe tour of Bangladesh, 2018">ZIMBABWE TOUR OF
-                    BANGLADESH, 2018</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
-                                title="Bangladesh vs Zimbabwe">Bangladesh vs Zimbabwe,</a></h3><span class="text-gray">&nbsp;2nd ODI</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540369800000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540369800000 |date:'h:mm a'"></span><span class="text-gray"> at Zahur Ahmed Chowdhury Stadium, Chittagong</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
-                                                                   href="/live-cricket-scores/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
-                                                                   title="Bangladesh vs Zimbabwe 2nd ODI">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>ZIM</span> 204/4
-                                        (43.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>BAN</span></div>
-                                    <div class="cb-lv-scrs-col cb-text-live">Bangladesh opt to bowl</div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 

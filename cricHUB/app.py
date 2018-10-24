@@ -76,10 +76,6 @@ def format_datetime(value, format="%a %d %B %I:%M %p"):
     return local_dt.strftime(format)
 
 
-@app.route('/live-score/')
-def score():
-    return render_template('livescore/test2.html')
-
 
 # @app.route('/chat-box')
 # def chat():
