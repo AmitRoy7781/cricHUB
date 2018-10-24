@@ -38,6 +38,9 @@ def home():
 
 @app.route('/live-score/')
 def score():
+    if 'username' not in session.keys():
+        return redirect('/auth/signin')
+
     return render_template('LiveScore.html')
 
 
