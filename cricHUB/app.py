@@ -1,15 +1,14 @@
 import pytz
-from flask import Flask, redirect, session, render_template
+from cffi.setuptools_ext import execfile
+from flask import Flask, redirect, session, render_template, make_response, request
 
 # start
 from gevent import monkey
-
 monkey.patch_all()
 from flask_socketio import SocketIO, emit, join_room
 from cricMongoDB.database import db
 import pymongo, json
 # end
-
 
 from cricAuth.auth import app as auth
 from cricLIVE.livescore import app as livescore
@@ -91,6 +90,10 @@ def format_datetime(value, format="%a %d %B %I:%M %p"):
 # start
 @app.route('/chat-box/')
 def chat():
+
+    if 'username' not in session.keys():
+        return redirect('/auth/signin')
+
     data = [];
     data = db.chat.find();
 
@@ -101,26 +104,51 @@ def chat():
         tmp.append(item["message"]);
         message.append(tmp);
 
-    return render_template("chat.html", list=message)
 
+    if request.cookies.get('realtime-chat-nickname') is None:
+        res = make_response(render_template("chat.html", list=message))
+        res.set_cookie('realtime-chat-nickname', session['username'])
+        print(res)
+        return  res
+
+    else:
+
+    #data = [];
+    #data = db.chat.find();
+
+    #message = [];
+    #for item in data:
+    #    tmp = [];
+    #    tmp.append(item["author"]);
+    #    tmp.append(item["message"]);
+    #    message.append(tmp);
+
+        return render_template("chat.html", list=message)
 
 @socketio.on('message', namespace='/chat')
 def chat_message(message):
+
+    author = session["username"]
+
     print("message = ", message)
-    print(message["data"]["author"] + " " + message["data"]["message"])
+    print(author + " " + message["data"]["message"])
 
     if message["data"]["message"] != "":
-        # insert into database
-        db.chat.insert({"author": message["data"]["author"], "message": message["data"]["message"]});
 
+        # insert into database
+        db.chat.insert({"author": author, "message": message["data"]["message"]});
+
+        message["data"]["author"] = author
         emit('message', {'data': message['data']}, broadcast=True)
 
 
 @socketio.on('connect', namespace='/chat')
 def test_connect():
+
     emit('my response', {'data': 'Connected', 'count': 0})
 
-
 # end
+
+
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

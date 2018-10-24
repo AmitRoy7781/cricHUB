@@ -33,10 +33,10 @@
     }
 
     $(function () {
-
       if (typeof $.cookie("realtime-chat-nickname") === 'undefined') {
-        window.location = "/login"
-      } else {
+        window.location = "/"
+      }
+      else {
         $("#sendMessage").on("click", function () {
           sendMessage()
         });

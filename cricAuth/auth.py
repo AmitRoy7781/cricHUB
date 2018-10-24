@@ -1,4 +1,5 @@
 import string
+from flask import Flask, make_response
 from flask import render_template, request, redirect, session, Blueprint
 from cricMongoDB.database import db
 
@@ -114,10 +115,30 @@ def login_validation():
             return signin(data)
         session['username'] = username
         #return redirect('/profile/'+session['username'])
-        return redirect('/')
+
+        res = make_response(redirect('/'))
+        res.set_cookie('realtime-chat-nickname', session['username'])
+        print(res)
+
+        return res
+
+        #return redirect('/')
+
 
 @app.route("/auth/logout")
 def logout():
     if 'username' in session.keys():
         session.pop('username')
-    return redirect('/')
+
+    if request.cookies.get('realtime-chat-nickname') is None:
+        # do nothing
+        print("No cookies")
+    else:
+        res = make_response(redirect('/'))
+        res.set_cookie('realtime-chat-nickname', "")
+        print(res)
+
+        return res
+
+    #return redirect('/')
+

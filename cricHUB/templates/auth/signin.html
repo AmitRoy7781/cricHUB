@@ -41,44 +41,33 @@ University of Dhaka
     </script>
     <script>
         window.onload = function () {
-
             //check_login_status();
             //document.getElementById("footer").className += " fixed-bottom";
             //display_error();
         };
-
         var username = '{{userinfo["username"]}}';
         var username_msg = '{{userinfo["username_msg"]}}';
-
         var password = '{{userinfo["password"]}}';
         var password_msg = '{{userinfo["password_msg"]}}';
-
         function valid(str) {
             return !(!str || 0 === str.length || !str.trim());
         }
-
         function display_error() {
-
             if (!valid(username_msg) && !valid(username)) {
                 document.getElementById("username").placeholder = "User Name"
                 document.getElementById("password").placeholder = "Password"
                 document.getElementById("username").value = username
                 return
             }
-
             else if (valid(username_msg)) {
                 document.getElementById("username").placeholder = username_msg
                 return
             }
             else
                 document.getElementById("username").value = username
-
             if (valid(password_msg))
                 document.getElementById("password").placeholder = password_msg
-
-
         }
-
     </script>
 </head>
 <body>
