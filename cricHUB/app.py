@@ -16,6 +16,8 @@ from cricRanking.rank_try import app as ranking_try
 from cricSTAT.t20Stat import app as stat
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
+from  cricProfile.user_data import app as profile
+
 #from cricCHAT.server import app as chat
 #from cricCHAT import server
 
@@ -42,6 +44,9 @@ app.register_blueprint(news)
 
 #player blueprint
 app.register_blueprint(player)
+
+#user profile blueprint
+app.register_blueprint(profile)
 
 #chat-box
 #app.register_blueprint(chat)
