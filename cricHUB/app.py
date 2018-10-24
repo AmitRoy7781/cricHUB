@@ -151,4 +151,4 @@ def test_connect():
 
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    socketio.run(app)
