@@ -9,6 +9,7 @@ from cricMongoDB.database import db
 import pymongo, json
 # end
 
+from cricLIVE.livescore import app as livescore
 from cricAuth.auth import app as auth
 from cricRanking.show_ranking import app as ranking
 from cricRanking.rank_try import app as ranking_try
@@ -27,6 +28,9 @@ app.secret_key = 'TishuPaperIsNoMore'
 app.debug = True
 socketio = SocketIO(app)
 # end
+
+#live score blueprint
+app.register_blueprint(livescore)
 
 # authentication blueprint
 app.register_blueprint(auth)
@@ -60,7 +64,7 @@ def home():
 
 @app.route('/live-score/')
 def score():
-    return render_template('LiveScore.html')
+    return render_template('livescore/test2.html')
 
 
 # @app.route('/chat-box')

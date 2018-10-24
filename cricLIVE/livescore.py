@@ -1,5 +1,8 @@
+from flask import render_template, request, redirect, session, Blueprint
 from bs4 import BeautifulSoup
 import requests
+
+app = Blueprint('livescore', __name__)
 
 def SCORE(url):
     try:

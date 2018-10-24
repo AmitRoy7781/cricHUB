@@ -1,5 +1,8 @@
-<!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
+{% extends "/common/base.html" %}
+
+{% block content %}
+    {% include '/common/header.html' %}
+
 <head>
     <meta charset="utf-8">
     <script>var is_mobile = /symbian|tizen|midp|uc(web|browser)|MSIE (5.0|6.0|7.0|8.0)|tablet/i.test(navigator.userAgent);
@@ -988,113 +991,6 @@
     .cb-align-cen {
         padding-top: 10px;
     }</style>
-    <script>function getCookie(c_name) {
-        var i, x, y, ARRcookies = document.cookie.split(";");
-        for (i = 0; i < ARRcookies.length; i++) {
-            x = ARRcookies[i].substr(0, ARRcookies[i].indexOf("="));
-            y = ARRcookies[i].substr(ARRcookies[i].indexOf("=") + 1);
-            x = x.replace(/^\s+|\s+$/g, "");
-            if (x == c_name) {
-                return unescape(y);
-            }
-        }
-    }
-
-    var cbads_value = getCookie("cbzads");
-    if (cbads_value != null && cbads_value.indexOf('IN|AS') >= 0) {
-        document.write("<style>.cb-geo-in-50{height:50px}</style>")
-    }</script>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="author" content="">
-    <link rel="shortcut icon" type="image/x-icon" href="//i.cricketcb.com/statics/site/images/cric_ball.ico"/>
-    <meta name="google-signin-client_id"
-          content="125255339112-d594jen12o0j854sufu8jfn2gbbnaskj.apps.googleusercontent.com">
-    <LINK REL="apple-touch-icon" href="//i.cricketcb.com/statics/site/images/apple-touch-icon.png"/>
-    <link rel="chrome-webstore-item"
-          href="https://chrome.google.com/webstore/detail/cricbuzz/opljecakjchbhhikbeifamamnpcdbgem"/>
-    <title itemprop="name">Live Cricket Score | Scorecard | Live Commentary | Cricbuzz.com</title>
-    <meta name="description" itemprop="description"
-          content="Get Live Cricket Score, Ball by Ball Commentary, Scorecard Updates, Match Facts &amp; related News of all the International &amp; Domestic Cricket Matches across the globe.">
-    <link rel="alternate" href="android-app://com.cricbuzz.android/http/www.cricbuzz.com/cricket-match/live-scores">
-    <link rel="alternate" href="//m.cricbuzz.com/cricket-match/live-scores" media="only screen and (max-width: 640px)">
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
-    <meta name="google-site-verification" content="google89fd37b1258ef4b9.html">
-    <meta name="p:domain_verify" content="fd560568b43f31382de30f628c8430bd">
-    <meta name="msvalidate.01" content="A509FA8BAE50018F9DF2553AEDEDF77B">
-    <meta property="og:title" content="Live Cricket Score | Scorecard | Live Commentary">
-    <meta property="og:description"
-          content="Get Live Cricket Score, Ball by Ball Commentary, Scorecard Updates, Match Facts &amp; related News of all the International &amp; Domestic Cricket Matches across the globe.">
-    <meta property="fb:app_id" content="30119633160">
-    <meta property="og:site_name" content="Cricbuzz">
-    <meta property="twitter:title" content="Live Cricket Score | Scorecard | Live Commentary">
-    <meta property="twitter:description"
-          content="Get Live Cricket Score, Ball by Ball Commentary, Scorecard Updates, Match Facts &amp; related News of all the International &amp; Domestic Cricket Matches across the globe.">
-    <meta name="twitter:site" content="@cricbuzz">
-    <meta name="twitter:domain" content="cricbuzz.com">
-    <meta name="twitter:app:name:iphone" content="Cricbuzz">
-    <meta name="twitter:app:id:iphone" content="360466413">
-    <meta name="twitter:app:name:googleplay" content="Cricbuzz">
-    <meta name="twitter:app:id:googleplay" content="com.cricbuzz.android">
-    <meta name="twitter:widgets:csp" content="on">
-    <meta property="fb:pages" content="178697151159"/>
-    <meta name="keywords" content="">
-    <meta name="news_keywords" content="">
-    <link rel="canonical" href="https://www.cricbuzz.com/cricket-match/live-scores">
-    <meta name="msapplication-config" content="none"/>
-    <script>var PAGE_NAME = "live-scores-page";
-    var CBQueue = CBQueue || [];
-    var CBQueueOnLoad = CBQueueOnLoad || [];
-    /*CBQueue.push(function(){roadblock(2,{country:["US","CA", "ZA", "AU"], continent:["EU"]});});*/
-    CBQueue.push(function () {
-        roadblock(2, {country: ["US"]});
-    });
-    _udn = "cricbuzz.com";</script>
-    <script>(function (w) {
-        "use strict";
-        var loadCSS = function (href, before, media) {
-            var doc = w.document;
-            var ss = doc.createElement("link");
-            var ref;
-            if (before) {
-                ref = before;
-            } else {
-                var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-                ref = refs[refs.length - 1];
-            }
-            var sheets = doc.styleSheets;
-            ss.rel = "stylesheet";
-            ss.href = href;
-            ss.media = "only x";
-            ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
-            var onloadcssdefined = function (cb) {
-                var resolvedHref = ss.href;
-                var i = sheets.length;
-                while (i--) {
-                    if (sheets[i].href === resolvedHref) {
-                        return cb();
-                    }
-                }
-                setTimeout(function () {
-                    onloadcssdefined(cb);
-                });
-            };
-            ss.onloadcssdefined = onloadcssdefined;
-            onloadcssdefined(function () {
-                ss.media = media || "all";
-            });
-            return ss;
-        };
-        if (typeof module !== "undefined") {
-            module.exports = loadCSS;
-        } else {
-            w.loadCSS = loadCSS;
-        }
-    }(typeof global !== "undefined" ? global : this));
-    loadCSS("/css/cricbuzz.min.201810231342.css");</script>
-    <noscript>
-        <link rel="stylesheet" type="text/css" href="/css/cricbuzz.min.201810231342.css">
-    </noscript>
 </head>
 <body><a href="https://plus.google.com/104502282508811467249" rel="publisher"></a><a id="ad-skin" target="_blank"
                                                                                      href="Javascript:void(0)"
@@ -1102,567 +998,80 @@
         href="Javascript:void(0)" class="cb-skin-ads-close cb-font-18 ad-skin-close"
         style="position:fixed; z-index:1001; color:#FFF; background:#000; padding:2px 5px; right:2px;">&#x2716;</a>
 <div class="page">
-    <div id="fb-root"></div>
-    <div id="page-wrapper" class="container" style="display:inline-block;">
 
-        <div class='cb-bg-white cb-col-100 cb-col'>
-            <div class=" cb-col-67 cb-col cb-left cb-schdl"><h1 class='cb-schdl-hdr cb-font-24 line-ht30'>Live Cricket
-                Score</h1>
-                <nav class="cb-font-12 cb-schdl-nvtb" gtm-label="live scores"><a class="cb-nav-pill-1 active"
-                                                                                 id="All-tab"
-                                                                                 href="/cricket-match/live-scores">All</a><a
-                        class="cb-nav-pill-1 " id="Domestic-tab" href="/scores-home-domestic">Domestic & Others</a>
-                </nav>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="Windies tour of India, 2018">WINDIES TOUR OF INDIA,
-                    2018</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
-                                title="India vs Windies">India vs Windies,</a></h3><span
-                                class="text-gray">&nbsp;2nd ODI</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540368000000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540368000000 |date:'h:mm a'"></span><span class="text-gray"> at Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium, Visakhapatnam</span>
+
+    <div class='cb-bg-white cb-col-100 cb-col'>
+        <div class=" cb-col-67 cb-col cb-left cb-schdl"><h1 class='cb-schdl-hdr cb-font-24 line-ht30'>Live Cricket
+            Score</h1>
+            <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
+                                                          title="Windies tour of India, 2018">WINDIES TOUR OF INDIA,
+                2018</h2>
+                <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
+                    <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
+                            class="text-hvr-underline text-bold"
+                            href="/live-cricket-scores/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
+                            title="India vs Windies">India vs Windies,</a></h3><span
+                            class="text-gray">&nbsp;2nd ODI</span>
+                        <div class="text-gray"><span class="schedule-date" timestamp="1540368000000"
+                                                     format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
+                                ng-bind="1540368000000 |date:'h:mm a'"></span><span class="text-gray"> at Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium, Visakhapatnam</span>
+                        </div>
+                    </div>
+                    <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
+                                                               href="/live-cricket-scores/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
+                                                               title="India vs Windies 2nd ODI">
+                        <div class="cb-col">
+                            <div class="cb-scr-wll-chvrn">
+                                <div class="cb-lv-scrs-col text-black"><span class='text-bold'>IND</span> 267/5
+                                    (46.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
+                                            class='text-bold'>WI</span></div>
+                                <div class="cb-lv-scrs-col cb-text-live">India opt to bat</div>
+                            </div>
+                            <div class="cb-scr-wll-chvrn">
+                                <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
                             </div>
                         </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
-                                                                   href="/live-cricket-scores/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
-                                                                   title="India vs Windies 2nd ODI">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>IND</span> 267/5
-                                        (46.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>WI</span></div>
-                                    <div class="cb-lv-scrs-col cb-text-live">India opt to bat</div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/21249/ind-vs-wi-2nd-odi-windies-tour-of-india-2018"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
+                    </a></div>
+
                 </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="Zimbabwe tour of Bangladesh, 2018">ZIMBABWE TOUR OF
-                    BANGLADESH, 2018</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
-                                title="Bangladesh vs Zimbabwe">Bangladesh vs Zimbabwe,</a></h3><span class="text-gray">&nbsp;2nd ODI</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540369800000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540369800000 |date:'h:mm a'"></span><span class="text-gray"> at Zahur Ahmed Chowdhury Stadium, Chittagong</span>
+            </div>
+            <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
+                                                          title="Zimbabwe tour of Bangladesh, 2018">ZIMBABWE TOUR OF
+                BANGLADESH, 2018</h2>
+                <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
+                    <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
+                            class="text-hvr-underline text-bold"
+                            href="/live-cricket-scores/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
+                            title="Bangladesh vs Zimbabwe">Bangladesh vs Zimbabwe,</a></h3><span class="text-gray">&nbsp;2nd ODI</span>
+                        <div class="text-gray"><span class="schedule-date" timestamp="1540369800000"
+                                                     format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
+                                ng-bind="1540369800000 |date:'h:mm a'"></span><span class="text-gray"> at Zahur Ahmed Chowdhury Stadium, Chittagong</span>
+                        </div>
+                    </div>
+                    <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
+                                                               href="/live-cricket-scores/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
+                                                               title="Bangladesh vs Zimbabwe 2nd ODI">
+                        <div class="cb-col">
+                            <div class="cb-scr-wll-chvrn">
+                                <div class="cb-lv-scrs-col text-black"><span class='text-bold'>ZIM</span> 204/4
+                                    (43.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
+                                            class='text-bold'>BAN</span></div>
+                                <div class="cb-lv-scrs-col cb-text-live">Bangladesh opt to bowl</div>
+                            </div>
+                            <div class="cb-scr-wll-chvrn">
+                                <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
                             </div>
                         </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
-                                                                   href="/live-cricket-scores/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
-                                                                   title="Bangladesh vs Zimbabwe 2nd ODI">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>ZIM</span> 204/4
-                                        (43.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>BAN</span></div>
-                                    <div class="cb-lv-scrs-col cb-text-live">Bangladesh opt to bowl</div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/20773/ban-vs-zim-2nd-odi-zimbabwe-tour-of-bangladesh-2018"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="Australia v Pakistan in UAE, 2018">AUSTRALIA V
-                    PAKISTAN IN UAE, 2018</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21207/pak-vs-aus-1st-t20i-australia-v-pakistan-in-uae-2018"
-                                title="Pakistan vs Australia">Pakistan vs Australia,</a></h3><span class="text-gray">&nbsp;1st T20I</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540396800000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540396800000 |date:'h:mm a'"></span><span class="text-gray"> at Sheikh Zayed Stadium, Abu Dhabi</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-preview"
-                                                                   href="/live-cricket-scores/21207/pak-vs-aus-1st-t20i-australia-v-pakistan-in-uae-2018"
-                                                                   title="Pakistan vs Australia 1st T20I"> <span
-                                class="cb-text-preview">Read Preview</span> <span
-                                class=" cb-ico cb-lv-scr-chvrn-sml"></span> </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/cricket-match-facts/21207/pak-vs-aus-1st-t20i-australia-v-pakistan-in-uae-2018"
-                                class="cb-text-link cb-mtch-lnks">Match Facts</a><a
-                                href="/cricket-match-news/21207/pak-vs-aus-1st-t20i-australia-v-pakistan-in-uae-2018"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="England tour of Sri Lanka, 2018">ENGLAND TOUR OF
-                    SRI LANKA, 2018</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/20138/sl-vs-eng-5th-odi-england-tour-of-sri-lanka-2018"
-                                title="Sri Lanka vs England">Sri Lanka vs England,</a></h3><span class="text-gray">&nbsp;5th ODI</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540285200000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540285200000 |date:'h:mm a'"></span><span class="text-gray"> at R.Premadasa Stadium, Colombo</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-complete"
-                                                                   href="/live-cricket-scores/20138/sl-vs-eng-5th-odi-england-tour-of-sri-lanka-2018"
-                                                                   title="Sri Lanka vs England 5th ODI">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>ENG</span> 132/9
-                                        (26.1 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>SL</span> 366/6 (50.0 Ovs)
-                                    </div>
-                                    <div class="cb-lv-scrs-col cb-text-complete">Sri Lanka won by 219 runs (DLS
-                                        method)
-                                    </div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/20138/sl-vs-eng-5th-odi-england-tour-of-sri-lanka-2018"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/20138/sl-vs-eng-5th-odi-england-tour-of-sri-lanka-2018"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/20138/sl-vs-eng-5th-odi-england-tour-of-sri-lanka-2018"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/20138/sl-vs-eng-5th-odi-england-tour-of-sri-lanka-2018"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="Pakistan Women vs Australia Women in Malaysia, 2018">
-                    PAKISTAN WOMEN VS AUSTRALIA WOMEN IN MALAYSIA, 2018</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21431/pakw-vs-ausw-1st-t20i-pakistan-women-vs-australia-women-in-malaysia-2018"
-                                title="Pakistan Women vs Australia Women">Pakistan Women vs Australia Women,</a></h3>
-                            <span class="text-gray">&nbsp;1st T20I</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540432800000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540432800000 |date:'h:mm a'"></span><span class="text-gray"> at Kinrara Academy Oval, Kuala Lumpur</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-preview"
-                                                                   href="/live-cricket-scores/21431/pakw-vs-ausw-1st-t20i-pakistan-women-vs-australia-women-in-malaysia-2018"
-                                                                   title="Pakistan Women vs Australia Women 1st T20I">
-                            <span class="cb-text-preview">Read Preview</span> <span
-                                class=" cb-ico cb-lv-scr-chvrn-sml"></span> </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/cricket-match-facts/21431/pakw-vs-ausw-1st-t20i-pakistan-women-vs-australia-women-in-malaysia-2018"
-                                class="cb-text-link cb-mtch-lnks">Match Facts</a><a
-                                href="/cricket-match-news/21431/pakw-vs-ausw-1st-t20i-pakistan-women-vs-australia-women-in-malaysia-2018"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="Deodhar Trophy, 2018-19">DEODHAR TROPHY,
-                    2018-19</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21491/inda-vs-indc-3rd-match-deodhar-trophy-2018-19"
-                                title="India A vs India C">India A vs India C,</a></h3><span class="text-gray">&nbsp;3rd Match</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540438200000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540438200000 |date:'h:mm a'"></span><span class="text-gray"> at Feroz Shah Kotla, Delhi</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-preview"
-                                                                   href="/live-cricket-scores/21491/inda-vs-indc-3rd-match-deodhar-trophy-2018-19"
-                                                                   title="India A vs India C 3rd Match"> <span
-                                class="cb-text-preview">Read Preview</span> <span
-                                class=" cb-ico cb-lv-scr-chvrn-sml"></span> </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/cricket-match-facts/21491/inda-vs-indc-3rd-match-deodhar-trophy-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Match Facts</a><a
-                                href="/cricket-match-news/21491/inda-vs-indc-3rd-match-deodhar-trophy-2018-19"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main">
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21490/indb-vs-indc-2nd-match-deodhar-trophy-2018-19"
-                                title="India B vs India C">India B vs India C,</a></h3><span class="text-gray">&nbsp;2nd Match</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540351800000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540351800000 |date:'h:mm a'"></span><span class="text-gray"> at Feroz Shah Kotla, Delhi</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-complete"
-                                                                   href="/live-cricket-scores/21490/indb-vs-indc-2nd-match-deodhar-trophy-2018-19"
-                                                                   title="India B vs India C 2nd Match">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>INDC</span> 201-all
-                                        out (48.2 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>INDB</span> 231/9 (50.0 Ovs)
-                                    </div>
-                                    <div class="cb-lv-scrs-col cb-text-complete">India B won by 30 runs</div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/21490/indb-vs-indc-2nd-match-deodhar-trophy-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/21490/indb-vs-indc-2nd-match-deodhar-trophy-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/21490/indb-vs-indc-2nd-match-deodhar-trophy-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/21490/indb-vs-indc-2nd-match-deodhar-trophy-2018-19"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="4-Day Franchise Series 2018-19">4-DAY FRANCHISE
-                    SERIES 2018-19</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21364/lions-vs-kng-8th-match-4-day-franchise-series-2018-19"
-                                title="Lions vs Knights">Lions vs Knights,</a></h3><span class="text-gray">&nbsp;8th Match</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540195200000"
-                                                         format="MMM dd'"></span><span> - </span><span
-                                    class="schedule-date" timestamp="1540425600000" format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540195200000 |date:'h:mm a'"></span><span class="text-gray"> at New Wanderers Stadium, Johannesburg</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
-                                                                   href="/live-cricket-scores/21364/lions-vs-kng-8th-match-4-day-franchise-series-2018-19"
-                                                                   title="Lions vs Knights 8th Match">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>KNG</span> 266, 67/3
-                                        (14.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>LIONS</span> 377
-                                    </div>
-                                    <div class="cb-lv-scrs-col cb-text-live">Day 3: 2nd Session - Knights trail by 44
-                                        runs
-                                    </div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/21364/lions-vs-kng-8th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/21364/lions-vs-kng-8th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/21364/lions-vs-kng-8th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/21364/lions-vs-kng-8th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main">
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21365/tit-vs-cob-9th-match-4-day-franchise-series-2018-19"
-                                title="Titans vs Cape Cobras">Titans vs Cape Cobras,</a></h3><span class="text-gray">&nbsp;9th Match</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540195200000"
-                                                         format="MMM dd'"></span><span> - </span><span
-                                    class="schedule-date" timestamp="1540425600000" format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540195200000 |date:'h:mm a'"></span><span class="text-gray"> at SuperSport Park, Centurion</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
-                                                                   href="/live-cricket-scores/21365/tit-vs-cob-9th-match-4-day-franchise-series-2018-19"
-                                                                   title="Titans vs Cape Cobras 9th Match">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>TIT</span> 122, 382/7
-                                        (103.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>COB</span> 337
-                                    </div>
-                                    <div class="cb-lv-scrs-col cb-text-live">Day 3: 2nd Session - Titans lead by 167
-                                        runs
-                                    </div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/21365/tit-vs-cob-9th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/21365/tit-vs-cob-9th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/21365/tit-vs-cob-9th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/21365/tit-vs-cob-9th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main">
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21363/dol-vs-war-7th-match-4-day-franchise-series-2018-19"
-                                title="Dolphins vs Warriors">Dolphins vs Warriors,</a></h3><span class="text-gray">&nbsp;7th Match</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540195200000"
-                                                         format="MMM dd'"></span><span> - </span><span
-                                    class="schedule-date" timestamp="1540425600000" format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540195200000 |date:'h:mm a'"></span><span class="text-gray"> at Kingsmead, Durban</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
-                                                                   href="/live-cricket-scores/21363/dol-vs-war-7th-match-4-day-franchise-series-2018-19"
-                                                                   title="Dolphins vs Warriors 7th Match">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>WAR</span> 175, 261/6
-                                        (69.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>DOL</span> 335
-                                    </div>
-                                    <div class="cb-lv-scrs-col cb-text-live">Day 3: 2nd Session - Warriors lead by 101
-                                        runs
-                                    </div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/21363/dol-vs-war-7th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/21363/dol-vs-war-7th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/21363/dol-vs-war-7th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/21363/dol-vs-war-7th-match-4-day-franchise-series-2018-19"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="Pakistan A vs New Zealand A in UAE, 2018">PAKISTAN
-                    A VS NEW ZEALAND A IN UAE, 2018</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21424/paka-vs-nza-2nd-unofficial-odi-pakistan-a-vs-new-zealand-a-in-uae-2018"
-                                title="Pakistan A vs New Zealand A">Pakistan A vs New Zealand A,</a></h3><span
-                                class="text-gray">&nbsp;2nd unofficial ODI</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540359000000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540359000000 |date:'h:mm a'"></span><span class="text-gray"> at Sheikh Zayed Stadium Nursery 1, Abu Dhabi</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
-                                                                   href="/live-cricket-scores/21424/paka-vs-nza-2nd-unofficial-odi-pakistan-a-vs-new-zealand-a-in-uae-2018"
-                                                                   title="Pakistan A vs New Zealand A 2nd unofficial ODI">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>PAKA</span> 104/4
-                                        (26.0 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>NZA</span> 224 (48.4 Ovs)
-                                    </div>
-                                    <div class="cb-lv-scrs-col cb-text-live">Pakistan A need 121 runs</div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/21424/paka-vs-nza-2nd-unofficial-odi-pakistan-a-vs-new-zealand-a-in-uae-2018"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/21424/paka-vs-nza-2nd-unofficial-odi-pakistan-a-vs-new-zealand-a-in-uae-2018"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/21424/paka-vs-nza-2nd-unofficial-odi-pakistan-a-vs-new-zealand-a-in-uae-2018"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/21424/paka-vs-nza-2nd-unofficial-odi-pakistan-a-vs-new-zealand-a-in-uae-2018"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="The Ford Trophy 2018">THE FORD TROPHY 2018</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21294/wel-vs-can-2nd-match-the-ford-trophy-2018"
-                                title="Wellington vs Canterbury">Wellington vs Canterbury,</a></h3><span
-                                class="text-gray">&nbsp;2nd Match</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540332000000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540332000000 |date:'h:mm a'"></span><span class="text-gray"> at Basin Reserve, Wellington</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-complete"
-                                                                   href="/live-cricket-scores/21294/wel-vs-can-2nd-match-the-ford-trophy-2018"
-                                                                   title="Wellington vs Canterbury 2nd Match">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>WEL</span> 288/3
-                                        (47.1 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>CAN</span> 286 (48.4 Ovs)
-                                    </div>
-                                    <div class="cb-lv-scrs-col cb-text-complete">Wellington won by 7 wkts</div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/21294/wel-vs-can-2nd-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/21294/wel-vs-can-2nd-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/21294/wel-vs-can-2nd-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/21294/wel-vs-can-2nd-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main">
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21295/akl-vs-nk-3rd-match-the-ford-trophy-2018"
-                                title="Auckland vs Northern Knights">Auckland vs Northern Knights,</a></h3><span
-                                class="text-gray">&nbsp;3rd Match</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540332000000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540332000000 |date:'h:mm a'"></span><span class="text-gray"> at Eden Park Outer Oval, Auckland</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-complete"
-                                                                   href="/live-cricket-scores/21295/akl-vs-nk-3rd-match-the-ford-trophy-2018"
-                                                                   title="Auckland vs Northern Knights 3rd Match">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>AKL</span> 271/8
-                                        (49.4 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>NK</span> 268 (45.3 Ovs)
-                                    </div>
-                                    <div class="cb-lv-scrs-col cb-text-complete">Auckland won by 2 wkts</div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/21295/akl-vs-nk-3rd-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/21295/akl-vs-nk-3rd-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/21295/akl-vs-nk-3rd-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/21295/akl-vs-nk-3rd-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main">
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/21293/cd-vs-otg-1st-match-the-ford-trophy-2018"
-                                title="Central Districts vs Otago">Central Districts vs Otago,</a></h3><span
-                                class="text-gray">&nbsp;1st Match</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540332000000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540332000000 |date:'h:mm a'"></span><span class="text-gray"> at Saxton Oval, Nelson</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-complete"
-                                                                   href="/live-cricket-scores/21293/cd-vs-otg-1st-match-the-ford-trophy-2018"
-                                                                   title="Central Districts vs Otago 1st Match">
-                            <div class="cb-col">
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-lv-scrs-col text-black"><span class='text-bold'>OTG</span> 232-all
-                                        out (44.5 Ovs) <span class='cb-series-sch-dot'>&nbsp;&#8226;&nbsp;</span> <span
-                                                class='text-bold'>CD</span> 269/7 (50.0 Ovs)
-                                    </div>
-                                    <div class="cb-lv-scrs-col cb-text-complete">Central Districts won by 37 runs</div>
-                                </div>
-                                <div class="cb-scr-wll-chvrn">
-                                    <div class="cb-ico cb-lv-scr-chvrn-bg"></div>
-                                </div>
-                            </div>
-                        </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/live-cricket-scores/21293/cd-vs-otg-1st-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">Live Score</a><a
-                                href="/live-cricket-scorecard/21293/cd-vs-otg-1st-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">Scorecard</a><a
-                                href="/cricket-full-commentary/21293/cd-vs-otg-1st-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">Full Commentary</a><a
-                                href="/cricket-match-news/21293/cd-vs-otg-1st-match-the-ford-trophy-2018"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
-                </div>
-                <div class="cb-col cb-col-100 cb-lv-main"><h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr"
-                                                              title="Sheffield Shield 2018-19">SHEFFIELD SHIELD
-                    2018-19</h2>
-                    <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
-                        <div class="cb-col-100 cb-col cb-schdl"><h3 class="cb-lv-scr-mtch-hdr inline-block"><a
-                                class="text-hvr-underline text-bold"
-                                href="/live-cricket-scores/20528/saus-vs-ql-5th-match-sheffield-shield-2018-19"
-                                title="South Australia vs Queensland">South Australia vs Queensland,</a></h3><span
-                                class="text-gray">&nbsp;5th Match</span>
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540425600000"
-                                                         format="MMM dd'"></span><span> - </span><span
-                                    class="schedule-date" timestamp="1540684800000" format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540425600000 |date:'h:mm a'"></span><span class="text-gray"> at Adelaide Oval, Adelaide</span>
-                            </div>
-                        </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-preview"
-                                                                   href="/live-cricket-scores/20528/saus-vs-ql-5th-match-sheffield-shield-2018-19"
-                                                                   title="South Australia vs Queensland 5th Match">
-                            <span class="cb-text-preview">Read Preview</span> <span
-                                class=" cb-ico cb-lv-scr-chvrn-sml"></span> </a></div>
-                        <nav class="cb-col-100 cb-col padt5"><a
-                                href="/cricket-match-facts/20528/saus-vs-ql-5th-match-sheffield-shield-2018-19"
-                                class="cb-text-link cb-mtch-lnks">Match Facts</a><a
-                                href="/cricket-match-news/20528/saus-vs-ql-5th-match-sheffield-shield-2018-19"
-                                class="cb-text-link cb-mtch-lnks">News</a></nav>
-                    </div>
+                    </a></div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 </body>
-</html>
+
+    {% include '/common/footer.html' %}
+    {% include '/common/footer-social.html' %}
+{% endblock %}
