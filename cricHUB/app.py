@@ -1,3 +1,4 @@
+import pytz
 from flask import Flask, redirect, session, render_template
 
 # start
@@ -57,9 +58,22 @@ app.register_blueprint(profile)
 
 @app.route('/')
 def home():
-    if 'username' not in session.keys():
-        return redirect('/auth/signin')
-    return render_template('newsTwitter.html')
+    # if 'username' not in session.keys():
+    #     return redirect('/auth/signin')
+    from cricSchedule import schedule_adapter
+    data = schedule_adapter.Adapter()
+    return render_template('index.html', matches = data.get_match_data())
+
+
+@app.template_filter('formatdatetime')
+def format_datetime(value, format="%a %d %B %I:%M %p"):
+    if value is None:
+        return ""
+    tz = pytz.timezone('Asia/Dacca')  # timezone you want to convert to from UTC
+    utc = pytz.timezone('UTC')
+    value = utc.localize(value, is_dst=None).astimezone(pytz.utc)
+    local_dt = value.astimezone(tz)
+    return local_dt.strftime(format)
 
 
 @app.route('/live-score/')

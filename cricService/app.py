@@ -36,7 +36,7 @@ def not_found(error):
 
 @app.route("/get/bd")
 def show_bd():
-    response = db.stats.odi.team.find({'Team': 'Bangladesh'}, {'_id': False})
+    response = db.team_stats.find({'Team': 'Bangladesh', 'type':'odi', 'Year' : '2010'}, {'_id': False})
     return json_util.dumps({'result': response})
 
 
@@ -58,7 +58,8 @@ def insert_rank():
 def insert_stat():
     from cricSTAT import scraper
     data = scraper.scrape()
-    db_cm = db.stats.odi.team
+    data.drop(data.columns[14], axis=1, inplace=True)
+    db_cm = db.team_stats
     data_json = json.loads(data.to_json(orient='records'))
     db_cm.remove()
     db_cm.insert(data_json)

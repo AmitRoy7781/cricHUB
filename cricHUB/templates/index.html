@@ -5,14 +5,44 @@
 
     {% include '/common/header.html' %}
 
-    <!--Section Title Start-->
+    <section>
+        <div class="col-md-8">
+            <h5 class="section-title border-top">
+                <span class="rgb-label theme-background"><i class="fa fa-twitter"></i></span>
+                Readers recommend
+            </h5>
+            <a class="twitter-timeline" data-width="1200" data-widget-id="586402209283227648"
+               data-chrome="noheader nofooter" href="/ESPNcricinfo/timelines/585813293161406464"></a>
+            <script>
+                !function (d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + "://platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, "script", "twitter-wjs");
+            </script>
+        </div>
+
+        <div class="col-md-4">
+            <h5 class="section-title border-top">
+                <span class="rgb-label theme-background"><i class="fa fa-youtube-play"></i></span>
+                Featured Videos
+            </h5>
+            <iframe src="http://ytchannelembed.com/ytce-gallery.php?user=UCt2JXOLNxqry7B_4rRZME3Q&rows=10&ratio=hd&width=185&margin=10&desc="
+                    100&desc_color=9E9E9E&title=35&title_color=000000&https=1&duration=1&views=1&likes=0&dislikes=0&fav=0&cols=2"
+                    style="height:420px;overflow: hidden;" scrolling="auto"></iframe>
+        </div>
+    </section>
+
     <h4 class="section-title border-top">
         <span class="rgb-label theme-background">
             <i class="lnr lnr-hand"></i>
         </span>
         Upcoming matches
     </h4>
-    <!--Section Title End-->
 
     <div class="rgb-content-wrap">
         <!--Fixture Slider Wrap Start-->
@@ -24,10 +54,7 @@
                         <!--Fixture Content Start-->
                         <div class="rgb-fixtures-contant border-top" id="{{ m["unique_id"] }}">
                             <!--Team 1 Start-->
-                            <div class="rgb-team-1 pull-left">
-                                <div class="team-meta-logo rgb-shadow">
-                                    <img src="{{ url_for('static', filename='images/flag.png') }}" alt="img2">
-                                </div>
+                            <div class="h3 rgb-team-1 pull-left">
                                 <div class="text-wrap">
                                     <a href="#">{{ m["team-1"] }}</a>
                                 </div>
@@ -36,13 +63,10 @@
 
 
                             <div class="rgb-opponanet">
-                                <h5>VS</h5>
+                                <h6>VS</h6>
                             </div>
                             <!--Team 2 Start-->
-                            <div class="rgb-team-1 pull-right">
-                                <div class="team-meta-logo rgb-shadow">
-                                    <img src="{{ url_for('static', filename='images/flag.png') }}" alt="img1">
-                                </div>
+                            <div class="h3 rgb-team-1 pull-right">
                                 <div class="text-wrap">
                                     <a href="#">{{ m["team-2"] }}</a>
                                 </div>
@@ -51,7 +75,7 @@
                             </div>
 
                             <div class="rgb-fixtures-date">
-                                <h5>{{ m["date"] }}</h5>
+                                <h5>{{ m["date"] | formatdatetime }}</h5>
                                 <div>{{ m["type"] }}</div>
                             </div>
 
@@ -64,6 +88,7 @@
         </div>
         <!--Fixture Slider End-->
     </div>
+
     {% include '/common/footer.html' %}
     {% include '/common/footer-social.html' %}
 {% endblock %}
