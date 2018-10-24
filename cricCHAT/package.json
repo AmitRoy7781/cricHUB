@@ -1,6 +1,7 @@
 {
   "name": "mongochat",
   "version": "1.0.0",
+  "version": "2.6.10",
   "description": "Simple chat app using sockets",
   "main": "server.js",
   "scripts": {
@@ -502,6 +503,7 @@
   "license": "ISC",
   "dependencies": {
     "mongodb": "^2.6.10",
+    "mongodb": "^2.2.30",
     "socket.io": "^2.0.3"
   }
 }

@@ -10,6 +10,7 @@ import pymongo, json
 app = Flask(__name__)
 app.debug = True
 app.config['SECRET_KEY'] = 'nuttertools'
+#app.config['SECRET_KEY'] = 'TishuPaperIsNoMore'
 socketio = SocketIO(app)
 
 @app.route('/')

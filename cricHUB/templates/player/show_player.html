@@ -4,6 +4,1085 @@
     {% include '/common/header.html' %}
 
 
+    <head>
+        <meta charset="utf-8">
+        <script>var is_mobile = /symbian|tizen|midp|uc(web|browser)|MSIE (5.0|6.0|7.0|8.0)|tablet/i.test(navigator.userAgent);
+        if (is_mobile && window.location.hostname != "www1.cricbuzz.com") window.location.hostname = "m.cricbuzz.com";</script>
+        <style>body {
+            background: #E3E6E3;
+            font-family: helvetica, "Segoe UI", Arial, sans-serif;
+            color: #222;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        body {
+            min-height: 1000px
+        }
+
+
+
+        .page {
+            max-width: 980px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cb-col-8 {
+            width: 8%;
+        }
+
+        .cb-col-16 {
+            width: 16%;
+        }
+
+        .cb-col-20 {
+            width: 20%;
+        }
+
+        .cb-col-25 {
+            width: 25%;
+        }
+
+
+        .cb-col-33 {
+            width: 33%;
+        }
+
+        .cb-col-40 {
+            width: 40%;
+        }
+
+
+        .cb-col-60 {
+            width: 60%;
+        }
+
+
+        .cb-col-67 {
+            width: 67%;
+        }
+
+
+        .cb-col-84 {
+            width: 84%;
+        }
+
+
+        .cb-col-100 {
+            width: 100%;
+        }
+
+        .cb-col {
+            display: inline-block;
+            box-sizing: border-box;
+            float: left;
+            min-height: 1px;
+        }
+
+        h1 {
+            font-size: 36px;
+            line-height: 42px;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin: 0;
+            line-height: 30px;
+        }
+
+        h3 {
+            font-size: 18px;
+            line-height: 24px;
+            margin: 0;
+        }
+
+        h4 {
+            font-size: 16px;
+            margin: 0;
+        }
+
+        h5 {
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .cb-font-18 {
+            font-size: 18px;
+        }
+
+        img {
+            border: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #222;
+        }
+
+        a, a:hover, a:active, a:focus {
+            outline: medium none;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+
+
+        .cb-nws-dtl-lft-col {
+            padding: 10px 30px 0 30px;
+            border-right: 1px solid #ecebeb;
+        }
+
+        .cb-nws-lst-rt {
+            padding-left: 10px;
+        }
+
+        .cb-srs-lst-itm {
+            padding: 10px 0;
+        }
+
+        .cb-lst-itm-sm {
+            padding: 10px 0 5px;
+        }
+
+        .cb-scrd-lft-col {
+            padding: 15px 10px;
+        }
+
+        .cb-col-rt {
+            padding: 10px;
+        }
+
+        .text-white {
+            color: #fff;
+        }
+
+        .cb-scrd-hdr-rw, .cb-nav-pill-1.active {
+            background: #028062;
+            color: #fff;
+        }
+
+        .cb-nav {
+            position: relative;
+            height: 48px;
+            background: #009270;
+        }
+
+        .cb-hm-mnu-itm {
+            padding: 16px 7px 11px;
+            color: #fff;
+            display: inline-block;
+        }
+
+        .cb-hm-text {
+            padding: 10px 18px 10px 20px;
+        }
+
+        .cb-hm-rght {
+            padding: 15px;
+        }
+
+        .cb-subnav .cb-sub-navigation {
+            display: none;
+            position: absolute;
+        }
+
+        .cb-mat-mnu {
+            background: #4a4a4a;
+            width: 980px;
+            font-size: 0;
+        }
+
+        .cb-mat-mnu-itm {
+            font-size: 12px;
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+            display: inline-block;
+            max-width: 140px;
+        }
+
+        .cb-mat-mnu-ttl {
+            background: #333;
+            padding: 10px 20px;
+        }
+
+        .cb-mat-mnu-wrp {
+            margin-bottom: 10px;
+        }
+
+        .cb-ovr-flo {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .cb-mat-mnu-all {
+            text-align: center;
+            float: right;
+            width: 60px;
+        }
+
+        .cb-nav-main {
+            border-bottom: 1px solid #e3e6e3;
+            padding: 0 0 5px 20px;
+        }
+
+        .cb-nav-bar {
+            padding-top: 10px;
+            clear: both;
+        }
+
+        .cb-lst-itm, .cb-bg-white {
+            background: #fff;
+        }
+
+        .cb-nav-tab.active, .cb-nav-tab-hm.active {
+            font-weight: bold;
+            color: #028062;
+        }
+
+        .cb-nav-tab.active {
+            border-bottom: 3px solid #028062;
+            line-height: 24px;
+        }
+
+        .cb-nav-tab-hm.active {
+            border-bottom: 2px solid #028062;
+            line-height: 22px;
+        }
+
+        .cb-nav-tab {
+            margin-right: 20px;
+            padding-bottom: 6px;
+        }
+
+        .cb-nav-tab-hm {
+            margin-right: 15px;
+            padding-bottom: 6px;
+        }
+
+        .cb-nav-hdr {
+            padding-top: 15px
+        }
+
+        .cb-nav-subhdr {
+            padding: 5px 0 10px 0;
+        }
+
+        .cb-lv-scr-mtch-hdr {
+            line-height: 21px;
+            font-size: 16px;
+        }
+
+        .disp-none {
+            display: none;
+        }
+
+        .disp-blck {
+            display: block;
+        }
+
+        .cb-font-24 {
+            font-size: 24px;
+        }
+
+        .line-ht30 {
+            line-height: 30px;
+        }
+
+        .line-ht24 {
+            line-height: 24px;
+        }
+
+        .cb-hm-scg-blk {
+            background: #fff;
+            margin-bottom: 5px;
+            height: 90px;
+        }
+
+        .mrgn-btm-5 {
+            margin-bottom: 5px;
+        }
+
+        #scagTabContent .show {
+            display: block;
+            visibility: visible;
+        }
+
+        #scagTabContent .hide {
+            display: none;
+            visibility: hidden;
+        }
+
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+
+        .cb-hm-lft {
+            margin-bottom: 5px;
+            padding: 0 15px;
+        }
+
+        .cb-hm-lft-hdr {
+            margin: 0;
+            padding: 15px 15px 0;
+            color: #009270;
+        }
+
+        .cb-hm-mid {
+            border-left: 5px solid #e3e6e3;
+            border-right: 5px solid #e3e6e3;
+            padding: 0 15px;
+        }
+
+        .cb-mtch-blk {
+            border-right: 1px solid #ecebeb;
+            line-height: 1.4;
+            margin: 15px 0;
+            padding: 0 20px;
+        }
+
+        .crd-cntxt {
+            font-size: 12px;
+            color: #666;
+            padding-bottom: 10px;
+        }
+
+        .big-crd-main {
+            border-top: 1px solid #ecebeb;
+            padding: 15px 0 5px;
+            margin-bottom: 1px;
+            clear: both;
+        }
+
+        .big-crd-reltd-itm {
+            margin: 0 0 10px;
+            width: 100%;
+            display: inline-block;
+        }
+
+        .cb-nws-time {
+            font-size: 12px;
+            padding-bottom: 5px;
+        }
+
+        .cb-nws-hdln-ancr {
+            padding-bottom: 5px;
+        }
+
+        .cb-hmscg-bwl-txt, .cb-hmscg-bat-txt {
+            font-weight: bold;
+            padding-bottom: 4px;
+            height: 18px;
+        }
+
+        .cb-hmscg-bwl-txt {
+            color: #666;
+        }
+
+        .sml-crd-main {
+            padding: 15px 0 5px;
+            width: 100%;
+        }
+
+        .big-crd-hdln {
+            margin: 10px 0;
+        }
+
+        .big-crd-rltd-txt {
+            font-weight: bold;
+            margin: 10px 0;
+            color: #1866DB;
+        }
+
+        .cb-nws-intr {
+            color: #666;
+            padding-bottom: 5px;
+        }
+
+        .cb-lv-scrs-well {
+            background: #f5f5f5;
+            display: inline-block;
+            margin: 10px 0;
+            padding: 10px 5px;
+        }
+
+        .cb-schdl-hdr {
+            margin: 0;
+            padding: 15px 0 10px 10px;
+        }
+
+        .cb-lst-itm-lg {
+            padding: 20px 0;
+        }
+
+        .cb-left-pad {
+            padding: 20px 10px 0;
+        }
+
+        .cb-nav-pill-1 {
+            background: #CFE0DB;
+            border-radius: 20px;
+            color: #222;
+            cursor: pointer;
+            margin-right: 15px;
+            padding: 5px 20px;
+        }
+
+        .cb-mtch-lst {
+            padding: 15px 0;
+        }
+
+        .cb-nws-min-cntr {
+            padding: 10px;
+            background: #f5f5f5;
+            color: #333;
+            margin: 10px 0 15px;
+        }
+
+        .sml-crd-subtxt {
+            margin: 0 10px 10px;
+        }
+
+        /*-------------------------Live Pages -----------------------*/
+        .cb-scrcrd-status {
+            padding: 0 0 10px 10px;
+        }
+
+        .cb-scrd-hdr-rw {
+            padding: 8px 10px;
+        }
+
+        .cb-bg-gray {
+            background: #ecebeb;
+        }
+
+        .cb-lv-grn-strip {
+            background: #ecebeb;
+        }
+
+        .cb-min-hdr-rw, .cb-scrd-sub-hdr {
+            padding: 4px 10px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .cb-scrd-itms {
+            padding: 4px 10px;
+            font-size: 13px;
+        }
+
+        .cb-text-link {
+            color: #1866DB;
+        }
+
+        .text-bold {
+            font-weight: bold;
+        }
+
+        .text-normal {
+            font-weight: normal;
+        }
+
+        .cb-mat-fct-itm {
+            padding: 5px 0;
+        }
+
+        .cb-min-bat-rw {
+            padding-bottom: 5px;
+        }
+
+        .cb-nws-sub-txt, .cb-nws-sub-txt, .cb-font-12 {
+            font-size: 12px;
+        }
+
+        .cb-font-16 {
+            font-size: 16px;
+        }
+
+        .cb-font-20 {
+            font-size: 20px;
+        }
+
+        .cb-min-inf {
+            padding-top: 10px;
+            margin-left: -10px;
+            display: inline-block;
+        }
+
+        .cb-min-itm-rw {
+            padding: 5px 10px 0;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .cb-key-st-lst {
+            padding: 10px 0 0 5px;
+        }
+
+        .cb-min-prw-time {
+            padding: 20px 0 0;
+        }
+
+        .cb-toss-sts {
+            padding: 10px 0 30px;
+        }
+
+        .cb-min-rcnt {
+            padding: 7px 10px;
+            margin: 0 -10px 0;
+        }
+
+        .cb-key-lst-wrp {
+            border: 1px solid #ecebeb;
+            padding-bottom: 15px;
+            margin-right: -10px;
+        }
+
+        .cb-min-tm {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .cb-min-stts {
+            padding: 20px 0;
+        }
+
+        .cb-mom-itm {
+            padding: 0 0 10px;
+        }
+
+        .cb-lv-grn-strip {
+            padding: 10px 10px 5px;
+        }
+
+        .cb-ovr-num {
+            padding-top: 2px;
+        }
+
+        .cb-min-pad {
+            padding-left: 5px;
+        }
+
+        /*Upcoming Series*/
+        .cb-mnth {
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+
+        .cb-sch-lst-itm {
+            padding: 10px 0;
+            margin-left: 20px;
+            border-bottom: 1px solid #ecebeb;
+        }
+
+        /*Matches By Day*/
+        .cb-mtchs-dy {
+            padding: 20px 20px 20px 10px;
+        }
+
+        .cb-mtchs-dy-tm, .cb-mtchs-dy-vnu {
+            padding: 20px 20px 20px 0px;
+        }
+
+        /*Schedule Teams*/
+        .cb-lv-upcom-strip {
+            padding: 5px 10px;
+            background: #ecebeb;
+        }
+
+        /*Archives*/
+        .cb-srs-cat {
+            padding: 10px;
+            color: #028062;
+        }
+
+        .pad-left {
+            padding-left: 30px;
+        }
+
+        .cb-arcv-yr {
+            font-size: 20px;
+            padding: 0 0 5px 10px;
+            font-weight: bold
+        }
+
+        .cb-yr-tmline {
+            padding: 2px 15px 15px 0;
+        }
+
+        .cb-sch-tms-widgt {
+            padding: 5px 10px;
+            margin: 5px 2px 2px 2px;
+            background: #f5f5f5;
+            border-radius: 0;
+            border: 0;
+            display: inline-block;
+        }
+
+        /*Photos*/
+        .cb-thmb-dark {
+            background: #333333;
+            box-shadow: none;
+            border-radius: 0;
+            border: none;
+            padding: 0;
+            color: #CCC;
+        }
+
+        .cb-pht-main {
+            padding: 20px 15px;
+            margin: 0 -10px;
+        }
+
+        .cb-pht-block {
+            padding: 9px;
+            float: left;
+            height: 280px;
+            box-sizing: border-box;
+        }
+
+        .cb-gallery-pht-block {
+            padding: 9px 9px 9px 16px;
+        }
+
+        .img-responsive {
+            height: auto;
+            max-width: 100%;
+        }
+
+        .center-block {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .cb-schdl {
+            padding: 0 10px;
+            line-height: 1.5;
+        }
+
+        .cb-caret-up, .cb-caret-down {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            margin-left: 4px;
+            margin-bottom: 1px;
+            border-right: 4px solid transparent;
+            border-left: 4px solid transparent;
+        }
+
+        .cb-caret-up {
+            border-bottom: 4px solid;
+        }
+
+        .cb-caret-down {
+            border-top: 4px solid;
+        }
+
+        .cb-hm-rt-itm {
+            margin: 0 0 5px;
+            padding: 10px 10px 5px;
+        }
+
+        .cb-hmscg-tm-nm {
+            display: inline-block;
+            width: 60px;
+        }
+
+        .pull-right, .cb-all-mtch-tab {
+            float: right;
+        }
+
+        .cb-skin-ads-close {
+            display: none;
+        }
+
+        .cb-nws-sub-txt {
+            padding-top: 10px;
+        }
+
+        .nws-dtl-hdln {
+            margin-top: 10px;
+        }
+
+        .cb-min-lv {
+            min-height: 270px
+        }
+
+        .cb-min-comp {
+            min-height: 150px;
+        }
+
+        .cb-ttl-vts {
+            margin-top: 20px;
+        }
+
+        .cb-poll-radio {
+            width: 5%;
+            margin: 4px 10px 0 0;
+        }
+
+        .cb-mini-tim {
+            padding-bottom: 20px;
+        }
+
+        .cb-com-ln {
+            margin: 0 0 10px;
+            line-height: 24px;
+        }
+
+        .cb-comm-static {
+            min-height: 31px;
+            margin: 0 -10px 10px;
+        }
+
+        .cb-com-ovr-sum-ad {
+            min-height: 31px;
+        }
+
+        .cb-comm-static-anchr {
+            margin: 5px 10px;
+            display: block;
+        }
+
+        .ad-unit-rendered {
+            margin-bottom: 5px;
+        }
+
+        .cb-mm-wrp {
+            max-height: 0px;
+            -webkit-transition: max-height 0.35s ease;
+            transition: max-height 0.35s ease;
+            overflow: hidden;
+        }
+
+        .cb-mm-wrp.down {
+            max-height: 1000px;
+            transition: max-height 0.75s ease;
+            -webkit-transition: max-height 0.75s ease;
+            overflow: hidden;
+        }
+
+
+
+        .cb-col .cb-align-cen {
+            float: none;
+            text-align: center;
+            padding: 7px 25px;
+            margin-top: 20px;
+        }
+
+        .cb-align-cen {
+            padding-top: 10px;
+        }</style>
+
+
+    </head>
+    <body>
+    <div class="page">
+
+        <div class="cb-col cb-col-100 cb-bg-white">
+            <div class="cb-col cb-col-20 cb-col-rt"><img title="profile image"
+                                                         class="img-responsive cb-plyr-thum-img"
+                                                         src="https:{{ player_img }}">
+            </div>
+            <div style="padding-top: 90px;"><h1 itemprop="name" class="cb-font-40">{{ player_name }}</h1>
+                <h3 class="cb-font-18 text-gray">{{ player_country }}</h3></div>
+
+            <div class="cb-col cb-col-100 cb-bg-grey">
+                <div class="cb-col cb-col-33 text-black">
+                    <div class="cb-hm-rght">
+                        <div class="cb-font-16 text-bold"> Personal Information</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Born</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_born }}</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Birth Place</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_birth_place }}</div>
+                        <div class="cb-col cb-col-40 text-bold">Height</div>
+                        <div class="cb-col cb-col-60"> {{ player_height }}</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Role</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_role }}</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Batting Style</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_batting_style }}</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Bowling Style</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_bowlng_style }}</div>
+                        <div class="cb-font-16 text-bold cb-lst-itm-sm cb-col cb-col-100 cb-sr-rev-label">ICC
+                            Rankings
+                        </div>
+                        <div class="cb-col cb-col-25">&nbsp;</div>
+                        <div class="cb-col cb-col-25 text-right cb-plyr-rank">Test</div>
+                        <div class="cb-col cb-col-25 text-right cb-plyr-rank">ODI</div>
+                        <div class="cb-col cb-col-25 text-right cb-plyr-rank">T20</div>
+                        <div class="cb-col cb-col-25 text-left cb-plyr-rank text-bold">Batting</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_test_batting_rank }}</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right">{{ player_odi_batting_rank }}</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_t20_batting_rank }}</div>
+                        <div class="cb-col cb-col-25 text-left cb-plyr-rank text-bold">Bowling</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_test_bowling_rank }}</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_odi_bowling_rank }}</div>
+                        <div class="cb-col cb-col-25 cb-plyr-rank text-right"> {{ player_t20_bowling_rank }}</div>
+                        <div id="mpu" class="cb-ttl-vts cb-col ad-unit"></div>
+                        <div class="cb-col cb-col-100 cb-font-16 text-bold cb-ttl-vts"> Career Information</div>
+                        <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Teams</div>
+                        <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_team }}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="cb-col cb-col-67 cb-bg-white cb-plyr-rt-col">
+                <div class="cb-hm-rght cb-player-bio">
+                </div>
+                <div class="cb-plyr-tbl">
+                    <div class="cb-font-16 text-bold cb-lst-dom">Batting Career Summary</div>
+                    <table class="table cb-col-100 cb-plyr-thead">
+                        <thead>
+                        <tr class="cb-bg-grey cb-font-12">
+                            <th></th>
+                            <th class="cb-plyr-th text-right" title="Matches Played">M</th>
+                            <th class="text-center" title="No of Innings Batted">Inn</th>
+                            <th class="text-center" title="No of Not Outs">NO</th>
+                            <th class="text-center" title="No of Runs Scored">Runs</th>
+                            <th class="text-center" title="Highest Score">HS</th>
+                            <th class="text-center" title="Batting Average">Avg</th>
+                            <th class="text-center" title="No of Balls Faced">BF</th>
+                            <th class="text-center" title="Batting Strike Rate">SR</th>
+                            <th class="text-center" title="No of 100s Scored">100</th>
+                            <th class="text-center" title="No of 200s Scored">200</th>
+                            <th class="text-center" title="No of 50s Scored">50</th>
+                            <th class="text-center" title="No of fours hit">4s</th>
+                            <th class="text-center" title="No of sixes hit">6s</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="cb-col-8"><strong>Test</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_test_batting_m }}</td>
+                            <td class="text-right">{{ player_test_batting_inn }}</td>
+                            <td class="text-right">{{ player_test_no }}</td>
+                            <td class="text-right">{{ player_test_batting_runs }}</td>
+                            <td class="text-right">{{ player_test_hs }}</td>
+                            <td class="text-right">{{ player_test_batting_avg }}</td>
+                            <td class="text-right">{{ player_test_bf }}</td>
+                            <td class="text-right">{{ player_test_batting_sr }}</td>
+                            <td class="text-right">{{ player_test_100 }}</td>
+                            <td class="text-right">{{ player_test_200 }}</td>
+                            <td class="text-right">{{ player_test_50 }}</td>
+                            <td class="text-right">{{ player_test_4s }}</td>
+                            <td class="text-right">{{ player_test_6s }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>ODI</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_odi_batting_m }}</td>
+                            <td class="text-right">{{ player_odi_batting_inn }}</td>
+                            <td class="text-right">{{ player_odi_no }}</td>
+                            <td class="text-right">{{ player_odi_batting_runs }}</td>
+                            <td class="text-right">{{ player_odi_hs }}</td>
+                            <td class="text-right">{{ player_odi_batting_avg }}</td>
+                            <td class="text-right">{{ player_odi_bf }}</td>
+                            <td class="text-right">{{ player_odi_batting_sr }}</td>
+                            <td class="text-right">{{ player_odi_100 }}</td>
+                            <td class="text-right">{{ player_odi_200 }}</td>
+                            <td class="text-right">{{ player_odi_50 }}</td>
+                            <td class="text-right">{{ player_odi_4s }}</td>
+                            <td class="text-right">{{ player_odi_6s }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>T20I</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_t20_batting_m }}</td>
+                            <td class="text-right">{{ player_t20_batting_inn }}</td>
+                            <td class="text-right">{{ player_t20_no }}</td>
+                            <td class="text-right">{{ player_t20_batting_runs }}</td>
+                            <td class="text-right">{{ player_t20_hs }}</td>
+                            <td class="text-right">{{ player_t20_batting_avg }}</td>
+                            <td class="text-right">{{ player_t20_bf }}</td>
+                            <td class="text-right">{{ player_t20_batting_sr }}</td>
+                            <td class="text-right">{{ player_t20_100 }}</td>
+                            <td class="text-right">{{ player_t20_200 }}</td>
+                            <td class="text-right">{{ player_t20_50 }}</td>
+                            <td class="text-right">{{ player_t20_4s }}</td>
+                            <td class="text-right">{{ player_t20_6s }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>IPL</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_ipl_batting_m }}</td>
+                            <td class="text-right">{{ player_ipl_batting_inn }}</td>
+                            <td class="text-right">{{ player_ipl_no }}</td>
+                            <td class="text-right">{{ player_ipl_batting_runs }}</td>
+                            <td class="text-right">{{ player_ipl_hs }}</td>
+                            <td class="text-right">{{ player_ipl_batting_avg }}</td>
+                            <td class="text-right">{{ player_ipl_bf }}</td>
+                            <td class="text-right">{{ player_ipl_batting_sr }}</td>
+                            <td class="text-right">{{ player_ipl_100 }}</td>
+                            <td class="text-right">{{ player_ipl_200 }}</td>
+                            <td class="text-right">{{ player_ipl_50 }}</td>
+                            <td class="text-right">{{ player_ipl_4s }}</td>
+                            <td class="text-right">{{ player_ipl_6s }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cb-plyr-tbl">
+                    <div class="cb-font-16 text-bold cb-lst-dom">Bowling Career Summary</div>
+                    <table class="table cb-col-100 cb-plyr-thead">
+                        <thead>
+                        <tr class="cb-bg-grey cb-font-12">
+                            <th></th>
+                            <th class="cb-plyr-th text-right" title="Matches Played">M</th>
+                            <th class="text-right" title="No of Innings Bowled">Inn</th>
+                            <th class="text-right" title="No of Balls Bowled">B</th>
+                            <th class="text-right" title="No of Runs Conceded">Runs</th>
+                            <th class="text-right" title="Wickets">Wkts</th>
+                            <th class="text-right" title="Best Bowling in Innings">BBI</th>
+                            <th class="text-right" title="Best Bowling in Match">BBM</th>
+                            <th class="text-right" title="Economy">Econ</th>
+                            <th class="text-right" title="Bowling Average">Avg</th>
+                            <th class="text-right" title="Bowling Strike Rate">SR</th>
+                            <th class="text-right" title="Five Wickets in an Innings">5W</th>
+                            <th class="text-right cb-plyr-stump" title="Ten Wickets in an Match">10W</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td class="cb-col-8"><strong>Test</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_test_bowling_m }}</td>
+                            <td class="text-right">{{ player_test_bowling_inn }}</td>
+                            <td class="text-right">{{ player_test_b }}</td>
+                            <td class="text-right">{{ player_test_bowling_runs }}</td>
+                            <td class="text-right">{{ player_test_wkts }}</td>
+                            <td class="text-right">{{ player_test_bbi }}</td>
+                            <td class="text-right">{{ player_test_bbm }}</td>
+                            <td class="text-right">{{ player_test_econ }}</td>
+                            <td class="text-right">{{ player_test_bowling_avg }}</td>
+                            <td class="text-right">{{ player_test_bowling_sr }}</td>
+                            <td class="text-right">{{ player_test_5W }}</td>
+                            <td class="text-right">{{ player_test_10W }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>ODI</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_odi_bowling_m }}</td>
+                            <td class="text-right">{{ player_odi_bowling_inn }}</td>
+                            <td class="text-right">{{ player_odi_b }}</td>
+                            <td class="text-right">{{ player_odi_bowling_runs }}</td>
+                            <td class="text-right">{{ player_odi_wkts }}</td>
+                            <td class="text-right">{{ player_odi_bbi }}</td>
+                            <td class="text-right">{{ player_odi_bbm }}</td>
+                            <td class="text-right">{{ player_odi_econ }}</td>
+                            <td class="text-right">{{ player_odi_bowling_avg }}</td>
+                            <td class="text-right">{{ player_odi_bowling_sr }}</td>
+                            <td class="text-right">{{ player_odi_5W }}</td>
+                            <td class="text-right">{{ player_odi_10W }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>T20I</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_t20_bowling_m }}</td>
+                            <td class="text-right">{{ player_t20_bowling_inn }}</td>
+                            <td class="text-right">{{ player_t20_b }}</td>
+                            <td class="text-right">{{ player_t20_bowling_runs }}</td>
+                            <td class="text-right">{{ player_t20_wkts }}</td>
+                            <td class="text-right">{{ player_t20_bbi }}</td>
+                            <td class="text-right">{{ player_t20_bbm }}</td>
+                            <td class="text-right">{{ player_t20_econ }}</td>
+                            <td class="text-right">{{ player_t20_bowling_avg }}</td>
+                            <td class="text-right">{{ player_t20_bowling_sr }}</td>
+                            <td class="text-right">{{ player_t20_5W }}</td>
+                            <td class="text-right">{{ player_t20_10W }}</td>
+                        </tr>
+                        <tr>
+                            <td class="cb-col-8"><strong>IPL</strong></td>
+                            <td class="cb-plyr-tbody text-right">{{ player_ipl_bowling_m }}</td>
+                            <td class="text-right">{{ player_ipl_bowling_inn }}</td>
+                            <td class="text-right">{{ player_ipl_b }}</td>
+                            <td class="text-right">{{ player_ipl_bowling_runs }}</td>
+                            <td class="text-right">{{ player_ipl_wkts }}</td>
+                            <td class="text-right">{{ player_ipl_bbi }}</td>
+                            <td class="text-right">{{ player_ipl_bbm }}</td>
+                            <td class="text-right">{{ player_ipl_econ }}</td>
+                            <td class="text-right">{{ player_ipl_bowling_avg }}</td>
+                            <td class="text-right">{{ player_ipl_bowling_sr }}</td>
+                            <td class="text-right">{{ player_ipl_5W }}</td>
+                            <td class="text-right">{{ player_ipl_10W }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="cb-font-16 text-bold cb-plyr-tbl cb-lst-dom">Career Information</div>
+                <br/>
+                <div class="cb-col cb-col-100">
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Test debut</div>
+
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_test_debut }}
+                    </div>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last Test</div>
+
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_last_test }}
+                    </div>
+
+                    <br/><br/><br/>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">ODI debut</div>
+
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_odi_debut }}
+                    </div>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last ODI</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_last_odi }}
+                    </div>
+
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst cb-nav-hdr">T20 debut</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst cb-nav-hdr">
+                        {{ player_t20_debut }}
+                    </div>
+
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last T20</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_last_t20 }}
+                    </div>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst cb-nav-hdr">IPL debut</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst cb-nav-hdr">
+                        {{ player_ipl_debut }}
+                    </div>
+
+                    <div class="cb-col cb-col-16 text-bold cb-ftr-lst">Last IPL</div>
+                    <div class="cb-col cb-col-84 cb-ftr-lst">
+                        {{ player_last_ipl }}
+                    </div>
+                </div>
+                <div class="cb-col cb-col-100 cb-font-16 text-bold cb-plyr-tbl cb-lst-dom" id="profile">
+
+                    <br/>
+                    Profile
+                </div>
+                <div id="player_bio" class="text">
+                    {% for item in player_bio %}
+                        <p align="justify"> {{ item }}</p>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+    </body>
     {% include '/common/footer.html' %}
     {% include '/common/footer-social.html' %}
 {% endblock %}

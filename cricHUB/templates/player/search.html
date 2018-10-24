@@ -231,7 +231,7 @@
         <h1>Search For Players</h1>
         <br/>
         <br/>
-        <div class="search">
+        <div class="search-three">
             <form action="/players/show_players" method="post">
 
                 <input name="player_name" type="text" value="Search using Players Name" onfocus="this.value = '';"
@@ -248,9 +248,10 @@
         <br/>
         <br/>
 
-    {% if player_list != None %}
+    <h1>{{ search_status }}</h1>
+    {% if player_list != None%}
     {% for item in player_list %}
-    <form action="/news/detail_news" method="post">
+    <form action="/players/show_profile" method="post">
 
 
 
@@ -295,7 +296,7 @@
 
                             <br/>
 
-                            <button type="submit" name="view_profile" value="www.cricbuzz.com/{{ item["player_url"] }}" align="center" class="cb-more-btn"title="View Profile">
+                            <button type="submit" name="player_url" value="{{ item["player_href"] }}" align="center" class="cb-more-btn"title="View Profile">
                             View Profile
                             </button>
 
@@ -305,8 +306,6 @@
                 </div>
         </form>
     {% endfor %}
-    {% else %}
-        <h1></h1>
     {% endif %}
     </div>
     </body>

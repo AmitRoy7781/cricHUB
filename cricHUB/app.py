@@ -2,13 +2,13 @@ from cffi.setuptools_ext import execfile
 from flask import Flask,redirect,session, render_template
 #from twisted.python.compat import execfile
 
-# chat-box start
+# start
 from gevent import monkey
 monkey.patch_all()
 from flask_socketio import SocketIO, emit, join_room
 from cricMongoDB.database import db
 import pymongo, json
-# chat-box end
+# end
 
 from cricAuth.auth import app as auth
 from cricRanking.show_ranking import app as ranking
@@ -22,10 +22,10 @@ from cricPlayer.player import app as player
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
 
-# chat-box start
+# start
 app.debug = True
 socketio = SocketIO(app)
-# chat-box end
+# end
 
 # authentication blueprint
 app.register_blueprint(auth)
@@ -56,12 +56,12 @@ def home():
 def score():
     return render_template('LiveScore.html')
 
-#@app.route('/chat-box/')
+#@app.route('/chat-box')
 #def chat():
 #    execfile('server.py')
 
 
-# chat-box start
+# start
 @app.route('/chat-box/')
 def chat():
 
@@ -95,8 +95,6 @@ def chat_message(message):
 def test_connect():
   emit('my response', {'data': 'Connected', 'count': 0})
 
-# chat-box end
-
-
+# end
 if __name__ == '__main__':
     app.run(port=5000, debug=True)

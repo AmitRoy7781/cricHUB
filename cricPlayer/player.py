@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect, session, Blueprint
+from cricPlayer.player_search import get_data
 from bs4 import BeautifulSoup
 import requests,os
 
@@ -10,6 +11,9 @@ def search_players(player_list=None,search_status=None):
     if 'username' not in session.keys():
         return redirect('/auth/signin')
 
+    if search_status is None:
+        search_status = ""
+    # print(search_status)
     return render_template("player/search.html",player_list=player_list,search_status=search_status)
 
 @app.route("/players/show_players", methods=['POST', 'GET'])
@@ -17,6 +21,9 @@ def show_players():
 
     search_for = request.form.to_dict()["player_name"]
     search_for = search_for.lower()
+
+    if len(search_for)<4:
+        return search_players(None,"Please type at least 4 characters")
 
     os.chdir(os.path.dirname(__file__))
 
@@ -32,12 +39,9 @@ def show_players():
 
         x = file_data[i].split("|")
 
-
         name = x[0]
-        href = "https://www.cricbuzz.com" + str(x[1])
+        href = "https://www.cricbuzz.com" + x[1]
         img = str(x[2])
-
-
 
         if (x[0].lower().find(search_for)) != -1:
 
@@ -46,15 +50,31 @@ def show_players():
             temp["player_href"] = href
             temp["player_img"] = img
 
-
             player_list.append(temp)
 
     file.close()
 
     if player_list == []:
-        return search_players(player_list,"Sorry No Data Found!!! <br/>Check Spelling and Try Again")
-    return search_players(player_list)
+        return search_players(player_list,"Sorry No Data Found!!! \n Check Spelling and Try Again")
+    return search_players(player_list,"Search Results")
 
 @app.route("/players/show_profile", methods=['POST', 'GET'])
 def show_profile():
-    return "NOT YET IMPELEMENTED"
+    url = request.form.to_dict()["player_url"]
+    return get_data(url)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
