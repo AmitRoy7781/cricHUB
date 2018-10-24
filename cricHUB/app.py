@@ -10,10 +10,11 @@ from cricMongoDB.database import db
 import pymongo, json
 # end
 
-from cricLIVE.livescore import app as livescore
+
 from cricAuth.auth import app as auth
-from cricRanking.show_ranking import app as ranking
-from cricRanking.rank_try import app as ranking_try
+from cricLIVE.livescore import app as livescore
+from cricPrediction.predictions import app as prediction
+from cricRanking.show_ranking import app as ranking_try
 from cricSTAT.t20Stat import app as stat
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
@@ -30,14 +31,19 @@ app.debug = True
 socketio = SocketIO(app)
 # end
 
-#live score blueprint
-app.register_blueprint(livescore)
 
 # authentication blueprint
 app.register_blueprint(auth)
 
+
+# live score blueprint
+app.register_blueprint(livescore)
+
+
+# prediction blueprint
+app.register_blueprint(prediction)
+
 # show ranking blueprint
-app.register_blueprint(ranking)
 app.register_blueprint(ranking_try)
 
 # t20 Statistics blueprint

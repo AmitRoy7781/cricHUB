@@ -29,6 +29,16 @@
         background-color: #f1f1f1;
     }
 
+    .cb-more-btn {
+                padding: 8px 20px;
+                border-radius: 2px;
+                color: #fff;
+                background: #1f679d;
+                border: 0;
+                cursor: pointer;
+            }
+
+
 
 </style>
 
@@ -90,9 +100,9 @@
                 <label for="format">Format</label>
                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="format" name="format">
                     <option selected>Choose...</option>
-                    <option value="test">Test</option>
-                    <option value="odi">ODI</option>
-                    <option value="t20i">t2OI</option>
+                    <option value="tests">Test</option>
+                    <option value="odis">ODI</option>
+                    <option value="t20s">t2OI</option>
                 </select>
                 <span id="format_msg" style="font-size: small;color: red"></span>
             </div>
@@ -109,16 +119,18 @@
                 <label for="rank_type">Ranking Type</label>
                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="rank_type" name="rank_type">
                     <option selected>Choose...</option>
-                    <option value="batting">Batsmen</option>
-                    <option value="bowling">Bowlers</option>
-                    <option value="all-rounder">All Rounders</option>
-                    <option value="team">Team</option>
+                    <option value="batsmen">Batsmen</option>
+                    <option value="bowlers">Bowlers</option>
+                    <option value="all-rounders">All Rounders</option>
+                    <option value="teams">Team</option>
                 </select>
                 <span id="rank_type_msg" style="font-size: small;color: red"></span>
             </div>
             <br/>
-            <div class="form-group">
-                <input type="submit" class="btn btn-dark btn-lg" value="Show Ranking">
+            <div>
+                <button type="submit" class="cb-more-btn" value="Show Ranking">
+                    Show Ranking
+                </button>
             </div>
 
         </form>
