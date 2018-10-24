@@ -1,13 +1,31 @@
+from cffi.setuptools_ext import execfile
 from flask import Flask,redirect,session, render_template
+#from twisted.python.compat import execfile
+
+# chat-box start
+from gevent import monkey
+monkey.patch_all()
+from flask_socketio import SocketIO, emit, join_room
+from cricMongoDB.database import db
+import pymongo, json
+# chat-box end
+
 from cricAuth.auth import app as auth
 from cricRanking.show_ranking import app as ranking
 from cricRanking.rank_try import app as ranking_try
 from cricSTAT.t20Stat import app as stat
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
+#from cricCHAT.server import app as chat
+#from cricCHAT import server
 
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
+
+# chat-box start
+app.debug = True
+socketio = SocketIO(app)
+# chat-box end
 
 # authentication blueprint
 app.register_blueprint(auth)
@@ -25,7 +43,8 @@ app.register_blueprint(news)
 #player blueprint
 app.register_blueprint(player)
 
-
+#chat-box
+#app.register_blueprint(chat)
 
 @app.route('/')
 def home():
@@ -33,11 +52,51 @@ def home():
         return redirect('/auth/signin')
     return render_template('newsTwitter.html')
 
-
 @app.route('/live-score/')
 def score():
     return render_template('LiveScore.html')
 
+#@app.route('/chat-box/')
+#def chat():
+#    execfile('server.py')
+
+
+# chat-box start
+@app.route('/chat-box/')
+def chat():
+
+  data = [];
+  data = db.chat.find();
+
+  message = [];
+  for item in data:
+    tmp = [];
+    tmp.append(item["author"]);
+    tmp.append(item["message"]);
+    message.append(tmp);
+
+  return render_template("chat.html", list=message)
+
+@socketio.on('message', namespace='/chat')
+def chat_message(message):
+
+  print("message = ", message)
+  print(message["data"]["author"] + " " + message["data"]["message"])
+
+  if message["data"]["message"] != "":
+
+    # insert into database
+    db.chat.insert({"author": message["data"]["author"], "message": message["data"]["message"]});
+
+    emit('message', {'data': message['data']}, broadcast=True)
+
+
+@socketio.on('connect', namespace='/chat')
+def test_connect():
+  emit('my response', {'data': 'Connected', 'count': 0})
+
+# chat-box end
+
 
 if __name__ == '__main__':
-    app.run(port=5000,debug=True)
+    app.run(port=5000, debug=True)
