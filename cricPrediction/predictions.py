@@ -4,4 +4,4 @@ app = Blueprint('predictions', __name__)
 
 @app.route('/predictions/')
 def predictions():
-    return "Not Yet Implemented"
+    return render_template("prediction/prediction.html")
