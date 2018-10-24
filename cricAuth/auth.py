@@ -7,6 +7,7 @@ app = Blueprint('auth', __name__)
 
 @app.route("/auth/signup")
 def signUp(data=None):
+
     if 'username' in session.keys():
         return redirect('/')
     #print(data)

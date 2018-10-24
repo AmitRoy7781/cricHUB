@@ -375,7 +375,7 @@ def get_data(url):
         bio = bio.replace("</i>", "")
         bio = bio.split("<br/>")
 
-        print(bio[len(bio)-1])
+        # print(bio[len(bio)-1])
         player_bio = []
 
         for x in bio:
