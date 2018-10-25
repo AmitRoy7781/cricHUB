@@ -25,7 +25,7 @@ def show_news(page_no=None):
     news_details = soup.find_all('div', {'class': 'cb-nws-intr'})
     news_time = soup.find_all('span', {'class': 'cb-nws-time'})
 
-    temp = soup.find_all('img', {'class': 'cb-lst-img'})
+    temp = soup.find_all('div', {'itemprop': 'image'})  
     news_title = []
     news_img = []
     news_img_title = []
@@ -69,7 +69,6 @@ def show_news(page_no=None):
     return render_template("news/news.html", news_data=data,page_no= page_no)
 
 
-
 @app.route("/news/more_news",methods=['POST', 'GET'])
 def more_news():
     if 'username' not in session.keys():
@@ -84,17 +83,49 @@ def detail_news():
     if 'username' not in session.keys():
         return redirect('/auth/signin')
 
+    news_topic = ""
+    news_headline = ""
+    news_author = ""
+    news_time = ""
+    news_img = ""
+    news_img_caption = ""
+    news_fb_href = ""
+    news_twt_href = ""
+
     url = request.form["detail_news"]
     url = "https://" + url
 
     res = requests.get(url)
     soup = BeautifulSoup(res.text, 'lxml')
-    news_topic = soup.find_all('span', {'class': 'cb-text-gray'})[0].text
-    news_headline = soup.find_all('h1', {'itemprop': 'headline'})[0].text
-    news_author = soup.find_all('span', {'itemprop': 'author'})[0].text
-    news_time = soup.find_all('time', {'itemprop': 'dateModified'})[0].text
-    news_img = soup.find_all('img', {'itemprop': 'contentUrl'})[0]["src"]
-    news_img_caption = soup.find_all('div', {'class': 'cb-img-cptn'})[0].text
+
+    x = soup.find_all('span', {'class': 'cb-text-gray'})
+    if x is not None and len(x)>=1:
+        news_topic = x[0].text
+
+    x = soup.find_all('h1', {'itemprop': 'headline'})
+    if x is not None and len(x)>=1:
+        news_headline = x[0].text
+
+    x = soup.find_all('span', {'itemprop': 'author'})
+    if x is not None and len(x)>=1:
+        news_author = x[0].text
+
+
+    x = soup.find_all('time', {'itemprop': 'dateModified'})
+    if x is not None and len(x)>=1:
+        news_time = x[0].text
+
+    x = soup.find_all('img', {'itemprop': 'contentUrl'})
+    y = soup.find_all('img', {'class': 'playerPoster'})
+
+    if x is not None and len(x)>=1:
+        news_img = x[0]["src"]
+    elif y is not None and len(y)>=1:
+        news_img = y[0]["src"]
+
+    x = soup.find_all('div', {'class': 'cb-img-cptn'})
+    if x is not None and len(x)>=1:
+        news_img_caption = x[0].text
 
     all_paras = soup.find_all('p')
     news_para = []
@@ -102,8 +133,13 @@ def detail_news():
         if temp.text != "" and temp.text != "{{suggest.tag}}" and temp.text != "Search for “”":
             news_para.append(temp.text)
 
-    news_fb_href = soup.find_all('a', {'class': 'cb-social-ancr-fb'})[0]["href"]
-    news_twt_href = soup.find_all('a', {'class': 'cb-social-ancr-twt'})[0]["href"]
+    x = soup.find_all('a', {'class': 'cb-social-ancr-fb'})
+    if x is not None and len(x)>=1:
+        news_fb_href = x[0]["href"]
+
+    x = soup.find_all('a', {'class': 'cb-social-ancr-twt'})
+    if x is not None and len(x) >= 1:
+        news_twt_href = x[0]["href"]
 
     return render_template('/news/detail_news.html',
                            news_topic=news_topic,
