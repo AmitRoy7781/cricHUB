@@ -1,5 +1,5 @@
 import pusher
-from flask import Flask,render_template,jsonify,request,Blueprint
+from flask import Flask,render_template,jsonify,request,Blueprint,session,redirect
 from cricMongoDB.database import db
 
 app = Blueprint('cricCHAT2', __name__)
@@ -15,14 +15,20 @@ pusher_client = pusher.Pusher(
 
 @app.route('/chat-room2/')
 def index():
-    messages = db.chat.find()
 
+    if 'username' not in session.keys():
+        return redirect('/auth/signin')
+    messages = db.chat.find()
     return render_template('temp.html', messages=messages)
 
 
 @app.route('/message', methods=['POST'])
 def message():
 
+
+    if 'username' not in session.keys():
+        return redirect('/auth/signin')
+    
     print(request.form.to_dict())
     try:
 
