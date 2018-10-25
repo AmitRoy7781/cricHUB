@@ -15,4 +15,4 @@ def profile():
 
     profile = users.find_one(query)
 
-    return render_template('user_profile.html', name=profile["name"], email=profile["email"], phone=profile["phone_number"])
+    return render_template('profile_2.html', name=profile["name"], email=profile["email"], phone=profile["phone_number"])
