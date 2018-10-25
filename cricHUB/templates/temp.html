@@ -16,7 +16,12 @@
 
             .media-list {
                 overflow: auto;
-            }</style>
+            }
+            .scroll {
+            height: 450px;
+            overflow: scroll;
+        }
+        </style>
     </head>
 
 
@@ -30,9 +35,7 @@
             <div class="col-lg-10" style="padding-left: 17%">
                 <div class="panel panel-info">
 
-                    <div class="panel-body fixed-panel"
-                         style="border-width: 50px; color: black;background-color: #5bc0de; height:420px; overflow: auto;"
-                         scrolling="auto">
+                    <div class='panel-Body scroll' id='messageBody'>
                         <ul id="content" class="media-list">
 
                             {% for message in messages %}
@@ -74,7 +77,15 @@
             crossorigin="anonymous"></script>
     <script>
 
+        $( document ).ready(function() {
+
+
+        });
+
         $(function () {
+
+
+
             var username = '{{ session["username"] }}';
 
 
@@ -84,6 +95,8 @@
                 $.post('/message', {'author': username, 'message': message}, function () {
                     $('#chat_text').val('');
                 });
+
+
             });
 
             // Enable pusher logging - don't include this in production
@@ -115,6 +128,9 @@
                     '        </div>\n' +
                     '    </article>\ ';
                 $('#content').append(message_template);
+
+                var messageBody = document.getElementById('messageBody');
+                messageBody.scrollTop = messageBody.scrollHeight;
 
             });
 

@@ -28,7 +28,7 @@ def message():
 
     if 'username' not in session.keys():
         return redirect('/auth/signin')
-    
+
     print(request.form.to_dict())
     try:
 
