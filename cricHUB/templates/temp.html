@@ -17,17 +17,18 @@
             .media-list {
                 overflow: auto;
             }
+
             .scroll {
-            height: 450px;
-            overflow: scroll;
-        }
+                height: 450px;
+                overflow: scroll;
+            }
         </style>
     </head>
 
 
 
     <body style="overflow-y:hidden;" class="has-navbar-fixed-bottom">
-    <div >
+    <div>
         <div class="row " style="padding-top:10px;">
             <h3 class="text-center">cricCHAT</h3>
             <br/>
@@ -57,7 +58,8 @@
 
                     <div class="panel-footer">
                         <div class="input-group">
-                            <input id="chat_text" type="text" class="form-control" placeholder="Enter Message..."
+                            <input id="chat_text" type="text" onkeypress="send_message(this)" class="form-control"
+                                   placeholder="Enter Message..."
                                    autofocus/>
                             <span class="input-group-btn">
                 <button id="chat_btn" class="btn btn-info" type="button">SEND <span
@@ -77,13 +79,20 @@
             crossorigin="anonymous"></script>
     <script>
 
-        $( document ).ready(function() {
+        var input = document.getElementById("chat_text");
 
-
+        // Execute a function when the user releases a key on the keyboard
+        input.addEventListener("keyup", function (event) {
+            // Cancel the default action, if needed
+            event.preventDefault();
+            // Number 13 is the "Enter" key on the keyboard
+            if (event.keyCode === 13) {
+                // Trigger the button element with a click
+                document.getElementById("chat_btn").click();
+            }
         });
 
         $(function () {
-
 
 
             var username = '{{ session["username"] }}';
@@ -92,12 +101,14 @@
             $('#chat_btn').on('click', function () {
 
                 var message = $('#chat_text').val();
-                $.post('/message', {'author': username, 'message': message}, function () {
-                    $('#chat_text').val('');
-                });
 
-
+                if (message.trim() != "") {
+                    $.post('/message', {'author': username, 'message': message}, function () {
+                        $('#chat_text').val('');
+                    });
+                }
             });
+
 
             // Enable pusher logging - don't include this in production
             Pusher.logToConsole = true;
