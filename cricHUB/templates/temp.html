@@ -1,234 +1,100 @@
-{% extends "/common/base.html" %}
-{% set active_page = "index" %}
-
-{% block content %}
-
-    {% include '/common/header.html' %}
+<!DOCTYPE html>
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <style>body {
-        background: #E3E6E3;
-        font-family: helvetica, "Segoe UI", Arial, sans-serif;
-        color: #222;
-        font-size: 14px;
-        line-height: 1.5;
-        margin: 0;
-    }
-
-    body, .cb-comm-pg, .cb-hm-mid {
-        min-height: 1000px
-    }
-
-
-    .page {
-        max-width: 980px;
-        margin: 0 auto;
-        position: relative;
-    }
-
-
-    .cb-col-67 {
-        width: 67%;
-    }
-
-
-
-    .cb-col-100 {
-        width: 100%;
-    }
-
-    .cb-col {
-        display: inline-block;
-        box-sizing: border-box;
-        float: left;
-        min-height: 1px;
-    }
-
-    h1 {
-        font-size: 36px;
-        line-height: 42px;
-        margin: 0;
-    }
-
-    h2 {
-        font-size: 24px;
-        margin: 0;
-        line-height: 30px;
-    }
-
-    h3 {
-        font-size: 18px;
-        line-height: 24px;
-        margin: 0;
-    }
-
-    h4 {
-        font-size: 16px;
-        margin: 0;
-    }
-
-    h5 {
-        font-size: 14px;
-        margin: 0;
-    }
-
-    .cb-font-18 {
-        font-size: 18px;
-    }
-
-    img {
-        border: 0;
-    }
-
-    a {
-        text-decoration: none;
-        color: #222;
-    }
-
-    a, a:hover, a:active, a:focus {
-        outline: medium none;
-    }
-
-    .cb-hm-rght {
-        padding: 15px;
-    }
-
-    .cb-subnav .cb-sub-navigation {
-        display: none;
-        position: absolute;
-    }
-
-    .cb-mat-mnu-wrp {
-        margin-bottom: 10px;
-    }
-
-
-    #scagTabContent .show {
-        display: block;
-        visibility: visible;
-    }
-
-    #scagTabContent .hide {
-        display: none;
-        visibility: hidden;
-    }
-
-    [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-        display: none !important;
-    }
-
-
-    .text-bold {
-        font-weight: bold;
-    }
-
-
-    .cb-skin-ads-close {
-        display: none;
-    }
-
-
-
-    h2.cb-cat-head-text {
-        font-size: 18px
-    }
-
-
-    .cb-col .cb-align-cen {
-        float: none;
-        text-align: center;
-        padding: 7px 25px;
-        margin-top: 20px;
-    }
-
-    </style>
-    <script>(function (w) {
-        "use strict";
-        var loadCSS = function (href, before, media) {
-            var doc = w.document;
-            var ss = doc.createElement("link");
-            var ref;
-            if (before) {
-                ref = before;
-            } else {
-                var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
-                ref = refs[refs.length - 1];
-            }
-            var sheets = doc.styleSheets;
-            ss.rel = "stylesheet";
-            ss.href = href;
-            ss.media = "only x";
-            ref.parentNode.insertBefore(ss, (before ? ref : ref.nextSibling));
-            var onloadcssdefined = function (cb) {
-                var resolvedHref = ss.href;
-                var i = sheets.length;
-                while (i--) {
-                    if (sheets[i].href === resolvedHref) {
-                        return cb();
-                    }
-                }
-                setTimeout(function () {
-                    onloadcssdefined(cb);
-                });
-            };
-            ss.onloadcssdefined = onloadcssdefined;
-            onloadcssdefined(function () {
-                ss.media = media || "all";
-            });
-            return ss;
-        };
-        if (typeof module !== "undefined") {
-            module.exports = loadCSS;
-        } else {
-            w.loadCSS = loadCSS;
-        }
-    }(typeof global !== "undefined" ? global : this));
-    loadCSS("//s.cricketcb.com/site/style.201810151158.css");</script>
+    <title>Pusher Test</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"/>
 </head>
-<body><a href="https://plus.google.com/104502282508811467249" rel="publisher"></a><a id="ad-skin" target="_blank"
-                                                                                     href="Javascript:void(0)"
-                                                                                     class="cb-skin-ads-link cb-skin-ads-link-fixed ad-skin"></a><a
-        href="Javascript:void(0)" class="cb-skin-ads-close cb-font-18 ad-skin-close"
-        style="position:fixed; z-index:1001; color:#FFF; background:#000; padding:2px 5px; right:2px;">&#x2716;</a>
-<div class="page">
 
-    <style>.sub-navigation {
-        padding-top: 6px;
-    }</style>
-    <div class='cb-bg-white cb-col-100 cb-col'>
-        <div class='cb-col-67 cb-col cb-left cb-hm-rght'><h3 class='cb-mat-mnu-wrp cb-min-pad'>IPL 2014 - Points
-            Table</h3>
-            <table class="table cb-srs-pnts">
-                <thead>
-                <tr class="cb-srs-gray-strip ">
-                    <th class="cb-srs-pnts-th text-left" style="padding-left: 6px;width:200px;">Teams</th>
-                    <td class=" cb-srs-pnts-th ">Mat</td>
-                    <td class=" cb-srs-pnts-th ">Won</td>
-                    <td class=" cb-srs-pnts-th ">Lost</td>
-                    <td class=" cb-srs-pnts-th ">Tied</td>
-                    <td class=" cb-srs-pnts-th ">NR</td>
-                    <th class=" cb-srs-pnts-th">Pts</th>
-                    <td class=" cb-srs-pnts-th ">NRR</td>
-                    <th></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr class="cb-main-color-light3">
-                    <td class='cb-srs-pnts-name' style="width:200px;">Kings XI Punjab</td>
-                    <td class="cb-srs-pnts-td">14</td>
-                    <td class="cb-srs-pnts-td">11</td>
-                    <td class="cb-srs-pnts-td">3</td>
-                    <td class="cb-srs-pnts-td">0</td>
-                    <td class="cb-srs-pnts-td">0</td>
-                    <td class='cb-srs-pnts-td text-bold'>22</td>
-                    <td class="cb-srs-pnts-td">+0.968</td>
-                </tr>
-                </tbody>
-            </table>
+<body style="overflow-y:hidden;" class="has-navbar-fixed-bottom">
+
+<nav class="navbar is-fixed-bottom" role="navigation" aria-label="main navigation">
+    <div class="container">
+        <div class="navbar-item is-expanded">
+
+            <input id="chat_text" class="input" type="text">
+            <a id="chat_btn" class="button is-info">
+                Post
+            </a>
+
         </div>
     </div>
+
+</nav>
+
+<div id="content" class="container" style="overflow-y:auto; margin-bottom: 100px;">
+
+    {% for message in messages %}
+    <article class="media">
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    <strong>{{ message.author }}</strong>
+                    <br>
+                    {{ message.message }}
+                </p>
+            </div>
+        </div>
+    </article>
+    {% endfor %}
 </div>
-</body>{% include '/common/footer.html' %}
-    {% include '/common/footer-social.html' %}
-{% endblock %}
+
+
+<script src="https://js.pusher.com/4.3/pusher.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script>
+
+    $(function () {
+        var username = '{{ session["username"] }}';
+
+
+
+        $('#chat_btn').on('click', function () {
+
+            var message = $('#chat_text').val();
+            $.post('/message', {'author' : username, 'message' : message}, function() {
+            $('#chat_text').val('');
+            });
+        });
+
+        // Enable pusher logging - don't include this in production
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('76e1eff5e36b22e9f0ef', {
+            cluster: 'ap2',
+            forceTLS: true
+        });
+
+        var channel = pusher.subscribe('my-channel');
+        channel.bind('new-message', function (data) {
+            var name = data.author;
+            var message = data.message;
+
+            var message_template = '<article class="media">\n' +
+            '\n' +
+            '        <div class="media-content">\n' +
+            '            <div class="content">\n' +
+            '                <p>\n' +
+            '                    <strong> '
+            + data.author +
+
+        ' </strong>\n' +
+            '                    <br> ' +
+            data.message +
+            '                </p>\n' +
+            '            </div>\n' +
+            '        </div>\n' +
+            '    </article>\ ';
+            $('#content').append(message_template);
+
+        });
+
+    });
+</script>
+
+
+</body>
+
+</html>

@@ -18,6 +18,7 @@ from cricSTAT.t20Stat import app as stat
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
 from cricProfile.user_data import app as profile
+from cricCHAT2.cricCHAT2 import app as cricCHAT2
 
 # from cricCHAT.server import app as chat
 # from cricCHAT import server
@@ -57,6 +58,8 @@ app.register_blueprint(player)
 # user profile blueprint
 app.register_blueprint(profile)
 
+# user profile blueprint
+app.register_blueprint(cricCHAT2)
 
 # chat-box
 # app.register_blueprint(chat)
@@ -151,4 +154,4 @@ def test_connect():
 
 
 if __name__ == '__main__':
-    socketio.run(app)
+    app.run(debug=True)
