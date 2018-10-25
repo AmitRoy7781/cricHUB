@@ -4,7 +4,7 @@
     {% include '/common/header.html' %}
 
     <head>
-        <title>Pusher Test</title>
+        <title>chatROOM - cricHUB</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"/>
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -33,13 +33,20 @@
                     <div class="panel-body fixed-panel"
                          style="border-width: 50px; color: black;background-color: #5bc0de; height:420px; overflow: auto;"
                          scrolling="auto">
-                        <ul id = "content" class="media-list">
+                        <ul id="content" class="media-list">
 
                             {% for message in messages %}
-                                <p>{{ message.author }}</p>
-                                <p>{{ message.message }}</p>
-
-                                <hr>
+                                <article class="media">
+                                    <div class="media-content">
+                                        <div class="content">
+                                            <p>
+                                                <strong>{{ message.author }}</strong>
+                                                <br>
+                                                {{ message.message }}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </article>
                             {% endfor %}
 
                         </ul>
@@ -47,10 +54,10 @@
 
                     <div class="panel-footer">
                         <div class="input-group">
-                            <input id="chat_text" type="text" class="form-control" placeholder="Enter Message..." id=""
+                            <input id="chat_text" type="text" class="form-control" placeholder="Enter Message..."
                                    autofocus/>
                             <span class="input-group-btn">
-                <button class="btn btn-info" type="button" id="chat_btn">SEND <span
+                <button id="chat_btn" class="btn btn-info" type="button">SEND <span
                         class="glyphicon glyphicon-send"></span></button>
               </span>
                         </div>
@@ -59,8 +66,6 @@
             </div>
         </div>
     </div>
-
-
 
 
     <script src="https://js.pusher.com/4.3/pusher.min.js"></script>
