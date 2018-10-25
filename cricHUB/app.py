@@ -1,21 +1,19 @@
 import pytz
-from cffi.setuptools_ext import execfile
 from flask import Flask, redirect, session, render_template, make_response, request
 
+from cricAuth.auth import app as auth
+from cricCHAT2.cricCHAT2 import app as cricCHAT2
+from cricLIVE.livescore import app as livescore
 # start
 from cricMongoDB.database import db
-import pymongo, json
-# end
-
-from cricAuth.auth import app as auth
-from cricLIVE.livescore import app as livescore
-from cricPrediction.predictions import app as prediction
-from cricRanking.show_ranking import app as ranking_try
-from cricSTAT.t20Stat import app as stat
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
+from cricPrediction.predictions import app as prediction
 from cricProfile.user_data import app as profile
-from cricCHAT2.cricCHAT2 import app as cricCHAT2
+from cricRanking.show_ranking import app as ranking_try
+from cricSTAT.t20Stat import app as stat
+
+# end
 
 # from cricCHAT.server import app as chat
 # from cricCHAT import server
@@ -54,6 +52,7 @@ app.register_blueprint(profile)
 
 # user profile blueprint
 app.register_blueprint(cricCHAT2)
+
 
 # chat-box
 # app.register_blueprint(chat)
