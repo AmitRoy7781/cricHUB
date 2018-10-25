@@ -13,7 +13,7 @@ pusher_client = pusher.Pusher(
 )
 
 
-@app.route('/chat-room2')
+@app.route('/chat-room2/')
 def index():
     messages = db.chat.find()
 
