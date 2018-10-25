@@ -19,4 +19,9 @@ def get_prediction():
     predictor = ServePrediction(app.root_path)
     pred = predictor.predict(team1, team2, venue)
     formatted_pred = predictor.get_formatted_prediction(team1, team2, pred)
-    return render_template("prediction/pred-deliver.html", pred = formatted_pred)
+    legend = [team1+ ' bats first', team2 + ' bats first']
+    labels = [team1, team2]
+    values1 = pred[0, :].flatten().tolist()
+    values2 = pred[1, :].flatten().tolist()
+    return render_template('prediction/pred-deliver.html',
+                           pred = formatted_pred,values1=values1, values2=values2, labels=labels, legend=legend)

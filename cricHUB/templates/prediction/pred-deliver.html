@@ -1,10 +1,119 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-{{ pred }}
-</body>
-</html>
+{% extends "/common/base.html" %}
+
+{% block content %}
+    {% include '/common/header.html' %}
+
+    <script src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
+
+    <div class="col-md-9">
+        <h2> Probability of Winning match based on previous match records </h2>
+    {{ pred }}
+    </div>
+
+    <div class="col-md-6 col-md-offset-3">
+        <h3>If {{ labels[0] }} bats first and {{ labels[1] }} bowls first</h3>
+        <canvas id="myChart1" width="600" height="400"></canvas>
+    </div>
+
+    <br><br><br><br>
+
+    <div class="col-md-6 col-md-offset-3">
+        <h3>If {{ labels[1] }} bats first and {{ labels[0] }} bowls first</h3>
+        <canvas id="myChart2" width="600" height="400"></canvas>
+    </div>
+    <div class="mol-md-4">
+    </div>
+
+    <script>
+        Chart.defaults.global.responsive = true;
+
+
+        // define the chart data
+        var chartData1 = {
+            labels: [{% for item in labels %}
+                "{{item}}",
+            {% endfor %}],
+            datasets: [{
+                lineTension: 0.1,
+                backgroundColor: ["rgba(66,165,245,.7)", "rgba(25,118,210,0.7)"],
+                borderColor: "rgba(75,192,192,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [{% for item in values1 %}
+                    {{item}},
+                {% endfor %}],
+                spanGaps: false
+            }]
+        }
+
+        // define the chart data
+        var chartData2 = {
+            labels: [{% for item in labels %}
+                "{{item}}",
+            {% endfor %}],
+            datasets: [{
+                lineTension: 0.1,
+                backgroundColor: ["rgba(66,165,245,.7)", "rgba(25,118,210,0.7)"],
+                borderColor: "rgba(75,192,192,1)",
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: 1,
+                pointHoverRadius: 5,
+                pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                pointHoverBorderColor: "rgba(220,220,220,1)",
+                pointHoverBorderWidth: 2,
+                pointRadius: 1,
+                pointHitRadius: 10,
+                data: [{% for item in values2 %}
+                    {{item}},
+                {% endfor %}],
+                spanGaps: false
+            }]
+        };
+
+        var option = {
+            legend: {display: false},
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+        // get chart canvas
+        var ctx = document.getElementById("myChart1").getContext("2d");
+        // get chart canvas
+        var ctx2 = document.getElementById("myChart2").getContext("2d");
+
+        // create the chart using the chart canvas
+        var myChart = new Chart(ctx, {
+            type: 'horizontalBar',
+            data: chartData1, options: option
+        });
+
+        var myChart2 = new Chart(ctx2, {
+            type: 'horizontalBar',
+            data: chartData2, options: option
+        });
+
+    </script>
+
+    {% include '/common/footer.html' %}
+    {% include '/common/footer-social.html' %}
+{% endblock %}
