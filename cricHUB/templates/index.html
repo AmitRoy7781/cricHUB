@@ -4,15 +4,25 @@
 {% block content %}
 
     {% include '/common/header.html' %}
+    {% include '/common/scripts.html' %}
 
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <section>
         <div class="col-md-8">
             <h5 class="section-title border-top">
                 <span class="rgb-label theme-background"><i class="fa fa-twitter"></i></span>
-                Readers recommend
+                RECENT TWEETS
             </h5>
-            <a class="twitter-timeline" data-width="1200" data-widget-id="586402209283227648"
-               data-chrome="noheader nofooter" href="/ESPNcricinfo/timelines/585813293161406464"></a>
+            <section class="reader_rec hide-for-mob hide-landscape hide-portrait"
+                     style="border-top: 8px solid #dddddd;margin-bottom: 10px;">
+
+                <a class="twitter-timeline"
+                   href="https://twitter.com/ESPNcricinfo/timelines/585813293161406464?ref_src=twsrc%5Etfw"
+                   height="893"></a>
+
+
+            </section>
+
             <script>
                 !function (d, s, id) {
                     var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
