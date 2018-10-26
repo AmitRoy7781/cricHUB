@@ -4,6 +4,12 @@ from cricPlayer.player_search import get_data
 
 app = Blueprint('player', __name__)
 
+class ConcreteCommand:
+
+    @app.route("/players/show_profile", methods=['POST', 'GET'])
+    def show_profile():
+        url = request.form.to_dict()["player_url"]
+        return get_data(url)
 
 class Command:
 
@@ -57,11 +63,3 @@ class Receiever:
         if player_list == []:
             return Command.search_players(player_list, "Sorry No Data Found!!! \n Check Spelling and Try Again")
         return Command.search_players(player_list, "Search Results")
-
-
-class ConcreteCommand:
-
-    @app.route("/players/show_profile", methods=['POST', 'GET'])
-    def show_profile():
-        url = request.form.to_dict()["player_url"]
-        return get_data(url)
