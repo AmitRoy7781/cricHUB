@@ -46,8 +46,8 @@ button:hover, a:hover {
 
 .avatar {
     vertical-align: middle;
-    width: 50px;
-    height: 50px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
 }
 </style>
@@ -64,7 +64,9 @@ button:hover, a:hover {
         var phone = {{ phone|safe }}
     </script>
 
-  <h1>{{ name }}</h1>
+    <img src="../static/images/avater.jpg" alt="Avatar" class="avatar">
+
+  <h2>{{ name }}</h2>
   <p class="title">{{ email }}</p>
   <p>{{ phone }}</p>
   <div style="margin: 24px 0;">
