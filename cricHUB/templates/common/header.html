@@ -1,3 +1,13 @@
+{% set navigation_bar = [
+                            ('/', 'index', 'Home'),
+                            ('/live-score/', 'live-score', 'Live score'),
+                            ('/rankings/', 'rankings', 'Rankings'),
+                            ('/predictions/', 'predictions', 'Predictions'),
+                            ('/news/', 'news', 'News'),
+                            ('/stats/', 'stats', 'Stats'),
+                            ('/players/', 'players', 'Players'),
+                            ('/schedule/', 'schedule', 'Schedule'),
+                            ('/chat-room2/', 'chat-room2', 'Chat Room')] -%}
 
 <!--Header Wrap Start-->
 <header class="rgb-header theme-background">
@@ -17,8 +27,8 @@
 
                 <div class="rgb-popups-btn">
                     <br/>
-                    <a id="signin"  href="/auth/signin" ></a>
-                    <a id="signup" href="/auth/signup" ></a>
+                    <a id="signin" href="/auth/signin"></a>
+                    <a id="signup" href="/auth/signup"></a>
                 </div>
                 <!--Popup Button End-->
                 <div class="dropdown rgb-language-button">
@@ -36,24 +46,13 @@
                 <div class="kode-navigation-wrapper">
                     <nav class="navigation">
                         <div class="menu-main-menu-container">
-
-                            {% set navigation_bar = [
-                            ('/', 'index', 'Home'),
-                            ('/live-score/', 'live-score', 'Live score'),
-                            ('/rankings/', 'rankings', 'Rankings'),
-                            ('/predictions/', 'predictions', 'Predictions'),
-                            ('/news/', 'news', 'News'),
-                            ('/stats/', 'stats', 'Stats'),
-                            ('/players/', 'players', 'Players'),
-                            ('/chat-room2/', 'chat-room2', 'Chat Room')] -%}
-
                             {% set active_page = active_page|default('index') -%}
                             ...
                             <ul id="navigation">
                                 {% for href, id, caption in navigation_bar %}
-                                <li
-                                {% if id ==active_page %} class="active"{% endif %}><a
-                                    href="{{ href|e }}">{{ caption|e }}</a></li>
+                                    <li
+                                            {% if id ==active_page %} class="active"{% endif %}><a
+                                            href="{{ href|e }}">{{ caption|e }}</a></li>
                                 {% endfor %}
                             </ul>
 
@@ -65,9 +64,9 @@
 
                         <ul class="dl-menu">
                             {% for href, id, caption in navigation_bar %}
-                            <li
-                            {% if id == active_page %} class="active"{% endif %}><a
-                                href="{{ href|e }}">{{ caption|e }}</a></li>
+                                <li
+                                        {% if id == active_page %} class="active"{% endif %}><a
+                                        href="{{ href|e }}">{{ caption|e }}</a></li>
                             {% endfor %}
                         </ul>
 
