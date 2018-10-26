@@ -1,0 +1,60 @@
+{% extends "/common/base.html" %}
+
+{% block content %}
+{% include '/common/header.html' %}
+
+    <h4 class="section-title border-top">
+        <span class="rgb-label theme-background">
+            <i class="lnr lnr-hand"></i>
+        </span>
+        Upcoming matches
+    </h4>
+
+    <div class="rgb-content-wrap">
+        <!--Fixture Slider Wrap Start-->
+        <div class="rgb-fixtures-slider-wrap">
+            <!--Fixture Slider Start-->
+            <div class="fixtures-slider">
+                {% for m in matches %}
+                    <div>
+                        <!--Fixture Content Start-->
+                        <div class="rgb-fixtures-contant border-top" id="{{ m["unique_id"] }}">
+                            <!--Team 1 Start-->
+                            <div class="h3 rgb-team-1 pull-left">
+                                <div class="text-wrap">
+                                    <a href="#">{{ m["team-1"] }}</a>
+                                </div>
+                            </div>
+                            <!--Team 1 End-->
+
+
+                            <div class="rgb-opponanet">
+                                <h6>VS</h6>
+                            </div>
+                            <!--Team 2 Start-->
+                            <div class="h3 rgb-team-1 pull-right">
+                                <div class="text-wrap">
+                                    <a href="#">{{ m["team-2"] }}</a>
+                                </div>
+
+                                <!--Team 2 End-->
+                            </div>
+
+                            <div class="rgb-fixtures-date">
+                                <h5>{{ m["date"] | formatdatetime }}</h5>
+                                <div>{{ m["type"] }}</div>
+                            </div>
+
+                        </div>
+                        <!--Fixture Contant End-->
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+        <!--Fixture Slider End-->
+    </div>
+
+{% include '/common/footer.html' %}
+{% include '/common/footer-social.html' %}
+{% endblock %}

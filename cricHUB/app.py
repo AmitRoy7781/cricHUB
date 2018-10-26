@@ -4,7 +4,6 @@ from flask import Flask, redirect, session, render_template, make_response, requ
 from cricAuth.auth import app as auth
 from cricCHAT2.cricCHAT2 import app as cricCHAT2
 from cricLIVE.livescore import app as livescore
-# start
 from cricMongoDB.database import db
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
@@ -13,17 +12,8 @@ from cricProfile.user_data import app as profile
 from cricRanking.show_ranking import app as ranking_try
 from cricSTAT.t20Stat import app as stat
 
-# end
-
-# from cricCHAT.server import app as chat
-# from cricCHAT import server
-
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
-
-# start
-app.debug = True
-# end
 
 
 # authentication blueprint
@@ -61,9 +51,7 @@ app.register_blueprint(cricCHAT2)
 def home():
     # if 'username' not in session.keys():
     #     return redirect('/auth/signin')
-    from cricSchedule import schedule_adapter
-    data = schedule_adapter.Adapter()
-    return render_template('index.html', matches=data.get_match_data())
+    return render_template('index.html')
 
 
 @app.template_filter('formatdatetime')
@@ -117,6 +105,15 @@ def chat():
         #    message.append(tmp);
 
         return render_template("chat.html", list=message)
+
+
+@app.route('/schedule/')
+def schedule():
+    if 'username' not in session.keys():
+        return redirect('/auth/signin')
+    from cricSchedule import schedule_adapter
+    data = schedule_adapter.Adapter()
+    return render_template('Upcoming_matches.html', matches=data.get_match_data())
 
 
 if __name__ == '__main__':
