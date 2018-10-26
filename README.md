@@ -7,7 +7,7 @@ A Web Application related to the sport CRICKET
 - [Saif Mahmud](https://github.com/Saif-M-Dhrubo)
 - [Tauhid Tanjim](https://github.com/Tanjim13)
 - [Tanjid Hasan Tonmoy](https://github.com/thTonmoy)
-- [MD.Rakibul Hasan](https://github.com/RHT-20)
+- [MD. Rakibul Hasan](https://github.com/RHT-20)
 
 
 **Features:**
