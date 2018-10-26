@@ -202,42 +202,37 @@
 
     </head>
 
-    <body>
 
-    <div class="col-lg-12" style="padding-left: 2%; padding-top: 2%;"></div>
- <form>
-<input type="button" value="Write Blog" onclick="window.location.href='/blog/add/'" />
-</form>
-    {% for item in blog_data %}
-        <div class="col-lg-12" style="padding-left: 2%; padding-top: 0%; padding-bottom: 1%">
-            <div id="blog-list" class="cb-bg-white" style="border-color: black;box-shadow: black">
-                <div class="cb-col col-lg-12 cb-lst-itm cb-lst-itm-lg">
 
-                    <div class="col-lg-12 cb-nws-lst-rt cb-col cb-col-text-container">
+<body>
+  <div class="container">
 
-                        <h2 class="cb-nws-hdln cb-font-24 line-ht24">
-                            <a target="_self"
-                               class="cb-nws-hdln-ancr text-hvr-underline">
-                                {{ item[0] }}
-                            </a>
-                        </h2>
-                        <div class="cb-nws-intr" style="font-size: 15px; color: black">By {{ item[1] }}, {{ item[2] }}</div>
+    <div class="blog-header">
+      <h1 class="blog-title">Add Entry</h1>
+    </div>
 
-                        <br>
+    <div class="row">
 
-                        {#<div><span class="cb-nws-intr" style="font-size: 15px;color: black">{{ item[3] }}</span></div>#}
-                        <p>{{ item[3] }}</p>
-
-                        {#<button type="submit" name="detail_news" value="www.cricbuzz.com/{{ item["news_href"] }}" align="center" class="cb-more-btn"title="Load More News">
-                        Read More
-                        </button>#}
-                    </div>
-                </div>
+      <div class="col-sm-8 blog-main">
+        <form method="post">
+            <div class="form-group">
+                <label for="title">Title:</label>
+                <input type="text" class="form-control" name="title" id="title">
             </div>
+             <div class="form-group">
+                <label for="content">Content:</label>
+                 <textarea class="form-control" rows="5" name="content" id="content"></textarea>
             </div>
-        {% endfor %}
-    <div class="col-lg-12" style="padding-left: 2%; padding-bottom: 1%;"></div>
-    </body>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
 
     {% include '/common/footer.html' %}
     {% include '/common/footer-social.html' %}
