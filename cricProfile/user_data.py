@@ -11,7 +11,7 @@ class Facade:
         return
 
 
-class Subsystem:
+class Subsystem1:
 
     @app.route('/profile/')
     def profile():
