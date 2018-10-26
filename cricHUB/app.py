@@ -1,16 +1,19 @@
 import pytz
 from flask import Flask, redirect, session, render_template, make_response, request
 
+from cricMongoDB.database import db
+
 from cricAuth.auth import app as auth
 from cricCHAT2.cricCHAT2 import app as cricCHAT2
 from cricLIVE.livescore import app as livescore
-from cricMongoDB.database import db
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
 from cricPrediction.predictions import app as prediction
 from cricProfile.user_data import app as profile
 from cricRanking.show_ranking import app as ranking_try
 from cricSTAT.t20Stat import app as stat
+from cricBLOG.blog import app as blog
+
 
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
@@ -43,9 +46,9 @@ app.register_blueprint(profile)
 # user profile blueprint
 app.register_blueprint(cricCHAT2)
 
+# blog blueprint
+app.register_blueprint(blog)
 
-# chat-box
-# app.register_blueprint(chat)
 
 @app.route('/')
 def home():
@@ -63,11 +66,6 @@ def format_datetime(value, format="%a %d %B %I:%M %p"):
     value = utc.localize(value, is_dst=None).astimezone(pytz.utc)
     local_dt = value.astimezone(tz)
     return local_dt.strftime(format)
-
-
-# @app.route('/chat-box')
-# def chat():
-#    execfile('server.py')
 
 
 # start
@@ -93,17 +91,6 @@ def chat():
         return res
 
     else:
-
-        # data = [];
-        # data = db.chat.find();
-
-        # message = [];
-        # for item in data:
-        #    tmp = [];
-        #    tmp.append(item["author"]);
-        #    tmp.append(item["message"]);
-        #    message.append(tmp);
-
         return render_template("chat.html", list=message)
 
 

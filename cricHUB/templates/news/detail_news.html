@@ -995,12 +995,17 @@
             padding-top: 10px;
         }</style>
     </head>
+
+
     <body>
-    <div class="cb-col cb-col-67 cb-nws-dtl-lft-col">
+
+    {#<div class="cb-col cb-col-67 cb-nws-dtl-lft-col">#}
+    <div class="col-lg-12" style="padding-left: 2%; padding-top: 2%; padding-bottom: 2%;">
         <article itemscope="" itemtype="http://schema.org/NewsArticle">
 
         <h6>Source: www.cricbuzz.com</h6>
 
+        <div class="col-lg-12 cb-bg-white" style="padding-left: 2%; padding-top: 1%; padding-bottom: 0%;">
 
             <div class="cb-nws-sub-txt"><span class="cb-text-gray">{{ news_topic }}</span></div>
             <h1 class="nws-dtl-hdln" itemprop="headline">{{ news_headline }}</h1>
@@ -1017,38 +1022,34 @@
                     {{ news_time }}
                 </time>
             </div>
-            <br/>
-                <img alt="{{ news_img_caption }}" class="cursor-pointer"
-                     height="391" itemprop="contentUrl"
-                     src="{{ news_img }}"
-                     title="{{ news_img_caption }}" width="595"/>
-                <div class="cb-img-cptn"> "{{ news_img_caption }}"</div>
 
-                {% for item in news_para%}
-                <p>{{ item }}</p>
-                {% endfor %}
+            <br>
+            <img alt="{{ news_img_caption }}" class="cursor-pointer"
+                 height="391" {#width="595"#} itemprop="contentUrl"
+                 src="{{ news_img }}"
+                 title="{{ news_img_caption }}" style="padding-left: 25%"/>
 
+            <div class="cb-img-cptn col-lg-10" style="padding-left: 25%"> {{ news_img_caption }}</div>
 
+            <br>
 
-            <section>
-                        <button type="submit" align="center" class="cb-more-btn">
-            <a class="cb-more-btn" href="{{ news_fb_href }}"
-            target="_blank">
-                Share</a>
-            </button>
+            {% for item in news_para%}
+                <p class="col-lg-12">{{ item }}</p>
+            {% endfor %}
+        </div>
 
+            <div class="col-lg-12" style="padding-top: 2%"></div>
+            {#<section>#}
 
-                        <button type="submit" align="center" class="cb-more-btn">
-            <a class="cb-more-btn" href="{{ news_twt_href }}"
-            target="_blank">
-                Tweet</a>
-            </button>
+                <button type="submit" align="center" class="cb-more-btn">
+                <a class="cb-more-btn" href="{{ news_fb_href }}" target="_blank">Share</a>
+                </button>
 
-            <br/>
-            </section>
+                <button type="submit" align="center" class="cb-more-btn">
+                <a class="cb-more-btn" href="{{ news_twt_href }}" target="_blank">Tweet</a>
+                </button>
 
-
-
+            {#</section>#}
 
         </article>
 
@@ -1063,7 +1064,9 @@
                 js.src = "https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0&appId=30119633160";
                 fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-        });</script>
+        });
+        </script>
+
     </div>
 
     </body>
