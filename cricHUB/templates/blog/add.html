@@ -220,17 +220,26 @@
                 <input type="text" class="form-control" name="title" id="title">
             </div>
              <div class="form-group">
-                <label for="content">Content:</label>
-                 <textarea class="form-control" rows="5" name="content" id="content"></textarea>
+                <label for="imagecontent">Content:</label>
+                 <textarea class="form-control" rows="5" name="imagecontent" id="imagecontent"></textarea>
             </div>
+             {#<div class="form-group">
+                <label for="image">Add Image:</label>
+                 <textarea class="form-control"  name="addimage" id="addimage"></textarea>
+            </div>#}
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+
 
       </div>
 
     </div>
 
   </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.8.0/ckeditor.js"></script>
+<script type="text/javascript">
+CKEDITOR.replace('imagecontent');
+</script>
 
 </body>
 

@@ -1,6 +1,7 @@
 from flask import render_template, request, redirect, session, Blueprint, json
 from bs4 import BeautifulSoup
 import requests
+import text_to_image
 
 import datetime
 from cricMongoDB.database import db
@@ -45,7 +46,9 @@ def add():
 
         title = request.form['title']
 
-        content = request.form['content']
+        content = request.form['imagecontent']
+
+
         if title=="" or content =="":
             return redirect('/blog/add/')
         else:
@@ -69,7 +72,7 @@ def add():
 
             print(title+content+str(now))
 
-            return show_blog()
+            return redirect('/blog/')
 
     else:
 
