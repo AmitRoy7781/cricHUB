@@ -25,7 +25,7 @@ def show_news(page_no=None):
     news_details = soup.find_all('div', {'class': 'cb-nws-intr'})
     news_time = soup.find_all('span', {'class': 'cb-nws-time'})
 
-    temp = soup.find_all('div', {'itemprop': 'image'})  
+    temp = soup.find_all('div', {'itemprop': 'image'})
     news_title = []
     news_img = []
     news_img_title = []

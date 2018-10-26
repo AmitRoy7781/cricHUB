@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% if title %}
+        <title>{{ title }} - cricHUB</title>
+    {% else %}
+        <title>cricHUB</title>
+    {% endif %}
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slick.css') }}">
+    <!-- DL Menu CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='js/dl-menu/component.css') }}">
+    <!-- ICONS CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/linearicons.css') }}">
+    <!-- Typography CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/typography.css') }}">
+    <!-- Widget CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/widget.css') }}">
+    <!-- Shortcodes CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/shortcodes.css') }}">
+    <!-- Custom Main StyleSheet CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <!-- Color CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/color.css') }}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body class="gray-background">
+<div class="rgb-wrapper">
+
+    {% block content %} {% endblock %}
+
+</div>
+
+{#<!--Jquery Library-->#}
+{#<!--Bootstrap core JavaScript-->#}
+{#<script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>#}
+{#<!--Slick Slider JavaScript-->#}
+{#<script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>#}
+{#<!--Dl Menu Script-->#}
+<script src="{{ url_for('static', filename='js/dl-menu/modernizr.custom.js') }}"></script>
+<script src="{{ url_for('static', filename='js/dl-menu/jquery.dlmenu.js') }}"></script>
+{#<!--Custom JavaScript-->#}
+<script src="{{ url_for('static', filename='js/custom.js') }}"></script>
+
+<script>
+
+    function valid(str) {
+        return !(!str || 0 === str.length || !str.trim());
+    }
+
+    function check_login_status() {
+
+        var username = '{{session["username"]}}';
+
+        if (valid(username)) {
+            document.getElementById("signin").innerText = username;
+            document.getElementById("signin").href = "/profile";
+            document.getElementById("signup").innerText = "Log Out";
+            document.getElementById("signup").href = "/auth/logout";
+        }
+        else {
+            document.getElementById("signin").innerText = "Sign In"
+            document.getElementById("signin").href = "/auth/signin"
+            document.getElementById("signup").innerText = "Sign Up"
+            document.getElementById("signup").href = "/auth/signup"
+        }
+    }
+    window.onload = function () {
+        check_login_status();
+        //display_error();
+    }
+
+</script>
+
+
+</body>
+
+</html>
