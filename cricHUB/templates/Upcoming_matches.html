@@ -10,17 +10,17 @@
         Upcoming matches
     </h4>
 
-    <div class="rgb-content-wrap">
         <!--Fixture Slider Wrap Start-->
         <div class="rgb-fixtures-slider-wrap">
             <!--Fixture Slider Start-->
+         <div class="col-md-8 col-md-offset-2">
             <div class="fixtures-slider">
                 {% for m in matches %}
                     <div>
                         <!--Fixture Content Start-->
-                        <div class="rgb-fixtures-contant border-top" id="{{ m["unique_id"] }}">
+                        <div class="rgb-fixtures-contant border-top " style="margin-top: 2%;" id="{{ m["unique_id"] }}">
                             <!--Team 1 Start-->
-                            <div class="h3 rgb-team-1 pull-left" style="padding-left: 2%">
+                            <div class="h2 rgb-team-1 pull-left" style="padding-left: 8%">
                                 <div class="text-wrap">
                                     <a href="#">{{ m["team-1"] }}</a>
                                 </div>
@@ -32,7 +32,7 @@
                                 <h6>VS</h6>
                             </div>
                             <!--Team 2 Start-->
-                            <div class="h3 rgb-team-1 pull-right" style="padding-right: 2%">
+                            <div class="h2 rgb-team-1 pull-right" style="padding-right: 8%">
                                 <div class="text-wrap">
                                     <a href="#">{{ m["team-2"] }}</a>
                                 </div>
@@ -53,7 +53,8 @@
             </div>
         </div>
         <!--Fixture Slider End-->
-    </div>
+        </div>
+{#    </div>#}
 
 {% include '/common/footer.html' %}
 {% include '/common/footer-social.html' %}

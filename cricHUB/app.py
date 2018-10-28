@@ -100,8 +100,6 @@ def chat():
 
 @app.route('/schedule/')
 def schedule():
-    if 'username' not in session.keys():
-        return redirect('/auth/signin')
     from cricSchedule import schedule_adapter
     data = schedule_adapter.Adapter()
     return render_template('Upcoming_matches.html', matches=data.get_match_data())
