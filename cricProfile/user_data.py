@@ -7,14 +7,14 @@ app = Blueprint('profile', __name__)
 
 class Facade:
 
-    def __init__(self):
+    def __init__(self=None):
         return
 
 
 class Subsystem1:
 
     @app.route('/profile/')
-    def profile():
+    def profile(self=None):
         if 'username' not in session.keys():
             return redirect('/auth/signin')
 

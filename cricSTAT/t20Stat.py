@@ -16,8 +16,8 @@ def takePoints(elem):
 
 @app.route('/stats/')
 def stats(info = None,data=None,image=None):
-    if 'username' not in session.keys():
-        return redirect('/auth/signin')
+    # if 'username' not in session.keys():
+    #     return redirect('/auth/signin')
     #print(info)
     if image==None:
         return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image)

@@ -14,7 +14,7 @@ class Singleton:
 
 class Instance:
 
-    def player_database():
+    def player_database(self):
 
         for i in range(449, len(Singleton.file_data)):
             x = Singleton.file_data[i].split("|")

@@ -42,6 +42,9 @@ def show_blog():
 #in this feature blog
 def add():
 
+    if 'username' not in session.keys():
+        return redirect('/auth/signin')
+
     if request.method == 'POST':
 
         title = request.form['title']
@@ -76,4 +79,4 @@ def add():
 
     else:
 
-        return render_template("/blog/add.html")
+        return render_template("/blog/show_blog.html",blog_data=None)

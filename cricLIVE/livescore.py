@@ -7,9 +7,9 @@ app = Blueprint('livescore', __name__)
 
 @app.route('/live-score/')
 def score():
-	
-    if 'username' not in session.keys():
-        return redirect('/auth/signin')
+    #
+    # if 'username' not in session.keys():
+    #     return redirect('/auth/signin')
 
     url = 'https://www.cricbuzz.com/cricket-match/live-scores'
     res = requests.get(url)

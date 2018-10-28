@@ -7,7 +7,7 @@ app = Blueprint('player', __name__)
 class ConcreteCommand:
 
     @app.route("/players/show_profile", methods=['POST', 'GET'])
-    def show_profile():
+    def show_profile(self=None):
         url = request.form.to_dict()["player_url"]
         return get_data(url)
 
@@ -15,8 +15,8 @@ class Command:
 
     @app.route("/players/")
     def search_players(player_list=None, search_status=None):
-        if 'username' not in session.keys():
-            return redirect('/auth/signin')
+        # if 'username' not in session.keys():
+        #     return redirect('/auth/signin')
 
         if search_status is None:
             search_status = ""
@@ -27,7 +27,7 @@ class Command:
 class Receiever:
 
     @app.route("/players/show_players", methods=['POST', 'GET'])
-    def show_players():
+    def show_players(self=None):
         search_for = request.form.to_dict()["player_name"]
         search_for = search_for.lower()
 

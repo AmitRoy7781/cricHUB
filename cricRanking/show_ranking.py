@@ -67,8 +67,8 @@ class ConcreteComponent:
 
     @app.route('/rankings/')
     def ranking(rank_info=None):
-        if 'username' not in session.keys():
-            return redirect('/auth/signin')
+        # if 'username' not in session.keys():
+        #     return redirect('/auth/signin')
 
         return render_template('ranking/ranking.html', ranking_info=rank_info)
 
@@ -77,9 +77,9 @@ class Component:
 
 
     @app.route('/show_rank', methods=['POST', 'GET'])
-    def show_ranking():
-        if 'username' not in session.keys():
-            return redirect('/auth/signin')
+    def show_ranking(self=None):
+        # if 'username' not in session.keys():
+        #     return redirect('/auth/signin')
 
         data = request.form.to_dict()
 

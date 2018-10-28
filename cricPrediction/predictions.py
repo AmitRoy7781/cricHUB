@@ -5,8 +5,8 @@ app = Blueprint('predictions', __name__)
 
 @app.route('/predictions/')
 def predictions():
-    if 'username' not in session.keys():
-        return redirect('/auth/signin')
+    # if 'username' not in session.keys():
+    #     return redirect('/auth/signin')
     return render_template("prediction/prediction.html")
 
 @app.route('/pred-deliver/', methods=['GET', 'POST'])

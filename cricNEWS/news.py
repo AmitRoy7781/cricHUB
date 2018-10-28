@@ -7,8 +7,8 @@ app = Blueprint('news', __name__)
 
 @app.route('/news/')
 def show_news(page_no=None):
-    if 'username' not in session.keys():
-        return redirect('/auth/signin')
+    # if 'username' not in session.keys():
+    #     return redirect('/auth/signin')
 
     url = 'https://www.cricbuzz.com/cricket-news'
 
@@ -71,8 +71,8 @@ def show_news(page_no=None):
 
 @app.route("/news/more_news",methods=['POST', 'GET'])
 def more_news():
-    if 'username' not in session.keys():
-        return redirect('/auth/signin')
+    # if 'username' not in session.keys():
+    #     return redirect('/auth/signin')
     # print(request.form["more_news"])
     page_no = int(request.form["more_news"])
     return show_news(str(page_no+1))
@@ -80,8 +80,8 @@ def more_news():
 
 @app.route("/news/detail_news",methods=['POST', 'GET'])
 def detail_news():
-    if 'username' not in session.keys():
-        return redirect('/auth/signin')
+    # if 'username' not in session.keys():
+    #     return redirect('/auth/signin')
 
     news_topic = ""
     news_headline = ""
