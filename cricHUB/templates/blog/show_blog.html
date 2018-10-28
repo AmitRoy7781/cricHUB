@@ -188,7 +188,10 @@
             .cb-align-cen {
                 padding-top: 10px;
             }
-
+            .haus>a {
+     position: absolute;
+     z-index: 9999;
+ }
             .cb-more-btn {
                 padding: 8px 20px;
                 border-radius: 2px;
@@ -205,19 +208,21 @@
     <body>
 
     <div class="col-lg-12" style="padding-left: 2%; padding-top: 2%;"></div>
- <form>
-<input type="button" value="Write Blog" onclick="window.location.href='/blog/add/'" />
-</form>
-    {% for item in blog_data %}
-        <div class="col-lg-12" style="padding-left: 2%; padding-top: 0%; padding-bottom: 1%">
-            <div id="blog-list" class="cb-bg-white" style="border-color: black;box-shadow: black">
-                <div class="cb-col col-lg-12 cb-lst-itm cb-lst-itm-lg">
 
-                    <div class="col-lg-12 cb-nws-lst-rt cb-col cb-col-text-container">
+    <form class="col-md-12" style="padding-left: 2%; padding-right: 2%; padding-bottom: 2%;">
+        <input class="btn btn-primary col-md-12" type="button" value="Write Blog" onclick="window.location.href='/blog/add/'" />
+    </form>
+
+    {% for item in blog_data %}
+        <div class="col-lg-12" style="padding-left: 2%;padding-right: 2%; padding-top: 0%; padding-bottom: 1%">
+            <div id="blog-list" class="cb-bg-white" style="border-color: black;box-shadow: black;">
+                <div class="cb-col col-lg-12 cb-lst-itm cb-lst-itm-lg col-md-4 w3-card-4">
+
+                    <div class="col-lg-12 cb-nws-lst-rt cb-col cb-col-text-container w3-card-4">
 
                         <h2 class="cb-nws-hdln cb-font-24 line-ht24">
                             <a target="_self"
-                               class="cb-nws-hdln-ancr text-hvr-underline">
+                               class="cb-nws-hdln-ancr text-hvr-underline w3-card-4">
                                 {{ item[0] }}
                             </a>
                         </h2>
@@ -225,8 +230,7 @@
 
                         <br>
 
-                        {#<div><span class="cb-nws-intr" style="font-size: 15px;color: black">{{ item[3] }}</span></div>#}
-                        <p>{{ item[3] }}</p>
+                        {{ item[3]| safe }}
 
                         {#<button type="submit" name="detail_news" value="www.cricbuzz.com/{{ item["news_href"] }}" align="center" class="cb-more-btn"title="Load More News">
                         Read More
@@ -234,9 +238,11 @@
                     </div>
                 </div>
             </div>
-            </div>
-        {% endfor %}
-    <div class="col-lg-12" style="padding-left: 2%; padding-bottom: 1%;"></div>
+        </div>
+    {% endfor %}
+
+    <div class="col-lg-12 w3-card-4" style="padding-left: 2%; padding-bottom: 1%;"></div>
+
     </body>
 
     {% include '/common/footer.html' %}
