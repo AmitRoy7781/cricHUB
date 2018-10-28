@@ -3,23 +3,29 @@
 {% block content %}
     {% include '/common/header.html' %}
 
-
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <section>
+
+    {#<section>#}
+    <div class="col-md-12" style="padding-bottom: 3%">
+
         <div class="col-md-7">
+
             <h5 class="section-title border-top">
-                <span class="rgb-label theme-background"><i class="fa fa-twitter"></i></span>
+                <span class="rgb-label theme-background">
+                    <i class="fa fa-twitter"></i>
+                </span>
                 RECENT TWEETS
             </h5>
-            <section class="reader_rec hide-for-mob hide-landscape hide-portrait"
-                     style="border-top: 8px solid #dddddd;margin-bottom: 10px;">
+
+            <div class="reader_rec hide-for-mob hide-landscape hide-portrait"
+                 style="border-top: 8px solid #dddddd;margin-bottom: 10px;">
 
                 <a class="twitter-timeline"
                    href="https://twitter.com/ESPNcricinfo/timelines/585813293161406464?ref_src=twsrc%5Etfw"
-                   height="893" data-chrome="noheader nofooter"></a>
+                   height="1350" data-chrome="noheader nofooter">
+                </a>
 
-
-            </section>
+            </div>
 
             <script>
                 !function (d, s, id) {
@@ -32,16 +38,24 @@
                     }
                 }(document, "script", "twitter-wjs");
             </script>
+
         </div>
 
         <div class="col-md-5">
+
             <h5 class="section-title border-top">
-                <span class="rgb-label theme-background"><i class="fa fa-youtube-play"></i></span>
+                <span class="rgb-label theme-background">
+                    <i class="fa fa-youtube-play"></i>
+                </span>
                 Featured Videos
             </h5>
-            <iframe src='https://www.sociablekit.com/app/embed/index.php?embed_id=15593' frameborder='0' width='100%' height='1000'></iframe>
+
+            <iframe src='https://www.sociablekit.com/app/embed/index.php?embed_id=15593' frameborder='0' width='100%' height='1350'></iframe>
+
         </div>
-    </section>
+
+    </div>
+    {#</section>#}
 
     {% include '/common/footer.html' %}
     {% include '/common/footer-social.html' %}

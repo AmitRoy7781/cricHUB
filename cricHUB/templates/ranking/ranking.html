@@ -92,10 +92,12 @@
 
     <div style="width: 70%">
 
+        <h2 class="page-header"> ICC Player and Team Rankings </h2>
 
-        <h2 class="page-header"> ICC Player and Team Rankings</h2>
         <br/>
+
         <form action="/show_rank" method="POST" style="width: 30%">
+
             <div class="form-group">
                 <label for="format">Format</label>
                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="format" name="format">
@@ -106,6 +108,7 @@
                 </select>
                 <span id="format_msg" style="font-size: small;color: red"></span>
             </div>
+
             <div class="form-group">
                 <label for="gender">Choose Gender</label>
                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="gender" name="gender">
@@ -115,6 +118,7 @@
                 </select>
                 <span id="gender_msg" style="font-size: small;color: red"></span>
             </div>
+
             <div class="form-group">
                 <label for="rank_type">Ranking Type</label>
                 <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="rank_type" name="rank_type">
@@ -126,7 +130,9 @@
                 </select>
                 <span id="rank_type_msg" style="font-size: small;color: red"></span>
             </div>
+
             <br/>
+
             <div>
                 <button type="submit" class="cb-more-btn" value="Show Ranking">
                     Show Ranking
@@ -139,6 +145,7 @@
 </div>
 <br/>
 <br/>
+
 {% include '/common/footer.html' %}
 {% include '/common/footer-social.html' %}
 {% endblock %}
