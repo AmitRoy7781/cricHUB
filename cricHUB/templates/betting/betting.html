@@ -42,10 +42,10 @@
 
 </style>
 
-<script>
+{#<script>
 
 
-    var format = '{{ranking_info["format"]}}';
+    var match = '{{ranking_info["match"]}}';
     var format_msg = '{{ranking_info["format_msg"]}}';
 
     var gender = '{{ranking_info["gender"]}}';
@@ -85,57 +85,56 @@
         }
 
     }
-</script>
+</script>#}
 
 
-<div align="center">
+<div align="center" style="padding-bottom: 3%">
 
     <div style="width: 70%">
 
-        <h2 class="page-header"> ICC Player and Team Rankings </h2>
 
+        <h2 class="page-header"> Match Betting </h2>
         <br/>
-
         <form action="/show_rank" method="POST" style="width: 30%">
-
             <div class="form-group">
-                <label for="format">Format</label>
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="format" name="format">
-                    <option selected>Choose...</option>
-                    <option value="tests">Test</option>
-                    <option value="odis">ODI</option>
-                    <option value="t20s">t2OI</option>
+                <label for="match"> Matches </label>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="match" name="match">
+
+                    <option selected> Choose... </option>
+
+                    {% for item in match_data %}
+                        <option value="match_name">{{ item["match_name"] }}</option>
+                    {% endfor %}
+
                 </select>
+
                 <span id="format_msg" style="font-size: small;color: red"></span>
             </div>
 
             <div class="form-group">
-                <label for="gender">Choose Gender</label>
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="gender" name="gender">
-                    <option selected>Choose...</option>
-                    <option value="mens">Mens</option>
-                    <option value="womens">Womens</option>
+                <label for="winner"> Select Predicted Winning Team </label>
+                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="winner" name="winner">
+                    <option selected> Choose... </option>
+                    <option value="team1"> Team - 1 </option>
+                    <option value="team2"> Team - 2 </option>
                 </select>
                 <span id="gender_msg" style="font-size: small;color: red"></span>
             </div>
 
             <div class="form-group">
-                <label for="rank_type">Ranking Type</label>
-                <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="rank_type" name="rank_type">
-                    <option selected>Choose...</option>
-                    <option value="batsmen">Batsmen</option>
-                    <option value="bowlers">Bowlers</option>
-                    <option value="all-rounders">All Rounders</option>
-                    <option value="teams">Team</option>
-                </select>
+                <label for="rank_type"> Bet Coin </label>
+                <form>
+                    <input type="number" style="height: 30px; width: 100%; font-size: large; font: bold" name="coin" value="0" min="0" max={{ coin }}>
+                </form>
+
                 <span id="rank_type_msg" style="font-size: small;color: red"></span>
             </div>
 
             <br/>
 
             <div>
-                <button type="submit" class="cb-more-btn" value="Show Ranking">
-                    Show Ranking
+                <button type="submit" class="btn btn-primary" value="Bet" style="width: 30%">
+                    Bet
                 </button>
             </div>
 
@@ -143,8 +142,6 @@
 
     </div>
 </div>
-<br/>
-<br/>
 
 {% include '/common/footer.html' %}
 {% include '/common/footer-social.html' %}

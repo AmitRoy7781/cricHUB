@@ -999,10 +999,10 @@
     </style>
 
 
-    <div class="cb-nav-main cb-bg-white">
-        <h1 class='cb-nav-hdr cb-font-24 line-ht30'>
+    <div {#class="cb-nav-main cb-bg-white"#} align="center">
+        {#<h1 class='cb-nav-hdr cb-font-24 line-ht30'>
             ICC Player and Team Rankings
-        </h1>
+        </h1>#}
         <h2 class="page-header" id="rank_header">
                 <script>
 
@@ -1041,9 +1041,7 @@
 
     </div>
 
-
-
-
+    <div class="col-md-12" style="padding-left: 2%; padding-right: 2%; padding-bottom: 2%">
 
     {% if gender=="womens" %}
 
@@ -1149,6 +1147,7 @@
 
         </div>
     {% else %}
+
         <div class="cb-col cb-col-100 cb-plyr-tbody">
             <div class="cb-col cb-col-100 cb-rank-tabs">
 
@@ -1190,9 +1189,7 @@
             </div>
         </div>
 
-
     {% endif %}
-
 
     {% if rank_type!="teams" and rank_type!="all-rounders" %}
     <div align="center">
@@ -1204,6 +1201,8 @@
                 <input type="hidden" name="rank_limit" value="{{ rank_limit }}"></input>
                 <input type="hidden" name="rank_status" value="{{ rank_status }}"></input>
 
+                <div class="col-md-12" style="padding-bottom: 2%"></div>
+
                 <button type="submit" name="more_news" value="" align="center" class="cb-more-btn"
                         title="Full Ranking">{{ rank_status }}
                 </button>
@@ -1212,6 +1211,7 @@
     </div>
     {% endif %}
 
+    </div>
 
 
     {% include '/common/footer.html' %}

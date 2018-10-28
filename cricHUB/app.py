@@ -13,6 +13,7 @@ from cricProfile.user_data import app as profile
 from cricRanking.show_ranking import app as ranking_try
 from cricSTAT.t20Stat import app as stat
 from cricBLOG.blog import app as blog
+from cricBETTING.betting import app as betting
 
 
 app = Flask(__name__)
@@ -48,6 +49,9 @@ app.register_blueprint(cricCHAT2)
 
 # blog blueprint
 app.register_blueprint(blog)
+
+# betting blueprint
+app.register_blueprint(betting)
 
 
 @app.route('/')
