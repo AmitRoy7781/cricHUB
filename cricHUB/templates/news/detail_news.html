@@ -2,7 +2,8 @@
 
 {% block content %}
     {% include '/common/header.html' %}
-    <head>
+
+    {#<head>
         <meta charset="utf-8">
 
         <script>
@@ -994,21 +995,58 @@
         .cb-align-cen {
             padding-top: 10px;
         }</style>
-    </head>
+    </head>#}
+
+
+    <style>
+
+        #commListTable {
+
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 17px;
+        }
+
+        #commListTable th, #commListTable td {
+            text-align: left;
+            padding: 12px;
+            font-family: Ubuntu;
+        }
+
+        #commListTable tr {
+            border-bottom: 1px solid #ddd;
+            font-family: Ubuntu;
+            font-size: 13px;
+        }
+
+        #commListTable tr.header, #commListTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .cb-more-btn {
+                    padding: 8px 20px;
+                    border-radius: 2px;
+                    color: #fff;
+                    background: #1f679d;
+                    border: 0;
+                    cursor: pointer;
+                }
+
+    </style>
 
 
     <body>
 
-    {#<div class="cb-col cb-col-67 cb-nws-dtl-lft-col">#}
     <div class="col-lg-12" style="padding-left: 2%; padding-top: 2%; padding-bottom: 2%;">
         <article itemscope="" itemtype="http://schema.org/NewsArticle">
 
         <h6>Source: www.cricbuzz.com</h6>
 
-        <div class="col-lg-12 cb-bg-white" style="padding-left: 2%; padding-top: 1%; padding-bottom: 0%;">
+        <div class="col-lg-12 {#cb-bg-white#}" style="color: black; background: white; padding-left: 2%; padding-top: 1%;">
 
             <div class="cb-nws-sub-txt"><span class="cb-text-gray">{{ news_topic }}</span></div>
-            <h1 class="nws-dtl-hdln" itemprop="headline">{{ news_headline }}</h1>
+            <h3 class="nws-dtl-hdln" itemprop="headline">{{ news_headline }}</h3>
 
             <div class="cb-nws-sub-txt">
                 <span itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1034,20 +1072,20 @@
             <br>
 
             {% for item in news_para%}
-                <p class="col-lg-12">{{ item }}</p>
+                <p class="col-lg-12" style="color: black">{{ item }}</p>
             {% endfor %}
         </div>
 
             <div class="col-lg-12" style="padding-top: 2%"></div>
             {#<section>#}
 
-                <button type="submit" align="center" class="cb-more-btn">
-                <a class="cb-more-btn" href="{{ news_fb_href }}" target="_blank">Share</a>
-                </button>
+            <button type="submit" class="cb-more-btn">
+                <a class="cb-more-btn" href="{{ news_fb_href }}" target="_blank"> Share </a>
+            </button>
 
-                <button type="submit" align="center" class="cb-more-btn">
-                <a class="cb-more-btn" href="{{ news_twt_href }}" target="_blank">Tweet</a>
-                </button>
+            <button type="submit" align="center" class="cb-more-btn">
+                <a class="cb-more-btn" href="{{ news_twt_href }}" target="_blank"> Tweet </a>
+            </button>
 
             {#</section>#}
 
