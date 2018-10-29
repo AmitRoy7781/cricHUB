@@ -22,7 +22,7 @@ def stats(info = None,data=None,image=None):
     if image==None:
         return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image)
     else:
-        return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image.decode('utf8'))
+        return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image.decode('utf8'), d = d)
 
 
 
@@ -44,7 +44,7 @@ def show_stats():
 
     if flag is True:
         posts = db.t20TournamentStat
-        myquery = {"Tournament":Tournament,"Year":Year}
+        myquery = {"Tournament": Tournament, "Year": Year}
         mydoc = posts.find(myquery)
 
         stat_data=[]
@@ -129,3 +129,18 @@ def show_stats():
         return stats(data,stat_data,figdata_png)
 
     return  stats(data,None)
+
+
+@app.route('/team-stat/')
+def tstats_inp():
+    return render_template("team_stat_inp.html")
+
+
+@app.route('/ts/', methods=['GET', 'POST'])
+def tstats():
+    if request.method == 'POST':
+        team = request.form['team']
+    from cricSTAT import team_stat
+    labels, values = team_stat.get_data(team)
+    legend = ['odi', 't20', 'test']
+    return render_template('team_stat.html',title='Team Win lose Percentage', labels=labels, values=values, legend=legend)

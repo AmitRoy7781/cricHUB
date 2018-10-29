@@ -1,0 +1,74 @@
+{% extends "/common/base.html" %}
+
+{% block content %}
+    {% include '/common/header.html' %}
+
+    <script src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
+
+
+    <div class="col-md-8 col-md-offset-2">
+        <h4>Yearly Statistics: Percentage of Win or Draw in different formats</h4>
+
+    <div class="col-md-12">
+        <p>
+            <br/><br/>
+        </p>
+    </div>
+        <canvas id="myChart" width="600" height="400"></canvas>
+    </div>
+
+    <div class="col-md-12">
+        <p>
+            <br/><br/><br/><br/>
+        </p>
+    </div>
+
+
+    <script>
+        Chart.defaults.global.responsive = true;
+
+
+        // define the chart data
+        var chartData = {
+            labels: [{% for item in labels %}
+                "{{item}}",
+            {% endfor %}],
+            datasets: [{
+                label: '{{ legend[0] }}',
+                fill: false,
+                borderColor: "rgba(5,192,19,1)",
+                data: [{% for item in values['odi'] %}
+                    {{item}},
+                {% endfor %}]
+            }, {
+                label: '{{ legend[1] }}',
+                fill: false,
+                borderColor: "rgba(175,20,2,1)",
+                data: [{% for item in values['t20i'] %}
+                    {{item}},
+                {% endfor %}]
+            },
+                {
+                    label: '{{ legend[2] }}',
+                    fill: false,
+                    borderColor: "rgba(5,20,200,1)",
+                    data: [{% for item in values['test'] %}
+                        {{item}},
+                    {% endfor %}]
+                }
+            ]
+        };
+
+        // get chart canvas
+        var ctx = document.getElementById("myChart").getContext("2d");
+
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: chartData
+        });
+
+    </script>
+
+    {% include '/common/footer.html' %}
+    {% include '/common/footer-social.html' %}
+{% endblock %}
