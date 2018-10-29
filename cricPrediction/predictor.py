@@ -76,7 +76,7 @@ class ServePrediction:
         d = self.prepare_data_for_prediction(team1, team2, venue)
         pred1 = self.clf.predict_proba(d[0])
         pred2 = 1 - self.clf.predict_proba(d[1])
-        return np.divide(pred1+pred2, 2)
+        return np.divide(pred1+pred2, 2)*100
 
 
     def get_formatted_prediction(self, team1, team2, pred:np.ndarray):
