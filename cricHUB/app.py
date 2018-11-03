@@ -4,7 +4,7 @@ from flask import Flask, redirect, session, render_template, make_response, requ
 from cricMongoDB.database import db
 
 from cricAuth.auth import app as auth
-from cricCHAT2.cricCHAT2 import app as cricCHAT2
+from cricCHAT2.cricCHAT import app as cricCHAT2
 from cricLIVE.livescore import app as livescore
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
