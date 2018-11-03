@@ -4,7 +4,7 @@ from flask import Flask, redirect, session, render_template, make_response, requ
 from cricMongoDB.database import db
 
 from cricAuth.auth import app as auth
-from cricCHAT2.cricCHAT import app as cricCHAT2
+from cricCHAT.cricCHAT import app as cricCHAT
 from cricLIVE.livescore import app as livescore
 from cricNEWS.news import app as news
 from cricPlayer.player import app as player
@@ -45,7 +45,7 @@ app.register_blueprint(player)
 app.register_blueprint(profile)
 
 # user profile blueprint
-app.register_blueprint(cricCHAT2)
+app.register_blueprint(cricCHAT)
 
 # blog blueprint
 app.register_blueprint(blog)
@@ -102,7 +102,7 @@ def chat():
 def schedule():
     from cricSchedule import schedule_adapter
     data = schedule_adapter.Adapter()
-    return render_template('Upcoming_matches.html', matches=data.get_match_data())
+    return render_template('schedule/templates/Upcoming_matches.html', matches=data.get_match_data())
 
 
 if __name__ == '__main__':
