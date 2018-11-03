@@ -1,5 +1,4 @@
 import string
-from flask import Flask, make_response
 from flask import render_template, request, redirect, session, Blueprint
 from cricMongoDB.database import db
 
@@ -11,7 +10,6 @@ def signUp(data=None):
 
     if 'username' in session.keys():
         return redirect('/')
-    #print(data)
     return render_template('auth/signup.html', userinfo=data)
 
 
@@ -71,12 +69,14 @@ def signup_validation():
             flag = False
             data['email_msg'] = 'Email format is not correct'
 
+        if len(phone_number) < 11:
+            flag = False
+            data['password_msg'] = 'Phone Number must contain 11 digits'
+
         for ch in phone_number:
             if ch not in string.digits:
                 flag = False
                 data['phone_number_msg'] = 'Phone Number can contain only digits'
-
-        #print(flag)
 
         if flag is True:
             data.pop('c_password')
@@ -88,10 +88,10 @@ def signup_validation():
 
 
 @app.route("/auth/signin")
-def signin(data=None):
-    # if 'username' in session.keys():
-    #     return redirect('/profile/' + session['username'])
-    return render_template('auth/signin.html',userinfo=data)
+def signin(data=None,target=None):
+    if target==None:
+        target = "/"
+    return render_template('auth/signin.html',userinfo=data,target=target)
 
 
 @app.route("/auth/signin-validation", methods=['POST', 'GET'])
@@ -100,6 +100,7 @@ def login_validation():
         data = request.form.to_dict()
         username = data['username']
         password = data['password']
+        target = data['target']
 
         flag = True
 
@@ -112,17 +113,12 @@ def login_validation():
             flag = False
             data['password_msg'] = 'Wrong password. Try again.'
         if flag is False:
-            return signin(data)
+            return signin(data,target)
+
         session['username'] = username
-        #return redirect('/profile/'+session['username'])
+        return redirect(target)
 
-        res = make_response(redirect('/'))
-        res.set_cookie('realtime-chat-nickname', session['username'])
-        print(res)
 
-        return res
-
-        #return redirect('/')
 
 
 @app.route("/auth/logout")
@@ -130,15 +126,5 @@ def logout():
     if 'username' in session.keys():
         session.pop('username')
 
-    if request.cookies.get('realtime-chat-nickname') is None:
-        # do nothing
-        print("No cookies")
-    else:
-        res = make_response(redirect('/'))
-        res.set_cookie('realtime-chat-nickname', "")
-        print(res)
-
-        return res
-
-    #return redirect('/')
+    return redirect('/')
 

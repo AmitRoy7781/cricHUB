@@ -1,8 +1,9 @@
 import pusher
+from cricAuth.auth import signin
 from flask import Flask,render_template,jsonify,request,Blueprint,session,redirect
 from cricMongoDB.database import db
 
-app = Blueprint('cricCHAT2', __name__)
+app = Blueprint('cricCHAT', __name__)
 
 pusher_client = pusher.Pusher(
   app_id='630604',
@@ -13,13 +14,13 @@ pusher_client = pusher.Pusher(
 )
 
 
-@app.route('/chat-room2/')
+@app.route('/chat-room/')
 def index():
 
     if 'username' not in session.keys():
-        return redirect('/auth/signin')
+        return signin(None, "/chat-room/")
     messages = db.chat.find()
-    return render_template('temp.html', messages=messages)
+    return render_template('chat/chat.html', messages=messages)
 
 
 @app.route('/message', methods=['POST'])
@@ -27,7 +28,7 @@ def message():
 
 
     if 'username' not in session.keys():
-        return redirect('/auth/signin')
+        return signin(None, "/message/")
 
     print(request.form.to_dict())
     try:
@@ -45,7 +46,7 @@ def message():
 
         pusher_client.trigger('my-channel', 'new-message', {'author': username, 'message': message})
 
-        return render_template('temp.html')
+        return render_template('chat/chat.html')
 
     except:
 

@@ -1,4 +1,5 @@
 from flask import render_template, request, redirect, session, Blueprint, json
+from cricAuth.auth import signin
 from bs4 import BeautifulSoup
 import requests
 
@@ -11,7 +12,7 @@ app = Blueprint('blog', __name__)
 def show_blog():
 
     if 'username' not in session.keys():
-        return redirect('/auth/signin')
+        return signin(None,"/blog/")
 
     data = []
     data = db.blog.find()
@@ -38,6 +39,9 @@ def show_blog():
 @app.route('/blog/add/', methods=['GET', 'POST'])
 def add():
 
+    if 'username' not in session.keys():
+        return signin(None,"/blog/")
+
     if request.method == 'POST':
         title = request.form['title']
         content = request.form['imagecontent']
@@ -56,7 +60,7 @@ def add():
 
             posts.insert_one(blog_message)
 
-            print(title+content+str(now))
+            #print(title+content+str(now))
 
             return redirect('/blog/')
 
