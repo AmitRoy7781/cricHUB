@@ -22,7 +22,7 @@ def stats(info = None,data=None,image=None):
     if image==None:
         return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image)
     else:
-        return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image.decode('utf8'), d = d)
+        return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image.decode('utf8'))
 
 
 
