@@ -1,5 +1,3 @@
-from bson import json_util
-
 from cricMongoDB.database import db
 
 

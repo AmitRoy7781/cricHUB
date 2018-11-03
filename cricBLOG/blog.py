@@ -27,7 +27,7 @@ def show_blog():
         tmp.append(item["content"])
         message.append(tmp)
 
-        print(tmp[0]+" "+tmp[1]+" "+tmp[2]+" "+tmp[3])
+        # print(tmp[0]+" "+tmp[1]+" "+tmp[2]+" "+tmp[3])
 
     message.sort(key=lambda message:message[2])
     message.reverse()

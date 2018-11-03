@@ -20,9 +20,9 @@ def stats(info = None,data=None,image=None):
     #     return redirect('/auth/signin')
     #print(info)
     if image==None:
-        return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image)
+        return render_template('stat/t20Stat.html',stat_info = info,stat_data=data,stat_image=image)
     else:
-        return render_template('t20Stat.html',stat_info = info,stat_data=data,stat_image=image.decode('utf8'))
+        return render_template('stat/t20Stat.html',stat_info = info,stat_data=data,stat_image=image.decode('utf8'))
 
 
 
@@ -133,7 +133,7 @@ def show_stats():
 
 @app.route('/team-stat/')
 def tstats_inp():
-    return render_template("team_stat_inp.html")
+    return render_template("stat/team_stat_inp.html")
 
 
 @app.route('/ts/', methods=['GET', 'POST'])
@@ -143,4 +143,4 @@ def tstats():
     from cricSTAT import team_stat
     labels, values = team_stat.get_data(team)
     legend = ['odi', 't20', 'test']
-    return render_template('team_stat.html',title='Team Win lose Percentage', labels=labels, values=values, legend=legend)
+    return render_template('stat/team_stat.html',title='Team Win lose Percentage', labels=labels, values=values, legend=legend)

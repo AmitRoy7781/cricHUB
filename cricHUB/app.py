@@ -102,7 +102,7 @@ def chat():
 def schedule():
     from cricSchedule import schedule_adapter
     data = schedule_adapter.Adapter()
-    return render_template('schedule/templates/Upcoming_matches.html', matches=data.get_match_data())
+    return render_template('schedule/Upcoming_matches.html', matches=data.get_match_data())
 
 
 if __name__ == '__main__':
