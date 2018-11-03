@@ -3,17 +3,22 @@
 {% block content %}
     {% include '/common/header.html' %}
 
+    <script>
+        window.onload = function () {
+            check_login_status();
+        }
+    </script>
     <script src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
 
 
     <div class="col-md-8 col-md-offset-2">
         <h4>Yearly Statistics: Percentage of Win or Draw in different formats</h4>
 
-    <div class="col-md-12">
-        <p>
-            <br/><br/>
-        </p>
-    </div>
+        <div class="col-md-12">
+            <p>
+                <br/><br/>
+            </p>
+        </div>
         <canvas id="myChart" width="600" height="400"></canvas>
     </div>
 

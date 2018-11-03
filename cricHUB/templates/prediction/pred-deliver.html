@@ -3,12 +3,17 @@
 {% block content %}
     {% include '/common/header.html' %}
 
-    <script src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/Chart.min.js') }}">
+
+        window.onload = function () {
+            check_login_status();
+        }
+    </script>
 
     <div class="col-md-12">
-    <p>
-    <h3>Probability of winning</h3><br>
-    </p>
+        <p>
+        <h3>Probability of winning</h3><br>
+        </p>
     </div>
 
     <div class="col-md-6 col-md-offset-3">
@@ -17,9 +22,9 @@
     </div>
 
     <div class="col-md-12">
-    <p>
-    <br><br><br>
-    </p>
+        <p>
+            <br><br><br>
+        </p>
     </div>
 
     <div class="col-md-6 col-md-offset-3">
@@ -34,9 +39,9 @@
 
         <p>
             {% for team, probs in pred.items() %}
-            <h5><b>Team : </b> {{ team }} </h5>
-            Probability of Win (Batting first) : {{ probs['bat_first'] }}
-            <br> Probability of Win (Bowling first) : {{ probs['ball_first'] }}<br><br>
+                <h5><b>Team : </b> {{ team }} </h5>
+                Probability of Win (Batting first) : {{ probs['bat_first'] }}
+                <br> Probability of Win (Bowling first) : {{ probs['ball_first'] }}<br><br>
             {% endfor %}
         </p>
     </div>

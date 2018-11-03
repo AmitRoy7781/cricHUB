@@ -5,8 +5,11 @@
 
     <head>
         <meta charset="utf-8">
-        <script>var is_mobile = /symbian|tizen|midp|uc(web|browser)|MSIE (5.0|6.0|7.0|8.0)|tablet/i.test(navigator.userAgent);
-        if (is_mobile && window.location.hostname != "www1.cricbuzz.com") window.location.hostname = "m.cricbuzz.com";</script>
+        <script>
+            window.onload = function () {
+            check_login_status();
+        }
+        </script>
         <style>body {
             background: #E3E6E3;
             font-family: helvetica, "Segoe UI", Arial, sans-serif;

@@ -1,12 +1,18 @@
 {% extends "/common/base.html" %}
 
 {% block content %}
-{% include '/common/header.html' %}
+    {% include '/common/header.html' %}
+
+    <script>
+        window.onload = function () {
+            check_login_status();
+        }
+    </script>
 
     {% set countries = ['Afghanistan', 'Australia', 'Bangladesh', 'England', 'India', 'Ireland',
                 'Kenya', 'New Zealand', 'Pakistan', 'Scotland', 'South Africa', 'Sri Lanka',
                 'West Indies', 'Zimbabwe'] %}
-    {% set venue_option = ['Team 1 Home Venue','Team 2 Home Venue','Neutral Venue']  %}
+    {% set venue_option = ['Team 1 Home Venue','Team 2 Home Venue','Neutral Venue'] %}
 
     <div class="col-md-5 col-md-offset-3">
         <h5 style="align-self: center">Enter teams and venue</h5>
@@ -16,52 +22,52 @@
         <form name="pred" action="/pred-deliver/" method='POST'>
 
             <div class="form-group">
-            <label for="team1">Select Team 1</label>
-            <select name="team1" id="team1">
-                {% for c in countries %}
-                    <option value="{{ c }}">{{ c }}</option>
-                {% endfor %}
-            </select>
+                <label for="team1">Select Team 1</label>
+                <select name="team1" id="team1">
+                    {% for c in countries %}
+                        <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
+                </select>
             </div>
 
-        <div class="form-group">
-            <label for="team2">Select Team 2</label>
-            <select name="team2" id="team2">
-                {% for c in countries %}
-                    <option value="{{ c }}">{{ c }}</option>
-                {% endfor %}
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="team2">Select Team 2</label>
+                <select name="team2" id="team2">
+                    {% for c in countries %}
+                        <option value="{{ c }}">{{ c }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
-        <div class="form-group">
-            <label for="venue">Select Venue Type</label>
-            <select name="venue" id="venue">
-                {% for i in range(1,4) %}
-                    {% set j = i-1 %}
-                    <option value="{{ i }}">{{ venue_option[j] }}</option>
-                {% endfor %}
-            </select>
-        </div>
+            <div class="form-group">
+                <label for="venue">Select Venue Type</label>
+                <select name="venue" id="venue">
+                    {% for i in range(1,4) %}
+                        {% set j = i-1 %}
+                        <option value="{{ i }}">{{ venue_option[j] }}</option>
+                    {% endfor %}
+                </select>
+            </div>
 
 
-<div class="container">
-{% with messages = get_flashed_messages() %}
-  {% if messages %}
-    <ul class=flashes>
-    {% for message in messages %}
-        <div class="alert alert-warning">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        {{ message }}
-        </div>
-    {% endfor %}
-    </ul>
-  {% endif %}
-{% endwith %}
-</div>
+            <div class="container">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        <ul class=flashes>
+                            {% for message in messages %}
+                                <div class="alert alert-warning">
+                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                {% endwith %}
+            </div>
 
-        <div class="form-group">
-            <button type="submit" class="btn btn-primary" style="align-self: center">Submit</button>
-        </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" style="align-self: center">Submit</button>
+            </div>
         </form>
     </div>
 
@@ -70,6 +76,6 @@
         <h5 style="align-self: center">Based on historical data </h5>
     </div>
 
-{% include '/common/footer.html' %}
-{% include '/common/footer-social.html' %}
+    {% include '/common/footer.html' %}
+    {% include '/common/footer-social.html' %}
 {% endblock %}

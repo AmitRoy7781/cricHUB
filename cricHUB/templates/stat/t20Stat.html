@@ -3,6 +3,13 @@
 {% block content %}
     {% include '/common/header.html' %}
 
+    <script>
+        window.onload = function () {
+            check_login_status();
+            display_error();
+        }
+
+    </script>
     <style>
 
         #commListTable {
@@ -142,9 +149,9 @@
 
         <div style="width: 70%">
 
-    <br/>
-    <br/>
-    <br/>
+            <br/>
+            <br/>
+            <br/>
             {% if stat_data is none %}
                 <h2 align="center"> T20 Tournament Statistics and Data Visualization</h2>
                 <br/>
@@ -153,7 +160,7 @@
                         <label for="format">Tournament</label>
                         <select id="Tournament" name="Tournament" onchange="change_option()"
                                 class="custom-select mb-2 mr-sm-2 mb-sm-0" id="format" name="format">
-                            <option selected >Choose...</option>
+                            <option selected>Choose...</option>
                             <option value="BPL">BPL - Bangladesh Premier League</option>
                             <option value="IPL">IPL - Indian Premier League</option>
                             <option value="BBL">BBL - Big Bash League</option>
