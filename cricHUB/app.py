@@ -72,32 +72,6 @@ def format_datetime(value, format="%a %d %B %I:%M %p"):
     return local_dt.strftime(format)
 
 
-# start
-@app.route('/chat-box/')
-def chat():
-    if 'username' not in session.keys():
-        return redirect('/auth/signin')
-
-    data = []
-    data = db.chat.find()
-
-    message = []
-    for item in data:
-        tmp = []
-        tmp.append(item["author"])
-        tmp.append(item["message"])
-        message.append(tmp)
-
-    if request.cookies.get('realtime-chat-nickname') is None:
-        res = make_response(render_template("chat.html", list=message))
-        res.set_cookie('realtime-chat-nickname', session['username'])
-        print(res)
-        return res
-
-    else:
-        return render_template("chat.html", list=message)
-
-
 @app.route('/schedule/')
 def schedule():
     from cricSchedule import schedule_adapter
