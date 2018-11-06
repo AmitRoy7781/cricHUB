@@ -3,8 +3,15 @@
 {% block content %}
     {% include '/common/header.html' %}
 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
 
+
+    </script>
+    <script>
+            window.onload = function () {
+            check_login_status();
+        }
+        </script>
 {#    <section>#}
     <div class="col-md-12"><p><br></p></div>
     <div class="col-md-12" style="padding-bottom: 3%">

@@ -4,15 +4,16 @@ from flask import Flask, redirect, session, render_template, make_response, requ
 from cricMongoDB.database import db
 
 from cricAuth.auth import app as auth
-from cricCHAT.cricCHAT import app as cricCHAT
 from cricLIVE.livescore import app as livescore
+from cricSchedule.schedule_adapter import app as schedule
 from cricNEWS.news import app as news
-from cricPlayer.player import app as player
 from cricPrediction.predictions import app as prediction
-from cricProfile.user_data import app as profile
 from cricRanking.show_ranking import app as ranking_try
 from cricSTAT.t20Stat import app as stat
+from cricPlayer.player import app as player
 from cricBLOG.blog import app as blog
+from cricCHAT.cricCHAT import app as cricCHAT
+from cricProfile.user_data import app as profile
 from cricBETTING.betting import app as betting
 
 
@@ -25,6 +26,9 @@ app.register_blueprint(auth)
 
 # live score blueprint
 app.register_blueprint(livescore)
+
+#schedule blueprint
+app.register_blueprint(schedule)
 
 # prediction blueprint
 app.register_blueprint(prediction)
@@ -56,8 +60,6 @@ app.register_blueprint(betting)
 
 @app.route('/')
 def home():
-    # if 'username' not in session.keys():
-    #     return redirect('/auth/signin')
     return render_template('index.html')
 
 
@@ -70,14 +72,6 @@ def format_datetime(value, format="%a %d %B %I:%M %p"):
     value = utc.localize(value, is_dst=None).astimezone(pytz.utc)
     local_dt = value.astimezone(tz)
     return local_dt.strftime(format)
-
-
-@app.route('/schedule/')
-def schedule():
-    from cricSchedule import schedule_adapter
-    data = schedule_adapter.Adapter()
-    return render_template('schedule/Upcoming_matches.html', matches=data.get_match_data())
-
 
 if __name__ == '__main__':
     app.run()
