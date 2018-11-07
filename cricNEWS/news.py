@@ -1,14 +1,11 @@
-from flask import render_template, request, redirect, session, Blueprint, json
-from bs4 import BeautifulSoup
 import requests
-
+from bs4 import BeautifulSoup
+from flask import render_template, request, Blueprint
 
 app = Blueprint('news', __name__)
 
 @app.route('/news/')
 def show_news(page_no=None):
-    # if 'username' not in session.keys():
-    #     return redirect('/auth/signin')
 
     url = 'https://www.cricbuzz.com/cricket-news'
 
@@ -19,7 +16,6 @@ def show_news(page_no=None):
 
     res = requests.get(url)
     soup = BeautifulSoup(res.text, 'lxml')
-    # print(soup.prettify())
     news_context = soup.find_all('div', {'class': 'cb-nws-time'})
     news_headline = soup.find_all('a', {'class': 'cb-nws-hdln-ancr'})
     news_details = soup.find_all('div', {'class': 'cb-nws-intr'})
@@ -41,9 +37,6 @@ def show_news(page_no=None):
         news_img.append(soup.find('img')['src'])
         news_img_title.append(soup.find('img')['title'])
 
-
-    # print(news_img)
-
     data = []
     for i in range(len(news_context)):
         temp = {}
@@ -57,31 +50,17 @@ def show_news(page_no=None):
         temp["news_href"] = news_href[i]
         data.append(temp)
 
-    #print(data)
-    #     print(news_context[i].text)
-    #     print(news_headline[i].text)
-    #     print(news_details[i].text)
-    #     print(news_time[i].text)
-    #     print()
-    #     print("--------------------------------------------------------")
-
-    # print(page_no)
     return render_template("news/news.html", news_data=data,page_no= page_no)
 
 
 @app.route("/news/more_news",methods=['POST', 'GET'])
 def more_news():
-    # if 'username' not in session.keys():
-    #     return redirect('/auth/signin')
-    # print(request.form["more_news"])
     page_no = int(request.form["more_news"])
     return show_news(str(page_no+1))
 
 
 @app.route("/news/detail_news",methods=['POST', 'GET'])
 def detail_news():
-    # if 'username' not in session.keys():
-    #     return redirect('/auth/signin')
 
     news_topic = ""
     news_headline = ""

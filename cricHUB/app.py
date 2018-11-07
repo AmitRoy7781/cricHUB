@@ -6,7 +6,7 @@ from cricBETTING.betting import app as betting
 from cricBLOG.blog import app as blog
 from cricCHAT.cricCHAT import app as cricCHAT
 from cricLIVE.livescore import app as livescore
-from cricNEWS.news import app as news
+from cricNEWS.news_adapter import app as news
 from cricPlayer.player import app as player
 from cricPrediction.predictions import app as prediction
 from cricProfile.user_data import app as profile
