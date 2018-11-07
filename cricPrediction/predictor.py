@@ -1,8 +1,7 @@
-from sklearn.externals import joblib
-import numpy as np
 from os import path
-from flask import url_for
 
+import numpy as np
+from sklearn.externals import joblib
 
 
 class ServePrediction:

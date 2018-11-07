@@ -3,6 +3,8 @@ from cricPrediction.predictor import ServePrediction
 
 app = Blueprint('predictions', __name__)
 
+predictor = ServePrediction(app.root_path)
+
 
 @app.route('/predictions/')
 def predictions():
@@ -21,7 +23,6 @@ def get_prediction():
     if team1 == team2:
         flash('Please select different teams')
         return render_template("prediction/prediction.html")
-    predictor = ServePrediction(app.root_path)
     pred = predictor.predict(team1, team2, venue)
     formatted_pred = predictor.get_formatted_prediction(team1, team2, pred)
     legend = [team1+ ' bats first', team2 + ' bats first']

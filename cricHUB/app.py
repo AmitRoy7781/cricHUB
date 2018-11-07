@@ -1,21 +1,18 @@
 import pytz
-from flask import Flask, redirect, session, render_template, make_response, request
-
-from cricMongoDB.database import db
+from flask import Flask, render_template
 
 from cricAuth.auth import app as auth
-from cricLIVE.livescore import app as livescore
-from cricSchedule.schedule_adapter import app as schedule
-from cricNEWS.news import app as news
-from cricPrediction.predictions import app as prediction
-from cricRanking.show_ranking import app as ranking_try
-from cricSTAT.t20Stat import app as stat
-from cricPlayer.player import app as player
+from cricBETTING.betting import app as betting
 from cricBLOG.blog import app as blog
 from cricCHAT.cricCHAT import app as cricCHAT
+from cricLIVE.livescore import app as livescore
+from cricNEWS.news import app as news
+from cricPlayer.player import app as player
+from cricPrediction.predictions import app as prediction
 from cricProfile.user_data import app as profile
-from cricBETTING.betting import app as betting
-
+from cricRanking.show_ranking import app as ranking_try
+from cricSTAT.t20Stat import app as stat
+from cricSchedule.schedule_blueprint import app as schedule
 
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
