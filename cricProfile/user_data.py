@@ -25,4 +25,4 @@ class Subsystem1:
 
         profile = users.find_one(query)
 
-        return render_template('profile_2.html', name=profile["name"], email=profile["email"], phone=profile["phone_number"])
+        return render_template('profile/profile.html', name=profile["name"], email=profile["email"], phone=profile["phone_number"])
