@@ -1,27 +1,62 @@
 {% extends "/common/base.html" %}
 
 {% block content %}
-    {% include '/common/header.html' %}
+{% include '/common/header.html' %}
 
-    <script>
-        window.onload = function () {
-            check_login_status();
+    <style>
+
+        #commListTable {
+
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 17px;
         }
-    </script>
 
-    {% set countries = ['Afghanistan', 'Australia', 'Bangladesh', 'England', 'India', 'Ireland', 'New Zealand',
-    'Pakistan', 'South Africa', 'Sri Lanka','West Indies', 'Zimbabwe'] %}
-    {% set venue_option = ['Team 1 Home Venue','Team 2 Home Venue','Neutral Venue'] %}
+        #commListTable th, #commListTable td {
+            text-align: left;
+            padding: 12px;
+            font-family: Ubuntu;
+        }
 
-    <div class="col-md-5 col-md-offset-3">
+        #commListTable tr {
+            border-bottom: 1px solid #ddd;
+            font-family: Ubuntu;
+            font-size: 13px;
+        }
+
+        #commListTable tr.header, #commListTable tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .cb-more-btn {
+                    padding: 8px 20px;
+                    border-radius: 2px;
+                    color: #fff;
+                    background: #1f679d;
+                    border: 0;
+                    cursor: pointer;
+                }
+
+    </style>
+
+
+    {% set countries = ['Choose...', 'Afghanistan', 'Australia', 'Bangladesh', 'England', 'India',
+                        'Ireland', 'Kenya', 'New Zealand', 'Pakistan', 'Scotland', 'South Africa',
+                        'Sri Lanka', 'West Indies', 'Zimbabwe'] %}
+    {% set venue_option = ['Choose...', 'Team 1 Home Venue','Team 2 Home Venue','Neutral Venue']  %}
+
+    <h3 class="page-header" style="padding-left: 30%"> Prediction Based On Historical Data </h3>
+
+    {#<div class="col-md-5 col-md-offset-3">
         <h5 style="align-self: center">Enter teams and venue</h5>
-    </div>
+    </div>#}
 
-    <div class="col-md-5 col-md-offset-3">
+    <div style="padding-left: 35%; padding-right: 35%">
         <form name="pred" action="/pred-deliver/" method='POST'>
 
             <div class="form-group">
-                <label for="team1">Select Team 1</label>
+                <label for="team1" style="padding-left: 39%"> Select Team 1 </label>
                 <select name="team1" id="team1">
                     {% for c in countries %}
                         <option value="{{ c }}">{{ c }}</option>
@@ -30,7 +65,7 @@
             </div>
 
             <div class="form-group">
-                <label for="team2">Select Team 2</label>
+                <label for="team2" style="padding-left: 39%"> Select Team 2 </label>
                 <select name="team2" id="team2">
                     {% for c in countries %}
                         <option value="{{ c }}">{{ c }}</option>
@@ -39,42 +74,37 @@
             </div>
 
             <div class="form-group">
-                <label for="venue">Select Venue Type</label>
+            <label for="venue" style="padding-left: 39%"> Select Venue </label>
                 <select name="venue" id="venue">
-                    {% for i in range(1,4) %}
+                    {% for i in range(1,5) %}
                         {% set j = i-1 %}
                         <option value="{{ i }}">{{ venue_option[j] }}</option>
                     {% endfor %}
                 </select>
             </div>
 
-
             <div class="container">
                 {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        <ul class=flashes>
-                            {% for message in messages %}
-                                <div class="alert alert-warning">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    {{ message }}
-                                </div>
-                            {% endfor %}
-                        </ul>
-                    {% endif %}
+                  {% if messages %}
+                    <ul class=flashes style="padding-left: 2%; padding-right: 70%">
+                    {% for message in messages %}
+                        <div class="alert alert-warning">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
                 {% endwith %}
             </div>
 
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary" style="align-self: center">Submit</button>
+            <div class="form-group" style="padding-left: 39%; padding-right: 39%; padding-top: 1%; padding-bottom: 2%">
+                <button type="submit" class="cb-more-btn"> Submit </button>
             </div>
+
         </form>
     </div>
 
-
-    <div class="col-md-5 col-md-offset-3">
-        <h5 style="align-self: center">Based on historical data </h5>
-    </div>
-
-    {% include '/common/footer.html' %}
-    {% include '/common/footer-social.html' %}
+{% include '/common/footer.html' %}
+{% include '/common/footer-social.html' %}
 {% endblock %}

@@ -211,7 +211,6 @@
 
     <body>
 
-    {#<div class="cb-col cb-col-67 cb-nws-lft-col">#}
     <div class="col-lg-12" style="padding-left: 2%; padding-top: 2%; padding-bottom: 0%;">
 
         <h1 class="cb-font-24 line-ht30">Cricket News and Editorials</h1>
@@ -223,11 +222,11 @@
         {% for item in news_data %}
             <div class="col-lg-12" style="padding-left: 2%; padding-top: 1%; padding-bottom: 0%;">
 
-                <div id="news-list" class="cb-bg-white">
+                <div id="news-list" style="background-color: white">
 
-                    <div class="cb-col col-lg-12{#cb-col-100#} cb-lst-itm cb-lst-itm-lg">
+                    <div class="cb-col col-lg-12 cb-lst-itm cb-lst-itm-lg">
 
-                        <div class="cb-col col-lg-3{#cb-col-33#}" itemscope itemtype="https://schema.org/ImageObject"
+                        <div class="cb-col col-lg-3" itemscope itemtype="https://schema.org/ImageObject"
                              itemprop="image" style="padding-left: 2%">
 
                             <meta itemprop="width" content="205">
@@ -248,7 +247,7 @@
                             </a>
                         </div>
 
-                        <div class="col-lg-9{#cb-col-67#} cb-nws-lst-rt cb-col cb-col-text-container">
+                        <div class="col-lg-9 cb-nws-lst-rt cb-col cb-col-text-container">
                             <div class="cb-nws-time">{{ item["news_context"] }}</div>
 
                             <h2 class="cb-nws-hdln cb-font-18 line-ht24">

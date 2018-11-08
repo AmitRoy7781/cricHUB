@@ -6,26 +6,28 @@
     <br/>
     <br/>
     <br/>
-<div style="width: 90%">
+<div {#style="width: 90%"#}>
     <h2 align="center"> Yearly Statistics of Teams</h2>
     <br/>
     <br/>
 </div>
 
-<div class="col-md-5 col-md-offset-4">
+<div>
     <form name="ts" action="/ts/" method='POST'>
 
-        <div class="form-group">
+        <div class="form-group" align="center">
             <label for="team">Select Team</label>
-            <select name="team" id="team" align="center ">
+            <select name="team" id="team" align="center" style="width: 35%">
                 {% for c in countries %}
                     <option value="{{ c }}">{{ c }}</option>
                 {% endfor %}
             </select>
         </div>
 
-        <div class="form-group">
-            <button type="submit" align="center" class="btn btn-primary" style="align-self: center">Submit</button>
+        <div align="center" style="width: 35%">
+            <button type="submit" class="cb-more-btn" value="Show Ranking">
+                Submit
+            </button>
         </div>
     </form>
 </div>

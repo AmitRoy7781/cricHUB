@@ -3,40 +3,30 @@
 {% block content %}
     {% include '/common/header.html' %}
 
-    <script src="{{ url_for('static', filename='js/Chart.min.js') }}">
+    <script src="{{ url_for('static', filename='js/Chart.min.js') }}"></script>
 
-        window.onload = function () {
-            check_login_status();
-        }
-    </script>
+    <h3 class="page-header" style="padding-left: 38%">
+        Probability of winning
+    </h3>
 
-    <div class="col-md-12">
-        <p>
-        <h3>Probability of winning</h3><br>
-        </p>
+    <div class="col-md-8 col-md-offset-3" style="padding-left: 2%">
+        <h4 style="horiz-align: center;"> If {{ labels[0] }} bats first and {{ labels[1] }} bowls first</h4>
+    </div>
+    <div class="col-md-6 col-md-offset-3" style="padding-bottom: 5%">
+        <canvas style="background: white" id="myChart1" width="600" height="300"></canvas>
     </div>
 
-    <div class="col-md-6 col-md-offset-3">
-        <h4>If {{ labels[0] }} bats first and {{ labels[1] }} bowls first</h4>
-        <canvas id="myChart1" width="600" height="400"></canvas>
-    </div>
-
-    <div class="col-md-12">
-        <p>
-            <br><br><br>
-        </p>
-    </div>
-
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-3" style="padding-left: 2%">
         <h4>If {{ labels[1] }} bats first and {{ labels[0] }} bowls first</h4>
-        <canvas id="myChart2" width="600" height="400"></canvas>
     </div>
-    <div class="mol-md-4">
+    <div class="col-md-6 col-md-offset-3" style="padding-bottom: 5%">
+        <canvas style="background: white" id="myChart2" width="600" height="300"></canvas>
     </div>
 
-    <div class="col-md-9">
-        <h3> Summary </h3>
 
+    <h3 class="col-md-12" style="padding-left: 45%"> Summary </h3>
+    <div class="col-md-12" style="padding-left: 1%; padding-right: 1%; padding-bottom: 1%">
+    <div class="col-md-12" style="background-color: white; padding-left: 36%;">
         <p>
             {% for team, probs in pred.items() %}
                 <h5><b>Team : </b> {{ team }} </h5>
@@ -44,6 +34,11 @@
                 <br> Probability of Win (Bowling first) : {{ probs['ball_first'] }}<br><br>
             {% endfor %}
         </p>
+    </div>
+    </div>
+
+
+    <div class="mol-md-4">
     </div>
 
     <script>

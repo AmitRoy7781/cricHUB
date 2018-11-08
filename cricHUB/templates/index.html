@@ -3,17 +3,8 @@
 {% block content %}
     {% include '/common/header.html' %}
 
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-
-    </script>
-    <script>
-            window.onload = function () {
-            check_login_status();
-        }
-        </script>
-{#    <section>#}
-    <div class="col-md-12"><p><br></p></div>
     <div class="col-md-12" style="padding-bottom: 3%">
 
         <div class="col-md-7">
@@ -30,7 +21,7 @@
 
                 <a class="twitter-timeline"
                    href="https://twitter.com/ESPNcricinfo/timelines/585813293161406464?ref_src=twsrc%5Etfw"
-                   height="1300" data-chrome="noheader nofooter">
+                   height="1408" data-chrome="noheader nofooter">
                 </a>
 
             </div>
@@ -57,14 +48,19 @@
                 </span>
                 Featured Videos
             </h5>
+
 {#            <iframe src="http://ytchannelembed.com/ytce-gallery.php?user=UCt2JXOLNxqry7B_4rRZME3Q&rows=10#}
 {#            &ratio=hd&width=220&margin=10&desc="50&desc_color=9E9E9E&title=30&title_color=000000&https=1&duration=1#}
 {#                    &views=0&likes=0&dislikes=0&fav=0&cols=2" style="height:1300px;overflow:hidden;" class="ytce" scrolling="auto"></iframe>#}
-            <div class='sk-ww-youtube-channel-videos' data-embed-id='16030'></div><script src='{{ url_for('static', filename='js/yt.min.js') }}'></script>
+            <div class='sk-ww-youtube-channel-videos' data-embed-id='16030' width='100%' height='1350'></div>
+            <script src='{{ url_for('static', filename='js/yt.min.js') }}'></script>
+            {#<iframe src='https://www.sociablekit.com/app/embed/index.php?embed_id=15593' frameborder='0' width='100%' height='1350'></iframe>#}
+
+            {#<iframe src='https://www.sociablekit.com/app/embed/index.php?embed_id=15593' frameborder='0' width='100%' height='1350'></iframe>#}
+
         </div>
 
     </div>
-{#    </section>#}
 
     {% include '/common/footer.html' %}
     {% include '/common/footer-social.html' %}

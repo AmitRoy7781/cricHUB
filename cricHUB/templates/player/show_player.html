@@ -3,14 +3,10 @@
 {% block content %}
     {% include '/common/header.html' %}
 
-
     <head>
         <meta charset="utf-8">
-        <script>
-            window.onload = function () {
-                check_login_status();
-            }
-        </script>
+        <script>var is_mobile = /symbian|tizen|midp|uc(web|browser)|MSIE (5.0|6.0|7.0|8.0)|tablet/i.test(navigator.userAgent);
+        if (is_mobile && window.location.hostname != "www1.cricbuzz.com") window.location.hostname = "m.cricbuzz.com";</script>
         <style>body {
             background: #E3E6E3;
             font-family: helvetica, "Segoe UI", Arial, sans-serif;
@@ -23,6 +19,8 @@
         body {
             min-height: 1000px
         }
+
+
 
         .page {
             max-width: 980px;
@@ -46,6 +44,7 @@
             width: 25%;
         }
 
+
         .cb-col-33 {
             width: 33%;
         }
@@ -54,17 +53,21 @@
             width: 40%;
         }
 
+
         .cb-col-60 {
             width: 60%;
         }
+
 
         .cb-col-67 {
             width: 67%;
         }
 
+
         .cb-col-84 {
             width: 84%;
         }
+
 
         .cb-col-100 {
             width: 100%;
@@ -125,6 +128,8 @@
         .text-center {
             text-align: center;
         }
+
+
 
         .cb-nws-dtl-lft-col {
             padding: 10px 30px 0 30px;
@@ -764,6 +769,8 @@
             overflow: hidden;
         }
 
+
+
         .cb-col .cb-align-cen {
             float: none;
             text-align: center;
@@ -777,15 +784,16 @@
 
 
     </head>
+
     <body>
     <div class="page">
 
         <div class="cb-col cb-col-100 cb-bg-white">
-            <div class="cb-col cb-col-20 cb-col-rt"><img title="profile image"
+            <div class="cb-col cb-col-20 cb-col-rt"><img title={{ player_name }}
                                                          class="img-responsive cb-plyr-thum-img"
                                                          src="https:{{ player_img }}">
             </div>
-            <div style="padding-top: 90px;"><h1 itemprop="name" class="cb-font-40">{{ player_name }}</h1>
+            <div style="padding-top: 5%;"><h1 itemprop="name" class="cb-font-40">{{ player_name }}</h1>
                 <h3 class="cb-font-18 text-gray">{{ player_country }}</h3></div>
 
             <div class="cb-col cb-col-100 cb-bg-grey">
@@ -804,6 +812,7 @@
                         <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_batting_style }}</div>
                         <div class="cb-col cb-col-40 text-bold cb-lst-itm-sm">Bowling Style</div>
                         <div class="cb-col cb-col-60 cb-lst-itm-sm"> {{ player_bowlng_style }}</div>
+
                         <div class="cb-font-16 text-bold cb-lst-itm-sm cb-col cb-col-100 cb-sr-rev-label">ICC
                             Rankings
                         </div>
@@ -828,11 +837,11 @@
                 </div>
 
             </div>
-            <div class="cb-col cb-col-67 cb-bg-white cb-plyr-rt-col">
+            <div class="cb-col cb-col-100 cb-bg-white cb-plyr-rt-col" style="padding-left: 2%; padding-right: 2%">
                 <div class="cb-hm-rght cb-player-bio">
                 </div>
                 <div class="cb-plyr-tbl">
-                    <div class="cb-font-16 text-bold cb-lst-dom">Batting Career Summary</div>
+                    <div class="cb-font-16 text-bold cb-lst-dom" style="padding-left: 40%">Batting Career Summary</div>
                     <table class="table cb-col-100 cb-plyr-thead">
                         <thead>
                         <tr class="cb-bg-grey cb-font-12">
@@ -922,7 +931,7 @@
                 </div>
 
                 <div class="cb-plyr-tbl">
-                    <div class="cb-font-16 text-bold cb-lst-dom">Bowling Career Summary</div>
+                    <div class="cb-font-16 text-bold cb-lst-dom" style="padding-left: 39%">Bowling Career Summary</div>
                     <table class="table cb-col-100 cb-plyr-thead">
                         <thead>
                         <tr class="cb-bg-grey cb-font-12">

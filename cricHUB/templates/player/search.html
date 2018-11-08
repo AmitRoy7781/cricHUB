@@ -3,316 +3,81 @@
 {% block content %}
     {% include '/common/header.html' %}
 
-    <head>
-        <script>
-            window.onload = function () {
-            check_login_status();
-        }
-        </script>
-
-        <style>
-
-            h2 > a {
-                position: relative;
-                color: #000;
-                text-decoration: none;
-            }
-
-            h2 > a:hover {
-                color: #008fd1;
-                position: relative;
-                text-decoration: none;
-                font-size: 19px;
-                display: inline-block;
-            }
-
-            body {
-                background: #E3E6E3;
-                font-family: helvetica, "Segoe UI", Arial, sans-serif;
-                color: #222;
-                font-size: 14px;
-                line-height: 1.5;
-                margin: 0;
-            }
-
-            body, .cb-comm-pg, .cb-hm-mid {
-                min-height: 1000px
-            }
-
-            .container {
-                width: 980px;
-                margin: 0 auto;
-            }
-
-            .page {
-                max-width: 980px;
-                margin: 0 auto;
-                position: relative;
-            }
-
-            .cb-col-33 {
-                width: 33%;
-            }
-
-            .cb-col-67 {
-                width: 67%;
-            }
-
-            .cb-col-100 {
-                width: 100%;
-            }
-
-            .cb-col {
-                display: inline-block;
-                box-sizing: border-box;
-                float: left;
-                min-height: 1px;
-            }
-
-            h1 {
-                font-size: 36px;
-                line-height: 42px;
-                margin: 0;
-            }
-
-            h2 {
-                font-size: 24px;
-                margin: 0;
-                line-height: 30px;
-            }
-
-            h3 {
-                font-size: 18px;
-                line-height: 24px;
-                margin: 0;
-            }
-
-            h4 {
-                font-size: 16px;
-                margin: 0;
-            }
-
-            h5 {
-                font-size: 14px;
-                margin: 0;
-            }
-
-            .cb-font-18 {
-                font-size: 18px;
-            }
-
-            img {
-                border: 0;
-            }
-
-            a {
-                text-decoration: none;
-                color: #222;
-            }
-
-            a, a:hover, a:active, a:focus {
-                outline: medium none;
-            }
-
-            .cb-nws-lft-col {
-                padding: 15px 20px;
-            }
-
-            .cb-nws-lst-rt {
-                padding-left: 10px;
-            }
-
-            .cb-lst-itm, .cb-bg-white {
-                background: #fff;
-            }
-
-            .cb-font-24 {
-                font-size: 24px;
-            }
-
-            .line-ht30 {
-                line-height: 30px;
-            }
-
-            .line-ht24 {
-                line-height: 24px;
-            }
-
-            .mrgn-btm-5 {
-                margin-bottom: 5px;
-            }
-
-            #scagTabContent {
-                display: block;
-                visibility: visible;
-            }
-
-            #scagTabContent {
-                display: none;
-                visibility: hidden;
-            }
-
-            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-                display: none !important;
-            }
-
-            .cb-nws-time {
-                font-size: 12px;
-                padding-bottom: 5px;
-            }
-
-            .cb-nws-hdln-ancr {
-                padding-bottom: 5px;
-            }
-
-            .cb-nws-intr {
-                color: #666;
-                padding-bottom: 5px;
-            }
-
-            .cb-lst-itm-lg {
-                padding: 20px 0;
-            }
-
-            .cb-text-link {
-                color: #1866DB;
-            }
-
-            h2 {
-                font-size: 18px
-            }
-
-            .cb-col .cb-align-cen {
-                float: none;
-                text-align: center;
-                padding: 7px 25px;
-                margin-top: 20px;
-            }
-
-            .cb-align-cen {
-                padding-top: 10px;
-            }
-
-            .cb-more-btn {
-                padding: 8px 20px;
-                border-radius: 2px;
-                color: #fff;
-                background: #1f679d;
-                border: 0;
-                cursor: pointer;
-            }
-
-        </style>
-
-
-
-        <!-- for-mobile-apps -->
-        <script type="application/x-javascript"> addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        } </script>
-        <!-- //for-mobile-apps -->
-        <link href="../../static/css/searchstyle.css" rel="stylesheet" type="text/css" media="all"/>
-        <link href='//fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
-        <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic'
-              rel='stylesheet' type='text/css'>
-
-
-
-    </head>
     <body>
-    <br/>
-    <br/>
-    <br/>
-    <br/>
+
     <div class="main">
+        <h2 style="padding-left: 37.5%">Search For Players</h2>
         <br/>
         <br/>
-        <br/>
-        <br/>
-        <h1>Search For Players</h1>
-        <br/>
-        <br/>
-        <div class="search-three">
+
+        <div style="padding-left: 35.5%">
             <form action="/players/show_players" method="post">
 
-                <input name="player_name" type="text" value="Search using Players Name" onfocus="this.value = '';"
+                <input class="col-md-4" style="height: 35px; font-size: 16px"
+                       name="player_name" type="text" value="Search using Players Name"
+                       onfocus="this.value = '';"
                        onblur="if (this.value == '') {this.value = 'Search using Players Name';}" required="">
 
-                <input type="submit" value="Search">
-
-                <div class="clear"></div>
+                <input style="height: 35px; width: 11%; background-color: #1f679d; color: white" type="submit" value="Search">
 
             </form>
         </div>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
 
-    <h1>{{ search_status }}</h1>
-    {% if player_list != None%}
-    {% for item in player_list %}
-    <form action="/players/show_profile" method="post">
+    <div class="col-md-12" style="padding-top: 4%"></div>
 
+    {% if player_list is defined and player_list[0] is defined %}
 
+        <h2 style="padding-left: 40%">{{ search_status }}</h2>
 
-                <div id="news-list" class="cb-bg-white">
+        <div style="padding-left: 10%; padding-right: 10%; padding-top: 1%">
 
-                    <div class="cb-col cb-col-100 cb-lst-itm cb-lst-itm-lg">
+        {% for item in player_list %}
 
-                        <div class="cb-col cb-col-33" itemscope itemtype="https://schema.org/ImageObject"
-                             itemprop="image">
+            <div class="col-md-12" style="background-color: white; padding-left: 15%; padding-right: 15%">
 
-                            <meta itemprop="width" content="205">
-                            <meta itemprop="height" content="152">
-                            <meta itemprop="url" content="https:" + {{ item["player_img"] }}>
+                <div class="col-md-4" style="padding-top: 2%; padding-bottom: 2%">
+                    <a target="_self"
+                       {#href="//www.cricbuzz.com/{{ item["news_href"] }}"#}
+                       title="{{ item["player_name"] }}">
 
-                            <a target="_self"
-{#                               href="//www.cricbuzz.com/{{ item["news_href"] }}"#}
-                               title="{{ item["player_name"] }}">
+                        <img height="180" width="180"
+                             alt="{{ item["player_name"] }}"
+                             title="{{ item["player_name"] }}"
+                             itemprop="image"
+                             src="{{ item["player_img"] }}"/>
+                    </a>
+                </div>
 
-                                <img height="152" width="205"
-                                     alt="{{ item["player_name"] }}"
-                                     title="{{ item["player_name"] }}"
-                                     itemprop="image"
-                                     class="cb-lst-img"
-                                     src="{{ item["player_img"] }}"
-                                     style="padding:0px;"/>
-                            </a>
-                        </div>
-                        <div class="cb-col-67 cb-nws-lst-rt cb-col cb-col-text-container">
+                <div class="col-md-8" style="padding-top: 2%">
+                    <div>
+                        <h3>{{ item["player_name"] }}</h3>
+                    </div>
 
-
-                            <h2 class="cb-nws-hdln cb-font-18 line-ht24">
-                                <a target="_self"
-                                   class="cb-nws-hdln-ancr text-hvr-underline"
-{#                                   value="//www.cricbuzz.com/{{ item["news_href"] }}"#}
-                                   title="{{ item["player_name"] }}">
-                                    {{ item["player_name"] }}
-                                </a>
-                            </h2>
-
-
-                            <div>
-
-                            <br/>
-
-                            <button type="submit" name="player_url" value="{{ item["player_href"] }}" align="center" class="cb-more-btn"title="View Profile">
-                            View Profile
+                    <div style="padding-top: 5%">
+                        <form action="/players/show_profile" method="post">
+                            <button type="submit" name="player_url" value="{{ item["player_href"] }}"
+                                    align="center" title="View Profile"
+                                    style="background-color: #1f679d; color: white; height: 40px; width: 35%">
+                                    View Profile
                             </button>
-
-                        </div>
+                        </form>
                     </div>
                 </div>
-                </div>
-        </form>
-    {% endfor %}
+            </div>
+
+            <div class="col-md-12" style="padding-top: 1%;"></div>
+
+        {% endfor %}
+
+        </div>
     {% endif %}
+
+    {% if player_list[0] is not defined %}
+        <h3 style="padding-left: 21%; padding-bottom: 2%">{{ search_status }}</h3>
+    {% endif %}
+
     </div>
+
     </body>
 
     {% include '/common/footer.html' %}

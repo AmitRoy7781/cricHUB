@@ -151,12 +151,11 @@
 
             <br/>
             <br/>
-            <br/>
             {% if stat_data is none %}
                 <h2 align="center"> T20 Tournament Statistics and Data Visualization</h2>
                 <br/>
-                <form action="/show_stats" method="POST" style="width: 30%">
-                    <div class="form-group" style="width: 130%">
+                <form action="/show_stats" method="POST">
+                    <div class="form-group" align="center" style="width: 35%">
                         <label for="format">Tournament</label>
                         <select id="Tournament" name="Tournament" onchange="change_option()"
                                 class="custom-select mb-2 mr-sm-2 mb-sm-0" id="format" name="format">
@@ -169,7 +168,7 @@
                         </select>
                         <span id="Tournament_msg" style="font-size: small;color: red"></span>
                     </div>
-                    <div class="form-group" style="width: 130%">
+                    <div class="form-group" style="width: 35%">
                         <label for="gender">Choose Year</label>
                         <select id="Year" name="Year" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="gender"
                                 name="gender">
@@ -179,14 +178,12 @@
                     </div>
                     <br/>
 
-                    <div style="width: 130%">
+                    <div align="center" style="width: 35%">
                         <button type="submit" class="cb-more-btn" value="Show Ranking">
                             Show Statistics
                         </button>
                     </div>
                 </form>
-                <br/>
-                <br/>
                 {% include 'stat/team_stat_inp.html' %}
 
             {% else %}
@@ -243,14 +240,7 @@
     </div>
     <div class="col-md-12">
         <p>
-            <br/><br/><br/><br/>
-        </p>
-    </div>
-
-
-    <div class="col-md-12">
-        <p>
-            <br/><br/><br/><br/>
+            <br/><br/>
         </p>
     </div>
 
