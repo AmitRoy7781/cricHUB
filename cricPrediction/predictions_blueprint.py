@@ -1,9 +1,10 @@
 from flask import render_template, request, redirect, session, Blueprint, flash
-from cricPrediction.predictor import ServePrediction
+from cricPrediction.predictor import ServePrediction, PredictionModelPool
 
 app = Blueprint('predictions', __name__)
 
-predictor = ServePrediction(app.root_path)
+predictor_model_pool = PredictionModelPool(app.root_path, 3)
+pred_serve = ServePrediction()
 
 
 @app.route('/predictions/')
@@ -23,8 +24,12 @@ def get_prediction():
     if team1 == team2:
         flash('Please select different teams')
         return render_template("prediction/prediction.html")
-    pred = predictor.predict(team1, team2, venue)
-    formatted_pred = predictor.get_formatted_prediction(team1, team2, pred)
+
+    reusable_model = predictor_model_pool.acquire()
+    pred = pred_serve.predict(reusable_model, team1, team2, venue)
+    predictor_model_pool.release(reusable_model)
+
+    formatted_pred = pred_serve.get_formatted_prediction(team1, team2, pred)
     legend = [team1+ ' bats first', team2 + ' bats first']
     labels = [team1, team2]
     values1 = pred[0, :].flatten().tolist()

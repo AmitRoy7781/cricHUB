@@ -8,7 +8,7 @@ from cricCHAT.cricCHAT import app as cricCHAT
 from cricLIVE.livescore import app as livescore
 from cricNEWS.news_adapter import app as news
 from cricPlayer.player import app as player
-from cricPrediction.predictions import app as prediction
+from cricPrediction.predictions_blueprint import app as prediction
 from cricProfile.user_data import app as profile
 from cricRanking.show_ranking import app as ranking_try
 from cricSTAT.t20Stat import app as stat
