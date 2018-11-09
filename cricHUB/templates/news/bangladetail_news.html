@@ -3,99 +3,105 @@
 {% block content %}
     {% include '/common/header.html' %}
 
-
-
-<head prefix="og: http://ogp.me/ns#">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1, user-scalable=0"
-          name="viewport"/>
-    <meta content="" name="keywords"/>
-    <link href="https://www.prothomalo.com/sports/article/1564540/%E0%A6%89%E0%A6%97%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0-%E0%A6%86%E0%A6%9B%E0%A7%87-%E2%80%98%E0%A6%AD%E0%A6%BE%E0%A6%A4%E0%A6%BF%E0%A6%9C%E0%A6%BE%E2%80%99-%E0%A6%86%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%BF"
-          rel="canonical"/>
-    <link href="http://www.prothomalo.com/amp/sports/article/1564540/%E0%A6%89%E0%A6%97%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0-%E0%A6%86%E0%A6%9B%E0%A7%87-%E2%80%98%E0%A6%AD%E0%A6%BE%E0%A6%A4%E0%A6%BF%E0%A6%9C%E0%A6%BE%E2%80%99-%E0%A6%86%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%BF"
-          rel="amphtml"/>
-    <link href="/favicon.ico" rel="shortcut icon"/>
-    <link href="/favicon.ico" rel="icon" type="image/ico"/>
-    <link href="https://www.prothomalo.com/feed/sports" rel="alternate" title="প্রথম আলো RSS"
-          type="application/rss+xml"/>
-    <style>
-        body {
-            font-family: SolaimanLipi, Arial, Vrinda, FallbackBengaliFont, Helvetica, sans-serif;
+    <script>
+        window.onload = function () {
+            check_login_status();
         }
-    </style>
-    <link href="//paloimages.prothom-alo.com/contents/assets/jquery/css/smoothness/jquery-ui-1.9.2.custom.min.css"
-          media="all" rel="stylesheet" type="text/css"/>
-    <link href="//paloimages.prothom-alo.com/contents/assets/jquery/js/swiper/swiper.min.css" media="all"
-          rel="stylesheet" type="text/css"/>
-    <link href="//paloimages.prothom-alo.com/contents/plugins/core/comments/css/comments_styles.css?v=1.7" media="all"
-          rel="stylesheet" type="text/css"/>
-    <link href="//paloimages.prothom-alo.com/contents/widgets/styles/style.css?v=1.52" media="all" rel="stylesheet"
-          type="text/css"/>
-    <link href="//paloimages.prothom-alo.com/contents/themes/public/style/font-jade-embedded.css?v=1.52" media="all"
-          rel="stylesheet" type="text/css"/>
-    <link href="//paloimages.prothom-alo.com/contents/themes/public/style/style.css?v=1.52" media="all" rel="stylesheet"
-          type="text/css"/>
-    <link href="//paloimages.prothom-alo.com/contents/themes/public/style/widget_style.css?v=1.52" media="all"
-          rel="stylesheet" type="text/css"/>
-    <link href="//paloimages.prothom-alo.com/contents/themes/public/style/colors.css?v=1.52" media="all"
-          rel="stylesheet" type="text/css"/>
-    <link href="//paloimages.prothom-alo.com/contents/themes/public/style/common_styles.css?v=1.52" media="all"
-          rel="stylesheet" type="text/css"/>
-    <link href="//paloimages.prothom-alo.com/contents/themes/public/style/print.css?v=1.52" media="print"
-          rel="stylesheet" type="text/css"/>
-    <script>
-        var __jw_s_link = 'https://profiles.prothomalo.com/api/authentication_helper/session_js/?APP_ID=1&_nc=1541755977.2792';
-        var __jw_a_link = 'https://profiles.prothomalo.com/api/authentication_helper/account_bar/?contianer=account_bar&APP_ID=1';
-        var __is_jadewits_user_logged_in = false;
-        var __user_login_check = false;
-        var __user_login_check2 = false;
     </script>
-    <script src="//paloimages.prothom-alo.com/contents/themes/public/js/core.js">
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/jquery-1.9.1.min.js">
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/jquery-ui-1.9.2.custom.min.js">
-    </script>
-    <meta content="JadeWits Technologies Web Application 2.0.1" name="generator"/>
-    <script>
-        var jw_template_dir = '//paloimages.prothom-alo.com/contents/themes/public/';
-        var jw_relative_url = '/';
-        var jw_full_url = 'https://www.prothomalo.com/';
-        var jw_cdn_url = '//paloimages.prothom-alo.com/';
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/assets/jwshare/share.js?v=1.3">
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/swiper/swiper.jquery.min.js">
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/fullscreen/jquery.fullscreen.js">
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/fullscreen/fullscreen.js">
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/jquery-ui-timepicker-addon.js">
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/assets/jadewits/jquery.jw.ari.js?v=1.52">
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/themes/public/js/custom.js?v=1.52">
-    </script>
-    <script src="//paloimages.prothom-alo.com/contents/assets/customjs/fade.js?v=1.52">
-    </script>
-    <script>
-        var facebook_application_id = "1499138263726489";
-        var current_page_url = 'https://www.prothomalo.com/sports';
-        var jw_base_url = '/';
-        var cannonical_url = 'https://www.prothomalo.com/sports/article/1564540/%E0%A6%89%E0%A6%97%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0-%E0%A6%86%E0%A6%9B%E0%A7%87-%E2%80%98%E0%A6%AD%E0%A6%BE%E0%A6%A4%E0%A6%BF%E0%A6%9C%E0%A6%BE%E2%80%99-%E0%A6%86%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%BF';
-        var current_archive_time = '2018-11-09';
-        var last_archive_time = '2018-11-09';
-        var jw_language = 'bn';
-        var jw_device = 'computer';
-        var jw_site_name = 'প্রথম আলো';
-        var jw_meta_title = 'উগান্ডার আছে ‘ভাতিজা’ আফ্রিদি!';
-        var jw_meta_description = 'উগান্ডা জাতীয় ক্রিকেট দলেও আছেন একজন আফ্রিদি। কে এই আফ্রিদি?  বোলিংয়ের রান আপ চাচার মতোই। অ্যাকশনেও তাই&amp;mdash;ডান হাতে অফস্পিনের সঙ্গে চাচার মতো লেগ ব্রেক আর গুগলি্ও পারেন। আর উইকেট পাওয়ার পর উদ্&amp;zwnj;যাপনেও কী দারুণ মিল! দু হাত উঁচিয়ে স্মিত হাসি মুখে। সত্যিই রক্ত কথা বলে!  মোটা দাগে পার্থক্য শুধু চুল আর জার্সিতে। চাচার যৌবনে তাঁর রেশমি চুলের প্রেমে পড়েছেন অগণিত তরুণী। সংখ্যাটা এখনো কম না।...';
-        var jw_meta_url = 'https://www.prothomalo.com/sports/article/1564540/%E0%A6%89%E0%A6%97%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0-%E0%A6%86%E0%A6%9B%E0%A7%87-%E2%80%98%E0%A6%AD%E0%A6%BE%E0%A6%A4%E0%A6%BF%E0%A6%9C%E0%A6%BE%E2%80%99-%E0%A6%86%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%BF';
-        var jw_meta_image = 'https://paloimages.prothom-alo.com/contents/cache/images/600x315x1/uploads/media/2018/11/09/82f73048be5b6d461dd5cf4d7f8e08a6-5be5504d04224.jpg?jadewits_media_id=1393150';
-    </script>
-    <script data-schema="Organization" type="application/ld+json">
+
+    <head prefix="og: http://ogp.me/ns#">
+        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=1, user-scalable=0"
+              name="viewport"/>
+        <meta content="" name="keywords"/>
+        <link href="https://www.prothomalo.com/sports/article/1564540/%E0%A6%89%E0%A6%97%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0-%E0%A6%86%E0%A6%9B%E0%A7%87-%E2%80%98%E0%A6%AD%E0%A6%BE%E0%A6%A4%E0%A6%BF%E0%A6%9C%E0%A6%BE%E2%80%99-%E0%A6%86%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%BF"
+              rel="canonical"/>
+        <link href="http://www.prothomalo.com/amp/sports/article/1564540/%E0%A6%89%E0%A6%97%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0-%E0%A6%86%E0%A6%9B%E0%A7%87-%E2%80%98%E0%A6%AD%E0%A6%BE%E0%A6%A4%E0%A6%BF%E0%A6%9C%E0%A6%BE%E2%80%99-%E0%A6%86%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%BF"
+              rel="amphtml"/>
+        <link href="/favicon.ico" rel="shortcut icon"/>
+        <link href="/favicon.ico" rel="icon" type="image/ico"/>
+        <link href="https://www.prothomalo.com/feed/sports" rel="alternate" title="প্রথম আলো RSS"
+              type="application/rss+xml"/>
+        <style>
+            body {
+                font-family: SolaimanLipi, Arial, Vrinda, FallbackBengaliFont, Helvetica, sans-serif;
+            }
+        </style>
+        <link href="//paloimages.prothom-alo.com/contents/assets/jquery/css/smoothness/jquery-ui-1.9.2.custom.min.css"
+              media="all" rel="stylesheet" type="text/css"/>
+        <link href="//paloimages.prothom-alo.com/contents/assets/jquery/js/swiper/swiper.min.css" media="all"
+              rel="stylesheet" type="text/css"/>
+        <link href="//paloimages.prothom-alo.com/contents/plugins/core/comments/css/comments_styles.css?v=1.7"
+              media="all"
+              rel="stylesheet" type="text/css"/>
+        <link href="//paloimages.prothom-alo.com/contents/widgets/styles/style.css?v=1.52" media="all" rel="stylesheet"
+              type="text/css"/>
+        <link href="//paloimages.prothom-alo.com/contents/themes/public/style/font-jade-embedded.css?v=1.52" media="all"
+              rel="stylesheet" type="text/css"/>
+        <link href="//paloimages.prothom-alo.com/contents/themes/public/style/style.css?v=1.52" media="all"
+              rel="stylesheet"
+              type="text/css"/>
+        <link href="//paloimages.prothom-alo.com/contents/themes/public/style/widget_style.css?v=1.52" media="all"
+              rel="stylesheet" type="text/css"/>
+        <link href="//paloimages.prothom-alo.com/contents/themes/public/style/colors.css?v=1.52" media="all"
+              rel="stylesheet" type="text/css"/>
+        <link href="//paloimages.prothom-alo.com/contents/themes/public/style/common_styles.css?v=1.52" media="all"
+              rel="stylesheet" type="text/css"/>
+        <link href="//paloimages.prothom-alo.com/contents/themes/public/style/print.css?v=1.52" media="print"
+              rel="stylesheet" type="text/css"/>
+        <script>
+            var __jw_s_link = 'https://profiles.prothomalo.com/api/authentication_helper/session_js/?APP_ID=1&_nc=1541755977.2792';
+            var __jw_a_link = 'https://profiles.prothomalo.com/api/authentication_helper/account_bar/?contianer=account_bar&APP_ID=1';
+            var __is_jadewits_user_logged_in = false;
+            var __user_login_check = false;
+            var __user_login_check2 = false;
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/themes/public/js/core.js">
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/jquery-1.9.1.min.js">
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/jquery-ui-1.9.2.custom.min.js">
+        </script>
+        <meta content="JadeWits Technologies Web Application 2.0.1" name="generator"/>
+        <script>
+            var jw_template_dir = '//paloimages.prothom-alo.com/contents/themes/public/';
+            var jw_relative_url = '/';
+            var jw_full_url = 'https://www.prothomalo.com/';
+            var jw_cdn_url = '//paloimages.prothom-alo.com/';
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/assets/jwshare/share.js?v=1.3">
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/swiper/swiper.jquery.min.js">
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/fullscreen/jquery.fullscreen.js">
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/fullscreen/fullscreen.js">
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/assets/jquery/js/jquery-ui-timepicker-addon.js">
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/assets/jadewits/jquery.jw.ari.js?v=1.52">
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/themes/public/js/custom.js?v=1.52">
+        </script>
+        <script src="//paloimages.prothom-alo.com/contents/assets/customjs/fade.js?v=1.52">
+        </script>
+        <script>
+            var facebook_application_id = "1499138263726489";
+            var current_page_url = 'https://www.prothomalo.com/sports';
+            var jw_base_url = '/';
+            var cannonical_url = 'https://www.prothomalo.com/sports/article/1564540/%E0%A6%89%E0%A6%97%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0-%E0%A6%86%E0%A6%9B%E0%A7%87-%E2%80%98%E0%A6%AD%E0%A6%BE%E0%A6%A4%E0%A6%BF%E0%A6%9C%E0%A6%BE%E2%80%99-%E0%A6%86%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%BF';
+            var current_archive_time = '2018-11-09';
+            var last_archive_time = '2018-11-09';
+            var jw_language = 'bn';
+            var jw_device = 'computer';
+            var jw_site_name = 'প্রথম আলো';
+            var jw_meta_title = 'উগান্ডার আছে ‘ভাতিজা’ আফ্রিদি!';
+            var jw_meta_description = 'উগান্ডা জাতীয় ক্রিকেট দলেও আছেন একজন আফ্রিদি। কে এই আফ্রিদি?  বোলিংয়ের রান আপ চাচার মতোই। অ্যাকশনেও তাই&amp;mdash;ডান হাতে অফস্পিনের সঙ্গে চাচার মতো লেগ ব্রেক আর গুগলি্ও পারেন। আর উইকেট পাওয়ার পর উদ্&amp;zwnj;যাপনেও কী দারুণ মিল! দু হাত উঁচিয়ে স্মিত হাসি মুখে। সত্যিই রক্ত কথা বলে!  মোটা দাগে পার্থক্য শুধু চুল আর জার্সিতে। চাচার যৌবনে তাঁর রেশমি চুলের প্রেমে পড়েছেন অগণিত তরুণী। সংখ্যাটা এখনো কম না।...';
+            var jw_meta_url = 'https://www.prothomalo.com/sports/article/1564540/%E0%A6%89%E0%A6%97%E0%A6%BE%E0%A6%A8%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0-%E0%A6%86%E0%A6%9B%E0%A7%87-%E2%80%98%E0%A6%AD%E0%A6%BE%E0%A6%A4%E0%A6%BF%E0%A6%9C%E0%A6%BE%E2%80%99-%E0%A6%86%E0%A6%AB%E0%A7%8D%E0%A6%B0%E0%A6%BF%E0%A6%A6%E0%A6%BF';
+            var jw_meta_image = 'https://paloimages.prothom-alo.com/contents/cache/images/600x315x1/uploads/media/2018/11/09/82f73048be5b6d461dd5cf4d7f8e08a6-5be5504d04224.jpg?jadewits_media_id=1393150';
+        </script>
+        <script data-schema="Organization" type="application/ld+json">
    {
 	"@context": "http://schema.org/",
 	"name":"প্রথম আলো",
@@ -137,1054 +143,1055 @@
 
 
 
-    </script>
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-11355905-1">
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+        </script>
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-11355905-1">
+        </script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-        gtag('js', new Date());
-
-        gtag('config', 'UA-11355905-1');
-        gtag('config', 'AW-921330377');
-    </script>
-    <script>
-        gtag('event', 'conversion', {'send_to': 'AW-921330377/1aEkCPzTxIcBEMnFqbcD'});
-    </script>
-    <script async="" src="https://www.googletagservices.com/tag/js/gpt.js">
-    </script>
-    <link href="//www.prothomalo.com/palo-internal/paloweb-content-style.css?v=1.4" media="all" rel="stylesheet"
-          type="text/css"/>
-    <link href="//www.prothomalo.com/palo-internal/palo-modification.css?v=1.5" media="all" rel="stylesheet"
-          type="text/css"/>
-
-    <link href="//service.prothomalo.com/quote.css" media="all" rel="stylesheet" type="text/css"/>
-    <style>
-        body {
-            font-family: Kiron, SolaimanLipi, Arial, Vrinda, FallbackBengaliFont, Helvetica, sans-serif !important;
-        }
-
-        .contents .has_image.image_featured .info {
-            padding-top: 40px;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
-        }
-
-        .pop-main .swiper-slide .info .caption_hide {
-            text-shadow: 1px 1px 1px #000;
-        }
-
-        .pop-main .pop-icons {
-            text-align: right;
-        }
-
-        .pop-main .pop-icons .cancel {
-            display: inline-block;
-        }
-
-        .pop-main .swiper-slide .info .caption {
-            padding: 20px 0 12px
-        }
-
-        .pop-each .photo a::after, a.jw_media_holder::after {
-            background: rgb(51, 51, 51)
-        }
-
-        .search_result_form {
-            margin-bottom: 16px;
-            background: #f6f6f6;
-            padding: 16px;
-        }
-
-        .search_result_form .search_input {
-            border: 2px solid #a8a8a8;
-            background: #fff;
-            height: 44px;
-        }
-
-        a.jw_media_holder {
-            background: #F0F0ED !important;
-        }
-
-        .header_seach_form .search_input_holder {
-            height: 48px;
-            overflow: hidden;
-            padding-right: 8px;
-            padding: 8px;
-            background: #fff;
-        }
-
-        .header_seach_form .search_input {
-            background: #fff;
-            display: block;
-            border: 2px solid #f0f0ed;
-            color: #000;
-            height: 26px;
-            line-height: 25px;
-            padding: 8px 1%;
-            font-size: 18px;
-            font-family: SolaimanLipi;
-            width: 100%;
-        }
-
-        .account_toggle .jw_notifications_counter.new_notification {
-            color: #F44336;
-            text-shadow: -2px 1px 1px #fff;
-            font-weight: bold;
-        }
-
-        #jw_notifications .jw_notifications_counter:before {
-            content: 'নোটিফিকেশন ';
-            text-align: center;
-        }
-
-        #jw_notifications #jw_notifications_holder .each_notifications a {
-            border-bottom: 0px;
-            border-top: 1px solid #ccc;
-            padding: 6px 16px;
-        }
-
-        #jw_notifications #jw_notifications_holder .status_new {
-            background-color: #E3F2FD;
-            color: #000;
-        }
-
-        #jw_notifications #jw_notifications_holder .status_old {
-            background-color: #fff
-        }
-
-        .single_album_gallery .pop-each a.pop-active::after {
-            display: none;
-        }
-
-        .share_group_inner {
-            position: absolute;
-            left: -3px;
-            bottom: 0;
-            z-index: 1;
-            background: #fff;
-            box-shadow: none;
-            border-radius: 3px;
-            display: none;
-            width: 210px;
-        }
-
-        .comment_share .share_group_inner {
-            top: 0;
-        }
-
-        @media screen and (max-width: 1024px) {
-            .share_group_inner {
-                display: block;
+            function gtag() {
+                dataLayer.push(arguments);
             }
 
-            .gallery-body .share_group_inner, .comment_share .share_group_inner {
-                display: none;
+            gtag('js', new Date());
+
+            gtag('config', 'UA-11355905-1');
+            gtag('config', 'AW-921330377');
+        </script>
+        <script>
+            gtag('event', 'conversion', {'send_to': 'AW-921330377/1aEkCPzTxIcBEMnFqbcD'});
+        </script>
+        <script async="" src="https://www.googletagservices.com/tag/js/gpt.js">
+        </script>
+        <link href="//www.prothomalo.com/palo-internal/paloweb-content-style.css?v=1.4" media="all" rel="stylesheet"
+              type="text/css"/>
+        <link href="//www.prothomalo.com/palo-internal/palo-modification.css?v=1.5" media="all" rel="stylesheet"
+              type="text/css"/>
+
+        <link href="//service.prothomalo.com/quote.css" media="all" rel="stylesheet" type="text/css"/>
+        <style>
+            body {
+                font-family: Kiron, SolaimanLipi, Arial, Vrinda, FallbackBengaliFont, Helvetica, sans-serif !important;
             }
 
-            .pop-main .share_group_inner {
-                display: none;
+            .contents .has_image.image_featured .info {
+                padding-top: 40px;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
             }
 
-            .gallery-body .share_group_inner {
-                left: 33px;
+            .pop-main .swiper-slide .info .caption_hide {
+                text-shadow: 1px 1px 1px #000;
             }
 
-            .pop-main .share_group:hover .share_group_inner {
-                display: block;
-                bottom: 46px;
-                left: -16px;
+            .pop-main .pop-icons {
+                text-align: right;
             }
 
-            .pop-main .share_group:hover .share_group_inner:after {
-                content: '';
-
-                border-top: 10px solid #fff;
-                border-left: 10px solid transparent;
-                border-right: 10px solid transparent;
-                position: absolute;
-                bottom: -10px;
-                left: 21px;
-            }
-        }
-
-        @media screen and (min-width: 801px) {
-
-            .comments_holder .share_group:hover .share_group_inner {
-                padding: 8px;
-                width: 320px;
-                box-shadow: none;
-                height: 38px;
-                background: transparent;
-                top: -10px;
-                left: 24px;
+            .pop-main .pop-icons .cancel {
+                display: inline-block;
             }
 
-            body.no-scrollbar .main_menu {
-                display: none;
+            .pop-main .swiper-slide .info .caption {
+                padding: 20px 0 12px
             }
 
-            .more_main_menu_wrap {
-                top: 64px;
-            }
-
-            .more_main_menu_inner {
-                background: #fff;
-                padding: 1px 5%;
-                top: 0;
-            }
-
-            .top_big_menu {
-                border-top: 1px solid #ccc;
-                max-width: 1280px;
-                margin: auto;
-            }
-
-            .big_menu .big_menu_top {
-                border-bottom: 1px solid #ccc;
-                padding: 24px 0;
-            }
-
-            .big_menu .big_menu_bottom {
-                padding-top: 24px;
-            }
-
-            .big_menu .big_menu_top .special_menu ul li a {
-                line-height: 40px;
-            }
-
-            .big_menu .big_menu_bottom .bmenu_bottom_toplinks {
-                margin-bottom: 24px;
-            }
-
-            .close_more_main {
-                display: none
-            }
-
-            .big_menu .big_menu_bottom .bmenu_bottom_imagelinks {
-                margin-bottom: 24px;
-            }
-
-            .foot-middle-container {
-                padding-bottom: 0
-            }
-
-            .big_menu .big_menu_bottom .bmenu_bottom_right {
-                padding-bottom: 24px
-            }
-
-            .big_menu .big_menu_bottom .bmenu_bottom_right p {
-                font-family: Arial, Helvetica, sans-serif;
-                font-size: 14px;
-                line-height: 20px;
-                font-weight: normal;
-            }
-
-            .foot_big_menu.big_menu .big_menu_top {
-                border-bottom: 1px solid #4a4a4a;
-            }
-
-            .office_address {
-                float: left;
-                margin-right: 4px;
-            }
-
-            /* end menu fix */
-            .more_main_menu_wrap {
-                overflow: hidden;
-            }
-
-            body.no-scrollbar {
-                overflow-y: scroll !important;
-                padding-top: 64px !important;
-            }
-
-            .header_social_wrap {
-                position: relative;
-            }
-
-            .header_social_wrap .social_links {
-                display: none;
-                position: absolute;
-                top: 76%;
-                right: 0;
-                background: transparent;
-                z-index: 5;
-                box-shadow: none;
-            }
-
-            .social_links.click-free-pop-active:before {
-                content: '';
-                border-top: 15px solid #fff;
-                border-left: 0px solid transparent;
-                border-right: 16px solid transparent;
-                position: absolute;
-                right: 0;
-                height: 0px;
-                background: #f1f1f1;
-                width: 93%;
-            }
-
-            .header_social_wrap .social_links ul {
-                list-style: none;
-                background: #ffffff;
-                box-shadow: 0 0 5px #000;
-                margin-top: 15px;
-            }
-
-            .header_social_wrap .social_links a {
-                color: #616161;
-                display: block;
-                overflow: hidden;
-                padding: 6px 16px;
-                display: inline-flex;
-                min-width: 106px;
-            }
-
-            .header_social_wrap .social_links a:before {
-                font-family: font-jade;
-                margin-right: 4px;
-                float: left;
-                width: 20px;
-            }
-
-            #jw_notifications #jw_notifications_holder {
-                position: relative;
-                width: auto;
-                box-shadow: none;
-                top: 0;
-            }
-
-            #account_bar .profile_link {
-                padding-left: 16px;
-            }
-
-            #account_bar .profile_link, #account_bar .logout_link {
-                border-right: 0 none;
-            }
-
-            #account_bar a {
-                float: none;
-                padding: 6px 16px;
-                text-decoration: none;
-                display: block;
-                border-bottom: 1px solid #ccc;
-            }
-
-            #account_bar .profile_pic {
-                margin-right: 8px;
-                height: 32px;
-                float: left;
-            }
-
-            #jw_notifications {
-                position: relative;
-                float: none;
-            }
-
-            #jw_notifications .jw_notifications_counter {
-                background: transparent;
-                box-shadow: none;
-                border: 0 none;
-                padding: 6px 16px;
-                float: none;
-            }
-
-            i.demo-icon.icon-off {
-                font-size: 22px;
-            }
-
-            .icon-off:before {
-                margin: 0 14px 0 0;
-            }
-
-            .header_account_wrap {
-                position: relative;
-            }
-
-            .user_account {
-                min-width: 250px;
-                top: 48px;
-            }
-
-            .user_account.click-free-pop-active:before {
-                content: '';
-                border-top: 16px solid #fff;
-                background: #f1f1f1;
-                position: absolute;
-                right: 0;
-                border-left: 0 solid transparent;
-                border-right: 16px solid transparent;
-                height: 0px;
-            }
-
-            #account_bar {
-                margin-top: 16px;
-                box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.35);
-                width: 100%;
-            }
-        }
-
-        .header_seach_form .search_input_holder {
-            height: 48px;
-            overflow: hidden;
-            padding-right: 8px;
-            padding: 8px;
-            background: #fff;
-        }
-
-        .header_seach_form .search_input {
-            background: #fff;
-            display: block;
-            border: 2px solid #f0f0ed;
-            color: #000;
-            height: 26px;
-            line-height: 25px;
-            padding: 8px 1%;
-            font-size: 18px;
-            font-family: SolaimanLipi;
-            width: 100%;
-        }
-
-        .header_seach_form .search_close {
-            width: 64px;
-            height: 46px;
-            line-height: 46px;
-            float: right;
-            text-align: center;
-            cursor: pointer;
-            background: #efefef;
-            margin-top: 8px;
-        }
-
-        .header_seach_form .search_button {
-            float: right;
-            height: 46px;
-            line-height: 46px;
-            color: #000;
-            background: #efefef;
-            width: 64px;
-            border: 0 none;
-            cursor: pointer;
-            border-right: 1px solid #fff;
-            border-left: 1px solid #f0f0f0;
-            margin-top: 8px;
-        }
-
-        .video_summery.content {
-            display: none;
-        }
-
-        .footer_only_mobile .bottom {
-            display: none
-        }
-
-        @media screen and (max-width: 800px) {
-
-            .footer_only_mobile .bottom {
-                display: block;
-                margin-bottom: 24px;
-            }
-
-            .footer_only_mobile .bottom a.more_link {
-                color: #369;
-                font-size: 16px;
-                background-color: #f0f0ed;
-                padding: 12px 32px;
-                line-height: normal;
-                display: block;
-                border-radius: 0;
-                border-bottom: 1px solid #9eb6ce;
-            }
-
-            .palo_break {
-                display: block;
-            }
-
-            .pop-each .photo a.pop-active::after, a.jw_media_holder.pop-active::after {
-                display: none
-            }
-
-            .pop-main .pop-slide {
-                position: relative;
-                height: 100% !important;
-            }
-
-            .pop-main .pop-thumb {
-                position: absolute;
-                bottom: 0;
-                display: none;
-            }
-
-            .comments_holder .share_group:hover .share_group_inner {
-                box-shadow: none;
-                left: 24px;
-                top: -10px;
+            .pop-each .photo a::after, a.jw_media_holder::after {
+                background: rgb(51, 51, 51)
             }
 
             .search_result_form {
-                padding: 8px
+                margin-bottom: 16px;
+                background: #f6f6f6;
+                padding: 16px;
             }
 
-            .search_result_form .select_holder {
-                float: left;
-                margin-right: 0;
-                border-bottom: 1px solid #ccc;
-                padding: 8px 1%;
-                width: 98%;
+            .search_result_form .search_input {
+                border: 2px solid #a8a8a8;
+                background: #fff;
+                height: 44px;
             }
 
-            .big_menu .big_menu_top .special_menu ul li {
-                margin-right: 36px
+            a.jw_media_holder {
+                background: #F0F0ED !important;
             }
 
-            .big_menu .big_menu_bottom .bmenu_bottom_imagelinks ul li a span {
+            .header_seach_form .search_input_holder {
+                height: 48px;
+                overflow: hidden;
+                padding-right: 8px;
+                padding: 8px;
+                background: #fff;
+            }
+
+            .header_seach_form .search_input {
+                background: #fff;
                 display: block;
-                height: 32px;
-                line-height: 32px;
-                margin-right: 12px;
-                float: left;
-                width: 32px;
+                border: 2px solid #f0f0ed;
+                color: #000;
+                height: 26px;
+                line-height: 25px;
+                padding: 8px 1%;
+                font-size: 18px;
+                font-family: SolaimanLipi;
+                width: 100%;
+            }
+
+            .account_toggle .jw_notifications_counter.new_notification {
+                color: #F44336;
+                text-shadow: -2px 1px 1px #fff;
+                font-weight: bold;
+            }
+
+            #jw_notifications .jw_notifications_counter:before {
+                content: 'নোটিফিকেশন ';
                 text-align: center;
             }
 
-            a[title="Print"].jadeshare {
+            #jw_notifications #jw_notifications_holder .each_notifications a {
+                border-bottom: 0px;
+                border-top: 1px solid #ccc;
+                padding: 6px 16px;
+            }
+
+            #jw_notifications #jw_notifications_holder .status_new {
+                background-color: #E3F2FD;
+                color: #000;
+            }
+
+            #jw_notifications #jw_notifications_holder .status_old {
+                background-color: #fff
+            }
+
+            .single_album_gallery .pop-each a.pop-active::after {
                 display: none;
             }
 
             .share_group_inner {
-                width: 241px;
-            }
-
-            .secondary_menu_toggle {
-                top: 30px
-            }
-
-            .has_sub {
-                height: 56px;
-                margin-bottom: 38px
-            }
-
-            .secondary_logo .subpage_logo {
-                font-size: 24px;
-                line-height: 30px;
-                clear: both;
-                float: none;
-                width: 94%;
                 position: absolute;
-                margin-top: 10px;
-                padding: 0 1%;
+                left: -3px;
+                bottom: 0;
+                z-index: 1;
+                background: #fff;
+                box-shadow: none;
+                border-radius: 3px;
+                display: none;
+                width: 210px;
+            }
+
+            .comment_share .share_group_inner {
+                top: 0;
+            }
+
+            @media screen and (max-width: 1024px) {
+                .share_group_inner {
+                    display: block;
+                }
+
+                .gallery-body .share_group_inner, .comment_share .share_group_inner {
+                    display: none;
+                }
+
+                .pop-main .share_group_inner {
+                    display: none;
+                }
+
+                .gallery-body .share_group_inner {
+                    left: 33px;
+                }
+
+                .pop-main .share_group:hover .share_group_inner {
+                    display: block;
+                    bottom: 46px;
+                    left: -16px;
+                }
+
+                .pop-main .share_group:hover .share_group_inner:after {
+                    content: '';
+
+                    border-top: 10px solid #fff;
+                    border-left: 10px solid transparent;
+                    border-right: 10px solid transparent;
+                    position: absolute;
+                    bottom: -10px;
+                    left: 21px;
+                }
+            }
+
+            @media screen and (min-width: 801px) {
+
+                .comments_holder .share_group:hover .share_group_inner {
+                    padding: 8px;
+                    width: 320px;
+                    box-shadow: none;
+                    height: 38px;
+                    background: transparent;
+                    top: -10px;
+                    left: 24px;
+                }
+
+                body.no-scrollbar .main_menu {
+                    display: none;
+                }
+
+                .more_main_menu_wrap {
+                    top: 64px;
+                }
+
+                .more_main_menu_inner {
+                    background: #fff;
+                    padding: 1px 5%;
+                    top: 0;
+                }
+
+                .top_big_menu {
+                    border-top: 1px solid #ccc;
+                    max-width: 1280px;
+                    margin: auto;
+                }
+
+                .big_menu .big_menu_top {
+                    border-bottom: 1px solid #ccc;
+                    padding: 24px 0;
+                }
+
+                .big_menu .big_menu_bottom {
+                    padding-top: 24px;
+                }
+
+                .big_menu .big_menu_top .special_menu ul li a {
+                    line-height: 40px;
+                }
+
+                .big_menu .big_menu_bottom .bmenu_bottom_toplinks {
+                    margin-bottom: 24px;
+                }
+
+                .close_more_main {
+                    display: none
+                }
+
+                .big_menu .big_menu_bottom .bmenu_bottom_imagelinks {
+                    margin-bottom: 24px;
+                }
+
+                .foot-middle-container {
+                    padding-bottom: 0
+                }
+
+                .big_menu .big_menu_bottom .bmenu_bottom_right {
+                    padding-bottom: 24px
+                }
+
+                .big_menu .big_menu_bottom .bmenu_bottom_right p {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    line-height: 20px;
+                    font-weight: normal;
+                }
+
+                .foot_big_menu.big_menu .big_menu_top {
+                    border-bottom: 1px solid #4a4a4a;
+                }
+
+                .office_address {
+                    float: left;
+                    margin-right: 4px;
+                }
+
+                /* end menu fix */
+                .more_main_menu_wrap {
+                    overflow: hidden;
+                }
+
+                body.no-scrollbar {
+                    overflow-y: scroll !important;
+                    padding-top: 64px !important;
+                }
+
+                .header_social_wrap {
+                    position: relative;
+                }
+
+                .header_social_wrap .social_links {
+                    display: none;
+                    position: absolute;
+                    top: 76%;
+                    right: 0;
+                    background: transparent;
+                    z-index: 5;
+                    box-shadow: none;
+                }
+
+                .social_links.click-free-pop-active:before {
+                    content: '';
+                    border-top: 15px solid #fff;
+                    border-left: 0px solid transparent;
+                    border-right: 16px solid transparent;
+                    position: absolute;
+                    right: 0;
+                    height: 0px;
+                    background: #f1f1f1;
+                    width: 93%;
+                }
+
+                .header_social_wrap .social_links ul {
+                    list-style: none;
+                    background: #ffffff;
+                    box-shadow: 0 0 5px #000;
+                    margin-top: 15px;
+                }
+
+                .header_social_wrap .social_links a {
+                    color: #616161;
+                    display: block;
+                    overflow: hidden;
+                    padding: 6px 16px;
+                    display: inline-flex;
+                    min-width: 106px;
+                }
+
+                .header_social_wrap .social_links a:before {
+                    font-family: font-jade;
+                    margin-right: 4px;
+                    float: left;
+                    width: 20px;
+                }
+
+                #jw_notifications #jw_notifications_holder {
+                    position: relative;
+                    width: auto;
+                    box-shadow: none;
+                    top: 0;
+                }
+
+                #account_bar .profile_link {
+                    padding-left: 16px;
+                }
+
+                #account_bar .profile_link, #account_bar .logout_link {
+                    border-right: 0 none;
+                }
+
+                #account_bar a {
+                    float: none;
+                    padding: 6px 16px;
+                    text-decoration: none;
+                    display: block;
+                    border-bottom: 1px solid #ccc;
+                }
+
+                #account_bar .profile_pic {
+                    margin-right: 8px;
+                    height: 32px;
+                    float: left;
+                }
+
+                #jw_notifications {
+                    position: relative;
+                    float: none;
+                }
+
+                #jw_notifications .jw_notifications_counter {
+                    background: transparent;
+                    box-shadow: none;
+                    border: 0 none;
+                    padding: 6px 16px;
+                    float: none;
+                }
+
+                i.demo-icon.icon-off {
+                    font-size: 22px;
+                }
+
+                .icon-off:before {
+                    margin: 0 14px 0 0;
+                }
+
+                .header_account_wrap {
+                    position: relative;
+                }
+
+                .user_account {
+                    min-width: 250px;
+                    top: 48px;
+                }
+
+                .user_account.click-free-pop-active:before {
+                    content: '';
+                    border-top: 16px solid #fff;
+                    background: #f1f1f1;
+                    position: absolute;
+                    right: 0;
+                    border-left: 0 solid transparent;
+                    border-right: 16px solid transparent;
+                    height: 0px;
+                }
+
+                #account_bar {
+                    margin-top: 16px;
+                    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.35);
+                    width: 100%;
+                }
+            }
+
+            .header_seach_form .search_input_holder {
+                height: 48px;
+                overflow: hidden;
+                padding-right: 8px;
+                padding: 8px;
+                background: #fff;
+            }
+
+            .header_seach_form .search_input {
+                background: #fff;
                 display: block;
-            }
-
-            .secondary_logo .subpage_logo:before {
-                border-left: 4px solid #d84315;
-                content: '';
+                border: 2px solid #f0f0ed;
+                color: #000;
+                height: 26px;
+                line-height: 25px;
+                padding: 8px 1%;
                 font-size: 18px;
-                padding-right: 4px;
+                font-family: SolaimanLipi;
+                width: 100%;
             }
 
-            .secondary_menu_wrap {
-                width: 66%;
-                right: 0;
-                left: 32%;
-                top: 47px;
-                box-shadow: 0px 4px 5px #000;
-            }
-
-            .secondary_menu a:hover, .secondary_menu a.active, .secondary_menu ul li:last-child a.active {
-                border-left: 4px solid #c00;
-                text-decoration: none;
-                padding-left: 12px;
-                border-bottom: 1px solid #eaeaea;
-            }
-
-            .secondary_menu a {
-                border-bottom: 1px solid #eaeaea;
-            }
-
-            .secondary_menu_toggle.opened {
-                background-color: #fff
-            }
-
-            .header_seach_form .search_button, .header_seach_form .search_close {
-                width: 55px;
+            .header_seach_form .search_close {
+                width: 64px;
                 height: 46px;
                 line-height: 46px;
+                float: right;
+                text-align: center;
+                cursor: pointer;
+                background: #efefef;
                 margin-top: 8px;
             }
 
-            .header_seach_form form[id^=jadewits_search_form] {
-                background-color: #fff;
-                padding-right: 8px;
-                box-shadow: 0 8px 8px -8px #000;
-            }
-
-            .header_social_wrap .social_links {
-                top: 110px;
-                left: 0;
-                box-shadow: none;
-                background: #fff;
-                padding: 12px 1%;
-                box-shadow: 0 5px 5px -5px #000;
-            }
-
-            .mh_toggle {
-                position: static;
-            }
-
-            .header_social_wrap .social_links ul {
+            .header_seach_form .search_button {
                 float: right;
-            }
-
-            .header_social_wrap .social_links li {
-                border-bottom: 0 none;
-                float: left;
-            }
-
-            .header_social_wrap .social_links a {
-                padding: 0;
-                width: 32px;
-                height: 32px;
-                margin-right: 12px;
-                border-radius: 16px;
-            }
-
-            .social_links a.facebook:before {
-                color: #fff !important;
-                background-color: #4267a5;
-                padding: 8px 11px;
-            }
-
-            .social_links a.twitter:before {
-                background-color: #1da1f2;
-                padding: 8px;
-                color: #fff !important;
-            }
-
-            .social_links a.pinterest:before {
-                background-color: #bd081c;
-                padding: 8px 10px;
-                color: #fff !important;
-            }
-
-            .social_links a.googleplus:before {
-                background-color: #dc4a38;
-                padding: 8px 4px;
-                color: #fff !important;
-            }
-
-            .social_links a.linkedin:before {
-                background-color: #0078ba;
-                padding: 8px;
-                color: #fff !important;
-            }
-
-            .social_links a.instagram:before {
-                background-color: #6b3ccb;
-                padding: 8px 6px;
-                color: #fff !important;
-            }
-
-            .account_toggle:before {
-                font-size: 22px;
-                line-height: 30px;
-            }
-
-            .user_account {
-                width: 98%;
-                top: 110px;
-                left: 0;
-                background-color: #fff;
-                padding: 12px 1%;
-                box-shadow: 0 5px 5px -5px #000;
-            }
-
-            #account_bar {
-                background: transparent;
-                box-shadow: none;
-            }
-
-            #jw_notifications .jw_notifications_counter {
-                box-shadow: none;
-                background: transparent;
-            }
-
-            .social_toggle, .account_toggle:before, .account_toggle, .account_toggle .profile_link_holder, .account_toggle .profile_link_holder img {
-                width: 32px;
-                height: 32px;
-            }
-
-            .social_toggle:before {
-                font-size: 22px;
-                line-height: 30px;
-                width: 32px;
-                height: 32px;
-            }
-
-            .account_toggle:before, .social_toggle:before {
-                margin-top: 14px;
-            }
-
-            .header_account_wrap {
-                margin-right: 16px;
-            }
-
-            .other_language_link {
-                line-height: 60px
-            }
-
-            #account_bar a + a {
-                border-left: 1px solid #ccc;
-            }
-
-            .comments_title {
-                padding: 24px 16px 8px;
-                margin: 12px -16px;
-                background-color: #e2e2e2;
-                box-shadow: 0px 8px 8px -8px #9a9a9a inset;
-            }
-
-            .comments_holder .share_group .share_group_inner {
-                display: none;
-            }
-
-            .comments_holder .share_group:hover .share_group_inner {
-                display: block;
-            }
-
-        }
-
-        li.menu_page_id_1401 a {
-            color: #ff7a00;
-        }
-    </style>
-    <style>
-        /*featured part style*/
-        .palo_featured_1 .has_image h2.title_holder {
-            font-size: 30px;
-            line-height: 40px;
-        }
-
-        /* Today's paper Rounak */
-
-        .todays_newspaper_pages_widget .todayspaper_container li.headbar:before {
-            height: 18px;
-            margin-top: 7px;
-        }
-
-        /* Tabbed widget footer hide Rounak
-.contents_tabbed .view_all_wrap{
-display: none;
-}
-.contents_tabbed  .tabbed_conents .tabs_content ul li:last-child{
-border-bottom: none;
-}
-*/
-        /* start todays paper menu*/
-
-        .palo_todays_paper_widget .todayspaper_container {
-            background-color: #f6f6f6;
-            position: relative;
-        }
-
-        .palo_todays_paper_widget .todayspaper_container h3 {
-            padding: 16px;
-            border-bottom: 1px solid #e7e7e7;
-            color: #555555;
-            font-size: 18px;
-            margin-bottom: 0px;
-            margin-top: 0px;
-
-        }
-
-        .palo_todays_paper_widget ul.menu_container_t {
-            padding: 16px 0px 25px 16px;
-            margin: 0px;
-        }
-
-        .palo_todays_paper_widget ul.menu_container_t li {
-            font-size: 16px;
-            list-style: none;
-            margin: 0;
-            padding: 5px 0px;
-
-        }
-
-        .palo_todays_paper_widget ul.menu_container_t li a {
-            color: #999999;
-            text-decoration: none;
-        }
-
-        .palo_todays_paper_widget ul.menu_container_t li a:hover {
-            color: #333333;
-            text-decoration: none;
-        }
-
-        .palo_todays_paper_widget li.headbar:before {
-            content: ' ';
-            width: 4px;
-            height: 20px;
-            background: #c00;
-        }
-
-        .palo_todays_paper_widget ul.menu_container_t li.headbar a {
-            padding-left: 10px;
-            color: #000;
-            cursor: auto;
-            font-size: 18px;
-        }
-
-        .palo_todays_paper_widget .secondary_menu_wrap_palo {
-            height: auto;
-            background: none;
-        }
-
-        .palo_todays_paper_widget .secondary_menu_palo li, .palo_todays_paper_widget .secondary_menu_palo a {
-            float: none;
-        }
-
-        .palo_todays_paper_widget .secondary_menu_palo a:hover, .palo_todays_paper_widget .secondary_menu_palo a.active {
-            border-bottom: none;
-        }
-
-        .palo_todays_paper_widget .todayspaper_container li.headbar:before {
-            height: 18px;
-            margin-top: 7px;
-        }
-
-        .bottom, .pagination {
-            text-align: center;
-        }
-
-        .bottom a.more_link, .pagination .next_page, .pagination .previous_page {
-            background-color: #757575;
-            padding: 12px 90px;
-            color: #ffffff;
-            font-size: 20px;
-            border-radius: 4px;
-        }
-
-        .pagination .next_page, .pagination .previous_page {
-            float: none;
-            padding: 12px 40px;
-        }
-
-        .mobile_show {
-            display: none;
-            margin: auto;
-        }
-
-        .desktop_show {
-            display: block;
-            margin: 0px auto 8px;
-        }
-
-        .news_inner_spcl_ad {
-            float: left;
-            margin-right: 15px;
-        }
-
-        span.highlighted_txt {
-            color: #054e84;
-            font-weight: bold;
-        }
-
-        /*
-.section_footer.widget a.more_link {
-    color: #231f20;
-    background-color: #a0a0a0;
-    font-size: 20px;
-    line-height: 28px;
-    padding: 6px;
-
-}
-.pagination a, .pagination span {
-    color: #FFFFFF !important;
-}
-*/
-        @media screen and (max-width: 800px) {
-            .desktop_show {
-                display: none;
-            }
-
-            .mobile_show {
-                display: block;
-                margin: 4px auto 10px;
-            }
-
-            .news_inner_spcl_ad {
-                float: none;
-                text-align: center;
-            }
-
-            .bottom a.more_link, .section_footer.widget a.more_link {
-                line-height: 70px;
-            }
-
-            .pagination .next_page, .pagination .previous_page {
-                line-height: 20px;
-            }
-
-            .contents .has_image.m_show_image_as_top .info h2.title_holder .title {
-                font-size: 22px;
-                line-height: 30px;
-            }
-
-            .contents .has_image.image_left .info h2.title_holder .title, .contents.m_show_2col .has_image.m_show_image_as_top .info h2.title_holder .title {
-                font-size: 18px;
-                line-height: 24px;
-            }
-
-            .palo_todays_paper_widget .secondary_menu_wrap_palo {
-
-                box-shadow: 0px 4px 5px #000;
-                height: auto;
-                position: absolute;
-                z-index: 4;
-                background: #fff;
-                width: 50%;
-                top: 0px;
-                left: 50%;
-                display: none;
-            }
-
-            .section_footer.widget a.more_link {
-                margin: 10PX;
-            }
-
-            .secondary_menu_toggle_palo.opened::before {
-                font-family: font-jade;
-                font-size: 24px;
-            }
-
-            .secondary_menu_toggle_palo {
-                position: absolute;
-
-                /*  top: 50%;
-  right: 10px;*/
-                top: 20px;
-                right: 3px;
-                margin-top: -17px;
-                height: 34px;
-                width: 34px;
-                text-align: center;
-                line-height: 34px;
-                background: rgba(0, 0, 0, 0.15);
+                height: 46px;
+                line-height: 46px;
                 color: #000;
+                background: #efefef;
+                width: 64px;
+                border: 0 none;
                 cursor: pointer;
+                border-right: 1px solid #fff;
+                border-left: 1px solid #f0f0f0;
+                margin-top: 8px;
             }
 
-            .todayspaper_container {
-                line-height: 0px;
+            .video_summery.content {
+                display: none;
             }
 
-            .calender_icon {
-                float: left;
-                margin-left: 20px;
+            .footer_only_mobile .bottom {
+                display: none
+            }
+
+            @media screen and (max-width: 800px) {
+
+                .footer_only_mobile .bottom {
+                    display: block;
+                    margin-bottom: 24px;
+                }
+
+                .footer_only_mobile .bottom a.more_link {
+                    color: #369;
+                    font-size: 16px;
+                    background-color: #f0f0ed;
+                    padding: 12px 32px;
+                    line-height: normal;
+                    display: block;
+                    border-radius: 0;
+                    border-bottom: 1px solid #9eb6ce;
+                }
+
+                .palo_break {
+                    display: block;
+                }
+
+                .pop-each .photo a.pop-active::after, a.jw_media_holder.pop-active::after {
+                    display: none
+                }
+
+                .pop-main .pop-slide {
+                    position: relative;
+                    height: 100% !important;
+                }
+
+                .pop-main .pop-thumb {
+                    position: absolute;
+                    bottom: 0;
+                    display: none;
+                }
+
+                .comments_holder .share_group:hover .share_group_inner {
+                    box-shadow: none;
+                    left: 24px;
+                    top: -10px;
+                }
+
+                .search_result_form {
+                    padding: 8px
+                }
+
+                .search_result_form .select_holder {
+                    float: left;
+                    margin-right: 0;
+                    border-bottom: 1px solid #ccc;
+                    padding: 8px 1%;
+                    width: 98%;
+                }
+
+                .big_menu .big_menu_top .special_menu ul li {
+                    margin-right: 36px
+                }
+
+                .big_menu .big_menu_bottom .bmenu_bottom_imagelinks ul li a span {
+                    display: block;
+                    height: 32px;
+                    line-height: 32px;
+                    margin-right: 12px;
+                    float: left;
+                    width: 32px;
+                    text-align: center;
+                }
+
+                a[title="Print"].jadeshare {
+                    display: none;
+                }
+
+                .share_group_inner {
+                    width: 241px;
+                }
+
+                .secondary_menu_toggle {
+                    top: 30px
+                }
+
+                .has_sub {
+                    height: 56px;
+                    margin-bottom: 38px
+                }
+
+                .secondary_logo .subpage_logo {
+                    font-size: 24px;
+                    line-height: 30px;
+                    clear: both;
+                    float: none;
+                    width: 94%;
+                    position: absolute;
+                    margin-top: 10px;
+                    padding: 0 1%;
+                    display: block;
+                }
+
+                .secondary_logo .subpage_logo:before {
+                    border-left: 4px solid #d84315;
+                    content: '';
+                    font-size: 18px;
+                    padding-right: 4px;
+                }
+
+                .secondary_menu_wrap {
+                    width: 66%;
+                    right: 0;
+                    left: 32%;
+                    top: 47px;
+                    box-shadow: 0px 4px 5px #000;
+                }
+
+                .secondary_menu a:hover, .secondary_menu a.active, .secondary_menu ul li:last-child a.active {
+                    border-left: 4px solid #c00;
+                    text-decoration: none;
+                    padding-left: 12px;
+                    border-bottom: 1px solid #eaeaea;
+                }
+
+                .secondary_menu a {
+                    border-bottom: 1px solid #eaeaea;
+                }
+
+                .secondary_menu_toggle.opened {
+                    background-color: #fff
+                }
+
+                .header_seach_form .search_button, .header_seach_form .search_close {
+                    width: 55px;
+                    height: 46px;
+                    line-height: 46px;
+                    margin-top: 8px;
+                }
+
+                .header_seach_form form[id^=jadewits_search_form] {
+                    background-color: #fff;
+                    padding-right: 8px;
+                    box-shadow: 0 8px 8px -8px #000;
+                }
+
+                .header_social_wrap .social_links {
+                    top: 110px;
+                    left: 0;
+                    box-shadow: none;
+                    background: #fff;
+                    padding: 12px 1%;
+                    box-shadow: 0 5px 5px -5px #000;
+                }
+
+                .mh_toggle {
+                    position: static;
+                }
+
+                .header_social_wrap .social_links ul {
+                    float: right;
+                }
+
+                .header_social_wrap .social_links li {
+                    border-bottom: 0 none;
+                    float: left;
+                }
+
+                .header_social_wrap .social_links a {
+                    padding: 0;
+                    width: 32px;
+                    height: 32px;
+                    margin-right: 12px;
+                    border-radius: 16px;
+                }
+
+                .social_links a.facebook:before {
+                    color: #fff !important;
+                    background-color: #4267a5;
+                    padding: 8px 11px;
+                }
+
+                .social_links a.twitter:before {
+                    background-color: #1da1f2;
+                    padding: 8px;
+                    color: #fff !important;
+                }
+
+                .social_links a.pinterest:before {
+                    background-color: #bd081c;
+                    padding: 8px 10px;
+                    color: #fff !important;
+                }
+
+                .social_links a.googleplus:before {
+                    background-color: #dc4a38;
+                    padding: 8px 4px;
+                    color: #fff !important;
+                }
+
+                .social_links a.linkedin:before {
+                    background-color: #0078ba;
+                    padding: 8px;
+                    color: #fff !important;
+                }
+
+                .social_links a.instagram:before {
+                    background-color: #6b3ccb;
+                    padding: 8px 6px;
+                    color: #fff !important;
+                }
+
+                .account_toggle:before {
+                    font-size: 22px;
+                    line-height: 30px;
+                }
+
+                .user_account {
+                    width: 98%;
+                    top: 110px;
+                    left: 0;
+                    background-color: #fff;
+                    padding: 12px 1%;
+                    box-shadow: 0 5px 5px -5px #000;
+                }
+
+                #account_bar {
+                    background: transparent;
+                    box-shadow: none;
+                }
+
+                #jw_notifications .jw_notifications_counter {
+                    box-shadow: none;
+                    background: transparent;
+                }
+
+                .social_toggle, .account_toggle:before, .account_toggle, .account_toggle .profile_link_holder, .account_toggle .profile_link_holder img {
+                    width: 32px;
+                    height: 32px;
+                }
+
+                .social_toggle:before {
+                    font-size: 22px;
+                    line-height: 30px;
+                    width: 32px;
+                    height: 32px;
+                }
+
+                .account_toggle:before, .social_toggle:before {
+                    margin-top: 14px;
+                }
+
+                .header_account_wrap {
+                    margin-right: 16px;
+                }
+
+                .other_language_link {
+                    line-height: 60px
+                }
+
+                #account_bar a + a {
+                    border-left: 1px solid #ccc;
+                }
+
+                .comments_title {
+                    padding: 24px 16px 8px;
+                    margin: 12px -16px;
+                    background-color: #e2e2e2;
+                    box-shadow: 0px 8px 8px -8px #9a9a9a inset;
+                }
+
+                .comments_holder .share_group .share_group_inner {
+                    display: none;
+                }
+
+                .comments_holder .share_group:hover .share_group_inner {
+                    display: block;
+                }
+
+            }
+
+            li.menu_page_id_1401 a {
+                color: #ff7a00;
+            }
+        </style>
+        <style>
+            /*featured part style*/
+            .palo_featured_1 .has_image h2.title_holder {
+                font-size: 30px;
+                line-height: 40px;
+            }
+
+            /* Today's paper Rounak */
+
+            .todays_newspaper_pages_widget .todayspaper_container li.headbar:before {
+                height: 18px;
+                margin-top: 7px;
+            }
+
+            /* Tabbed widget footer hide Rounak
+    .contents_tabbed .view_all_wrap{
+    display: none;
+    }
+    .contents_tabbed  .tabbed_conents .tabs_content ul li:last-child{
+    border-bottom: none;
+    }
+    */
+            /* start todays paper menu*/
+
+            .palo_todays_paper_widget .todayspaper_container {
+                background-color: #f6f6f6;
+                position: relative;
+            }
+
+            .palo_todays_paper_widget .todayspaper_container h3 {
+                padding: 16px;
+                border-bottom: 1px solid #e7e7e7;
+                color: #555555;
+                font-size: 18px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+
             }
 
             .palo_todays_paper_widget ul.menu_container_t {
-                padding: 0;
-                display: block;
-                background: #fff;
+                padding: 16px 0px 25px 16px;
+                margin: 0px;
             }
 
-            .palo_todays_paper_widget ul.menu_container_t li.headbar {
-                background: none;
-                box-shadow: none;
+            .palo_todays_paper_widget ul.menu_container_t li {
+                font-size: 16px;
+                list-style: none;
+                margin: 0;
+                padding: 5px 0px;
+
+            }
+
+            .palo_todays_paper_widget ul.menu_container_t li a {
+                color: #999999;
+                text-decoration: none;
+            }
+
+            .palo_todays_paper_widget ul.menu_container_t li a:hover {
+                color: #333333;
+                text-decoration: none;
             }
 
             .palo_todays_paper_widget li.headbar:before {
                 content: ' ';
-                width: 0;
-                height:;
-
-                background: none;
-                padding-right: 0px;
-            }
-
-            .mobile_button {
-                background-color: #f6f6f6;
-            }
-
-            .todays_newspaper_pages_widget ul.menu_container_t li {
-                padding: 0px 0px;
-            }
-
-            .palo_todays_paper_widget ul.menu_container_t li a {
-                color: #000;
+                width: 4px;
+                height: 20px;
+                background: #c00;
             }
 
             .palo_todays_paper_widget ul.menu_container_t li.headbar a {
-                border-left: 4px solid #c00;
-                text-decoration: none;
-                padding-left: 12px;
-                border-bottom: 1px solid #eaeaea;
-            }
-
-            .secondary_menu_palo a {
-                line-height: 44px;
-                padding: 0 10px;
-                font-size: 16px;
-                border-bottom: 0 none;
+                padding-left: 10px;
                 color: #000;
-                border-bottom: 1px solid #eaeaea;
-                display: block;
+                cursor: auto;
+                font-size: 18px;
             }
 
-        }
+            .palo_todays_paper_widget .secondary_menu_wrap_palo {
+                height: auto;
+                background: none;
+            }
 
-        .palo_privacy_link {
-            color: #999999 !important;
-            text-decoration: underline;
-        }
+            .palo_todays_paper_widget .secondary_menu_palo li, .palo_todays_paper_widget .secondary_menu_palo a {
+                float: none;
+            }
 
-        .palo_privacy_link:hover {
-            color: #ffffff;
-        }
+            .palo_todays_paper_widget .secondary_menu_palo a:hover, .palo_todays_paper_widget .secondary_menu_palo a.active {
+                border-bottom: none;
+            }
 
-        /* end todays paper menu*/
-    </style>
+            .palo_todays_paper_widget .todayspaper_container li.headbar:before {
+                height: 18px;
+                margin-top: 7px;
+            }
 
+            .bottom, .pagination {
+                text-align: center;
+            }
+
+            .bottom a.more_link, .pagination .next_page, .pagination .previous_page {
+                background-color: #757575;
+                padding: 12px 90px;
+                color: #ffffff;
+                font-size: 20px;
+                border-radius: 4px;
+            }
+
+            .pagination .next_page, .pagination .previous_page {
+                float: none;
+                padding: 12px 40px;
+            }
+
+            .mobile_show {
+                display: none;
+                margin: auto;
+            }
+
+            .desktop_show {
+                display: block;
+                margin: 0px auto 8px;
+            }
+
+            .news_inner_spcl_ad {
+                float: left;
+                margin-right: 15px;
+            }
+
+            span.highlighted_txt {
+                color: #054e84;
+                font-weight: bold;
+            }
+
+            /*
+    .section_footer.widget a.more_link {
+        color: #231f20;
+        background-color: #a0a0a0;
+        font-size: 20px;
+        line-height: 28px;
+        padding: 6px;
+
+    }
+    .pagination a, .pagination span {
+        color: #FFFFFF !important;
+    }
+    */
+            @media screen and (max-width: 800px) {
+                .desktop_show {
+                    display: none;
+                }
+
+                .mobile_show {
+                    display: block;
+                    margin: 4px auto 10px;
+                }
+
+                .news_inner_spcl_ad {
+                    float: none;
+                    text-align: center;
+                }
+
+                .bottom a.more_link, .section_footer.widget a.more_link {
+                    line-height: 70px;
+                }
+
+                .pagination .next_page, .pagination .previous_page {
+                    line-height: 20px;
+                }
+
+                .contents .has_image.m_show_image_as_top .info h2.title_holder .title {
+                    font-size: 22px;
+                    line-height: 30px;
+                }
+
+                .contents .has_image.image_left .info h2.title_holder .title, .contents.m_show_2col .has_image.m_show_image_as_top .info h2.title_holder .title {
+                    font-size: 18px;
+                    line-height: 24px;
+                }
+
+                .palo_todays_paper_widget .secondary_menu_wrap_palo {
+
+                    box-shadow: 0px 4px 5px #000;
+                    height: auto;
+                    position: absolute;
+                    z-index: 4;
+                    background: #fff;
+                    width: 50%;
+                    top: 0px;
+                    left: 50%;
+                    display: none;
+                }
+
+                .section_footer.widget a.more_link {
+                    margin: 10PX;
+                }
+
+                .secondary_menu_toggle_palo.opened::before {
+                    font-family: font-jade;
+                    font-size: 24px;
+                }
+
+                .secondary_menu_toggle_palo {
+                    position: absolute;
+
+                    /*  top: 50%;
+      right: 10px;*/
+                    top: 20px;
+                    right: 3px;
+                    margin-top: -17px;
+                    height: 34px;
+                    width: 34px;
+                    text-align: center;
+                    line-height: 34px;
+                    background: rgba(0, 0, 0, 0.15);
+                    color: #000;
+                    cursor: pointer;
+                }
+
+                .todayspaper_container {
+                    line-height: 0px;
+                }
+
+                .calender_icon {
+                    float: left;
+                    margin-left: 20px;
+                }
+
+                .palo_todays_paper_widget ul.menu_container_t {
+                    padding: 0;
+                    display: block;
+                    background: #fff;
+                }
+
+                .palo_todays_paper_widget ul.menu_container_t li.headbar {
+                    background: none;
+                    box-shadow: none;
+                }
+
+                .palo_todays_paper_widget li.headbar:before {
+                    content: ' ';
+                    width: 0;
+                    height:;
+
+                    background: none;
+                    padding-right: 0px;
+                }
+
+                .mobile_button {
+                    background-color: #f6f6f6;
+                }
+
+                .todays_newspaper_pages_widget ul.menu_container_t li {
+                    padding: 0px 0px;
+                }
+
+                .palo_todays_paper_widget ul.menu_container_t li a {
+                    color: #000;
+                }
+
+                .palo_todays_paper_widget ul.menu_container_t li.headbar a {
+                    border-left: 4px solid #c00;
+                    text-decoration: none;
+                    padding-left: 12px;
+                    border-bottom: 1px solid #eaeaea;
+                }
+
+                .secondary_menu_palo a {
+                    line-height: 44px;
+                    padding: 0 10px;
+                    font-size: 16px;
+                    border-bottom: 0 none;
+                    color: #000;
+                    border-bottom: 1px solid #eaeaea;
+                    display: block;
+                }
+
+            }
+
+            .palo_privacy_link {
+                color: #999999 !important;
+                text-decoration: underline;
+            }
+
+            .palo_privacy_link:hover {
+                color: #ffffff;
+            }
+
+            /* end todays paper menu*/
+        </style>
+
+        <script>
+            _atrk_opts = {atrk_acct: "VTJem1aIF5R1fn", domain: "prothomalo.com", dynamic: true};
+
+            (function () {
+                var as = document.createElement('script');
+                as.type = 'text/javascript';
+                as.async = true;
+                as.src = "https://certify-js.alexametrics.com/atrk.js";
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(as, s);
+            })();
+        </script>
+        <noscript>
+            <img alt="" height="1" src="https://certify.alexametrics.com/atrk.gif?account=VTJem1aIF5R1fn"
+                 style="display:none" width="1"/>
+        </noscript>
+        <meta content="uRs2Ls-3fpuKgaEKAvA2VyjiZV3lPAQiKnRl9wpxsVA" name="google-site-verification"/>
+    </head>
+    <body class="page_color_ jw_body_page_id_216 jw_body_content_id_1564540 ">
+    <div id="fb-root">
+    </div>
     <script>
-        _atrk_opts = {atrk_acct: "VTJem1aIF5R1fn", domain: "prothomalo.com", dynamic: true};
-
-        (function () {
-            var as = document.createElement('script');
-            as.type = 'text/javascript';
-            as.async = true;
-            as.src = "https://certify-js.alexametrics.com/atrk.js";
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(as, s);
-        })();
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1499138263726489";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
     </script>
-    <noscript>
-        <img alt="" height="1" src="https://certify.alexametrics.com/atrk.gif?account=VTJem1aIF5R1fn"
-             style="display:none" width="1"/>
-    </noscript>
-    <meta content="uRs2Ls-3fpuKgaEKAvA2VyjiZV3lPAQiKnRl9wpxsVA" name="google-site-verification"/>
-</head>
-<body class="page_color_ jw_body_page_id_216 jw_body_content_id_1564540 ">
-<div id="fb-root">
-</div>
-<script>
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7&appId=1499138263726489";
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
-<div class="whole_wrapper">
-    <div class="whole_inner">
+    <div class="whole_wrapper">
+        <div class="whole_inner">
 
-        <div class="secondary_header" style="
+            <div class="secondary_header" style="
 
 
 									background-image:url('//paloimages.prothom-alo.com/contents/uploads/default/2017/01/28/0220b43742d316d91b2b1b4af72fa7a1-588c5702a388e.png');
@@ -1196,225 +1203,226 @@ border-bottom: none;
 					-o-background-size: cover;
 					background-size: cover;
 				">
-            <script>
-                jw_menu_fixer('.secondary_menu', 'navigation');
-                $('.secondary_menu_toggle').click(function () {
-                    $('.secondary_menu_wrap').toggle();
-                    $('.secondary_menu_toggle').toggleClass('opened');
-                });
-                //now run horizontal menu hover helper
-                //jadewits_horizontal_hover_menu({container:'.main_menu',waittime:500});
-            </script>
-        </div>
-        <div class="spacer mb24">
+                <script>
+                    jw_menu_fixer('.secondary_menu', 'navigation');
+                    $('.secondary_menu_toggle').click(function () {
+                        $('.secondary_menu_wrap').toggle();
+                        $('.secondary_menu_toggle').toggleClass('opened');
+                    });
+                    //now run horizontal menu hover helper
+                    //jadewits_horizontal_hover_menu({container:'.main_menu',waittime:500});
+                </script>
+            </div>
+            <div class="spacer mb24">
+            </div>
+
         </div>
 
     </div>
-
-</div>
-<div class="pagemaker">
-    <div class="p _col" id="div_2136">
-        <div class="inner">
-            <div class="wrapper container_white_bg " id="wrapper_52770">
-                <div class="inner">
-                    <div class="p_p _col" id="div_52771">
-                        <div class="inner">
-                            <div class="widget_color_ widget_wrap" id="widget_64929">
-                                <div class="widget_text widget">
-                                    <div class="widget_text_inner aunqur">
-                                        <div class="content">
-                                            <style>
-                                                .secondary_header {
-                                                    background: #9ccc65;
-                                                    position: relative;
-                                                }
-
-                                                .secondary_menu a:hover, .secondary_menu a.active {
-                                                    border-bottom: 4px solid #fdd835;
-                                                }
-
-                                                .secondary_menu a {
-                                                    color: #fff;
-                                                }
-
-                                                @media only screen and (max-width: 800px) {
-                                                    .secondary_menu a {
-                                                        color: #000;
+    <div class="pagemaker">
+        <div class="p _col" id="div_2136">
+            <div class="inner">
+                <div class="wrapper container_white_bg " id="wrapper_52770">
+                    <div class="inner">
+                        <div class="p_p _col" id="div_52771">
+                            <div class="inner">
+                                <div class="widget_color_ widget_wrap" id="widget_64929">
+                                    <div class="widget_text widget">
+                                        <div class="widget_text_inner aunqur">
+                                            <div class="content">
+                                                <style>
+                                                    .secondary_header {
+                                                        background: #9ccc65;
+                                                        position: relative;
                                                     }
-                                                }
-                                            </style>
+
+                                                    .secondary_menu a:hover, .secondary_menu a.active {
+                                                        border-bottom: 4px solid #fdd835;
+                                                    }
+
+                                                    .secondary_menu a {
+                                                        color: #fff;
+                                                    }
+
+                                                    @media only screen and (max-width: 800px) {
+                                                        .secondary_menu a {
+                                                            color: #000;
+                                                        }
+                                                    }
+                                                </style>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="widget_color_ widget_wrap" id="widget_56620">
-                                <div class="detail_widget_banner widget">
-                                    <div class="content_detail">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="widget_color_ widget_wrap" id="widget_94761">
-                                <div class="widget_text widget">
-                                    <div class="widget_text_inner aunqur">
-                                        <div class="content">
-                                            <style>
-                                                .palo_wc_team {
-                                                    overflow: hidden;
-                                                    padding: 8px 16px;
-                                                    float: left;
-                                                    background: #f0f0ed;
-                                                    border: 1px solid #ccc;
-                                                    margin-right: 24px;
-                                                    margin-bottom: 8px;
-                                                }
-
-                                                .palo_wc_flag_top {
-                                                    /*	background: url("http://paimages.prothom-alo.com/contents/uploads/media/2018/01/28/4368180b7c0529a06bdfc73b3255a919-5a6db3e610578.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
-*/
-                                                    display: inline-block;
-                                                    float: left;
-                                                    height: 23px;
-                                                    width: 34px;
-                                                    margin: 3px 9px 3px 1px;
-                                                    box-shadow: 0 0 1px #676767 inset;
-                                                }
-
-                                                .palo_wc_flag_top.russia {
-                                                    background-position: -5px -5px;
-                                                }
-
-                                                .palo_wc_flag_top.saudi {
-                                                    background-position: -44px -5px;
-                                                }
-
-                                                .palo_wc_flag_top.egypt {
-                                                    background-position: -83px -5px;
-                                                }
-
-                                                .palo_wc_flag_top.uruguay {
-                                                    background-position: -122px -5px;
-                                                }
-
-                                                .palo_wc_flag_top.portugal {
-                                                    background-position: -161px -5px;
-                                                }
-
-                                                .palo_wc_flag_top.spain {
-                                                    background-position: -200px -5px;
-                                                }
-
-                                                .palo_wc_flag_top.morocco {
-                                                    background-position: -239px -5px;
-                                                }
-
-                                                .palo_wc_flag_top.iran {
-                                                    background-position: -278px -5px;
-                                                }
-
-                                                .palo_wc_flag_top.france {
-                                                    background-position: -5px -32px;
-                                                }
-
-                                                .palo_wc_flag_top.australia {
-                                                    background-position: -44px -32px;
-                                                }
-
-                                                .palo_wc_flag_top.peru {
-                                                    background-position: -83px -32px;
-                                                }
-
-                                                .palo_wc_flag_top.denmark {
-                                                    background-position: -122px -32px;
-                                                }
-
-                                                .palo_wc_flag_top.argentina {
-                                                    background-position: -161px -32px;
-                                                }
-
-                                                .palo_wc_flag_top.iceland {
-                                                    background-position: -200px -32px;
-                                                }
-
-                                                .palo_wc_flag_top.croatia {
-                                                    background-position: -239px -32px;
-                                                }
-
-                                                .palo_wc_flag_top.nigeria {
-                                                    background-position: -278px -32px;
-                                                }
-
-                                                .palo_wc_flag_top.brazil {
-                                                    background-position: -5px -59px;
-                                                }
-
-                                                .palo_wc_flag_top.switzerland {
-                                                    background-position: -44px -59px;
-                                                }
-
-                                                .palo_wc_flag_top.costarica {
-                                                    background-position: -83px -59px;
-                                                }
-
-                                                .palo_wc_flag_top.serbia {
-                                                    background-position: -122px -59px;
-                                                }
-
-                                                .palo_wc_flag_top.germany {
-                                                    background-position: -161px -59px;
-                                                }
-
-                                                .palo_wc_flag_top.mexico {
-                                                    background-position: -200px -59px;
-                                                }
-
-                                                .palo_wc_flag_top.sweden {
-                                                    background-position: -239px -59px;
-                                                }
-
-                                                .palo_wc_flag_top.south_korea {
-                                                    background-position: -278px -59px;
-                                                }
-
-                                                .palo_wc_flag_top.belgium {
-                                                    background-position: -5px -86px;
-                                                }
-
-                                                .palo_wc_flag_top.panama {
-                                                    background-position: -44px -86px;
-                                                }
-
-                                                .palo_wc_flag_top.tunisia {
-                                                    background-position: -83px -86px;
-                                                }
-
-                                                .palo_wc_flag_top.england {
-                                                    background-position: -122px -86px;
-                                                }
-
-                                                .palo_wc_flag_top.poland {
-                                                    background-position: -161px -86px;
-                                                }
-
-                                                .palo_wc_flag_top.senegal {
-                                                    background-position: -200px -86px;
-                                                }
-
-                                                .palo_wc_flag_top.colombia {
-                                                    background-position: -239px -86px;
-                                                }
-
-                                                .palo_wc_flag_top.japan {
-                                                    background-position: -278px -86px;
-                                                }
-                                            </style>
+                                <div class="widget_color_ widget_wrap" id="widget_56620">
+                                    <div class="detail_widget_banner widget">
+                                        <div class="content_detail">
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="widget_color_ widget_wrap" id="widget_95297">
-                                <div class="widget_text widget">
-                                    <div class="widget_text_inner aunqur">
-                                        <div class="content">
+                                <div class="widget_color_ widget_wrap" id="widget_94761">
+                                    <div class="widget_text widget">
+                                        <div class="widget_text_inner aunqur">
+                                            <div class="content">
+                                                <style>
+                                                    .palo_wc_team {
+                                                        overflow: hidden;
+                                                        padding: 8px 16px;
+                                                        float: left;
+                                                        background: #f0f0ed;
+                                                        border: 1px solid #ccc;
+                                                        margin-right: 24px;
+                                                        margin-bottom: 8px;
+                                                    }
+
+                                                    .palo_wc_flag_top {
+                                                        /*	background: url("http://paimages.prothom-alo.com/contents/uploads/media/2018/01/28/4368180b7c0529a06bdfc73b3255a919-5a6db3e610578.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    */
+                                                        display: inline-block;
+                                                        float: left;
+                                                        height: 23px;
+                                                        width: 34px;
+                                                        margin: 3px 9px 3px 1px;
+                                                        box-shadow: 0 0 1px #676767 inset;
+                                                    }
+
+                                                    .palo_wc_flag_top.russia {
+                                                        background-position: -5px -5px;
+                                                    }
+
+                                                    .palo_wc_flag_top.saudi {
+                                                        background-position: -44px -5px;
+                                                    }
+
+                                                    .palo_wc_flag_top.egypt {
+                                                        background-position: -83px -5px;
+                                                    }
+
+                                                    .palo_wc_flag_top.uruguay {
+                                                        background-position: -122px -5px;
+                                                    }
+
+                                                    .palo_wc_flag_top.portugal {
+                                                        background-position: -161px -5px;
+                                                    }
+
+                                                    .palo_wc_flag_top.spain {
+                                                        background-position: -200px -5px;
+                                                    }
+
+                                                    .palo_wc_flag_top.morocco {
+                                                        background-position: -239px -5px;
+                                                    }
+
+                                                    .palo_wc_flag_top.iran {
+                                                        background-position: -278px -5px;
+                                                    }
+
+                                                    .palo_wc_flag_top.france {
+                                                        background-position: -5px -32px;
+                                                    }
+
+                                                    .palo_wc_flag_top.australia {
+                                                        background-position: -44px -32px;
+                                                    }
+
+                                                    .palo_wc_flag_top.peru {
+                                                        background-position: -83px -32px;
+                                                    }
+
+                                                    .palo_wc_flag_top.denmark {
+                                                        background-position: -122px -32px;
+                                                    }
+
+                                                    .palo_wc_flag_top.argentina {
+                                                        background-position: -161px -32px;
+                                                    }
+
+                                                    .palo_wc_flag_top.iceland {
+                                                        background-position: -200px -32px;
+                                                    }
+
+                                                    .palo_wc_flag_top.croatia {
+                                                        background-position: -239px -32px;
+                                                    }
+
+                                                    .palo_wc_flag_top.nigeria {
+                                                        background-position: -278px -32px;
+                                                    }
+
+                                                    .palo_wc_flag_top.brazil {
+                                                        background-position: -5px -59px;
+                                                    }
+
+                                                    .palo_wc_flag_top.switzerland {
+                                                        background-position: -44px -59px;
+                                                    }
+
+                                                    .palo_wc_flag_top.costarica {
+                                                        background-position: -83px -59px;
+                                                    }
+
+                                                    .palo_wc_flag_top.serbia {
+                                                        background-position: -122px -59px;
+                                                    }
+
+                                                    .palo_wc_flag_top.germany {
+                                                        background-position: -161px -59px;
+                                                    }
+
+                                                    .palo_wc_flag_top.mexico {
+                                                        background-position: -200px -59px;
+                                                    }
+
+                                                    .palo_wc_flag_top.sweden {
+                                                        background-position: -239px -59px;
+                                                    }
+
+                                                    .palo_wc_flag_top.south_korea {
+                                                        background-position: -278px -59px;
+                                                    }
+
+                                                    .palo_wc_flag_top.belgium {
+                                                        background-position: -5px -86px;
+                                                    }
+
+                                                    .palo_wc_flag_top.panama {
+                                                        background-position: -44px -86px;
+                                                    }
+
+                                                    .palo_wc_flag_top.tunisia {
+                                                        background-position: -83px -86px;
+                                                    }
+
+                                                    .palo_wc_flag_top.england {
+                                                        background-position: -122px -86px;
+                                                    }
+
+                                                    .palo_wc_flag_top.poland {
+                                                        background-position: -161px -86px;
+                                                    }
+
+                                                    .palo_wc_flag_top.senegal {
+                                                        background-position: -200px -86px;
+                                                    }
+
+                                                    .palo_wc_flag_top.colombia {
+                                                        background-position: -239px -86px;
+                                                    }
+
+                                                    .palo_wc_flag_top.japan {
+                                                        background-position: -278px -86px;
+                                                    }
+                                                </style>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="widget_color_ widget_wrap" id="widget_95297">
+                                    <div class="widget_text widget">
+                                        <div class="widget_text_inner aunqur">
+                                            <div class="content">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1422,159 +1430,161 @@ border-bottom: none;
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="wrapper special_32_5_67_5 container_white_bg " id="wrapper_2137">
-                <div class="inner">
-                    <div class="p_d container_fixed_height container_white_bg _col" id="div_2138">
-                        <div class="inner">
-                            <div class="wrapper container_fixed_height " id="wrapper_14160">
-                                <div class="inner">
-                                    <div class="p_d_p _col" id="div_14161">
-                                        <div class="inner">
-                                            <div class="widget_color_ widget_wrap" id="widget_14812">
-                                                <div class="detail_widget widget">
-                                                    <div class="content_detail detail">
-                                                        <div class="row">
+                <div class="wrapper special_32_5_67_5 container_white_bg " id="wrapper_2137">
+                    <div class="inner">
+                        <div class="p_d container_fixed_height container_white_bg _col" id="div_2138">
+                            <div class="inner">
+                                <div class="wrapper container_fixed_height " id="wrapper_14160">
+                                    <div class="inner">
+                                        <div class="p_d_p _col" id="div_14161">
+                                            <div class="inner">
+                                                <div class="widget_color_ widget_wrap" id="widget_14812">
+                                                    <div class="detail_widget widget">
+                                                        <div class="content_detail detail">
+                                                            <div class="row">
 
-                                                            <div class="right_title">
-                                                                <h1 class="title mb10">
-                                                                    {{ newsHeader }}
-                                                                </h1>
+                                                                <div class="right_title">
+                                                                    <h1 class="title mb10">
+                                                                        {{ newsHeader }}
+                                                                    </h1>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="spacer mb24">
-                                                        </div>
-                                                        <div class="row detail_holder">
-                                                            <div class="left_part">
-                                                                <div class="col_in">
-                                                                    <div class="each_row do_not_print">
-                                                                        <div class="fb-save" data-size="large"
-                                                                             data-uri="">
+                                                            <div class="spacer mb24">
+                                                            </div>
+                                                            <div class="row detail_holder">
+                                                                <div class="left_part">
+                                                                    <div class="col_in">
+                                                                        <div class="each_row do_not_print">
+                                                                            <div class="fb-save" data-size="large"
+                                                                                 data-uri="">
+                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="right_part">
-                                                            <div class="col_in">
-                                                                <article class="jw_detail_content_holder content mb16"
-                                                                         itemscope=""
-                                                                         itemtype="http://schema.org/Article">
-                                                                    <div class="viewport" itemprop="articleBody">
-                                                                        <noscript id="ari-noscript">
-                                                                            <p>
-                                                                                <img alt="{{ newsImgCap }}"
-                                                                                     class="image aligncenter"
-                                                                                     itemprop="image"
-                                                                                     caption = "{{ newsImgCap }}"
-                                                                                     src="{{ newsImg }}"
-                                                                                     title="{{ newsImgCap }}"
-                                                                                     width="800"/>
-                                                                                <span class="jw_media_caption"><span class="tt">{{ newsImgCap }}</span></span>
-                                                                            </p>
-                                                                            <div class="palo_web_news_div">
-                                                                                {{ newsDetails }}
-                                                                            </div>
-                                                                            {% for item in newsPar %}
-                                                                            <p>
-                                                                                {{ item }}
-                                                                            </p>
-                                                                            {% endfor %}
+                                                            <div class="right_part">
+                                                                <div class="col_in">
+                                                                    <article
+                                                                            class="jw_detail_content_holder content mb16"
+                                                                            itemscope=""
+                                                                            itemtype="http://schema.org/Article">
+                                                                        <div class="viewport" itemprop="articleBody">
+                                                                            <noscript id="ari-noscript">
+                                                                                <p>
+                                                                                    <img alt="{{ newsImgCap }}"
+                                                                                         class="image aligncenter"
+                                                                                         itemprop="image"
+                                                                                         caption="{{ newsImgCap }}"
+                                                                                         src="{{ newsImg }}"
+                                                                                         title="{{ newsImgCap }}"
+                                                                                         width="800"/>
+                                                                                    <span class="jw_media_caption"><span
+                                                                                            class="tt">{{ newsImgCap }}</span></span>
+                                                                                </p>
+                                                                                <div class="palo_web_news_div">
+                                                                                    {{ newsDetails }}
+                                                                                </div>
+                                                                                {% for item in newsPar %}
+                                                                                    <p>
+                                                                                        {{ item }}
+                                                                                    </p>
+                                                                                {% endfor %}
 
-                                                                        </noscript>
-                                                                    </div>
-                                                                    <script>
-                                                                        //console.log(current_page_url);
-                                                                        var $div = $('<div>').append($('#ari-noscript').text()).attr('itemprop', 'articleBody').addClass('viewport');
-                                                                        var $images = $div.find('.jwMediaContent');
-                                                                        for (var i in $images) {
-                                                                            if (typeof $images[i] == 'object') $($images[i]).removeAttr('src').removeClass(function () {
-                                                                                return $(this).attr('class').replace(/\b(?:alignright|alignleft)\b\s*/g, '');
-                                                                            });
-                                                                            ;//.removeAttr('class')
-                                                                        }
-                                                                        $('#ari-noscript').parent().replaceWith($div);
-                                                                        var parentWidth = $div.width();
-                                                                        $images.each(function () {
-                                                                            var data = $.parseJSON($(this).data('jadewitsmedia').replace(/'/g, '"'));
-                                                                            //console.log($(this ).attr('class'));
-                                                                            if (data) {
-                                                                                var prop = {
-                                                                                    width: 0,
-                                                                                    height: 0,
-                                                                                    wrapCaption: jwARI.caption(data['title'], data['caption']),
-                                                                                    viewPort: '.jw_detail_content_holder',
-                                                                                    url: cannonical_url + '#image-' + data.id
-                                                                                };
-                                                                                if (data['align'] == '') {
-                                                                                    if ($(this).hasClass('alignright')) data['align'] = 'alignright';
-                                                                                    if ($(this).hasClass('alignleft')) data['align'] = 'alignleft';
-                                                                                }
-                                                                                if (data['align'] == 'alignright' || data['align'] == 'alignleft') {
-                                                                                    if (parseFloat(data.width) > Math.floor(parentWidth * 0.62)) {
-                                                                                        prop.width = parentWidth;
-                                                                                        if (data.height && data.height > 64) {
-                                                                                            prop.height = jwARI.ratio(data.height, data.width, parentWidth);
-                                                                                        }
-                                                                                        else {
-                                                                                            delete prop.height;
-                                                                                            delete data.height;
-                                                                                        }
-                                                                                        data['align_current'] = 'alignfull';
-                                                                                    } else if (!data.width) {
-                                                                                        prop.width = 300;
-                                                                                        delete prop.height;
-                                                                                        delete data.height;
-                                                                                    } else {
-                                                                                        prop.width = data.width;
-                                                                                        if (data.height && data.height > 64) {
-                                                                                            prop.height = data.height;
-                                                                                        }
-                                                                                        else {
-                                                                                            delete prop.height;
-                                                                                            delete data.height;
-                                                                                        }
-                                                                                    }
-                                                                                } else {
-                                                                                    if (data.height && data.height < 50) {
-                                                                                        delete prop.height;
-                                                                                        delete data.height;
-                                                                                    } else {
-                                                                                        if (data.width) {
-                                                                                            prop.width = data.width;
-                                                                                            prop.height = data.height;
-                                                                                        } else {
-                                                                                            delete prop.width;
-                                                                                            delete data.width;
-                                                                                        }
-                                                                                        prop.height = data.height;
-                                                                                    }
-                                                                                    data['align'] = 'alignfull';
-                                                                                }
-                                                                                var tmp = $.extend(prop, data);
-                                                                                $(this).data('ari', tmp);
-                                                                                jwARI.fetch($(this));
+                                                                            </noscript>
+                                                                        </div>
+                                                                        <script>
+                                                                            //console.log(current_page_url);
+                                                                            var $div = $('<div>').append($('#ari-noscript').text()).attr('itemprop', 'articleBody').addClass('viewport');
+                                                                            var $images = $div.find('.jwMediaContent');
+                                                                            for (var i in $images) {
+                                                                                if (typeof $images[i] == 'object') $($images[i]).removeAttr('src').removeClass(function () {
+                                                                                    return $(this).attr('class').replace(/\b(?:alignright|alignleft)\b\s*/g, '');
+                                                                                });
+                                                                                ;//.removeAttr('class')
                                                                             }
-                                                                        });
-                                                                    </script>
-                                                                </article>
+                                                                            $('#ari-noscript').parent().replaceWith($div);
+                                                                            var parentWidth = $div.width();
+                                                                            $images.each(function () {
+                                                                                var data = $.parseJSON($(this).data('jadewitsmedia').replace(/'/g, '"'));
+                                                                                //console.log($(this ).attr('class'));
+                                                                                if (data) {
+                                                                                    var prop = {
+                                                                                        width: 0,
+                                                                                        height: 0,
+                                                                                        wrapCaption: jwARI.caption(data['title'], data['caption']),
+                                                                                        viewPort: '.jw_detail_content_holder',
+                                                                                        url: cannonical_url + '#image-' + data.id
+                                                                                    };
+                                                                                    if (data['align'] == '') {
+                                                                                        if ($(this).hasClass('alignright')) data['align'] = 'alignright';
+                                                                                        if ($(this).hasClass('alignleft')) data['align'] = 'alignleft';
+                                                                                    }
+                                                                                    if (data['align'] == 'alignright' || data['align'] == 'alignleft') {
+                                                                                        if (parseFloat(data.width) > Math.floor(parentWidth * 0.62)) {
+                                                                                            prop.width = parentWidth;
+                                                                                            if (data.height && data.height > 64) {
+                                                                                                prop.height = jwARI.ratio(data.height, data.width, parentWidth);
+                                                                                            }
+                                                                                            else {
+                                                                                                delete prop.height;
+                                                                                                delete data.height;
+                                                                                            }
+                                                                                            data['align_current'] = 'alignfull';
+                                                                                        } else if (!data.width) {
+                                                                                            prop.width = 300;
+                                                                                            delete prop.height;
+                                                                                            delete data.height;
+                                                                                        } else {
+                                                                                            prop.width = data.width;
+                                                                                            if (data.height && data.height > 64) {
+                                                                                                prop.height = data.height;
+                                                                                            }
+                                                                                            else {
+                                                                                                delete prop.height;
+                                                                                                delete data.height;
+                                                                                            }
+                                                                                        }
+                                                                                    } else {
+                                                                                        if (data.height && data.height < 50) {
+                                                                                            delete prop.height;
+                                                                                            delete data.height;
+                                                                                        } else {
+                                                                                            if (data.width) {
+                                                                                                prop.width = data.width;
+                                                                                                prop.height = data.height;
+                                                                                            } else {
+                                                                                                delete prop.width;
+                                                                                                delete data.width;
+                                                                                            }
+                                                                                            prop.height = data.height;
+                                                                                        }
+                                                                                        data['align'] = 'alignfull';
+                                                                                    }
+                                                                                    var tmp = $.extend(prop, data);
+                                                                                    $(this).data('ari', tmp);
+                                                                                    jwARI.fetch($(this));
+                                                                                }
+                                                                            });
+                                                                        </script>
+                                                                    </article>
 
+                                                                </div>
                                                             </div>
                                                         </div>
+                                                        <script>
+                                                            //$('.detail_holder .content blockquote').css({top:($('.detail_holder .left_part .col_in').outerHeight()+64)+'px'});
+                                                        </script>
                                                     </div>
                                                     <script>
-                                                        //$('.detail_holder .content blockquote').css({top:($('.detail_holder .left_part .col_in').outerHeight()+64)+'px'});
+                                                        $('.jw_detail_content_holder iframe').each(jw_content_iframe_fix);
+                                                        jwFullScreen.init({
+                                                            hook: '.right_part',
+                                                            pop: '.pop-media-holder',
+                                                            cache: '800x0x0'
+                                                        });
+                                                        $('.social_shares').trigger('jadewitsShare');
                                                     </script>
                                                 </div>
-                                                <script>
-                                                    $('.jw_detail_content_holder iframe').each(jw_content_iframe_fix);
-                                                    jwFullScreen.init({
-                                                        hook: '.right_part',
-                                                        pop: '.pop-media-holder',
-                                                        cache: '800x0x0'
-                                                    });
-                                                    $('.social_shares').trigger('jadewitsShare');
-                                                </script>
                                             </div>
                                         </div>
                                     </div>
@@ -1582,76 +1592,76 @@ border-bottom: none;
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="p_c _col" id="div_2139">
-                    <div class="inner">
-                        <div class="widget_color_ widget_wrap" id="widget_52121">
+                    <div class="p_c _col" id="div_2139">
+                        <div class="inner">
+                            <div class="widget_color_ widget_wrap" id="widget_52121">
+                                <div class="widget_text widget">
+                                    <div class="widget_text_inner aunqur">
+                                        <div class="content">
+                                            <div class="common_google_ads">
+                                                <div id="div-gpt-ad-19259-16">
+                                                    <script>
+                                                        googletag.cmd.push(function () {
+                                                            googletag.display('div-gpt-ad-19259-16');
+                                                        });
+                                                    </script>
+                                                </div>
+                                            </div>
+                                            <div class="r1_special">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="widget_color_ widget_wrap" id="widget_72926">
                             <div class="widget_text widget">
                                 <div class="widget_text_inner aunqur">
                                     <div class="content">
-                                        <div class="common_google_ads">
-                                            <div id="div-gpt-ad-19259-16">
-                                                <script>
-                                                    googletag.cmd.push(function () {
-                                                        googletag.display('div-gpt-ad-19259-16');
-                                                    });
-                                                </script>
-                                            </div>
-                                        </div>
-                                        <div class="r1_special">
-                                        </div>
+                                        <style>
+                                            .mi_24x24_zoomin {
+                                                width: 32px;
+                                                height: 32px;
+                                                border-radius: 16px;
+                                                float: left;
+                                                background: url(//paimages.prothom-alo.com/contents/uploads/media/2017/11/14/7b239bc050b256849d7c71e88ebaf242-5a0a9a1230546.png) no-repeat 0 0;
+                                            }
+
+                                            .mi_24x24_zoomout {
+                                                width: 32px;
+                                                height: 32px;
+                                                border-radius: 16px;
+                                                float: left;
+                                                background: url(//paimages.prothom-alo.com/contents/cache/images/32x32x1/uploads/media/2017/11/14/08db1dcd9d7743855af0af47482b4547-5a0a9a122faec.png) no-repeat 0 0;
+                                            }
+                                        </style>
+                                        <script>
+                                            $(document).ready(function (e) {
+
+                                                $('.comment_and_like.each_row.do_not_print').removeClass('dn');
+                                                $('.left_part .comment_and_like').prepend('<a class="mr10 mi_24x24 mi_24x24_zoomout jw_content_zoom_out" title="Zoom Out" data-container="jw_detail_content_holder" href="javascript:">&nbsp;</a><a class="mr10 mi_24x24 mi_24x24_zoomin jw_content_zoom_in" title="Zoom In" data-container="jw_detail_content_holder" href="javascript:">&nbsp;</a>');
+
+
+                                                $('.jw_content_zoom_out').live('click', function () {
+                                                    el = $(".detail .content p");
+                                                    jw_change_font_size(el, -2);
+
+                                                    el = $(".content .jw_media_holder .jw_media_caption");
+                                                    jw_change_font_size(el, -2);
+
+                                                });
+
+                                                $('.jw_content_zoom_in').live('click', function () {
+                                                    el = $(".detail .content p");
+                                                    jw_change_font_size(el, +2);
+
+                                                    el = $(".content .jw_media_holder .jw_media_caption");
+                                                    jw_change_font_size(el, +2);
+                                                });
+
+                                            });
+                                        </script>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="widget_color_ widget_wrap" id="widget_72926">
-                        <div class="widget_text widget">
-                            <div class="widget_text_inner aunqur">
-                                <div class="content">
-                                    <style>
-                                        .mi_24x24_zoomin {
-                                            width: 32px;
-                                            height: 32px;
-                                            border-radius: 16px;
-                                            float: left;
-                                            background: url(//paimages.prothom-alo.com/contents/uploads/media/2017/11/14/7b239bc050b256849d7c71e88ebaf242-5a0a9a1230546.png) no-repeat 0 0;
-                                        }
-
-                                        .mi_24x24_zoomout {
-                                            width: 32px;
-                                            height: 32px;
-                                            border-radius: 16px;
-                                            float: left;
-                                            background: url(//paimages.prothom-alo.com/contents/cache/images/32x32x1/uploads/media/2017/11/14/08db1dcd9d7743855af0af47482b4547-5a0a9a122faec.png) no-repeat 0 0;
-                                        }
-                                    </style>
-                                    <script>
-                                        $(document).ready(function (e) {
-
-                                            $('.comment_and_like.each_row.do_not_print').removeClass('dn');
-                                            $('.left_part .comment_and_like').prepend('<a class="mr10 mi_24x24 mi_24x24_zoomout jw_content_zoom_out" title="Zoom Out" data-container="jw_detail_content_holder" href="javascript:">&nbsp;</a><a class="mr10 mi_24x24 mi_24x24_zoomin jw_content_zoom_in" title="Zoom In" data-container="jw_detail_content_holder" href="javascript:">&nbsp;</a>');
-
-
-                                            $('.jw_content_zoom_out').live('click', function () {
-                                                el = $(".detail .content p");
-                                                jw_change_font_size(el, -2);
-
-                                                el = $(".content .jw_media_holder .jw_media_caption");
-                                                jw_change_font_size(el, -2);
-
-                                            });
-
-                                            $('.jw_content_zoom_in').live('click', function () {
-                                                el = $(".detail .content p");
-                                                jw_change_font_size(el, +2);
-
-                                                el = $(".content .jw_media_holder .jw_media_caption");
-                                                jw_change_font_size(el, +2);
-                                            });
-
-                                        });
-                                    </script>
                                 </div>
                             </div>
                         </div>
@@ -1660,7 +1670,6 @@ border-bottom: none;
             </div>
         </div>
     </div>
-</div>
-</body>    {% include '/common/footer.html' %}
+    </body>    {% include '/common/footer.html' %}
     {% include '/common/footer-social.html' %}
 {% endblock %}
