@@ -1,62 +1,73 @@
+import copy
 import requests
 from bs4 import BeautifulSoup
 from flask import render_template, request, Blueprint
 
 app = Blueprint('news', __name__)
 
+class PrototypeNews:
+
+
+    def show_news(page_no=None):
+
+        url = 'https://www.cricbuzz.com/cricket-news'
+
+        if page_no!=None:
+            url = url + '/' + page_no
+        else:
+            page_no = '1'
+
+        res = requests.get(url)
+        soup = BeautifulSoup(res.text, 'lxml')
+        news_context = soup.find_all('div', {'class': 'cb-nws-time'})
+        news_headline = soup.find_all('a', {'class': 'cb-nws-hdln-ancr'})
+        news_details = soup.find_all('div', {'class': 'cb-nws-intr'})
+        news_time = soup.find_all('span', {'class': 'cb-nws-time'})
+
+        temp = soup.find_all('div', {'itemprop': 'image'})
+        news_title = []
+        news_img = []
+        news_img_title = []
+        news_href = []
+
+        for i in news_headline:
+            soup = BeautifulSoup(str(i), 'lxml')
+            news_title.append(soup.find('a')['title'])
+            news_href.append(soup.find('a')['href'])
+
+        for i in temp:
+            soup = BeautifulSoup(str(i), 'lxml')
+            news_img.append(soup.find('img')['src'])
+            news_img_title.append(soup.find('img')['title'])
+
+        data = []
+        for i in range(len(news_context)):
+            temp = {}
+            temp["news_context"] = news_context[i].text
+            temp["news_headline"] = news_headline[i].text
+            temp["news_details"] = news_details[i].text
+            temp["news_time"] = news_time[i].text
+            temp["news_title"] = news_title[i]
+            temp["news_img"] = news_img[i]
+            temp["news_img_title"] = news_img_title[i]
+            temp["news_href"] = news_href[i]
+            data.append(temp)
+
+        return render_template("news/news.html", news_data=data,page_no= page_no)
 @app.route('/news/')
-def show_news(page_no=None):
-
-    url = 'https://www.cricbuzz.com/cricket-news'
-
-    if page_no!=None:
-        url = url + '/' + page_no
-    else:
-        page_no = '1'
-
-    res = requests.get(url)
-    soup = BeautifulSoup(res.text, 'lxml')
-    news_context = soup.find_all('div', {'class': 'cb-nws-time'})
-    news_headline = soup.find_all('a', {'class': 'cb-nws-hdln-ancr'})
-    news_details = soup.find_all('div', {'class': 'cb-nws-intr'})
-    news_time = soup.find_all('span', {'class': 'cb-nws-time'})
-
-    temp = soup.find_all('div', {'itemprop': 'image'})
-    news_title = []
-    news_img = []
-    news_img_title = []
-    news_href = []
-
-    for i in news_headline:
-        soup = BeautifulSoup(str(i), 'lxml')
-        news_title.append(soup.find('a')['title'])
-        news_href.append(soup.find('a')['href'])
-
-    for i in temp:
-        soup = BeautifulSoup(str(i), 'lxml')
-        news_img.append(soup.find('img')['src'])
-        news_img_title.append(soup.find('img')['title'])
-
-    data = []
-    for i in range(len(news_context)):
-        temp = {}
-        temp["news_context"] = news_context[i].text
-        temp["news_headline"] = news_headline[i].text
-        temp["news_details"] = news_details[i].text
-        temp["news_time"] = news_time[i].text
-        temp["news_title"] = news_title[i]
-        temp["news_img"] = news_img[i]
-        temp["news_img_title"] = news_img_title[i]
-        temp["news_href"] = news_href[i]
-        data.append(temp)
-
-    return render_template("news/news.html", news_data=data,page_no= page_no)
+def showNews():
+    prototype = PrototypeNews()
+    prototype_copy = copy.deepcopy(prototype)
+    return prototype_copy.show_news()
 
 
 @app.route("/news/more_news",methods=['POST', 'GET'])
 def more_news():
     page_no = int(request.form["more_news"])
-    return show_news(str(page_no+1))
+    prototype = PrototypeNews()
+    prototype_copy = copy.deepcopy(prototype)
+    return prototype_copy.show_news(str(page_no+1))
+
 
 
 @app.route("/news/detail_news",methods=['POST', 'GET'])
