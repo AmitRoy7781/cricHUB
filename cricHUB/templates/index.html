@@ -2,6 +2,12 @@
 
 {% block content %}
     {% include '/common/header.html' %}
+    <script>
+    window.onload = function () {
+            check_login_status();
+        }
+    </script>
+
 
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
