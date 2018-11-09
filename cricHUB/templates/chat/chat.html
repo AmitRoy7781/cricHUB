@@ -42,7 +42,7 @@
 
             .column2 {
                 float: left;
-                width: 90%;
+                width: 80%;
                 alignment: left;
             }
 
@@ -53,8 +53,8 @@
             }
             .column4 {
                 float: right;
-                width: 90%;
-                alignment: right;
+                width: 80%;
+                {#alignment: right;#}
             }
 
             /* Clearfix (clear floats) */
@@ -98,13 +98,14 @@
                                         <p style="background-color: #d6d6d6;
                                         padding-left: 2%; padding-right: 2%;
                                         padding-bottom: 1%; padding-top: 1%;
-                                        border-radius: 5%;
+                                        border-radius: 1%;
                                         font-size: 14px; color: black; width: fit-content"
-                                        {#align="right"#}>
-                                        <label style="font: bold; font-size: 15px">{{ message.author }}</label>
-                                        <br>
+                                        {#align="left"#}>
+                                        <label align="right" style="font: bold; font-size: 15px">{{ message.author }}</label>
 
-                                        {{ message.message }}
+                                            <br>
+
+                                        <label align="left">{{ message.message }}</label>
 
                                         </p>
                                     </div>
@@ -121,7 +122,7 @@
                                         <p style="background-color: white;
                                         padding-left: 2%; padding-right: 2%;
                                         padding-bottom: 1%; padding-top: 1%;
-                                        border-radius: 5%;
+                                        border-radius: 1%;
                                         font-size: 14px; color: black; width: fit-content">
                                             <label style="font: bold; font-size: 15px">{{ message.author }}</label>
 
@@ -220,7 +221,7 @@
                                 '<p style="background-color: #d6d6d6;\n' +
                                     'padding-left: 2%; padding-right: 2%;\n' +
                                     'padding-bottom: 1%; padding-top: 1%;\n' +
-                                    'border-radius: 5%;\n' +
+                                    'border-radius: 1%;\n' +
                                     'font-size: 14px; color: black; width: fit-content"\n' +
                                     'align="right">\n' +
                                     '<label style="font: bold; font-size: 15px">\n' +
@@ -247,7 +248,7 @@
                         '<p style="background-color: white;\n' +
                         'padding-left: 2%; padding-right: 2%;\n' +
                         'padding-bottom: 1%; padding-top: 1%;\n' +
-                        'border-radius: 5%;\n' +
+                        'border-radius: 1%;\n' +
                         'font-size: 14px; color: black;\n' +
                         'width: fit-content">\n' +
                         '<label style="font: bold; font-size: 15px">\n' +

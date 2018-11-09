@@ -7,22 +7,17 @@
     <div align="center">
         <h2 class="page-header" id="rank_header">
             <script>
-
                 var format = '{{format}}';
                 var gender = '{{gender}}';
                 var rank_type = '{{rank_type}}';
-
                 document.write("ICC ")
-
                 if (format == "test")
                     document.write("TEST ")
                 else if (format == "odi")
                     document.write("ODI ")
                 else
                     document.write("T20 ")
-
                 document.write("RANKING ")
-
                 if (rank_type == "batsmen" || rank_type == "batting")
                     document.write("OF BATSMEN ")
                 else if (rank_type == "bowling" || rank_type == "bowling")
@@ -31,12 +26,10 @@
                     document.write("OF TEAMS ")
                 else
                     document.write("OF ALL-ROUNDERS ")
-
                 if (gender == "men")
                     document.write("(MENS)")
                 else if (gender == "women")
                     document.write("(WOMENS)")
-
             </script>
         </h2>
     </div>
@@ -90,17 +83,17 @@
 
                         <div class="col-md-8" align="center" style="padding-left: 18%;">
                             <div class="col-md-5" align="right">
-                                <div class="col-md-1"  align="center">
+                                <div class="col-md-1" align="center">
                                 <span class="cb-ico"
                                       style="position:absolute; padding-top: 1%"></span>
                                     {{ item["position_change"] }}
                                 </div>
 
-                                <div class="col-md-4"  align="left">
+                                <div class="col-md-4">
                                     <img src="https:www.cricbuzz.com{{ item["img_url"] }}"
                                          title="{{ item["name"] }}" alt="{{ item["name"] }}"
                                          class="img-responsive cb-rank-plyr-img"
-                                        style="width: 100%; height: auto"/>
+                                        style="width: 60px; height: 60px"/>
                                 </div>
                             </div>
 
@@ -134,11 +127,12 @@
 
                 <div class="col-md-12" style="padding-bottom: 2%"></div>
 
-                {% if rank_type!="all-rounder" %}
-                <button type="submit" name="rank_status" value="" align="center"
-                        style="background-color: #1f679d; color: white; height: 40px; width: 15%"
-                        title="{{ rank_status }}">{{ rank_status }}
-                </button>
+                {% if rank_type != "all-rounder" %}
+                    <button type="submit" name="rank_status" value="" align="center"
+                            style="background-color: #1f679d; color: white; height: 40px; width: 15%"
+                            title="{{ rank_status }}">
+                        {{ rank_status }}
+                    </button>
                 {% endif %}
             </form>
 

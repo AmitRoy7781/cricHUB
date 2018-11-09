@@ -7,7 +7,6 @@ from cricMongoDB.database import db
 app = Blueprint('ranking', __name__)
 
 
-
 class Decorator:
 
 

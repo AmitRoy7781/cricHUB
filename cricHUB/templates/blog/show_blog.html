@@ -12,8 +12,8 @@
 
     <div class="container" style="padding-top: 2%">
 
-        <div style="padding-left: 42%" {#class="blog-header"#}>
-            <h2 {#class="blog-title"#}> Write Blog </h2>
+        <div style="padding-left: 42%">
+            <h3> Write Blog </h3>
         </div>
 
         <div class="row">
@@ -47,7 +47,7 @@
 
 
     <div style="padding-left: 47%">
-        <h2> Blogs </h2>
+        <h3> Blogs </h3>
     </div>
 
     {% for item in blog_data %}
@@ -55,12 +55,12 @@
 
             <div class="col-lg-12 cb-nws-lst-rt cb-col cb-col-text-container w3-card-4"
                  style="background: white; padding-top: 1%; padding-bottom: 1%; padding-left: 2%; padding-right: 2%">
-                <h3 class="cb-nws-hdln cb-font-24 line-ht24">
+                <h5 class="cb-nws-hdln cb-font-24 line-ht24">
                     <a target="_self"
                        class="cb-nws-hdln-ancr text-hvr-underline w3-card-4">
                         {{ item[0] }}
                     </a>
-                </h3>
+                </h5>
                 <div class="cb-nws-intr" style="font-size: 15px; color: black">By {{ item[1] }}, {{ item[2] }}</div>
 
                 <br>
