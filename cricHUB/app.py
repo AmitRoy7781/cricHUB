@@ -7,6 +7,7 @@ from cricBLOG.blog import app as blog
 from cricCHAT.cricCHAT import app as cricCHAT
 from cricLIVE.livescore import app as livescore
 from cricNEWS.news_adapter import app as news
+from cricNEWS.banglaNews import app as banglanews
 from cricPlayer.player import app as player
 from cricPrediction.predictions_blueprint import app as prediction
 from cricProfile.user_data import app as profile
@@ -40,6 +41,9 @@ app.register_blueprint(stat)
 
 # news blueprint
 app.register_blueprint(news)
+
+#news blueprint
+app.register_blueprint(banglanews)
 
 # player blueprint
 app.register_blueprint(player)
