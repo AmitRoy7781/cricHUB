@@ -2,8 +2,7 @@
                             ('/', 'index', 'Home'),
                             ('/live-score/', 'live-score', 'Live score'),
                             ('/schedule/', 'schedule', 'Schedule'),
-                            ('/news/', 'news', 'News'),
-                            ('/banglanews', 'banglanews', 'Bangla News'),
+                            ('#', 'news', 'News'),
                             ('/predictions/', 'predictions', 'Predictions'),
                             ('/rankings/', 'rankings', 'Rankings'),
                             ('/stats/', 'stats', 'Stats'),
@@ -52,9 +51,11 @@
                             ...
                             <ul id="navigation">
                                 {% for href, id, caption in navigation_bar %}
-                                    <li
-                                            {% if id ==active_page %} class="active"{% endif %}><a
-                                            href="{{ href|e }}">{{ caption|e }}</a></li>
+                                    <li {% if id == active_page %} class="active"{% endif %}>
+                                        <a href="{{ href|e }}">{{ caption|e }}</a>
+                                        {% if id == 'news' %}<ul class="children sub-menu">
+                                            <li><a href="/news/">English News</a></li><li><a href="/banglanews">Bangla News</a></li></ul>
+                                        {% endif %}</li>
                                 {% endfor %}
                             </ul>
 
@@ -66,9 +67,11 @@
 
                         <ul class="dl-menu">
                             {% for href, id, caption in navigation_bar %}
-                                <li
-                                        {% if id == active_page %} class="active"{% endif %}><a
-                                        href="{{ href|e }}">{{ caption|e }}</a></li>
+                                <li {% if id == active_page %} class="active"{% endif %}>
+                                        <a href="{{ href|e }}">{{ caption|e }}</a>
+                                        {% if id == 'news' %}<ul class="dl-submenu">
+                                            <li><a href="/news/">English News</a></li><li><a href="/banglanews">Bangla News</a></li></ul>
+                                        {% endif %}</li>
                             {% endfor %}
                         </ul>
 
