@@ -14,6 +14,8 @@ from cricRanking.show_ranking import app as ranking_try
 from cricSTAT.stats_mediator import app as stat
 from cricSchedule.schedule_blueprint import app as schedule
 
+#from cricNEWS.news import app as news
+
 app = Flask(__name__)
 app.secret_key = 'TishuPaperIsNoMore'
 
