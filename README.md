@@ -18,6 +18,7 @@ A Web Application related to the sport CRICKET
 - Predictor with historical data of ODIs from 1971 to 2017
 - Franchise T20 Tournament Statistics and Data Visualization
 - Chat Room for Active Users
+- Blog Post from Users
 
 
 **Specifications :**
