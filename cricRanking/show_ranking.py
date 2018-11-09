@@ -128,58 +128,16 @@ class Component:
         if flag is False:
             return ConcreteComponent.ranking(data)
 
-        # if gender == "womens":
-        #
-        #     temp_format, temp_rank_type = change_params(format, rank_type)
-        #
-        #     posts = db.ranking
-        #
-        #     myquery = {"format": temp_format, "gender": gender, "player_type": temp_rank_type}
-        #     mydoc = posts.find(myquery)
-        #
-        #     WOMAN_DATA = []
-        #
-        #     for x in mydoc:
-        #         temp = {}
-        #         temp["rank"] = x["rank"]
-        #         temp["name"] = x["name"]
-        #         temp["rating"] = x["rating"]
-        #         WOMAN_DATA.append(temp)
-        #
-        #     # print(WOMAN_DATA)
-        #     RANK_DATA = WOMAN_DATA
-        #     # return "OK"
-        #
-        # elif rank_type == "teams":
-        #
-        #     soup, maindiv = Decorator.get_element(rank_type, format)
-        #     print(soup)
-        #     TEAM_DATA = []
-        #
-        #     for d in maindiv[1:]:
-        #         temp = {}
-        #         row_data = u",".join(
-        #             s.strip() for s in filter(None, (t.find(text=True, recursive=False) for t in d.find_all())))
-        #         if row_data:
-        #             row_data = row_data.split(',')
-        #             temp["position"] = row_data[0]
-        #             temp["country"] = row_data[1]
-        #             temp["rating"] = row_data[2]
-        #             temp["points"] = row_data[3]
-        #
-        #             TEAM_DATA.append(temp)
-        #
-        #     # print(TEAM_DATA)
-        #     RANK_DATA = TEAM_DATA
-        #     # return "OK"
-        #
-        # else:
-
         url = "https://www.cricbuzz.com/cricket-stats/icc-rankings"
 
         url = url + "/" + gender + "/" + rank_type
 
-        print(url)
+        #print(url)
+
+
+
+        #if rank type is teams then no image is available
+
         if rank_type!="teams":
 
 
@@ -236,7 +194,10 @@ class Component:
 
 
 
+        #Rank Type is not Teams so we can show images
         else:
+
+
             soup, maindiv = Decorator.get_element(url,rank_type, format)
             #print(soup.prettify())
             #print(maindiv)
@@ -257,7 +218,7 @@ class Component:
                     #print(temp)
             # print(TEAM_DATA)
             RANK_DATA = TEAM_DATA
-            print(RANK_DATA)
+            # print(RANK_DATA)
 
 
 
