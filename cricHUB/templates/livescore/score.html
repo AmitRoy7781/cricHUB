@@ -995,9 +995,9 @@
             padding-top: 10px;
         }</style>
     </head>
+
     <body>
     <div class="page">
-
 
         <div class='cb-bg-white cb-col-100 cb-col'>
             <div class=" cb-col-67 cb-col cb-left cb-schdl">
@@ -1024,16 +1024,17 @@
                                 {{ item["match_no"] }}
                             </span>
 
-                            <div class="text-gray"><span class="schedule-date" timestamp="1540368000000"
-                                                         format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span><span
-                                    ng-bind="1540368000000 |date:'h:mm a'"></span><span class="text-gray">
-                                {{ item["match_venue"] }}
-                            </span>
+                            <div class="text-gray">
+                                <span class="schedule-date" timestamp="1540368000000"
+                                      format="MMM dd'"></span><span>&nbsp;&#8226;&nbsp;</span>
+                                <span ng-bind="1540368000000 |date:'h:mm a'"></span>
+                                <span class="text-gray">{{ item["match_venue"] }}</span>
                             </div>
                         </div>
-                        <div class="cb-col-100 cb-col cb-schdl"><a class="cb-lv-scrs-well cb-lv-scrs-well-live"
-                                                                   href="{{ item["match_href"]  }}"
-                                                                   title="{{ item["match_name"] }}{{ item["match_no"] }}">
+                        <div class="cb-col-100 cb-col cb-schdl">
+                            <a class="cb-lv-scrs-well cb-lv-scrs-well-live"
+                               href="{{ item["match_href"]  }}"
+                               title="{{ item["match_name"] }}{{ item["match_no"] }}">
                             <div class="cb-col">
                                 <div class="cb-scr-wll-chvrn">
                                     <div class="cb-lv-scrs-col text-black">
