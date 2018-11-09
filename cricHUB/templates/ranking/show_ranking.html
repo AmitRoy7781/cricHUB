@@ -133,10 +133,12 @@
 
                 <div class="col-md-12" style="padding-bottom: 2%"></div>
 
-                <button type="submit" name="more_news" value="" align="center"
+                {% if rank_type!="all-rounder" %}
+                <button type="submit" name="rank_status" value="" align="center"
                         style="background-color: #1f679d; color: white; height: 40px; width: 15%"
                         title="{{ rank_status }}">{{ rank_status }}
                 </button>
+                {% endif %}
             </form>
 
     </div>
