@@ -13,7 +13,7 @@ A Web Application related to the sport CRICKET
 **Features:**
 - Live Match Score and Upcoming Matches Schedule
 - Trending Tweets and Videos
-- ICC Ranking and Cricket News
+- ICC Ranking and Cricket News (Bangla and English)
 - Individual Player Statistics
 - Predictor with historical data of ODIs from 1971 to 2017
 - Franchise T20 Tournament Statistics and Data Visualization
