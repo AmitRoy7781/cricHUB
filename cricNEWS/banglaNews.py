@@ -87,7 +87,7 @@ def detail_news():
     newsImgCap = ""
     newsPar = []
 
-    print(soup.prettify())
+    #print(soup.prettify())
 
     newsHeader = soup.find('h1',{'class':"title mb10"}).text
     #print(newsHeader)
@@ -103,7 +103,7 @@ def detail_news():
 
             continue
         newsPar.append(temp[i].text)
-        print(temp[i].text)
+        #print(temp[i].text)
     return render_template("news/bangladetail_news.html"
                            ,newsHeader=newsHeader
                            ,newsDetails=newsDetails

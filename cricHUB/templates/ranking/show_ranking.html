@@ -14,9 +14,9 @@
 
                 document.write("ICC ")
 
-                if (format == "tests")
+                if (format == "test")
                     document.write("TEST ")
-                else if (format == "odis")
+                else if (format == "odi")
                     document.write("ODI ")
                 else
                     document.write("T20 ")
@@ -32,9 +32,9 @@
                 else
                     document.write("OF ALL-ROUNDERS ")
 
-                if (gender == "mens")
+                if (gender == "men")
                     document.write("(MENS)")
-                else if (gender == "womens")
+                else if (gender == "women")
                     document.write("(WOMENS)")
 
             </script>
@@ -43,64 +43,8 @@
 
     <div class="col-md-12" style="padding-left: 2%; padding-right: 2%; padding-bottom: 2%">
 
-    {% if gender=="womens" %}
 
-        {% if rank_type=="teams" %}
-            <div class="col-md-12" style="background-color: white; font-size: 15px">
-                <div class="col-md-12" style="padding-top: 1%" style="font: bold">
-                    <div class="col-md-3" align="center">Position</div>
-                    <div class="col-md-6" align="center">Team</div>
-                    <div class="col-md-3" align="center">Rating</div>
-                </div>
-
-                {% for item in RANK_DATA %}
-
-                    <div class="col-md-12">
-                        <hr>
-                        <div class="col-md-3" align="center">{{ item["rank"] }}</div>
-                        <div class="col-md-6" align="center">{{ item["name"] }}</div>
-                        <div class="col-md-3" align="center">{{ item["rating"] }}</div>
-                    </div>
-
-                {% endfor %}
-                <div class="col-md-12" style="padding-bottom: 1%"></div>
-            </div>
-
-        {% else %}
-
-            <div class="col-md-12" style="background-color: white; font-size: 15px">
-
-                <div class="col-md-12" style="padding-top: 1%" style="font: bold">
-                    <div class="col-md-3" align="center"><b>Position</b></div>
-
-                    <div class="col-md-6" align="center">
-                            <b>Player's Name</b>
-                    </div>
-
-                    <div class="col-md-3" align="center"><b>Rating</b></div>
-                </div>
-
-                {% for i in range(rank_limit) %}
-                    {% set item = RANK_DATA[i] %}
-
-                    <div class="col-md-12">
-                        <hr>
-
-                        <div class="col-md-3" align="center">{{ item["rank"] }}</div>
-
-                        <div class="col-md-6" align="center">
-                                {{ item["name"] }}
-                        </div>
-
-                        <div class="col-md-3" align="center">{{ item["rating"] }}</div>
-                    </div>
-                {% endfor %}
-                <div class="col-md-12" style="padding-bottom: 1%"></div>
-            </div>
-
-        {% endif %}
-
-    {% elif rank_type=="teams" %}
+    {% if rank_type=="team" %}
         <div class="col-md-12" style="background-color: white; font-size: 15px">
 
             <div class="col-md-12" style="padding-top: 1%" style="font: bold">
@@ -191,7 +135,7 @@
 
                 <button type="submit" name="more_news" value="" align="center"
                         style="background-color: #1f679d; color: white; height: 40px; width: 15%"
-                        title="Full Ranking">{{ rank_status }}
+                        title="{{ rank_status }}">{{ rank_status }}
                 </button>
             </form>
 

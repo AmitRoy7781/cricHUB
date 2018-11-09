@@ -11,54 +11,62 @@ app = Blueprint('ranking', __name__)
 class Decorator:
 
 
-    def get_element(rank_type, format):
-        url = "https://www.cricbuzz.com/cricket-stats/icc-rankings/"
+    def get_element(url,rank_type, format):
 
-        if rank_type == "batsmen":
-            url = url + "batsmen-rankings"
-            res = requests.get(url)
-            soup = BeautifulSoup(res.text, 'lxml')
-
-        elif rank_type == "bowlers":
-            url = url + "bowlers-rankings"
-            res = requests.get(url)
-            soup = BeautifulSoup(res.text, 'lxml')
-
-        elif rank_type == "all-rounders":
-            res = requests.get(url)
-            soup = BeautifulSoup(res.text, 'lxml')
-
-        elif rank_type == "teams":
-            res = requests.get(url)
-            soup = BeautifulSoup(res.text, 'lxml')
+        res = requests.get(url)
+        soup = BeautifulSoup(res.text, 'lxml')
 
         # print("#" + rank_type + "-" + format + " div.text-center")
+        #print(url)
+
+        param1 = ""
+        param2 = ""
+        param3 = ""
+
+        if rank_type=="batting":
+            rank_type = "batsmen"
+        elif rank_type == "bowling":
+            rank_type = "bowlers"
+        elif rank_type == "team":
+            rank_type = "teams"
+        elif rank_type=="all-rounder":
+            rank_type = "allrounders"  #kaj na korle remove hyphen
+
+        if format == "test":
+            format = "tests"
+        elif format == "odi":
+            format = "odis"
+        else:
+            format = "t20s"
+
 
         maindiv = soup.select("#" + rank_type + "-" + format + " div.text-center")
+        #print(maindiv)
         return soup, maindiv
 
 
-def change_params(format, rank_type):
-    temp_format = ""
+def change_params(rank_type, format):
+
     temp_rank_type = ""
+    temp_format = ""
 
-    if format == "tests":
-        temp_format = "test"
-    elif format == "odis":
-        temp_format = "odi"
+    if rank_type == "batting":
+        temp_rank_type = "batsmen"
+    elif rank_type == "bowling":
+        temp_rank_type = "bowlers"
+    elif rank_type == "team":
+        temp_rank_type = "teams"
+    elif rank_type == "all-rounder":
+        temp_rank_type = "allrounders"  # kaj na korle remove hyphen
+
+    if format == "test":
+        temp_format = "tests"
+    elif format == "odi":
+        temp_format = "odis"
     else:
-        temp_format = "t20i"
+        temp_format = "t20s"
 
-    if rank_type == "batsmen":
-        temp_rank_type = "batting"
-    elif rank_type == "bowlers":
-        temp_rank_type = "bowling"
-    elif rank_type == "all-rounders":
-        temp_rank_type = "all-rounder"
-    elif rank_type == "teams":
-        temp_rank_type = "team"
-
-    return temp_format, temp_rank_type
+    return temp_rank_type,temp_format
 
 
 
@@ -83,7 +91,7 @@ class Component:
 
         data = request.form.to_dict()
 
-        # print(data)
+        #print(data)
 
         format = data["format"]
         gender = data["gender"]
@@ -101,7 +109,7 @@ class Component:
 
         flag = True
 
-        if format == 'tests' and gender == 'womens':
+        if format == 'test' and gender == 'women':
             flag = False
             data["gender_msg"] = 'No data for womens in test cricket.'
 
@@ -120,74 +128,76 @@ class Component:
         if flag is False:
             return ConcreteComponent.ranking(data)
 
-        if gender == "womens":
+        # if gender == "womens":
+        #
+        #     temp_format, temp_rank_type = change_params(format, rank_type)
+        #
+        #     posts = db.ranking
+        #
+        #     myquery = {"format": temp_format, "gender": gender, "player_type": temp_rank_type}
+        #     mydoc = posts.find(myquery)
+        #
+        #     WOMAN_DATA = []
+        #
+        #     for x in mydoc:
+        #         temp = {}
+        #         temp["rank"] = x["rank"]
+        #         temp["name"] = x["name"]
+        #         temp["rating"] = x["rating"]
+        #         WOMAN_DATA.append(temp)
+        #
+        #     # print(WOMAN_DATA)
+        #     RANK_DATA = WOMAN_DATA
+        #     # return "OK"
+        #
+        # elif rank_type == "teams":
+        #
+        #     soup, maindiv = Decorator.get_element(rank_type, format)
+        #     print(soup)
+        #     TEAM_DATA = []
+        #
+        #     for d in maindiv[1:]:
+        #         temp = {}
+        #         row_data = u",".join(
+        #             s.strip() for s in filter(None, (t.find(text=True, recursive=False) for t in d.find_all())))
+        #         if row_data:
+        #             row_data = row_data.split(',')
+        #             temp["position"] = row_data[0]
+        #             temp["country"] = row_data[1]
+        #             temp["rating"] = row_data[2]
+        #             temp["points"] = row_data[3]
+        #
+        #             TEAM_DATA.append(temp)
+        #
+        #     # print(TEAM_DATA)
+        #     RANK_DATA = TEAM_DATA
+        #     # return "OK"
+        #
+        # else:
 
-            temp_format, temp_rank_type = change_params(format, rank_type)
+        url = "https://www.cricbuzz.com/cricket-stats/icc-rankings"
 
-            posts = db.ranking
+        url = url + "/" + gender + "/" + rank_type
 
-            myquery = {"format": temp_format, "gender": gender, "player_type": temp_rank_type}
-            mydoc = posts.find(myquery)
+        print(url)
+        if rank_type!="teams":
 
-            WOMAN_DATA = []
-
-            for x in mydoc:
-                temp = {}
-                temp["rank"] = x["rank"]
-                temp["name"] = x["name"]
-                temp["rating"] = x["rating"]
-                WOMAN_DATA.append(temp)
-
-            # print(WOMAN_DATA)
-            RANK_DATA = WOMAN_DATA
-            # return "OK"
-
-        elif rank_type == "teams":
-
-            soup, maindiv = Decorator.get_element(rank_type, format)
-            # print(soup)
-            TEAM_DATA = []
-
-            for d in maindiv[1:]:
-                temp = {}
-                row_data = u",".join(
-                    s.strip() for s in filter(None, (t.find(text=True, recursive=False) for t in d.find_all())))
-                if row_data:
-                    row_data = row_data.split(',')
-                    temp["position"] = row_data[0]
-                    temp["country"] = row_data[1]
-                    temp["rating"] = row_data[2]
-                    temp["points"] = row_data[3]
-
-                    TEAM_DATA.append(temp)
-
-            # print(TEAM_DATA)
-            RANK_DATA = TEAM_DATA
-            # return "OK"
-
-        else:
-
-            url = "https://www.cricbuzz.com/cricket-stats/icc-rankings"
-
-            if rank_type == "batsmen":
-                url = url + "/batsmen-rankings"
-            elif rank_type == "bowlers":
-                url = url + "/bowlers-rankings"
 
             res = requests.get(url)
             soup = BeautifulSoup(res.text, 'lxml')
 
-            scrape_html = soup.find('div', {'ng-show': "'" + rank_type + "-" + format + "' == act_rank_format"})
+            temp_rank_type,temp_format = change_params(rank_type,format)
+            scrape_html = soup.find('div', {'ng-show': "'" + temp_rank_type + "-" + temp_format + "' == act_rank_format"})
             soup = BeautifulSoup(str(scrape_html), 'lxml')
 
-            # print(soup)
+            #print(soup)
             POSITION_INDICATOR_CLASS = soup.find_all(['span', {'class': 'cb-ico'}, ])
             # print(POSITION_INDICATOR_CLASS)
-            IMG = soup.find_all('img', {'class': 'cb-rank-plyr-img'})
-            # print(IMG)
+            IMG = soup.find_all('img', {'class': 'img-responsive cb-rank-plyr-img'})
+            #print(IMG)
 
-            soup, maindiv = Decorator.get_element(rank_type, format)
-            # print(maindiv)
+            soup, maindiv = Decorator.get_element(url,rank_type, format)
+            #print(maindiv)
 
             PLAYER_DATA = []
 
@@ -196,7 +206,7 @@ class Component:
                 row_data = u",".join(
                     s.strip() for s in filter(None, (t.find(text=True, recursive=False) for t in d.find_all())))
                 if row_data:
-                    #print(row_data)
+                    # print(row_data)
                     row_data = row_data.split(',')
                     temp["position"] = row_data[0]
                     temp["position_change"] = row_data[3]
@@ -204,10 +214,10 @@ class Component:
                     temp["country"] = row_data[6]
                     temp["rating"] = row_data[7]
 
-                    if rank_type == "batsmen" or rank_type == "bowlers":
-                        temp["best_rank"] = ""
+                    #print(temp)
 
                     PLAYER_DATA.append(temp)
+
 
             for i in range(len(PLAYER_DATA)):
                 # PLAYER_DATA[i]["img_url"] = "http:" + IMG[i]["src"]
@@ -222,7 +232,35 @@ class Component:
                 # temp = PLAYER_DATA[i]
                 # print(temp["position_indicator_class"])
 
-            RANK_DATA = PLAYER_DATA
+                RANK_DATA = PLAYER_DATA
+
+
+
+        else:
+            soup, maindiv = Decorator.get_element(url,rank_type, format)
+            #print(soup.prettify())
+            #print(maindiv)
+            TEAM_DATA = []
+
+            for d in maindiv[1:]:
+                temp = {}
+                row_data = u",".join(
+                    s.strip() for s in filter(None, (t.find(text=True, recursive=False) for t in d.find_all())))
+                if row_data:
+                    row_data = row_data.split(',')
+                    temp["position"] = row_data[0]
+                    temp["country"] = row_data[1]
+                    temp["rating"] = row_data[2]
+                    temp["points"] = row_data[3]
+
+                    TEAM_DATA.append(temp)
+                    #print(temp)
+            # print(TEAM_DATA)
+            RANK_DATA = TEAM_DATA
+            print(RANK_DATA)
+
+
+
 
         # print(RANK_DATA)
 
