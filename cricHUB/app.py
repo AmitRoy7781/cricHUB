@@ -11,7 +11,7 @@ from cricPlayer.player import app as player
 from cricPrediction.predictions_blueprint import app as prediction
 from cricProfile.user_data import app as profile
 from cricRanking.show_ranking import app as ranking_try
-from cricSTAT.t20Stat import app as stat
+from cricSTAT.stats_mediator import app as stat
 from cricSchedule.schedule_blueprint import app as schedule
 
 app = Flask(__name__)

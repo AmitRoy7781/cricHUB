@@ -1,11 +1,11 @@
-from flask import render_template, request, redirect, session, Blueprint
-from cricMongoDB.database import db
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import os
-from io import BytesIO
 import base64
+from io import BytesIO
+
+import matplotlib.pyplot as plt
+import numpy as np
+from flask import render_template, request, Blueprint
+
+from cricMongoDB.database import db
 
 app = Blueprint('t20Stat', __name__)
 
@@ -16,9 +16,6 @@ def takePoints(elem):
 
 @app.route('/stats/')
 def stats(info = None,data=None,image=None):
-    # if 'username' not in session.keys():
-    #     return redirect('/auth/signin')
-    #print(info)
     if image==None:
         return render_template('stat/t20Stat.html',stat_info = info,stat_data=data,stat_image=image)
     else:
@@ -81,7 +78,6 @@ def show_stats():
 
 
         np_pnt_tbl = (np.array(pnt_tbl)).reshape(len(team_names), 7)
-        #print(np_pnt_tbl)
         np_pnt_tbl = np_pnt_tbl.astype(float)
         team_abr = []
 
@@ -98,9 +94,6 @@ def show_stats():
         for i in range(len(team_names)):
             val_ticks.append(i)
             lost_ticks.append(i + 0.4)
-
-        # val_ticks = [1,2,3,4,5,6,7,8]
-        # lost_ticks = [1.4,2.4,3.4,4.4,5.4,6.4,7.4,8.4]
 
         plt.close()
 
@@ -123,9 +116,6 @@ def show_stats():
         figfile.seek(0)
         figdata_png = base64.b64encode(figfile.getvalue())
 
-        #print(stat_data)
-        # stat_data.sort(key=takePoints, reverse=True)
-        #print(stat_data)
         return stats(data,stat_data,figdata_png)
 
     return  stats(data,None)
