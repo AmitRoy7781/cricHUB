@@ -1,0 +1,29 @@
+{% extends "/common/base.html" %}
+
+{% block content %}
+{% include '/common/header.html' %}
+
+<script>
+    window.onload = function () {
+            check_login_status();
+        }
+</script>
+
+    <div class="rgb-content-wrap">
+                <!--Blog Detail Page Start-->
+                <section class="rgb-error-wrap">
+                    <div class="container">
+                        <h6 class="theme-color">404<span>Uh-oh! nothing found</span></h6>
+                        <div class="text">
+                            <h5>Sorry!</h5>
+                            <p>The page you are looking for does not exist or another error occurred</p>
+                            <a class="simple-btn" href="/"><i class="fa fa-home"></i>GO BACK HOME</a>
+                        </div>
+                    </div>
+                </section>
+    </div>
+
+
+{% include '/common/footer.html' %}
+{% include '/common/footer-social.html' %}
+{% endblock %}

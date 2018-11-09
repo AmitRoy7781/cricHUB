@@ -196,6 +196,7 @@ class Component:
                 row_data = u",".join(
                     s.strip() for s in filter(None, (t.find(text=True, recursive=False) for t in d.find_all())))
                 if row_data:
+                    #print(row_data)
                     row_data = row_data.split(',')
                     temp["position"] = row_data[0]
                     temp["position_change"] = row_data[3]
@@ -204,7 +205,7 @@ class Component:
                     temp["rating"] = row_data[7]
 
                     if rank_type == "batsmen" or rank_type == "bowlers":
-                        temp["best_rank"] = row_data[8]
+                        temp["best_rank"] = ""
 
                     PLAYER_DATA.append(temp)
 
