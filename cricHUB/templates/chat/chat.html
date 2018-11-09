@@ -63,6 +63,7 @@
 
 
     <body style="overflow-y: hidden;">
+
     <div>
         <div class="row " style="padding-top:10px;">
 
@@ -207,6 +208,8 @@
                     '</div>\n' +
                     '</div>\n';
                     $('#content').append(message_template);
+
+
                 }
                 else {
                     var message_template =
@@ -234,10 +237,17 @@
                         '</div>\n' +
                         '</div>\n';
                     $('#content').append(message_template);
+
+                    var beep = new Audio()
+                    beep.src = "../../static/sounds/hangout_message.mp3"
+                    beep.play()
                 }
+
 
                 var messageBody = document.getElementById('messageBody');
                 messageBody.scrollTop = messageBody.scrollHeight;
+
+
 
             });
 
