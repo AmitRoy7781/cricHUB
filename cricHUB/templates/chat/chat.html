@@ -29,35 +29,94 @@
                 overflow: scroll;
             }
         </style>
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            .column1 {
+                float: left;
+                width: 10%;
+            }
+
+            .column2 {
+                float: left;
+                width: 85%;
+                alignment: left;
+            }
+
+            .column3 {
+                float: right;
+                width: 85%;
+                alignment: right;
+            }
+
+            /* Clearfix (clear floats) */
+            .row::after {
+                content: "";
+                clear: both;
+                display: table;
+            }
+        </style>
     </head>
 
 
-
-    <body style="overflow-y:hidden;" class="has-navbar-fixed-bottom">
+    <body style="overflow-y: hidden;">
     <div>
         <div class="row " style="padding-top:10px;">
 
             <h1 class="text-center">cricCHAT</h1>
+
             <br/>
 
-            <div class="col-lg-10" style="padding-left: 17%">
-                <div class="panel panel-info">
+            <div class="col-md-12" style="padding-left: 20%; padding-right: 20%; padding-bottom: 3%;">
+                <div style="border-width: 5px; border-style: solid; border-color: #1f679d; background-color: transparent {##d6d6d6#};">
 
                     <div class='panel-Body scroll' id='messageBody'>
-                        <ul id="content" class="media-list">
+                        <ul id="content">
 
                             {% for message in messages %}
-                                <article class="media">
-                                    <div class="media-content">
-                                        <div class="content">
-                                            <p>
-                                                <strong>{{ message.author }}</strong>
-                                                <br>
-                                                {{ message.message }}
-                                            </p>
-                                        </div>
+
+                                {% if session["username"] == message.author %}
+
+                                    <div class="row" style="padding-right: 3%">
+                                    <div class="column3" style="padding-top: 1%; float: right;" align="right">
+                                        <p style="background-color: #d6d6d6;
+                                        padding-left: 2%; padding-right: 2%;
+                                        padding-bottom: 1%; padding-top: 1%;
+                                        border-radius: 5%;
+                                        font-size: 14px; color: black; width: fit-content"
+                                        {#align="right"#}>
+
+                                        {{ message.message }}
+
+                                        </p>
                                     </div>
-                                </article>
+                                    </div>
+
+                                {% else %}
+                                    <div class="row" style="padding-left: 3%; padding-top: 1%; padding-bottom: 1%">
+                                    <div class="column1">
+                                        <img src="../../static/images/avater.jpg" alt="{{ message.author }}"
+                                             title="{{ message.author }}"
+                                            style="height: 75px; width: 75px; border-radius: 50%">
+                                    </div>
+                                    <div class="column2" style="padding-top: 1%">
+                                        <p style="background-color: white;
+                                        padding-left: 2%; padding-right: 2%;
+                                        padding-bottom: 1%; padding-top: 1%;
+                                        border-radius: 5%;
+                                        font-size: 14px; color: black; width: fit-content">
+                                            <label style="font: bold; font-size: 15px">{{ message.author }}</label>
+
+                                            <br>
+
+                                            {{ message.message }}
+                                        </p>
+                                    </div>
+                                    </div>
+                                {% endif %}
                             {% endfor %}
 
                         </ul>
@@ -69,9 +128,12 @@
                                    placeholder="Type Message Here..."
                                    autofocus/>
                             <span class="input-group-btn">
-                <button id="chat_btn" class="btn btn-info" type="button">SEND <span
-                        class="glyphicon glyphicon-send"></span></button>
-              </span>
+                                <button id="chat_btn" class="btn btn-info"
+                                        style="background-color: #1f679d" type="button">
+                                        SEND
+                                    <span class="glyphicon glyphicon-send"></span>
+                                </button>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -101,9 +163,7 @@
 
         $(function () {
 
-
             var username = '{{ session["username"] }}';
-
 
             $('#chat_btn').on('click', function () {
 
@@ -130,22 +190,51 @@
                 var name = data.author;
                 var message = data.message;
 
-                var message_template = '<article class="media">\n' +
-                    '\n' +
-                    '        <div class="media-content">\n' +
-                    '            <div class="content">\n' +
-                    '                <p>\n' +
-                    '                    <strong> '
-                    + data.author +
+                if(username == name) {
+                    var message_template =
+                        '<div class="row" style="padding-right: 3%">\n' +
+                        '<div class="column3" style="padding-top: 1%; float: right;" align="right">\n' +
+                        '<p style="background-color: #d6d6d6;\n' +
+                        'padding-left: 2%; padding-right: 2%;\n' +
+                        'padding-bottom: 1%; padding-top: 1%;\n' +
+                        'border-radius: 5%;\n' +
+                        'font-size: 14px; color: black; width: fit-content"\n' +
+                        '{#align="right"#}>\n' +
 
-                    ' </strong>\n' +
-                    '                    <br> ' +
-                    data.message +
-                    '                </p>\n' +
-                    '            </div>\n' +
-                    '        </div>\n' +
-                    '    </article>\ ';
-                $('#content').append(message_template);
+                        message
+
+                    '</p>\n' +
+                    '</div>\n' +
+                    '</div>\n';
+                    $('#content').append(message_template);
+                }
+                else {
+                    var message_template =
+                        '<div class="row" style="padding-left: 2%; padding-top: 1%; padding-bottom: 1%">\n' +
+                        '<div class="column1">\n' +
+                        '<img src="../../static/images/avater.jpg"\n' +
+                        'title="\n' +
+                        name +
+                        '"\n' +
+                        'style="height: 75px; width: 75px; border-radius: 50%">\n' +
+                        '</div>\n' +
+                        '<div class="column2" style="padding-top: 1%">\n' +
+                        '<p style="background-color: white;\n' +
+                        'padding-left: 2%; padding-right: 2%;\n' +
+                        'padding-bottom: 1%; padding-top: 1%;\n' +
+                        'border-radius: 5%;\n' +
+                        'font-size: 14px; color: black;\n' +
+                        'width: fit-content">\n' +
+                        '<label style="font: bold; font-size: 15px">\n' +
+                        name +
+                        '</label>\n' +
+                        '<br>\n' +
+                        message +
+                        '</p>\n' +
+                        '</div>\n' +
+                        '</div>\n';
+                    $('#content').append(message_template);
+                }
 
                 var messageBody = document.getElementById('messageBody');
                 messageBody.scrollTop = messageBody.scrollHeight;
@@ -154,7 +243,6 @@
 
         });
     </script>
-
 
     </body>
 

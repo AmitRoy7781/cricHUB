@@ -114,5 +114,3 @@ class ConcreteObserver(Observer):
         except:
 
             return jsonify({'result': 'failure'})
-
-
