@@ -228,15 +228,8 @@ class Component:
         # print(rank_limit)
         # print(len(RANK_DATA))
 
-        if rank_limit is "" or rank_limit == len(RANK_DATA):
-            rank_limit = 10
-        else:
-            rank_limit = len(RANK_DATA)
 
-        if rank_status is "" or rank_status == "Top 10":
-            rank_status = "Full Ranking"
-        else:
-            rank_status = "Top 10"
+        rank_limit = len(RANK_DATA)
 
         # print("Updated ", rank_limit)
 
