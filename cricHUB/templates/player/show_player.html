@@ -3,6 +3,12 @@
 {% block content %}
     {% include '/common/header.html' %}
 
+    <script>
+    window.onload = function () {
+            check_login_status();
+        }
+    </script>
+
     <head>
         <meta charset="utf-8">
         <script>var is_mobile = /symbian|tizen|midp|uc(web|browser)|MSIE (5.0|6.0|7.0|8.0)|tablet/i.test(navigator.userAgent);
