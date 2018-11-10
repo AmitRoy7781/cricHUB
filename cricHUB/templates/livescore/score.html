@@ -989,14 +989,14 @@
 
                 {%  for item in match_data %}
                 <div class="cb-col cb-col-100 cb-lv-main">
-                    <h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr" title="Windies tour of India, 2018">
+                    <h2 class="cb-lv-grn-strip text-bold cb-lv-scr-mtch-hdr" title="{{ item["match_header"] }}">
                         {{ item["match_header"] }}
                     </h2>
                     <div class="cb-mtch-lst cb-col cb-col-100 cb-tms-itm">
                         <div class="cb-col-100 cb-col cb-schdl">
                             <h3 class="cb-lv-scr-mtch-hdr inline-block">
                                 <a class="text-hvr-underline text-bold"
-                                   href="{{ item["match_href"]  }}"
+                                   href="#"
                                    title="{{ item["match_name"] }}">
                                     {{ item["match_name"] }}
                                 </a>

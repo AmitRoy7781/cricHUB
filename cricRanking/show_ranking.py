@@ -231,7 +231,7 @@ class Component:
             rank_limit = 10
         else:
             rank_limit = len(RANK_DATA)
-            
+
         if rank_status is "" or rank_status == "Top 10":
             rank_status = "Full Ranking"
         else:
