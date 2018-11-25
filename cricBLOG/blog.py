@@ -5,17 +5,10 @@ import requests
 import copy
 import datetime
 from cricMongoDB.database import db
+import datetime
+
 
 app = Blueprint('blog', __name__)
-
-
-from datetime import datetime
-import time
-
-def datetime_from_utc_to_local(utc_datetime):
-    now_timestamp = time.time()
-    offset = datetime.fromtimestamp(now_timestamp) - datetime.utcfromtimestamp(now_timestamp)
-    return utc_datetime + offset
 
 @app.route('/blog/')
 def showBlog():
@@ -28,7 +21,6 @@ class Prototype:
     """
     Example class to be copied.
     """
-
 
     def show_blog(self):
 
@@ -73,10 +65,14 @@ def add():
             blog_message["author"] = session['username']
             blog_message["title"] = title
             blog_message["content"] = content
-            now = datetime.utcnow()
-            now = datetime_from_utc_to_local(now)
-            now = now.replace(second=0, microsecond=0)
-            blog_message["date"] = str(now)
+
+            current_utc_time = datetime.datetime.utcnow()
+            time_delta = datetime.timedelta(hours=6)
+            current_bd_time = current_utc_time + time_delta
+            current_bd_time = current_bd_time.strftime('%Y-%m-%d %H:%M:%S')
+            print(current_bd_time)
+
+            blog_message["date"] = str(current_bd_time)
             posts = db.blog
 
             posts.insert_one(blog_message)
@@ -86,7 +82,7 @@ def add():
             return redirect('/blog/')
 
     else:
-        return showBlog()
+        return render_template("/blog/add.html")
 
 
 # @app.route('/blog/')
