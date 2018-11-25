@@ -8,8 +8,16 @@ from cricMongoDB.database import db
 
 app = Blueprint('blog', __name__)
 
-@app.route('/blog/')
 
+from datetime import datetime
+import time
+
+def datetime_from_utc_to_local(utc_datetime):
+    now_timestamp = time.time()
+    offset = datetime.fromtimestamp(now_timestamp) - datetime.utcfromtimestamp(now_timestamp)
+    return utc_datetime + offset
+
+@app.route('/blog/')
 def showBlog():
     prototype = Prototype()
     prototype_copy = copy.deepcopy(prototype)
@@ -65,7 +73,8 @@ def add():
             blog_message["author"] = session['username']
             blog_message["title"] = title
             blog_message["content"] = content
-            now = datetime.datetime.now()
+            now = datetime.utcnow()
+            now = datetime_from_utc_to_local(now)
             now = now.replace(second=0, microsecond=0)
             blog_message["date"] = str(now)
             posts = db.blog
