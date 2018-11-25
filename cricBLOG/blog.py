@@ -77,7 +77,7 @@ def add():
             return redirect('/blog/')
 
     else:
-        return render_template("/blog/add.html")
+        return showBlog()
 
 
 # @app.route('/blog/')

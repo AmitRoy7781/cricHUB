@@ -1,5 +1,9 @@
 import pytz
 from flask import Flask, render_template
+import sys
+sys.path.append('../')
+
+
 
 from cricAuth.auth import app as auth
 from cricBETTING.betting import app as betting
