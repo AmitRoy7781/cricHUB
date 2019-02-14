@@ -10,15 +10,13 @@ A Web Application related to the sport CRICKET
 - [MD. Rakibul Hasan](https://github.com/RHT-20)
 
 
-**Features:**
-- Live Match Score and Upcoming Matches Schedule
-- Trending Tweets and Videos
-- ICC Ranking and Cricket News (Bangla and English)
-- Individual Player Statistics
-- Predictor with historical data of ODIs from 1971 to 2017
-- Franchise T20 Tournament Statistics and Data Visualization
-- Chat Room for Active Users
-- Blog Post from Users
+**Probable Features:**
+- Peer to peer realtime interview platform
+- Online Coding Platform
+- Blog Recommendation
+- Q/A Forum and Feed
+- Online Contest Reminder
+- Profile and Rating
 
 
 **Specifications :**
