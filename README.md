@@ -10,7 +10,7 @@ A Web Application related to the sport CRICKET
 - [MD. Rakibul Hasan](https://github.com/rht20)
 
 
-**Probable Features:**
+**Key Features:**
 - Peer to peer realtime interview platform
 - Online Coding Platform
 - Blog Recommendation
