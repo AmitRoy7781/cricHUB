@@ -20,8 +20,8 @@ A Web Application related to the sport CRICKET
 - **Information Retrieval Tool:** Beautiful Soup 4.4.0
 
 **Developed by:**
-- [Amit Roy](https://github.com/AmitRoy7)
-- [Saif Mahmud](https://github.com/Saif-M-Dhrubo)
+- [Amit Roy](https://github.com/AmitRoy7781)
+- [Saif Mahmud](https://github.com/saif-mahmud)
 - [Tauhid Tanjim](https://github.com/Tanjim13)
 - [Tanjid Hasan Tonmoy](https://github.com/thTonmoy)
 - [MD. Rakibul Hasan](https://github.com/rht20)
