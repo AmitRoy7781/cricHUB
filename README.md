@@ -21,7 +21,7 @@ A Web Application related to the sport CRICKET
 
 **Developed by:**
 - [Amit Roy](https://amitroy7781.github.io)
-- [Saif Mahmud](https://github.com/saif-mahmud)
+- [Saif Mahmud](https://saif-mahmud.github.io)
 - [Tauhid Tanjim](https://github.com/Tanjim13)
 - [Tanjid Hasan Tonmoy](https://github.com/thTonmoy)
 - [MD. Rakibul Hasan](https://github.com/rht20)
