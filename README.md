@@ -1,4 +1,4 @@
-# cricHUB (http://cric-hub.herokuapp.com)
+# [cricHUB](http://cric-hub.herokuapp.com)
 A Web Application related to the sport CRICKET
 
 **Features:**
@@ -20,7 +20,7 @@ A Web Application related to the sport CRICKET
 - **Information Retrieval Tool:** Beautiful Soup 4.4.0
 
 **Developed by:**
-- [Amit Roy](https://github.com/AmitRoy7781)
+- [Amit Roy](https://amitroy7781.github.io)
 - [Saif Mahmud](https://github.com/saif-mahmud)
 - [Tauhid Tanjim](https://github.com/Tanjim13)
 - [Tanjid Hasan Tonmoy](https://github.com/thTonmoy)
