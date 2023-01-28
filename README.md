@@ -1,4 +1,4 @@
-# [cricHUB](http://cric-hub.herokuapp.com)
+# cricHUB
 A Web Application related to the sport CRICKET
 
 **Features:**
